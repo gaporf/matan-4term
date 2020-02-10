@@ -217,4 +217,117 @@
         
             $\int\limits_{A} f = \sum\limits_{i} \int\limits_{A_i} f$.
         
+\part{Предельный переход под знаком интеграла}
+
+    \subsection{Теорема}
+    
+        $(X, \mathcal{A}, \mu)$, $f_n$~--- измерима, $\forall n : 0 \leqslant f_n(x) \leqslant f_{n + 1} (x)$ при почти всех $x$.
+        
+        $f(x) = \lim\limits_{n \rightarrow +\infty} f_n(x)$ при почти всех $x$. Тогда
+        
+        $\lim \int\limits_{X} f_n(x) d \mu = \int\limits_{X} f d \mu$.
+        
+        \subsubsection{Доказательство}
+        
+            $f$~--- измерима как предел, измерима.
+            
+            \begin{itemize}
+            
+                \item $\leqslant$
+                
+                    $f_n(x) \leqslant f(x)$ почти везде, тогда $\forall n : \int\limits_{X} f_n(x) d \mu \leqslant \int\limits_{X} f d \mu$, откуда следует, что и предел не превосходит.
+                    
+                \item $\geqslant$
+                
+                    Достаточно доказать, что для любой ступенчатой функции $g : 0 \leqslant g \leqslant f$ верно $\lim \int\limits_{X} f_n \geqslant \int\limits_{X} g$.
+                    
+                    Достаточно доказать, что $\forall c \in (0, 1)$ верно $\lim \int\limits_{X} f_n \geqslant c \int\limits_{X} g$.
+                    
+                    $E_n := X \left( f_n \geqslant cg \right)$, $E_n \subset E_{n + 1} \subset \ldots$.
+                    
+                    $\bigcup E_n = X$, т.е. $c < 1$, то $c g(x) < f(x)$, $f_n(x) \rightarrow f(x) \Rightarrow f_n$ попадёт в с зазор $c g(x) < f(x)$.
+                    
+                    $\int\limits_{X} f_n \geqslant \int\limits_{E_n} f_n \geqslant \int\limits_{E_n} c g = c \int\limits_{E_n} g$,
+                    
+                    $\lim\limits_{n \rightarrow +\infty} \int\limits_{X} f_n \geqslant \lim\limits_{n \rightarrow +\infty} c \int\limits_{E_n} g = c \int\limits_{X} g$, потому что это непрерывность снизу меры $A \mapsto \int\limits_{A} g$.
+                    
+            \end{itemize}
+    
+    \subsection{Теорема}
+    
+        Пусть $f$, $g$~--- измеримы на $E$, $f \geqslant 0$, $g \geqslant 0$. Тогда $\int\limits_{E} f + g = \int\limits_{E} f + \int\limits_{E} g$.
+        
+        \subsubsection{Доказательство}
+        
+            Если $f$, $g$~--- ступенчатые, то очевидно.
+            
+            Разберём общий случай. Существуют ступенчатые функции $f_n : 0 \leqslant f_n \leqslant f_{n + 1} \leqslant \ldots \leqslant f$, и $g_n : 0 \leqslant g_n \leqslant g_{n + 1} \leqslant \ldots \leqslant g$, и $f_n(x) \rightarrow f(x)$ и $g_n(x) \rightarrow g(x)$. Тогда
+            
+            $\int\limits_{E} f_n + g_n = \int\limits_{E} f_n + \int\limits_{E} g_n$, сделаем предельный переход, значит при $n \rightarrow +\infty$
+            
+            $\int\limits_{E} f + g = \int\limits_ f + \int\limits_{E} g$
+            
+        \subsubsection{Следствие}
+        
+            Пусть $f$, $g$~--- суммируемые на множестве $E$, тогда $f + g$ тоже суммируема и $\int\limits_{E} f + g = \int\limits_{E} f + \int\limits_{E} g$.
+            
+            \textit{Доказательство}
+            
+                $(f + g)_{\pm} \leqslant | f + g | \leqslant |f| + |g|$.
+                
+                $h := f + g$,
+                
+                $h_+ - h_- = f_+ - f_- + g_+ - g_-$,
+                
+                $h_+ + f_- + g_- = h_- + f_+ + g_+$,
+                
+                $\int h_+ + \int f_- + \int g_- = \int h_- + \int f_+ \int g_+$,
+                
+                $\int h_+ - \int h_- = \int f_+ - \int f_- + \int g_+ - \int g_-$, тогда
+                
+                $\int h = \int f + \int g$.
+                
+    \subsection{Определение}
+    
+        $\mathcal{L} (X)$~--- множество суммируемых функций. Это линейное пространство.
+        
+        Интеграл: $\mathcal{L}(X) \rightarrow \mathbb{R}$~--- это линейная функция, но красивее говорить линейный функционал.
+        
+        $f_1, \ldots, f_n \in \mathcal{L}(X)$, $\alpha_1, \ldots, \alpha_n \in \mathbb{R}$, тогда $\alpha_1 f_1 + \ldots + \alpha_n f_n \in \mathcal{L}(x)$.
+        
+        $\int\limits_{X} f = I(f)$, $\int\limits_X \alpha_1 f_1 + \ldots \alpha_n f_n = \alpha_1 \int\limits_{X} f_1 + \ldots + \alpha_n \int\limits_{X} f_n$
+        
+        $I(\alpha_1 f_1 + \ldots + \alpha_n f_n) = I(\alpha_1 f_1) + \ldots + I(\alpha_n f_n)$.
+        
+    \subsection{Теорема об интегрировании положительных рядов}
+    
+        $u_n \geqslant 0$ почти везде, измеримы на $E$. Тогда
+        
+        $\int\limits_{E} \left( \sum\limits^{+\infty}_{i = 1} u_n \right) d \mu = \sum\limits^{+\infty}_{i \int= 1} \int\limits_{E} u_n d \mu$.
+        
+        \subsubsection{Доказательство}
+        
+            Очевидно по теореме Леви.
+            
+            $S(x) = \sum\limits^{+\infty}_{n = 1} u_n(x)$ и $p \leqslant S_N \leqslant S_{N + 1} \leqslant \ldots$ и $S_N \rightarrow S(X)$.
+            
+            $\lim\limits_{n \rightarrow +\infty} \int\limits_{E} S_N = \int\limits_{E} S$
+            
+            $\lim \sum\limits^n_{k = 1} \int\limits_{E} u_k(x) = \int\limits_{E} S(x) d \mu$.
+            
+        \subsubsection{Следствие}
+        
+            $u_n$~--- измеримая функция, $\sum\limits^{+\infty}_{n = 1} \int\limits_{E} | u_n | < +\infty$. Тогда
+            
+            $\sum u_n$~--- абсолютно сходится почти везде на $E$.
+            
+            \textit{Доказательство}
+            
+                $S(x) = \sum\limits^{+\infty}_{n = 1} | u_n(x) |$
+                
+                $\int\limits_{E} S(x) = \sum\limits^{+\infty}_{n = 1} \int\limits | u_n(x) | < +\infty$, значит $S(x)$ конечна почти всюду.
+                
+                $S(x) = +\infty$ при $x \in B$, $\mu B > 0$, $S(x) \geqslant n \cdot \chi_{B} \int\limits_{E} S(x) \geqslant n \cdot \mu B$.
+                
+        
 \end{document}
