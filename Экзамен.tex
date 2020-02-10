@@ -1,0 +1,220 @@
+\documentclass{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\parindent 0pt
+\parskip 8pt
+\usepackage{setspace}
+\usepackage{etaremune}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[left=2.3cm, right=2.3cm, top=2.7cm, bottom=2.7cm, bindingoffset=0cm]{geometry}
+\usepackage{latexsym}
+\usepackage[unicode, pdftex]{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\graphicspath{ {./images/} }
+
+\doublespacing
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\RM}[0]{\mathbb{R}^m}
+\newcommand{\dist}[0]{\mathrm{dist}}
+\newcommand{\rang}[0]{\mathrm{rang} $\ $}
+\newcommand{\grad}[0]{\mathrm{grad} $\ $}
+\newcommand{\Lin}[0]{\mathrm{Lin} $\ $}
+
+\tableofcontents
+
+\newpage 
+
+\part{Интеграл по мере}
+
+    $(X, \mathcal{A}, \mu)$~--- произвольное пространство с мерой.
+    
+    $\mathcal{L}^0 (X)$~--- множество измеримых почти везде конечных функций.
+    
+    \subsection{Определения интеграла функции}
+    
+        \begin{enumerate}
+        
+            \item $f = \sum\limits_{\text{кон.}} \lambda_k \cdot \chi_{E_k}$, $f \geqslant 0$.
+            
+                $(E_k \in \mathcal{A})$~--- допустимое разбиение, тогда 
+                
+                $\int\limits_{X} f d \mu = \int\limits_{X} f(x) d \mu(x) := \sum \lambda_k \mu E_k$ (считаем, что $0 \cdot \infty = \infty \cdot 0 = 0$).
+                
+                Свойства:
+                
+                \begin{itemize}
+                
+                    \item Интеграл не зависит от допустимого разбиения;
+                    
+                        $f = \sum \alpha_j \chi_{F_j} = \sum\limits_{i, j} \lambda_k \chi_{E_k \cap F_j}$, тогда $\int F = \int = \sum \lambda_k \mu E_k = \sum\limits_{k} \lambda_k \sum\limits_j \mu (E_k \cap F_j) = \sum \alpha_j \mu F_i = \int F$;
+                        
+                    \item $f \leqslant g$, то $\int\limits_{X} f d \mu = \int\limits_{X} g d \mu$.
+                    
+                \end{itemize}
+                
+            \item $f \geqslant 0$, измерима, тогда $\int\limits_{X} f d \mu = \sup\limits_{\text{g - ступенчатая}, 0 \leqslant g \leqslant f} \left( \int g \right)$.
+            
+                Свойства:
+                
+                \begin{itemize}
+                
+                    \item Для ступенчатых функций $f \geqslant 0$~--- это определение даёт тот же интеграл;
+                    
+                    \item $0 \leqslant \int f \leqslant +\infty$;
+                    
+                    \item $0 \leqslant g \leqslant f$, $g$~--- ступенчатая, $f$~--- измеримая, тогда $\int\limits_{X} g \leqslant \int\limits_{X} f$.
+                    
+                \end{itemize}
+                
+            \item $f$~--- измеримая, $f_+$ и $f_-$~--- срезки, тогда если $\int\limits_{X} f_+$ или $\int\limits_{X} f_-$~--- конечен, тогда 
+            
+                $\int\limits_{X} f d \mu := \int\limits_{X} f_+ - \int\limits_{X} f_-$. 
+                
+                \textit{Замечание}: Если $\int\limits_{X} f \neq \pm \infty$, то говорят, что $f$~--- суммируемая и $\int |f|$~--- конечен ($|f| = f_+ + f_-$).
+                
+                Свойства:
+                
+                \begin{itemize}
+                
+                    \item Если $f \geqslant 0$~--- измерима, то это определение даёт тот же интеграл, что и предыдущее.
+                
+                \end{itemize}
+            
+            \item $E \subset X$~--- измеримое множество, $f$~--- измеримо на $X$, тогда $\int\limits_{E} f d \mu := \int\limits_{X} f \chi_E d \mu$. $f$~--- суммируема на $E$ если $\int\limits_{E} f+-$ и $\int\limits_{E} f_-$~--- оба конечны.
+            
+                \textit{Замечание} 
+                
+                    \begin{enumerate}
+                    
+                        \item $f = \sum \lambda_k \chi_{E_k}$ и $\int\limits_{E} f = \sum \lambda_k \mu \left( E_k \cap E \right)$;
+                
+                        \item $f \geqslant 0$~--- измерима, тогда $\int\limits_{E} f d \mu = \sup\limits_{\text{g - ступ.}, 0 \leqslant g \leqslant f} \left( \int G \right)$.
+                        
+                    \end{enumerate}
+                    
+        \end{enumerate}
+        
+    \subsection{Свойства интегралов}
+    
+        \begin{enumerate}
+        
+            \item Монотонность: $f \leqslant g \Rightarrow \int\limits_{E} f \leqslant \int\limits_{E} g$.
+            
+                \textit{Доказательство}
+                
+                    \begin{itemize}
+                    
+                        \item $0 \leqslant f \leqslant g$, $\sum\limits_{\widetilde{f} stup, 0 \leqslant \widetilde{f} \leqslant f} \int \widetilde{f} \leqslant \sum\limits_{\widetilde{g} stup, 0 \leqslant \widetilde{g} \leqslant g} \int \widetilde{g}$;
+                        
+                        \item $f$ и $g$~--- произвольные, то работает со срезками и $f_+ \leqslant g_+$, а $f_- \geqslant g_-$, тогда очевидно и для интегралов.
+                        
+                    \end{itemize}
+            
+            \item $\int\limits_{E} 1 d \mu = \mu E$, $\int\limits_{E} 0 d \mu = 0$;
+            
+            \item $\mu E = 0$, $f$~--- измерима, тогда $\int\limits_{E} f = 0$.
+            
+                \textit{Доказательство}
+                
+                    \begin{itemize}
+                    
+                        \item $f$~--- ступенчатая, то очевидно;
+                        
+                        \item $f \geqslant 0$~--- измеримая, то очевидно;
+                        
+                        \item $f$~--- любая, то аналогично.
+                        
+                    \end{itemize}
+                    
+            \item $\int -f = - \int f$, $\forall c > 0 : \int cf = c \int f$.
+            
+                \textit{Доказательство}
+                
+                    \begin{itemize}
+                    
+                        \item $(-f)_+ = f_-$ и $(-f)_ = f_+$.
+                    
+                        \item $f \geqslant 0$~--- очевидно, $\sum\limits_{g stup, 0 \leqslant g \leqslant cf} \left( \int G \right) = c \sup\limits_{\widetilde{g} stup, 0 \leqslant \widetilde{g} \leqslant f} \left( \int g \right)$.
+                        
+                    \end{itemize}
+                    
+            \item Пусть существует $\int\limits_{E} f d \mu$, тогда $\left| \int\limits_{E} f \right| \leqslant \int\limits_{E} |f|$.
+            
+                \textit{Доказательство}
+                
+                    $- |f| \leqslant f \leqslant |f|$
+                    
+                    $- \int |f| \leqslant \int f \leqslant \int |f|$
+                    
+            \item $f$~--- измерима на $E$, $\mu E < +\infty$, $\forall x \in E$ $a \leqslant f(x) \leqslant b$. Тогда 
+            
+                $a \mu E \leqslant \int\limits_{E} f \leqslant b \mu E$.
+                
+        \end{enumerate}
+        
+    \subsection{Лемма}
+    
+        $A = \bigsqcup A_i$, $A$, $A_i$~--- измеримы, $g \leqslant 0$~--- ступенчатые. Тогда
+        
+        $\int\limits_{A} g d \mu = \sum\limits_{i = 1}^{+\infty} \int\limits_{A_i} g d \mu$.
+        
+        \subsubsection{Доказательство}
+        
+            $g = \sum \lambda_k \chi_{E_k}$.
+            
+            $\int\limits_A g d \mu = \sum \lambda_k \mu (A \cap E_k) = \sum\limits_{k} \lambda_k \sum\limits_{i} \mu (A_i \cap E_k) = \sum\limits_i \left( \sum\limits_k \lambda_k \mu (A_i \cap E_k ) \right) = \sum\limits_i \int\limits_{A_i} g$.
+            
+    \subsection{Теорема}
+    
+        $f : C \rightarrow \overline{R}$, $f \geqslant 0$~--- измеримая на $A$, $A$~--- измерима, $A = \bigsqcup A_i$, все $A_i$~--- измеримы. Тогда
+        
+        $\int\limits_{A} f d \mu = \sum\limits_{i} \int\limits_{A_i} f d \mu$
+            
+        \subsubsection{Доказательство}
+        
+            \begin{itemize}
+            
+                \item $\leqslant$
+                
+                    $g$~--- ступенчатая, $0 \leqslant g \leqslant f$, тогда $\int_A g = \sum \int\limits_{A_i} g \leqslant \sum \int\limits_{A_i} f$. Осталось перейти к $\sup$.
+                    
+                \item $\geqslant$
+                
+                    $A = A_1 \sqcup A_2$, $\sum \lambda_k \chi_{E_k} = g_1 \leqslant f \chi_{A_1}$, $g_2 \leqslant f \cdot \chi_{A_2} = \sum \lambda_k \chi_{E_k}$, $g_1 + g_2 \leqslant f \cdot \chi_{A}$
+                    
+                    $\int\limits_{A_1} g_1 + \int\limits_{A_2} g_2 = \int\limits_{A} g_1 + g_2$.
+                    
+                    переходим к $\sup$ $g_1$ и $g_2$
+                    
+                    $\int\limits_{A_1} f + \int\limits_{A_2} f \leqslant \int\limits_{A} f$
+                    
+                    по индукции разобьём для $A = A_1 \sqcup A_2 \sqcup \ldots \sqcup A_n$, $A = \bigsqcup\limits^{+\infty}_{i = 1} A_i$ и $A = A_1 \sqcup A_2 \sqcup \ldots \sqcup A_n \sqcup B_n$, где $B_n = \bigsqcup\limits_{i \geqslant n + 1} A_i$, тогда
+                    
+                    $\int\limits_{A} \geqslant \sum\limits^n_{i = 1} \int\limits_{A_i} f + \int\limits_{B} f \geqslant \sum\limits^n_{i = 1} f \Rightarrow \int\limits_{A}f \geqslant \sum\limits^{+\infty}_{i = 1} \int\limits_{A_i} f$
+                    
+            \end{itemize}
+            
+    \subsection{Следствие}
+    
+        $f \geqslant 0$~--- измеримая, $\nu : \mathcal{A} \rightarrow \overline{\mathbb{R}}_+$, $\nu E = \int\limits_{E} f d \mu$. Тогда
+        
+            $\nu$~--- мера.
+            
+    \subsection{Следствие 2}
+    
+        $A = \bigsqcup\limits_{i = 1}^{+\infty} A_i$, $f$~--- суммируема на $A$, тогда 
+        
+            $\int\limits_{A} f = \sum\limits_{i} \int\limits_{A_i} f$.
+        
+\end{document}
