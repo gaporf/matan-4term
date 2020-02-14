@@ -37,6 +37,8 @@
 
 \part{Интеграл по мере}
 
+\newpage
+
     \section{Интеграл ступенчатой функции}
     
         $f = \sum\limits_{k = 1}^n \lambda_k \cdot \chi_{E_k}$, $f \geqslant 0$, где $E_k \in \mathcal{A}$~--- допустимое разбиение, тогда интеграл ступенчатой функции $f$ на множестве $X$ есть
@@ -58,6 +60,26 @@
             \end{itemize}
             
     \newpage
+    
+    \section{Интеграл неотрицательной измеримой функции}
+    
+        $f \geqslant 0$, измерима, тогда интеграл неотрицательной измеримой функции $f$ есть
+        
+        $\int\limits_{X} f d \mu = \sup\limits_{\substack{\text{$g$ - ступ.} \\ 0 \leqslant g \leqslant f}} \left( \int\limits_{X} g d \mu \right)$.
+            
+        \subsection{Свойства}
+                
+            \begin{itemize}
+                
+                \item Для ступенчатой функции $f$ (при $f \geqslant 0$) это определение даёт тот же интеграл, что и для ступенчатой функции;
+                    
+                \item $0 \leqslant \int\limits_{X} f \leqslant +\infty$;
+                    
+                \item $0 \leqslant g \leqslant f$, $g$~--- ступенчатая, $f$~--- измеримая, тогда $\int\limits_{X} g \leqslant \int\limits_{X} f$.
+                    
+            \end{itemize}
+                
+    \newpage
                 
     $(X, \mathcal{A}, \mu)$~--- произвольное пространство с мерой.
     
@@ -66,21 +88,6 @@
     \subsection{Определения интеграла функции}
     
         \begin{enumerate}
-        
-                
-            \item $f \geqslant 0$, измерима, тогда $\int\limits_{X} f d \mu = \sup\limits_{\text{g - ступенчатая}, 0 \leqslant g \leqslant f} \left( \int g \right)$.
-            
-                Свойства:
-                
-                \begin{itemize}
-                
-                    \item Для ступенчатых функций $f \geqslant 0$~--- это определение даёт тот же интеграл;
-                    
-                    \item $0 \leqslant \int f \leqslant +\infty$;
-                    
-                    \item $0 \leqslant g \leqslant f$, $g$~--- ступенчатая, $f$~--- измеримая, тогда $\int\limits_{X} g \leqslant \int\limits_{X} f$.
-                    
-                \end{itemize}
                 
             \item $f$~--- измеримая, $f_+$ и $f_-$~--- срезки, тогда если $\int\limits_{X} f_+$ или $\int\limits_{X} f_-$~--- конечен, тогда 
             
