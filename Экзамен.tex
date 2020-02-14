@@ -37,6 +37,28 @@
 
 \part{Интеграл по мере}
 
+    \section{Интеграл ступенчатой функции}
+    
+        $f = \sum\limits_{k = 1}^n \lambda_k \cdot \chi_{E_k}$, $f \geqslant 0$, где $E_k \in \mathcal{A}$~--- допустимое разбиение, тогда интеграл ступенчатой функции $f$ на множестве $X$ есть
+                
+        $\int\limits_{X} f d \mu = \int\limits_{X} f(x) d \mu(x) = \sum\limits_{k = 1}^n \lambda_k \mu E_k$ 
+        
+        Дополнительно будем считать, что $0 \cdot \infty = \infty \cdot 0 = 0$.
+                
+        \subsection{Свойства}
+                
+            \begin{itemize}
+                
+                \item Интеграл не зависит от допустимого разбиения:
+                    
+                    $f = \sum \alpha_j \chi_{F_j} = \sum\limits_{k,\, j} \lambda_k \chi_{E_k \cap F_j}$, тогда $\int F = \sum \lambda_k \mu E_k = \sum\limits_{k} \lambda_k \sum\limits_j \mu (E_k \cap F_j) = \sum \alpha_j \mu F_i = \int F$;
+                        
+                \item $f \leqslant g$, то $\int\limits_{X} f d \mu \leqslant \int\limits_{X} g d \mu$.
+                
+            \end{itemize}
+            
+    \newpage
+                
     $(X, \mathcal{A}, \mu)$~--- произвольное пространство с мерой.
     
     $\mathcal{L}^0 (X)$~--- множество измеримых почти везде конечных функций.
@@ -45,23 +67,6 @@
     
         \begin{enumerate}
         
-            \item $f = \sum\limits_{\text{кон.}} \lambda_k \cdot \chi_{E_k}$, $f \geqslant 0$.
-            
-                $(E_k \in \mathcal{A})$~--- допустимое разбиение, тогда 
-                
-                $\int\limits_{X} f d \mu = \int\limits_{X} f(x) d \mu(x) := \sum \lambda_k \mu E_k$ (считаем, что $0 \cdot \infty = \infty \cdot 0 = 0$).
-                
-                Свойства:
-                
-                \begin{itemize}
-                
-                    \item Интеграл не зависит от допустимого разбиения;
-                    
-                        $f = \sum \alpha_j \chi_{F_j} = \sum\limits_{i, j} \lambda_k \chi_{E_k \cap F_j}$, тогда $\int F = \int = \sum \lambda_k \mu E_k = \sum\limits_{k} \lambda_k \sum\limits_j \mu (E_k \cap F_j) = \sum \alpha_j \mu F_i = \int F$;
-                        
-                    \item $f \leqslant g$, то $\int\limits_{X} f d \mu = \int\limits_{X} g d \mu$.
-                    
-                \end{itemize}
                 
             \item $f \geqslant 0$, измерима, тогда $\int\limits_{X} f d \mu = \sup\limits_{\text{g - ступенчатая}, 0 \leqslant g \leqslant f} \left( \int g \right)$.
             
