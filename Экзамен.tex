@@ -119,61 +119,80 @@
     
     $\mathcal{L}^0 (X)$~--- множество измеримых почти везде конечных функций.
         
-    \subsection{Свойства интегралов}
+    \section{Простейшие свойства интеграла Лебега}
     
         \begin{enumerate}
         
-            \item Монотонность: $f \leqslant g \Rightarrow \int\limits_{E} f \leqslant \int\limits_{E} g$.
+            \item \textit{Монотонность}: 
             
-                \textit{Доказательство}
+                $f \leqslant g \Rightarrow \int\limits_{E} f \leqslant \int\limits_{E} g$.
+            
+                \subsection{Доказательство}
                 
                     \begin{itemize}
                     
-                        \item $0 \leqslant f \leqslant g$, $\sum\limits_{\widetilde{f} stup, 0 \leqslant \widetilde{f} \leqslant f} \int \widetilde{f} \leqslant \sum\limits_{\widetilde{g} stup, 0 \leqslant \widetilde{g} \leqslant g} \int \widetilde{g}$;
+                        \item $\sup\limits_{\substack{\text{$\widetilde{f}$ - ступ.} \\ 0 \leqslant \widetilde{f} \leqslant f}} \left( \int\limits_{X} \widetilde{f} d \mu \right) \leqslant \sup\limits_{\substack{\text{$\widetilde{g}$ - ступ.} \\ 0 \leqslant \widetilde{g} \leqslant g}} \left( \int\limits_{X} \widetilde{g} d \mu \right)$;
                         
-                        \item $f$ и $g$~--- произвольные, то работает со срезками и $f_+ \leqslant g_+$, а $f_- \geqslant g_-$, тогда очевидно и для интегралов.
+                        \item $f$ и $g$~--- произвольные, то работаем со срезками, и $f_+ \leqslant g_+$, а $f_- \geqslant g_-$, тогда очевидно и для интегралов.
                         
                     \end{itemize}
             
-            \item $\int\limits_{E} 1 d \mu = \mu E$, $\int\limits_{E} 0 d \mu = 0$;
+            \item $\int\limits_{E} 1 \cdot d \mu = \mu E$, $\int\limits_{E} 0 \cdot d \mu = 0$.
+            
+                \subsection{Доказательство}
+                
+                    По определению.
             
             \item $\mu E = 0$, $f$~--- измерима, тогда $\int\limits_{E} f = 0$.
             
-                \textit{Доказательство}
+                \subsection{Доказательство}
                 
                     \begin{itemize}
                     
-                        \item $f$~--- ступенчатая, то очевидно;
+                        \item $f$~--- ступенчатая, то по определению интеграла для ступенчатых функций получаем $0$;
                         
-                        \item $f \geqslant 0$~--- измеримая, то очевидно;
+                        \item $f \geqslant 0$~--- измеримая, то по определению интеграла для измеримых неотрицательных функций также получаем $0$;
                         
-                        \item $f$~--- любая, то аналогично.
+                        \item $f$~--- любая, то разбиваем на срезки $f_+$ и $f_-$ и снова получаем $0$.
                         
                     \end{itemize}
                     
-            \item $\int -f = - \int f$, $\forall c > 0 : \int cf = c \int f$.
+            \item 
             
-                \textit{Доказательство}
+                \begin{enumerate}
+                
+                    \item $\int -f = - \int f$;
+                    \item $\forall c > 0 : \int cf = c \int f$.
+                
+                \end{enumerate}
+                
+                \subsection{Доказательство}
                 
                     \begin{itemize}
                     
-                        \item $(-f)_+ = f_-$ и $(-f)_ = f_+$.
+                        \item $(-f)_+ = f_-$ и $(-f)_ = f_+$ и $\int -f = f_- - f_+ = - \int f$.
                     
-                        \item $f \geqslant 0$~--- очевидно, $\sum\limits_{g stup, 0 \leqslant g \leqslant cf} \left( \int G \right) = c \sup\limits_{\widetilde{g} stup, 0 \leqslant \widetilde{g} \leqslant f} \left( \int g \right)$.
+                        \item $f \geqslant 0$~--- очевидно, $\sup\limits_{\substack{\text{$g$ - ступ.} \\ 0 \leqslant g \leqslant cf}} \left( \int g \right) = c \sup\limits_{\substack{\text{$g$ - ступ.} \\ 0 \leqslant g \leqslant f}} \left( \int g \right)$.
                         
                     \end{itemize}
                     
             \item Пусть существует $\int\limits_{E} f d \mu$, тогда $\left| \int\limits_{E} f \right| \leqslant \int\limits_{E} |f|$.
             
-                \textit{Доказательство}
+                \subsection{Доказательство}
                 
-                    $- |f| \leqslant f \leqslant |f|$
+                    $- |f| \leqslant f \leqslant |f|$,
                     
-                    $- \int |f| \leqslant \int f \leqslant \int |f|$
+                    $- \int\limits_{E} |f| \leqslant \int\limits_{E} f \leqslant \int\limits_{E} |f|$.
                     
-            \item $f$~--- измерима на $E$, $\mu E < +\infty$, $\forall x \in E$ $a \leqslant f(x) \leqslant b$. Тогда 
+            \item $f$~--- измерима на $E$, $\mu E < +\infty$, $\forall x \in E : a \leqslant f(x) \leqslant b$. Тогда 
             
                 $a \mu E \leqslant \int\limits_{E} f \leqslant b \mu E$.
+                
+                \subsection{Доказательство}
+                    
+                    $\int\limits_{E} a \leqslant \int\limits_{E} f \leqslant \int\limits_{E} b$,
+                    
+                    $a \mu E \leqslant \int\limits_{E} f \leqslant b \mu E$.
                 
         \end{enumerate}
         
