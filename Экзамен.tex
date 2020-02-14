@@ -196,61 +196,67 @@
                 
         \end{enumerate}
         
-    \subsection{Лемма}
+    \newpage
     
-        $A = \bigsqcup A_i$, $A$, $A_i$~--- измеримы, $g \leqslant 0$~--- ступенчатые. Тогда
-        
-        $\int\limits_{A} g d \mu = \sum\limits_{i = 1}^{+\infty} \int\limits_{A_i} g d \mu$.
-        
-        \subsubsection{Доказательство}
-        
-            $g = \sum \lambda_k \chi_{E_k}$.
-            
-            $\int\limits_A g d \mu = \sum \lambda_k \mu (A \cap E_k) = \sum\limits_{k} \lambda_k \sum\limits_{i} \mu (A_i \cap E_k) = \sum\limits_i \left( \sum\limits_k \lambda_k \mu (A_i \cap E_k ) \right) = \sum\limits_i \int\limits_{A_i} g$.
-            
-    \subsection{Теорема}
+    \section{Счетная аддитивность интеграла (по множеству)}
     
-        $f : C \rightarrow \overline{R}$, $f \geqslant 0$~--- измеримая на $A$, $A$~--- измерима, $A = \bigsqcup A_i$, все $A_i$~--- измеримы. Тогда
+        \subsection{Лемма}
+    
+            $A = \bigsqcup A_i$, где $A$, $A_i$~--- измеримы, $g \geqslant 0$~--- ступенчатые. Тогда
         
-        $\int\limits_{A} f d \mu = \sum\limits_{i} \int\limits_{A_i} f d \mu$
+            $\int\limits_{A} g d \mu = \sum\limits_{i = 1}^{+\infty} \int\limits_{A_i} g d \mu$.
             
-        \subsubsection{Доказательство}
+            \subsubsection{Доказательство}
         
-            \begin{itemize}
+                $g = \sum \lambda_k \chi_{E_k}$.
             
-                \item $\leqslant$
+                $\int\limits_A g d \mu = \sum \lambda_k \mu (A \cap E_k) = \sum\limits_{k} \lambda_k \sum\limits_{i} \mu (A_i \cap E_k) = \sum\limits_i \left( \sum\limits_k \lambda_k \mu (A_i \cap E_k ) \right) = \sum\limits_i \int\limits_{A_i} g d \mu$.
+            
+        \subsection{Теорема}
+    
+            $f : C \rightarrow \overline{R}$, $f \geqslant 0$~--- измеримая на $A$, $A$~--- измерима, $A = \bigsqcup A_i$, все $A_i$~--- измеримы. Тогда
+        
+            $\int\limits_{A} f d \mu = \sum\limits_{i} \int\limits_{A_i} f d \mu$
+            
+            \subsubsection{Доказательство}
+        
+                \begin{itemize}
+            
+                    \item $\leqslant$
                 
-                    $g$~--- ступенчатая, $0 \leqslant g \leqslant f$, тогда $\int_A g = \sum \int\limits_{A_i} g \leqslant \sum \int\limits_{A_i} f$. Осталось перейти к $\sup$.
+                        $g$~--- ступенчатая, $0 \leqslant g \leqslant f$, тогда $\int\limits_A g = \sum \int\limits_{A_i} g \leqslant \sum \int\limits_{A_i} f$. Осталось перейти к $\sup$.
                     
-                \item $\geqslant$
+                    \item $\geqslant$
                 
-                    $A = A_1 \sqcup A_2$, $\sum \lambda_k \chi_{E_k} = g_1 \leqslant f \chi_{A_1}$, $g_2 \leqslant f \cdot \chi_{A_2} = \sum \lambda_k \chi_{E_k}$, $g_1 + g_2 \leqslant f \cdot \chi_{A}$
+                        $A = A_1 \sqcup A_2$, $\sum \lambda_k \chi_{E_k} = g_1 \leqslant f \chi_{A_1}$, $g_2 \leqslant f \cdot \chi_{A_2} = \sum \lambda_k \chi_{E_k}$, $g_1 + g_2 \leqslant f \cdot \chi_{A}$
                     
-                    $\int\limits_{A_1} g_1 + \int\limits_{A_2} g_2 = \int\limits_{A} g_1 + g_2$.
+                        $\int\limits_{A_1} g_1 + \int\limits_{A_2} g_2 = \int\limits_{A} g_1 + g_2$.
                     
-                    переходим к $\sup$ $g_1$ и $g_2$
+                        переходим к $\sup$ $g_1$ и $g_2$
                     
-                    $\int\limits_{A_1} f + \int\limits_{A_2} f \leqslant \int\limits_{A} f$
+                        $\int\limits_{A_1} f + \int\limits_{A_2} f \leqslant \int\limits_{A} f$
                     
-                    по индукции разобьём для $A = A_1 \sqcup A_2 \sqcup \ldots \sqcup A_n$, $A = \bigsqcup\limits^{+\infty}_{i = 1} A_i$ и $A = A_1 \sqcup A_2 \sqcup \ldots \sqcup A_n \sqcup B_n$, где $B_n = \bigsqcup\limits_{i \geqslant n + 1} A_i$, тогда
+                        по индукции разобьём для $A = A_1 \sqcup A_2 \sqcup \ldots \sqcup A_n$, $A = \bigsqcup\limits^{+\infty}_{i = 1} A_i$ и $A = A_1 \sqcup A_2 \sqcup \ldots \sqcup A_n \sqcup B_n$, где $B_n = \bigsqcup\limits_{i \geqslant n + 1} A_i$, тогда
                     
-                    $\int\limits_{A} \geqslant \sum\limits^n_{i = 1} \int\limits_{A_i} f + \int\limits_{B} f \geqslant \sum\limits^n_{i = 1} f \Rightarrow \int\limits_{A}f \geqslant \sum\limits^{+\infty}_{i = 1} \int\limits_{A_i} f$
+                        $\int\limits_{A} \geqslant \sum\limits^n_{i = 1} \int\limits_{A_i} f + \int\limits_{B} f \geqslant \sum\limits^n_{i = 1} \int\limits_{A_i} f \Rightarrow \int\limits_{A}f \geqslant \sum\limits^{+\infty}_{i = 1} \int\limits_{A_i} f$
                     
-            \end{itemize}
+                \end{itemize}
             
-    \subsection{Следствие}
+        \subsection{Следствие}
     
-        $f \geqslant 0$~--- измеримая, $\nu : \mathcal{A} \rightarrow \overline{\mathbb{R}}_+$, $\nu E = \int\limits_{E} f d \mu$. Тогда
-        
-            $\nu$~--- мера.
+            $f \geqslant 0$~--- измеримая, $\nu : \mathcal{A} \rightarrow \overline{\mathbb{R}}_+$, $\nu E = \int\limits_{E} f d \mu$. Тогда $\nu$~--- мера.
             
-    \subsection{Следствие 2}
+        \subsection{Следствие 2}
     
-        $A = \bigsqcup\limits_{i = 1}^{+\infty} A_i$, $f$~--- суммируема на $A$, тогда 
+            $A = \bigsqcup\limits_{i = 1}^{+\infty} A_i$, $f$~--- суммируемая на $A$, тогда 
         
             $\int\limits_{A} f = \sum\limits_{i} \int\limits_{A_i} f$.
         
+\newpage
+
 \part{Предельный переход под знаком интеграла}
+
+\newpage
 
     \subsection{Теорема}
     
