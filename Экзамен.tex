@@ -334,7 +334,7 @@
     
         $u_n \geqslant 0$ почти везде, измеримы на $E$. Тогда
         
-        $\int\limits_{E} \left( \sum\limits^{+\infty}_{i = 1} u_n \right) d \mu = \sum\limits^{+\infty}_{i \int= 1} \int\limits_{E} u_n d \mu$.
+        $\int\limits_{E} \left( \sum\limits^{+\infty}_{i = 1} u_n \right) d \mu = \sum\limits^{+\infty}_{n = 1} \int\limits_{E} u_n d \mu$.
         
         \subsection{Доказательство}
         
@@ -342,9 +342,9 @@
             
             $S(x) = \sum\limits^{+\infty}_{n = 1} u_n(x)$ и $p \leqslant S_N \leqslant S_{N + 1} \leqslant \ldots$ и $S_N \rightarrow S(X)$.
             
-            $\lim\limits_{n \rightarrow +\infty} \int\limits_{E} S_N = \int\limits_{E} S$
+            $\lim\limits_{n \rightarrow +\infty} \int\limits_{E} S_N = \int\limits_{E} S$,
             
-            $\lim \sum\limits^n_{k = 1} \int\limits_{E} u_k(x) = \int\limits_{E} S(x) d \mu$.
+            $\lim\limits_{n \rightarrow +\infty} \sum\limits^n_{k = 1} \int\limits_{E} u_k(x) = \int\limits_{E} S(x) d \mu$.
             
         \subsection{Следствие}
         
@@ -352,13 +352,10 @@
             
             $\sum u_n$~--- абсолютно сходится почти везде на $E$.
             
-            \textit{Доказательство}
+            \subsubsection{Доказательство}
             
                 $S(x) = \sum\limits^{+\infty}_{n = 1} | u_n(x) |$
                 
                 $\int\limits_{E} S(x) = \sum\limits^{+\infty}_{n = 1} \int\limits | u_n(x) | < +\infty$, значит $S(x)$ конечна почти всюду.
-                
-                $S(x) = +\infty$ при $x \in B$, $\mu B > 0$, $S(x) \geqslant n \cdot \chi_{B} \int\limits_{E} S(x) \geqslant n \cdot \mu B$.
-                
         
 \end{document}
