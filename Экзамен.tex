@@ -266,7 +266,7 @@
         
         $\lim\limits_{n \rightarrow +\infty} \int\limits_{X} f_n(x) d \mu = \int\limits_{X} f d \mu$.
         
-        \subsubsection{Доказательство}
+        \subsection{Доказательство}
         
             $f$~--- измерима как предел измеримых функций.
             
@@ -294,11 +294,11 @@
     
     \newpage
     
-    \subsection{Теорема}
+    \section{Линейность интеграла Лебега}
     
         Пусть $f$, $g$~--- измеримы на $E$, $f \geqslant 0$, $g \geqslant 0$. Тогда $\int\limits_{E} f + g = \int\limits_{E} f + \int\limits_{E} g$.
         
-        \subsubsection{Доказательство}
+        \subsection{Доказательство}
         
             Если $f$, $g$~--- ступенчатые, то очевидно.
             
@@ -306,13 +306,13 @@
             
             $\int\limits_{E} f_n + g_n = \int\limits_{E} f_n + \int\limits_{E} g_n$, сделаем предельный переход, значит при $n \rightarrow +\infty$
             
-            $\int\limits_{E} f + g = \int\limits_ f + \int\limits_{E} g$
+            $\int\limits_{E} f + g = \int\limits_{E} f + \int\limits_{E} g$
             
-        \subsubsection{Следствие}
+        \subsection{Следствие}
         
             Пусть $f$, $g$~--- суммируемые на множестве $E$, тогда $f + g$ тоже суммируема и $\int\limits_{E} f + g = \int\limits_{E} f + \int\limits_{E} g$.
             
-            \textit{Доказательство}
+            \subsubsection{Доказательство}
             
                 $(f + g)_{\pm} \leqslant | f + g | \leqslant |f| + |g|$.
                 
@@ -327,7 +327,9 @@
                 $\int h_+ - \int h_- = \int f_+ - \int f_- + \int g_+ - \int g_-$, тогда
                 
                 $\int h = \int f + \int g$.
-                
+    
+    \newpage
+    
     \subsection{Определение}
     
         $\mathcal{L} (X)$~--- множество суммируемых функций. Это линейное пространство.
