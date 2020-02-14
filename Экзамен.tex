@@ -258,23 +258,23 @@
 
 \newpage
 
-    \subsection{Теорема}
+    \section{Теорема Леви}
     
         $(X, \mathcal{A}, \mu)$, $f_n$~--- измерима, $\forall n : 0 \leqslant f_n(x) \leqslant f_{n + 1} (x)$ при почти всех $x$.
         
         $f(x) = \lim\limits_{n \rightarrow +\infty} f_n(x)$ при почти всех $x$. Тогда
         
-        $\lim \int\limits_{X} f_n(x) d \mu = \int\limits_{X} f d \mu$.
+        $\lim\limits_{n \rightarrow +\infty} \int\limits_{X} f_n(x) d \mu = \int\limits_{X} f d \mu$.
         
         \subsubsection{Доказательство}
         
-            $f$~--- измерима как предел, измерима.
+            $f$~--- измерима как предел измеримых функций.
             
             \begin{itemize}
             
                 \item $\leqslant$
                 
-                    $f_n(x) \leqslant f(x)$ почти везде, тогда $\forall n : \int\limits_{X} f_n(x) d \mu \leqslant \int\limits_{X} f d \mu$, откуда следует, что и предел не превосходит.
+                    $f_n(x) \leqslant f(x)$ почти везде, тогда $\forall n : \int\limits_{X} f_n(x) d \mu \leqslant \int\limits_{X} f d \mu$, откуда следует, что и предел интегралов не превосходит интеграл предела.
                     
                 \item $\geqslant$
                 
@@ -284,13 +284,15 @@
                     
                     $E_n := X \left( f_n \geqslant cg \right)$, $E_n \subset E_{n + 1} \subset \ldots$.
                     
-                    $\bigcup E_n = X$, т.е. $c < 1$, то $c g(x) < f(x)$, $f_n(x) \rightarrow f(x) \Rightarrow f_n$ попадёт в с зазор $c g(x) < f(x)$.
+                    $\bigcup E_n = X$, т.к. $c < 1$, то $c g(x) < f(x)$, $f_n(x) \rightarrow f(x) \Rightarrow f_n$ попадёт в ''зазор'' $c g(x) < f(x)$.
                     
                     $\int\limits_{X} f_n \geqslant \int\limits_{E_n} f_n \geqslant \int\limits_{E_n} c g = c \int\limits_{E_n} g$,
                     
                     $\lim\limits_{n \rightarrow +\infty} \int\limits_{X} f_n \geqslant \lim\limits_{n \rightarrow +\infty} c \int\limits_{E_n} g = c \int\limits_{X} g$, потому что это непрерывность снизу меры $A \mapsto \int\limits_{A} g$.
                     
             \end{itemize}
+    
+    \newpage
     
     \subsection{Теорема}
     
