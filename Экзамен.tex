@@ -89,38 +89,35 @@
                 
         Если $\int\limits_{X} f \neq \pm \infty$, то говорят, что $f$~--- \textit{суммируемая}, а также $\int |f|$~--- конечен ($|f| = f_+ + f_-$).
                 
-        
+        \subsection{Свойство}
+                
+            Если $f \geqslant 0$~--- измерима, то это определение даёт тот же интеграл, что и интеграл измеримой неотрицательной функции.
+            
     \newpage
                 
+    \section{Интеграл суммируемой функции}
+        
+        $E \subset X$~--- измеримое множество, $f$~--- измеримо на $X$, тогда интеграл $f$ по множеству $E$ есть
+        
+        $\int\limits_{E} f d \mu := \int\limits_{X} f \chi_E d \mu$. 
+        
+        $f$~--- суммируемая на $E$ если $\int\limits_{E} f+-$ и $\int\limits_{E} f_-$~--- конечны одновременно.
+            
+        \subsection{Свойства} 
+                
+            \begin{itemize}
+                    
+                \item $f = \sum \lambda_k \chi_{E_k}$, то $\int\limits_{E} f = \sum \lambda_k \mu \left( E_k \cap E \right)$;
+                
+                \item $f \geqslant 0$~--- измерима, тогда $\int\limits_{E} f d \mu = \sup\limits_{\substack{\text{$g$ - ступ.} \\ 0 \leqslant g \leqslant f}} \left( \int\limits_{X} g d \mu \right)$.
+                        
+            \end{itemize}
+                    
+    \newpage
+    
     $(X, \mathcal{A}, \mu)$~--- произвольное пространство с мерой.
     
     $\mathcal{L}^0 (X)$~--- множество измеримых почти везде конечных функций.
-    
-    \subsection{Определения интеграла функции}
-    
-        \begin{enumerate}
-                
-            \item    Свойства:
-                
-                \begin{itemize}
-                
-                    \item Если $f \geqslant 0$~--- измерима, то это определение даёт тот же интеграл, что и предыдущее.
-                
-                \end{itemize}
-            
-            $E \subset X$~--- измеримое множество, $f$~--- измеримо на $X$, тогда $\int\limits_{E} f d \mu := \int\limits_{X} f \chi_E d \mu$. $f$~--- суммируема на $E$ если $\int\limits_{E} f+-$ и $\int\limits_{E} f_-$~--- оба конечны.
-            
-                \textit{Замечание} 
-                
-                    \begin{enumerate}
-                    
-                        \item $f = \sum \lambda_k \chi_{E_k}$ и $\int\limits_{E} f = \sum \lambda_k \mu \left( E_k \cap E \right)$;
-                
-                        \item $f \geqslant 0$~--- измерима, тогда $\int\limits_{E} f d \mu = \sup\limits_{\text{g - ступ.}, 0 \leqslant g \leqslant f} \left( \int G \right)$.
-                        
-                    \end{enumerate}
-                    
-        \end{enumerate}
         
     \subsection{Свойства интегралов}
     
