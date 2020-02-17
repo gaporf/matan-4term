@@ -357,5 +357,167 @@
                 $S(x) = \sum\limits^{+\infty}_{n = 1} | u_n(x) |$
                 
                 $\int\limits_{E} S(x) = \sum\limits^{+\infty}_{n = 1} \int\limits | u_n(x) | < +\infty$, значит $S(x)$ конечна почти всюду.
+    
+\newpage
+
+\part{17.02.2020}
+
+    \subsection{Теорема}
+    
+        $x_m \in \mathbb{R}$ и $\sum a_n$~--- абс. сходится.
+    
+        Тогда $\sum \frac{a_n}{\sqrt{| x - x_m |}}$ абсолютно сходится при почти всех $x$.
+    
+        \subsubsection{Доказательство}
+            
+            $\int\limits^{A}_{-A} \frac{| a_n |}{\sqrt{ | x - x_m |}} \leqslant | a_n | \int\limits^{A - x_m}_{-A - x_m} \frac{dx}{\sqrt{x}} \leqslant |a_n| \int\limits^{A}_{-A} \frac{dx}{\sqrt{x}} = 4 \sqrt{A} |a_n|$, а ряд $\sum 4 \sqrt A |a_n|$~--- сходится.
+    
+    \subsection{Абсолютная непрерывность интеграла}
+    
+        $f$~--- суммируемая функция, тогда
         
+        $\forall \varepsilon > 0 : \exists \delta > 0 : \forall E \in \mathcal{A} : \mu E < \delta : \left| \int\limits_{E} f \right| < \varepsilon$.
+        
+        \subsubsection{Доказательство}
+        
+            $X_n = X \left( f \geqslant n \right)$, $X_n \supset X_{n + 1} \supset \ldots$, $\mu \left( \bigcap\limits^{+\infty}_{n = 1} X_n \right) = 0$.
+            
+            Тогда $\forall \varepsilon > 0 : \exists n_{\varepsilon} : \int\limits_{X_{n_{\varepsilon}}} |f| < \frac{\varepsilon}{2}$ ($A \mapsto \int\limits_{A} |f|$~--- мера, тогда $\int\limits_{\bigcap X_n} |f| = 0$ и по непрерывности меры сверху).
+            
+            $\delta := \frac{\varepsilon}{2 n_{\varepsilon}}$, берём $E : \mu E < \delta$.
+            
+            $\left| \int\limits_{E} f \right| \leqslant \int\limits_{E} |f| = \int\limits_{E \cap X_{n_{\varepsilon}}} |f| + \int\limits_{E \setminus X_{n_{\varepsilon}}} |f| \leqslant \int\limits_{X_{n_{\varepsilon}}} |f| + n_{\varepsilon} \mu E < \frac{\varepsilon}{2} + n_{\varepsilon} \frac{\varepsilon}{2 n_{\varepsilon}} = \varepsilon$.
+            
+        \subsubsection{Следствие}
+        
+            $e_n$~--- измеримное множество, $\mu e_n \rightarrow 0$, $f$~--- суммируемая. Тогда $\int\limits_{e_n} f \rightarrow 0$.
+            
+\part{Произведение мер}
+
+    $(X, \mathcal{A}, \mu)$ и $(Y, \mathcal{B}, \nu)$.
+   
+    $\mathcal{A} \times \mathcal{B} = \left\{ A \times B, A \in \mathcal{A}, B \in \mathcal{B} \right\}$~--- семейство подмножеств в $X \times Y$.
+        
+    \subsection{Лемма}
+            
+        $\mathcal{A}$, $\mathcal{B}$~--- полукольцо, значит и $\mathcal{A} \times \mathcal{B}$~--- полукольцо.
+                
+    $\mathcal{A} \times \mathcal{B}$~--- полукольцо \textit{измеримых прямоугольников} (на самом деле это не всегда так).
+            
+    $\mu_0 \left( A \times B \right) = \mu A \cdot \mu B$.
+    
+    \subsection{Теорема}
+        
+        \begin{enumerate}
+        
+            \item $\mu_0$~--- мера на полукольце $\mathcal{A} \times \mathcal{B}$;
+            
+            \item $\mu$, $\nu$~--- $\sigma$-конечное, значит $\mu_0$~--- $\sigma$-конечное.
+            
+        \end{enumerate}
+        
+        \subsubsection{Доказательство}
+        
+            Проверим счётную аддитивность $\mu_0$. $\chi_{A \times B} (x, y) = \chi_A(x) \cdot \chi_B(y)$, $(x, y) \in X \times Y$.
+            
+            $P = \bigsqcup\limits_{\text{сч.}} P_k$~--- измеримые прямоугольники. $P = A \times B$ и $P_k = A_k \times B_k$, $\chi_P = \sum \chi_{P_k}$.
+            
+            $\chi_A(x) \chi_B(y) = \sum\limits_k \chi_{A_k}(x) \chi_{B_k}(y)$. Интегрируем по $\nu$ (по пространству $Y$).
+            
+            $\chi_A(x) \cdot \nu(B) = \sum \chi_{A_k}(x) \nu (B_k)$. Интегрируем по $\mu$.
+            
+            $\mu A \nu B = \sum \mu A_k \cdot \nu B_k$.
+            
+            $X = \bigcup X_k$, $Y = \bigcup Y_j$, где $\mu X_k$ и $\nu Y_j$~--- конечные, $X \times Y = \bigcup\limits_{k, j} X_k \times Y_j$.
+    
+    $\left( \mathbb{R}^m, \mathcal{M}^m, \lambda_m \right)$ и $\left( \mathbb{R}^n, \mathcal{M}^n, \lambda_n r\right)$.
+    
+    $\left( X \times Y, \mathcal{A} \times \mathcal{B}, \mu_0 \right)$, где $\mathcal{A} \times \mathcal{B}$~--- полукольцо.
+    
+    Запускаем теорему о продолжении меры
+    
+    $\rightsquigarrow \left( X \times Y, \mathcal{A} \otimes \mathcal{B}, \mu \right)$ (крестик в кружочке), где $\mathcal{A} \times \mathcal{B}$~--- $\sigma$-алгебра.
+    
+    $\mu$, $\nu$~--- $\sigma$-конечная, следовательно продолжение определено однозначно.
+            
+    \subsection{Замечание}
+    
+        произведение мер ассоциативна.
+    
+    \subsection{Теорема}
+    
+        $\lambda_{m + n}$ если произведение мер $\lambda_m$ и $\lambda_n$.
+        
+        без доказательства.
+        
+    $X$, $Y$ $C \subset X \times Y$, $C_x = \left\{ y \in Y : (x, y) \in C \right\} \subset Y$~--- сечение множества $C$, $C^y = \left\{ x \in X : (x, y) \in C \right\}$.
+    
+    Допустимы и объедения, пересечения и т.п.
+    
+    \subsection{Принцип Кавальери}
+    
+        $(X, \mathcal{A}, \mu)$ и $(Y, \mathcal{B}, \nu)$, $\mu$, $\nu$~--- $\sigma$-конечные, полные. 
+        
+        $m = \mu \times \nu$, $C \in \mathcal{A} \otimes \mathcal{B}$. Тогда
+        
+        \begin{enumerate}
+        
+            \item при почти всех $x \in X$ сечение $C_x \in \mathcal{B}$;
+            
+            \item $x \mapsto \nu (C_x)$~--- измерима* на $X$;
+            
+            \item $m C = \int\limits_{X} \nu (C_x) d \mu(x)$.
+            
+        \end{enumerate}
+        
+        *Рассматривается почти везде.
+        
+        \subsubsection{Замечание}
+        
+            \begin{enumerate}
+            
+                \item $C$~--- измеримая, не следует, что $\forall x : C_x$~--- измеримое.
+                
+                \item $\forall x$, $\forall y$, $C_x$, $C^y$~--- измеримы, но не следует, что $C$~--- измеримо (из Серпинскиго).
+                
+            \end{enumerate}
+            
+        \subsubsection{Доказательство}
+        
+            $D$~--- класс множеств $X \times Y$, для который принцип Кавальери верен.
+            
+            \begin{enumerate}
+            
+                \item $D \times \mathcal{B} \subset D$, $C = A \times B$, $C_x = B, x \in A, \varnothing, x \notin A$ (сделать красиво).
+                
+                    $x \mapsto X_x: \nu B \cdot \chi_A(x)$.
+                    
+                    $\int\limits_{X} \nu B \chi_A(x) d \mu(x) = \mu A \nu B = m C$.
+                    
+                \item $E_i$~--- дизъюнктные, $E_i \in D$. Тогда $\bigsqcup E_i \in D$.
+                
+                    $(E_i)_x$~--- измерное при почти всех $x$. 
+                    
+                    При почти всех $x$ все сечения $(F_i)_x$, $i = 1, 2, \ldots$~--- измеримое.
+                    
+                    $E_x = \bigsqcup (E_i)_x$~--- измеримое при почти всех $x$.
+                    
+                    $\nu E_x = \sum \nu (E_i)_x$, значит $x \mapsto \nu E_x$ измеримая функция.
+                    
+                    $\int\limits_{X} \nu E_x d \mu = \int\limits_{X} \sum \nu (E_i)_x d \mu = \sum \int\limits_{X} \nu (E_i)_x d \mu = \sum m E_i = m E$
+                
+                \item $E_i \in D$, $\ldots \supset E_i \supset E_{i + 1} \supset \ldots$, $E = \bigcap\limits^{+\infty}_{i = 1} E_i$, $m E_i < +\infty$. Тогда $E \in D$.
+                
+                    $\int\limits_{X} \nu (E_i)_x d\mu = m E_i < +\infty \Rightarrow \nu (E_i)_x$~--- почти везде конечны.
+                    
+                    $(E_i)_x \supset (E_{i + 1})_x \supset \ldots$, $E_x = \bigcap\limits^{+\infty}_{i = 1} (E_i)_x \Rightarrow E_x$~--- измеримое при почти всех $x$.
+                    
+                    при почти всех $x$ (для тех $x$, для который $\nu (E_i)_x$~--- конечные сразу все $i$ или при $i = 1$), поэтому можно утверждать, что $\nu E_x = \lim\limits_{i \rightarrow +\infty} \nu (E_i)_x \Rightarrow x\mapsto \nu E_X$~--- измерима.
+                    
+                    $\int\limits_{X} \nu E_x d \mu = \int\limits_{X} \lim (\nu E_i)_x = \lim\limits_{i \rightarrow +\infty} \int\limits_{X} \nu (E_i)_x d \mu = \lim m E_i = m E$ (по непрерывности сверху меры $m$).
+                    
+                    Перестановка пределов доказывается из теоремы Лебега, которую ещё не доказывали $|\nu (E_i)_x | \leqslant \nu (E_1)_x$~--- суммируемая функция.
+                    
+            \end{enumerate}
+            
 \end{document}
