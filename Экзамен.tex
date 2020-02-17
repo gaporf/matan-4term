@@ -518,6 +518,145 @@
                     
                     Перестановка пределов доказывается из теоремы Лебега, которую ещё не доказывали $|\nu (E_i)_x | \leqslant \nu (E_1)_x$~--- суммируемая функция.
                     
+                    Кажется, что мы доказали, что если $A_{ij} \in \mathcal{A} \times \mathcal{B}$, то $\bigcap\limits_{j} \left( \bigcup\limits_{i} A_{ij} \right) \in D$.
+        
+                    $m E = \inf \left( \sum m P_k, \ E \subset \bigcup P_k \right)$.
+    
+                \item $m E = 0 \Rightarrow E \in D$. $H = \bigcap\limits_{j} \bigcup\limits_{i} P_{ij}$, $m H = 0$ ($P_{ij} \in \mathcal{A} \times \mathcal{B}$), тогда $E \subset H$ ($H \in D$).
+                
+                    $0 = m H = \int\limits_{X} \nu H_x d \mu \Rightarrow \nu H_x = 0$ при почти всех $x$, но $E_x \subset H_x \Rightarrow$ при почти всех $x$ $\nu E_x = 0$, значит и $\int \nu E_x = 0 = m E$.
+                    
+                \item $C \in \mathcal{A} \otimes \mathcal{B}$, $m C < +\infty \Rightarrow C \in D$.
+                
+                    Для множества $C$ существует множество $e$, что $m e = 0$ и $H = \bigcap \bigcup P_{ij}$ и $C = H \setminus e$, $C_x = H_x \setminus e_x$ и $m C = m H$.
+                    
+                    $\nu e_x = 0$ при почти всех $x$, значит $\nu C_x = \nu H_x - \nu e_x$ при почти всех $x$.
+                    
+                    $\int\limits_{X} \nu C_x d \mu = \int\limits_{X} \nu H_x - \nu e_x = \int\limits_{X} \nu H_x - \int\limits_{X} \nu e_x = mH = m C$.
+                    
+                \item $C$~--- произведение, $m$ измеримое множество, $X = \bigsqcup X_k$ и $Y = \bigsqcup Y_j$, тогда $C = \bigsqcup\limits_{i, j} \left( C \bigcap \left( X_i \times Y_j \right) \right) \in D$ по пункту $2$. ($\mu X_k$, $\mu Y_j$~--- конечные).
+                
+            \end{enumerate}
+        
+        \subsubsection{Следствие}
+        
+            $C \in Q \otimes B$, $P_1(C) := \left\{ x : C_x \neq \varnothing \right\}$, тогда если $P_1(C)$~--- измеримое в $X$, тогда $m C = \int\limits_{P_1(C)} \nu C_x d \mu x)$.
+        
+        \subsubsection{Замечание}
+        
+            Из того, что $C$ измеримое, не следует, что его проекция измерима.
+
+        \subsubsection{Следствие}
+        
+            $f : [a, b] \rightarrow \mathbb{R}$, непрерывное. Тогда $\int\limits^b_a f(x) dx = \int\limits_{[a, b]} f d \lambda_1$.
+            
+            \textit{Доказательство}
+            
+                Достаточно для $f \geqslant 0$. 
+                
+                $f$~--- непрерывно $\Rightarrow C = \Pi \Gamma \left(f, [a, b] \right)$ измеримо в $\mathbb{R}^2$ (почти очевидно).
+                
+                $C_x = [0, f(x)]$ (или $\varnothing$) $\Rightarrow$ измеримость $\lambda_1 C_x = f(x)$.
+                
+                $\int\limits^b_a f(x) dx = \lambda_2 \left( \Pi \Gamma \left( f, [a, b] \right) \right) = \int\limits_{[a, b]} f(x) d \lambda_1 (x)$.
+                
+        \subsubsection{Замечание}
+            
+            $f \geqslant 0$ измеримое, значит $\lambda_2 \Pi \Gamma (f, [a, b]) = \int\limits_{[a, b]} f(x) d \lambda_2(x)$.
+            
+    $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $C \in X \times Y$, $C_x$, $f_x : C_x \rightarrow \mathbb{R}$, т.е. $y \mapsto f(x, y)$, аналогично $f^y : C^y \rightarrow \overline{\mathbb{R}}$.
+    
+    \subsection{Теорема Тонелли}
+    
+        $(X, \mathcal{A}, \mu)$, $(Y, \mathcal{B}, \nu)$, $\mu$, $\nu$~--- $\sigma$-конечные, полные. $m = \mu \times \nu$.
+        
+        $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $f \geqslant 0$, измеримое. Тогда
+        
+        \begin{enumerate}
+        
+            \item при почти всех $x$ функция $f_x$~--- измерима почти везде на $Y$ [аналогично при почти всех $y$ функция $f^y$ также измерима на $X$].
+            
+            \item $x \mapsto \varphi(x) = \int\limits_Y f_x(y) d \nu (y) = \int\limits_Y f(x, y) d \nu (y)$~--- измерима* на $X$ [аналогично $y \mapsto \psi(y) = \int\limits_X f(x, y) d \mu(x)$~--- измерима* на $Y$].
+            
+            \item $\int\limits_{X \times Y} f(x, y) d \mu = \int\limits_{Y} \left( \int\limits_{X} f (x, y) d \mu (x) \right) d \nu (y) = \int\limits_X \left( \int\limits_Y f(x, y) d \nu (y) \right) d \mu (x)$
+            
+        \end{enumerate}
+    
+        *Почти везде
+        
+        \subsubsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $f = \chi_c$, $C \subset X \times Y$, измеримая. $f_x = \chi_{C_x} (y)$. $C_x$~--- измеримое при почти всех $x \Rightarrow f_x$~--- измеримая при почти всех $x$.
+                
+                    $\varphi(x) = \int\limits_{Y} \chi_{C_x} (y) d \nu (y) = \nu (C_x)$ ($x \mapsto \nu C_x$~--- измерима по принципу Кавальери).
+                    
+                    $\int\limits_{X} \varphi(x) = \int\limits_{X} \nu C_X = m C = \int\limits_{X \times Y} \chi_C d m$.
+                
+                \item $f = \sum\limits_{\text{кон.}} a_k \chi_{C_k}$, $f \geqslant 0$.
+                
+                    $f_x = \sum a_k \chi_{(C_k)_x} (y)$.
+                    
+                    $x \mapsto \int f_x(y) d \nu(y) = \sum a_k \nu (C_k)_x$~--- измеримая (отдельные слагаемые~--- измеримые, значит и вся сумма измеримая).
+                    
+                    $\int\limits_X \left( \int\limits_{Y} f_x(y) d \nu \right) d \mu = \sum a_k \int\limits_X \nu (C_k)_x d \mu = \sum a_k m C_k = \int\limits_{X \times Y} f d m$
+                    
+                \item $f \geqslant 0$, $g_n$~--- ступенчатые, что $\ldots \leqslant g_n \leqslant g_{n + 1} \leqslant \ldots$, $\lim\limits_{n \rightarrow +\infty} g_n = f$.
+                
+                    $f_x = \lim\limits_{n \rightarrow +\infty} (g_n)_x$~--- измерима как предел измеримых функций.
+                    
+                    $\varphi(x) = \int\limits_Y f_x(y) d \nu (y) = \lim\limits_{n \rightarrow +\infty} \int\limits_{Y} g_n d \nu = \lim\limits_{n \rightarrow +\infty} \varphi_n(x)$, значит $\varphi(x)$ измерима из-за измеримости $\varphi_n$ (Теорема Леви).
+                
+                    $g_n \leqslant g_{n + 1} \leqslant \ldots \Rightarrow \varphi_n(x) \leqslant \varphi_{n + 1} (x) \leqslant \ldots$
+                    
+                    $\int\limits_{X} \varphi(x) = \lim\limits_{n \rightarrow +\infty} \int\limits_{X} \varphi_n(x) = \lim\limits_{n \rightarrow} \int\limits_{X \times Y} g_n d m = \int\limits_{X \times Y} f dm$ (по теореме Леви)
+                    
             \end{enumerate}
             
+        Везде должна быть приговорка ''при почти всех $x$''.
+        
+    \subsection{Теорема Фубини}
+    
+        $(X, \mathcal{A}, \mu)$, $(Y, \mathcal{B}, \nu)$, $\mu$, $\nu$~--- $\sigma$-конечные, полные.
+        
+        $f : X \times Y \rightarrow \overline{\mathbb{R}}$, суммируемая. Тогда
+        
+        \begin{enumerate}
+        
+            \item при почти всех $x$ функция $f_x$~--- суммируемая почти везде на $Y$ [аналогично при почти всех $y$ функция $f^y$ также измерима на $X$].
+            
+            \item $x \mapsto \varphi(x) = \int\limits_Y f_x(y) d \nu (y) = \int\limits_Y f(x, y) d \nu (y)$~--- суммируемая* на $X$ [аналогично $y \mapsto \psi(y) = \int\limits_X f(x, y) d \mu(x)$~--- суммируемая* на $Y$].
+            
+            \item $\int\limits_{X \times Y} f(x, y) d \mu = \int\limits_{Y} \left( \int\limits_{X} f (x, y) d \mu (x) \right) d \nu (y) = \int\limits_X \left( \int\limits_Y f(x, y) d \nu (y) \right) d \mu (x)$
+            
+        \end{enumerate}
+        
+        *почти везде
+        
+        без доказательства
+    
+        \subsubsection{Следствие}
+        
+            $\int\limits_C f = \int\limits_{X \times Y} f \chi_C = \int\limits_X \left( \int\limits_Y f \cdot \chi_C \right) d \mu = \int\limits_{P_1(C)} \left( \int\limits_{C_x} f(x, y) d \nu(y) \right) d \mu (x)$.
+            
+            $P_1(C)$~--- проекция, измеримая, $\left\{ x : C_x \neq \varnothing \right\}$.
+            
+    $B(0, 1) \subset \mathbb{R}^m$, Хотим найти $\lambda_m B(0, 1) = \alpha_m$.
+    
+    $\lambda_m B(0, R) = \alpha_m \cdot R^M$.
+    
+    $x_1^2 + x_2^2 + \ldots + x_m^2 \leqslant 1$.
+    
+    интеграл обычного кружочка: $\int \chi_B d \lambda_2 = \int\limits^1_{-1} \int\limits^{\sqrt{1 - x^2}}_{-\sqrt{1 - x^2}} 1 dy dy dx = \int\limits^1_{-1} 2 \sqrt{1 - x^2} dx = \pi$
+    
+    $\alpha_m = \int\limits_{\mathbb{R}^m} \chi_B = \int\limits^1_{-1} \left( \int\limits_{B(0, \sqrt{1 - x_1^2}) \subset \mathbb{R}^{m -1}} 1 d \nu \right) dx_1 = \int\limits^1_{-1} (1 - x_1^2)^{\frac{m - 1}{2}} \alpha_{m - 1} d x_1$.
+    
+    $B(x, y) = \int\limits^1_) t^{x - 1} (1 - t)^{y - 1} dt$.
+    
+    $B(x, y) = \dfrac{\Gamma(x) \Gamma(y)}{\Gamma(x + y)}$, $\Gamma(n) = (n - 1)!$, $\Gamma(x + 1) = \Gamma(x) \cdot x$.
+    
+    Тогда объём шара в $\mathbb{R}^m$ равен $\alpha_{m - 1} 2 \int\limits^1_0 (1 - t)^{\frac{m - 1}{2}} t^{-\frac{1}{2}} dt = B(\frac{1}{2}, \frac{m + 1}{2}) \alpha_{m - 1}$. Тогда объём шара можно переписать как $\dfrac{\Gamma (\frac{1}{2}) \Gamma (\frac{m + 1}{2})}{\Gamma (\frac{m}{2} + 1) \alpha_{m - 1}}$.
+    
+    
 \end{document}
