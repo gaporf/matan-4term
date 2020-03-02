@@ -366,7 +366,7 @@
         
         $$\forall \varepsilon > 0 : \exists \delta > 0 : \forall E \in \mathcal{A} : \mu E < \delta : \left| \int\limits_{E} f \right| < \varepsilon$$.
         
-        \subsubsection{Доказательство}
+        \subsection{Доказательство}
         
             $X_n = X \left( f \geqslant n \right)$, $X_n \supset X_{n + 1} \supset \ldots$ и $\mu \left( \bigcap\limits^{+\infty}_{n = 1} X_n \right) = 0$.
             
@@ -376,7 +376,7 @@
             
             $\left| \int\limits_{E} f \right| \leqslant \int\limits_{E} |f| = \int\limits_{E \cap X_{n_{\varepsilon}}} |f| + \int\limits_{E \setminus X_{n_{\varepsilon}}} |f| \leqslant \int\limits_{X_{n_{\varepsilon}}} |f| + n_{\varepsilon} \mu E < \frac{\varepsilon}{2} + n_{\varepsilon} \frac{\varepsilon}{2 n_{\varepsilon}} = \varepsilon$.
             
-        \subsubsection{Следствие}
+        \subsection{Следствие}
         
             $e_n$~--- измеримое множество, $\mu e_n \rightarrow 0$, $f$~--- суммируемая. Тогда $\int\limits_{e_n} f \rightarrow 0$.
  
@@ -463,53 +463,55 @@
     
     \newpage
 
-    \subsection{Принцип Кавальери}
+    \section{Принцип Кавальери}
     
-        $(X, \mathcal{A}, \mu)$ и $(Y, \mathcal{B}, \nu)$, $\mu$, $\nu$~--- $\sigma$-конечные, полные. 
+        $(X, \mathcal{A}, \mu)$ и $(Y, \mathcal{B}, \nu)$, а также $\mu$, $\nu$~--- $\sigma$-конечные и полные. 
         
-        $m = \mu \times \nu$, $C \in \mathcal{A} \otimes \mathcal{B}$. Тогда
+        $m = \mu \times \nu$, $C \in \mathcal{A} \otimes \mathcal{B}$. Тогда:
         
         \begin{enumerate}
         
             \item при почти всех $x \in X$ сечение $C_x \in \mathcal{B}$;
             
-            \item $x \mapsto \nu (C_x)$~--- измерима* на $X$;
+            \item $x \mapsto \nu (C_x)$~--- измерима (почти везде) на $X$;
             
             \item $m C = \int\limits_{X} \nu (C_x) d \mu(x)$.
             
         \end{enumerate}
         
-        *Рассматривается почти везде.
-        
-        \subsubsection{Замечание}
+        \subsection{Замечание}
         
             \begin{enumerate}
             
-                \item $C$~--- измеримая, не следует, что $\forall x : C_x$~--- измеримое.
+                \item $C$~--- измеримая $\not\Rightarrow$ что $\forall x : C_x$~--- измеримое.
                 
-                \item $\forall x$, $\forall y$, $C_x$, $C^y$~--- измеримы, но не следует, что $C$~--- измеримо (из Серпинскиго).
+                \item $\forall x$, $\forall y$, $C_x$, $C^y$~--- измеримы $\not\Rightarrow$ что $C$~--- измеримо (пример можно взять из Серпинскиго).
                 
             \end{enumerate}
             
-        \subsubsection{Доказательство}
+        \subsection{Доказательство}
         
             $D$~--- класс множеств $X \times Y$, для который принцип Кавальери верен.
             
             \begin{enumerate}
             
-                \item $D \times \mathcal{B} \subset D$, $C = A \times B$, $C_x = B, x \in A, \varnothing, x \notin A$ (сделать красиво).
+                \item $D \times \mathcal{B} \subset D$, $C = A \times B$, $C_x = 
+                                                                        \begin{cases}
+                                                                            B & x \in A \\ 
+                                                                            \varnothing & x \notin A
+                                                                        \end{cases}$.
                 
-                    $x \mapsto X_x: \nu B \cdot \chi_A(x)$.
+                    $x \longmapsto C_x: \nu B \cdot \chi_A(x)$.
                     
-                    $\int\limits_{X} \nu B \chi_A(x) d \mu(x) = \mu A \nu B = m C$.
+                    $\int\limits_{X} \nu B \chi_A(x) d \mu(x) = \mu A \cdot \nu B = m C$.
                     
                 \item $E_i$~--- дизъюнктные, $E_i \in D$. Тогда $\bigsqcup E_i \in D$.
                 
-                    $(E_i)_x$~--- измерное при почти всех $x$. 
+                    $(E_i)_x$~--- измеримые при почти всех $x$. 
                     
-                    При почти всех $x$ все сечения $(F_i)_x$, $i = 1, 2, \ldots$~--- измеримое.
+                    При почти всех $x$ все сечения $(E_i)_x$, $i = 1, 2, \ldots$~--- измеримые.
                     
-                    $E_x = \bigsqcup (E_i)_x$~--- измеримое при почти всех $x$.
+                    $E_x = \bigsqcup (E_i)_x$~--- измеримые при почти всех $x$.
                     
                     $\nu E_x = \sum \nu (E_i)_x$, значит $x \mapsto \nu E_x$ измеримая функция.
                     
@@ -521,13 +523,13 @@
                     
                     $(E_i)_x \supset (E_{i + 1})_x \supset \ldots$, $E_x = \bigcap\limits^{+\infty}_{i = 1} (E_i)_x \Rightarrow E_x$~--- измеримое при почти всех $x$.
                     
-                    при почти всех $x$ (для тех $x$, для который $\nu (E_i)_x$~--- конечные сразу все $i$ или при $i = 1$), поэтому можно утверждать, что $\nu E_x = \lim\limits_{i \rightarrow +\infty} \nu (E_i)_x \Rightarrow x\mapsto \nu E_X$~--- измерима.
+                    При почти всех $x$ (для тех $x$, для который $\nu (E_i)_x$~--- конечные сразу все $i$ или при $i = 1$), поэтому можно утверждать, что $\nu E_x = \lim\limits_{i \rightarrow +\infty} \nu (E_i)_x \Rightarrow x\mapsto \nu E_X$~--- измерима.
                     
                     $\int\limits_{X} \nu E_x d \mu = \int\limits_{X} \lim (\nu E_i)_x = \lim\limits_{i \rightarrow +\infty} \int\limits_{X} \nu (E_i)_x d \mu = \lim m E_i = m E$ (по непрерывности сверху меры $m$).
                     
                     Перестановка пределов доказывается из теоремы Лебега, которую ещё не доказывали $|\nu (E_i)_x | \leqslant \nu (E_1)_x$~--- суммируемая функция.
                     
-                    Кажется, что мы доказали, что если $A_{ij} \in \mathcal{A} \times \mathcal{B}$, то $\bigcap\limits_{j} \left( \bigcup\limits_{i} A_{ij} \right) \in D$.
+                    Мы доказали, что если $A_{ij} \in \mathcal{A} \times \mathcal{B}$, то $\bigcap\limits_{j} \left( \bigcup\limits_{i} A_{ij} \right) \in D$.
         
                     $m E = \inf \left( \sum m P_k, \ E \subset \bigcup P_k \right)$.
     
@@ -543,39 +545,43 @@
                     
                     $\int\limits_{X} \nu C_x d \mu = \int\limits_{X} \nu H_x - \nu e_x = \int\limits_{X} \nu H_x - \int\limits_{X} \nu e_x = mH = m C$.
                     
-                \item $C$~--- произведение, $m$ измеримое множество, $X = \bigsqcup X_k$ и $Y = \bigsqcup Y_j$, тогда $C = \bigsqcup\limits_{i, j} \left( C \bigcap \left( X_i \times Y_j \right) \right) \in D$ по пункту $2$. ($\mu X_k$, $\mu Y_j$~--- конечные).
+                \item $C$~--- произвольное, $m$-измеримое множество, $X = \bigsqcup X_k$ и $Y = \bigsqcup Y_j$, тогда $C = \bigsqcup\limits_{i, j} \left( C \bigcap \left( X_i \times Y_j \right) \right) \in D$ по пункту $2$. ($\mu X_k$, $\mu Y_j$~--- конечные).
                 
             \end{enumerate}
         
-        \subsubsection{Следствие}
+        \subsection{Следствие}
         
-            $C \in Q \otimes B$, $P_1(C) := \left\{ x : C_x \neq \varnothing \right\}$, тогда если $P_1(C)$~--- измеримое в $X$, тогда $m C = \int\limits_{P_1(C)} \nu C_x d \mu x)$.
+            $C \in Q \otimes B$, $P_1(C) := \left\{ x : C_x \neq \varnothing \right\}$, тогда если $P_1(C)$~--- измеримое в $X$, тогда $m C = \int\limits_{P_1(C)} \nu C_x d \mu x$.
         
-        \subsubsection{Замечание}
+        \subsection{Замечание}
         
-            Из того, что $C$ измеримое, не следует, что его проекция измерима.
+            Из того, что $C$ измеримое $\not\Rightarrow$ что его проекция измерима.
 
-        \subsubsection{Следствие}
+    \newpage
+    
+    \section{Совпадение определенного интеграла и интеграла Лебега}
         
-            $f : [a, b] \rightarrow \mathbb{R}$, непрерывное. Тогда $\int\limits^b_a f(x) dx = \int\limits_{[a, b]} f d \lambda_1$.
+        $f : [a, b] \rightarrow \mathbb{R}$, непрерывное. Тогда $\int\limits^b_a f(x) dx = \int\limits_{[a, b]} f d \lambda_1$.
             
-            \textit{Доказательство}
+        \subsection{Доказательство}
             
-                Достаточно для $f \geqslant 0$. 
+            Достаточно доказать для $f \geqslant 0$. 
                 
-                $f$~--- непрерывно $\Rightarrow C = \Pi \Gamma \left(f, [a, b] \right)$ измеримо в $\mathbb{R}^2$ (почти очевидно).
+            $f$~--- непрерывно $\Rightarrow C = \Pi \Gamma \left(f, [a, b] \right)$ измеримо в $\mathbb{R}^2$ (почти очевидно).
                 
-                $C_x = [0, f(x)]$ (или $\varnothing$) $\Rightarrow$ измеримость $\lambda_1 C_x = f(x)$.
+            $C_x = [0, f(x)]$ (или $\varnothing$) $\Rightarrow$ измеримость $\lambda_1 C_x = f(x)$.
                 
-                $\int\limits^b_a f(x) dx = \lambda_2 \left( \Pi \Gamma \left( f, [a, b] \right) \right) = \int\limits_{[a, b]} f(x) d \lambda_1 (x)$.
+            $\int\limits^b_a f(x) dx = \lambda_2 \left( \Pi \Gamma \left( f, [a, b] \right) \right) = \int\limits_{[a, b]} f(x) d \lambda_1 (x)$.
                 
-        \subsubsection{Замечание}
+        \subsection{Замечание}
             
             $f \geqslant 0$ измеримое, значит $\lambda_2 \Pi \Gamma (f, [a, b]) = \int\limits_{[a, b]} f(x) d \lambda_2(x)$.
             
-    $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $C \in X \times Y$, $C_x$, $f_x : C_x \rightarrow \mathbb{R}$, т.е. $y \mapsto f(x, y)$, аналогично $f^y : C^y \rightarrow \overline{\mathbb{R}}$.
+            $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $C \in X \times Y$, $C_x$, $f_x : C_x \rightarrow \mathbb{R}$, т.е. $y \mapsto f(x, y)$, аналогично $f^y : C^y \rightarrow \overline{\mathbb{R}}$.
     
-    \subsection{Теорема Тонелли}
+    \newpage
+    
+    \section{Теорема Тонелли}
     
         $(X, \mathcal{A}, \mu)$, $(Y, \mathcal{B}, \nu)$, $\mu$, $\nu$~--- $\sigma$-конечные, полные. $m = \mu \times \nu$.
         
