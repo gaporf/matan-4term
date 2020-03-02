@@ -844,4 +844,134 @@
                 
             \end{enumerate}
             
+        \subsubsection{Следствие}
+        
+            $f$~--- суммируема на $Y$, $B \in \mathcal{B}$, $\int\limits_B f d \nu(y) = \int\limits_{\Phi^{-1}}(B) f \circ \Phi w d \mu$.
+            
+            Частный случай: $X = Y$, $\mathcal{A} = \mathcal{B}$, $\Phi = \mathrm{id}$, $\omega \geqslant 0$~--- измерима.
+            
+            $\nu B = \int\limits_B \omega(x) d \mu(x)$, говорят, что $\omega$~--- плотность меры $\nu$ относительно меры $\mu$.
+            
+            $\int\limits_X f(x) d \nu(x) = \int\limits_X f(x) \omega(x) d \mu(x)$.
+            
+    \subsection{Критерий плотности}
+    
+        $(X, \mathcal{A}, \mu)$, $\nu$~--- ещё одна мера на $\mathcal{A}$, $\omega \geqslant 0$~--- измеримая. Тогда
+        
+        $\omega$~--- плотность $\nu$ относительна $\mu$ $\Leftrightarrow \forall A \in \mathcal{A}$ верное $\inf\limits_{A} \omega \cdot \mu A \leqslant \nu A \leqslant \sup\limits_{A} \omega \cdot \mu A$ ($0 \cdot \infty = 0$).
+        
+        \subsubsection{Доказательство}
+        
+            \begin{itemize}
+            
+                \item $\Rightarrow$ Очевидно (интеграл $\mu A$ обладает этими свойствами из-за плотностей);
+                
+                \item $\Leftarrow$ Считаем, что $\omega > 0$. Для $\omega = 0$ получаем: $e := X(\omega = 0)$, $\nu e = 0 = \int\limits_e \omega d \mu$, тогда $\nu (A) = \int\limits_{A} \omega d \mu$, $x \setminus e$ $\omega > 0$. Теперь пусть $\omega > 0$, то $q \in (0, 1)$. $A_j := A(q^j \leqslant \omega \leqslant q^{j - 1})$, $j \in \mathbb{Z}$, $A = \bigsqcup\limits_{j \in \mathbb{Z}} A_j$.
+                
+                    $q^j \mu A_j \leqslant \nu A_j \leqslant q^{j - 1} \mu A_j$.
+                    
+                    $q^j \mu A_j \leqslant \int\limits_{A_j} \omega d \mu \leqslant q^{j - 1} \mu A_j$.
+                    
+                    $q \int\limits_A \omega d \mu = q \sum \int\limits_{A_j} \leqslant \sum q^j \mu A_j \leqslant \nu A \leqslant \dfrac{1}{q} \sum q^j \mu A_j \leqslant \dfrac{1}{q} \int\limits_A \omega$.
+                    
+                    Устремим $q \rightarrow 1$ и получим доказательство равенства.
+                    
+            \end{itemize}
+            
+    \subsection{Лемма}
+    
+        $f$, $g$~--- суммируемые на $X$, $\forall A$~--- измеримых $\int\limits_A f = \int\limits_a g$. Тогда $f = g$ почти везде.
+        
+        \subsubsection{Доказательство}
+        
+            $h = f - g$, $\forall A$~--- измеримых, $\int\limits_A h = 0$.
+            
+            $A_+ = X(h \geqslant 0)$, $A_- = X(h < 0)$, $A_+ \bigcap A_- = \varnothing$.
+            
+            $\int\limits_{A_+} |h| = \int\limits_{A_+} h = 0$.
+            
+            $\int\limits_{A_-} |h| = - \int\limits_{A_-} h = 0$.
+            
+            $X = A_+ \bigsqcup A_-$, $\int\limits_{X} |h| = 0$.
+            
+    $L$ и $A$, тогда $\lambda (L(A)) = | \det L | \lambda A$.
+    
+    \subsection{Лемма об образе малых кубических ячеек}
+    
+        $\Phi : O \subset \mathbb{R}^m \rightarrow \mathbb{R}^m$, $a \in O$. $\Phi$~--- дифференцируема $G$ в окрестности точки $a$, $\det \Phi'(a) \neq 0$. Пусть $c > | \det \Phi'(a) |$. Тогда
+        
+        существует такое $\delta > 0$, что для любого куба $Q \subset B(a, \delta)$, $a \in Q$ верно, что $c \lambda \Phi(Q)$.
+        
+        \subsubsection{Доказательство}
+        
+            $L := \Phi'(a)$~--- обратимое линейное отображение линейное отображение. $\Phi(x) = \Phi(a) + L (x - a) + o(x - a)$.
+            
+            $a + L^{-1}(\Phi(x) - \Phi(a)) = x + o(x - a)$ (увеличили в константу, поэтому о маленькое остаётся о маленьким).
+            
+            $\forall \varepsilon > 0$ можно записать шар $B_{\varepsilon}(a)$, что при $x \in B_{\varepsilon}(a)$ $\left| \psi(x) - x \right| < \dfrac{\varepsilon}{\sqrt{m}} |x - a|$.
+            
+            $Q \subset B_{\varepsilon}$, $a \in Q$~--- куб со стороной $h$, при $x \in Q : | \psi(x) - x| < \varepsilon h$. $|x_i - a_i| \leqslant h$.
+            
+            $x$, $y \in Q$, тогда $\left| \psi(x)_i - \psi(y)_i \right| = \left| \psi(x)_i - x_i \right| + \left| \psi(y)_i - y_i \right| + |x_i - y_i| \leqslant | \psi(x) - x | + |\psi(y) - y| + h < (1 + 2 \varepsilon)h$.
+            
+            $\psi(Q)$~--- содержится в кубе со стороной $(1 + 2 \varepsilon) h$, тогда $\lambda \psi(Q) \leqslant (1 + 2 \varepsilon)^m \lambda Q$.
+            
+            $\lambda \Phi(Q) \leqslant (1 + 2 \varepsilon)^m | \det L | \lambda Q$.
+            
+            $< C \lambda Q$.
+            
+            Берём $\varepsilon : (1 + 2 \varepsilon) | \det L | < C$, где $\delta$~--- радиус $B_{\varepsilon} (a)$.
+            
+    $\lambda A = \inf\limits_{\text{G - открытое}, A \subset G} \lambda G$
+            
+    \subsection{Лемма 2}
+    
+        $f : \underset{\text{откр.}}{O} \subset \mathbb{R}^m \rightarrow \mathbb{R}$, $O$~--- непрерывное. $A$~--- измеримое, $A \subset Q \subset \overline{Q} \subset O$.
+        
+        Тогда $\int\limits_{A \subset G \text{открытое}} \left( \lambda (G) \sup\limits_{G} f \right) = \lambda A \sup\limits_{A} f$.
+        
+    \subsection{Теорема 2}
+    
+        $\Phi : O \subset \mathbb{R}^m \rightarrow \mathbb{R}^m$~--- диффеоморфизм. $A \in \mathcal{M}^m$, $A \subset O$. Тогда
+        
+        $\lambda \Phi(A) = \int\limits_{A} \left| \det \Phi'(a) \right| d \lambda$.
+        
+        \subsubsection{Доказательство}
+        
+            $\nu A := \lambda \Phi(A)$. Верно ли, что $J_{\Phi} (x) := \left| \det \Phi'(x) \right|$~--- это плотность $\nu$ по отношению к $\mu$.
+            
+            Достаточно проверить, что $\forall A$ верно: $\inf\limits_{A} J_{\Phi} \cdot \lambda A \leqslant \nu A \leqslant \sup\limits_{A} J_{\Phi} \cdot \lambda A$.
+            
+            Достаточно проверить правое неравенство. Левое~--- правое для $\Phi^{-1}$ и $\widetilde{A} = \Phi(A)$.
+            
+            $\lambda \Phi^{-1} \left( \widetilde{A} \right) \leqslant \sum J_{\Phi^{-1}} \cdot \lambda \widetilde{A}$.
+            
+            $\lambda A \leqslant \sup \left| \det (\Phi^{-1})' \right| \lambda \Phi(A)$.
+            
+            $\sup \dfrac{1}{\left| \det \Phi' \right|}$
+            
+            $\dfrac{1}{\inf \left| \det \Phi' \right|}$
+            
+            \begin{enumerate}
+            
+                \item $A$~--- кубическая ячейка, $\overline{A} \subset O$. От противного: пусть оказалось, что $\lambda Q \sup J_{\Phi} < \nu Q$. Возьмём $c > \sup\limits_{Q} J_{\Phi}$, так, что $\lambda Q \cdot c < \nu Q$. Значит существует такая часть $Q_i$, что $\lambda Q_i \cdot c < \nu Q_i$. $\lambda Q_n \cdot c < nu Q_n$, $a = \bigcap \overline{Q_n}$, накроем точку $a$ этим кубиков. $c > \left| \det \Phi'(a) \right|$, тогда $\nu Q_n = \lambda \Phi(Q_n)$. Получили, что $\lambda \Phi(Q_n) > c \lambda Q_n$, а по лемме нужно наоборот.
+            
+                \item Оценка $\nu A \leqslant \sup J_{\Phi} \lambda A$, верна для случая, когда $A$~--- открытое множество.
+                
+                    $\nu Q \leqslant \sup\limits_{A} J_{\Phi} \lambda Q$.
+                    
+                    Суммируя по $Q$: $\nu A \leqslant \sup\limits_{A} J_{\Phi} \lambda A$.
+                    
+                    Что было в лемме (и что мы потеряли):
+                    
+                    $\inf\limits_{A \subset G} \left( \lambda G \cdot \sup\limits_{G} f \right) = \lambda A \cdot \sup\limits_{A} f$.
+                    
+                    $G$~--- открытое, тогда
+                    
+                    $\nu G \leqslant \sup\limits_{G} J_{\Phi} \cdot \lambda G$.
+                    
+                    $\nu A \leqslant \nu G \leqslant \lambda \lambda A \sup\limits_{A} f$.
+                    
+            \end{enumerate}
+            
 \end{document}
