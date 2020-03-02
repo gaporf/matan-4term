@@ -583,23 +583,21 @@
     
     \section{Теорема Тонелли}
     
-        $(X, \mathcal{A}, \mu)$, $(Y, \mathcal{B}, \nu)$, $\mu$, $\nu$~--- $\sigma$-конечные, полные. $m = \mu \times \nu$.
+        $(X, \mathcal{A}, \mu)$, $(Y, \mathcal{B}, \nu)$ и $\mu$, $\nu$~--- $\sigma$-конечные и полные, а также $m = \mu \times \nu$.
         
-        $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $f \geqslant 0$, измеримое. Тогда
+        $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $f \geqslant 0$, измеримая. Тогда
         
         \begin{enumerate}
         
-            \item при почти всех $x$ функция $f_x$~--- измерима почти везде на $Y$ [аналогично при почти всех $y$ функция $f^y$ также измерима на $X$].
+            \item при почти всех $x$ функция $f_x$~--- измерима почти везде на $Y$ (аналогично при почти всех $y$ функция $f^y$ также измерима на $X$);
             
-            \item $x \mapsto \varphi(x) = \int\limits_Y f_x(y) d \nu (y) = \int\limits_Y f(x, y) d \nu (y)$~--- измерима* на $X$ [аналогично $y \mapsto \psi(y) = \int\limits_X f(x, y) d \mu(x)$~--- измерима* на $Y$].
+            \item $x \mapsto \varphi(x) = \int\limits_Y f_x(y) d \nu (y) = \int\limits_Y f(x, y) d \nu (y)$~--- измерима почти везде на $X$ (аналогично $y \mapsto \psi(y) = \int\limits_X f(x, y) d \mu(x)$~--- измерима почти везде на $Y$);
             
-            \item $\int\limits_{X \times Y} f(x, y) d \mu = \int\limits_{Y} \left( \int\limits_{X} f (x, y) d \mu (x) \right) d \nu (y) = \int\limits_X \left( \int\limits_Y f(x, y) d \nu (y) \right) d \mu (x)$
+            \item $\int\limits_{X \times Y} f(x, y) d \mu = \int\limits_{Y} \left( \int\limits_{X} f (x, y) d \mu (x) \right) d \nu (y) = \int\limits_X \left( \int\limits_Y f(x, y) d \nu (y) \right) d \mu (x)$.
             
         \end{enumerate}
-    
-        *Почти везде
         
-        \subsubsection{Доказательство}
+        \subsection{Доказательство}
         
             \begin{enumerate}
             
@@ -629,9 +627,11 @@
                     
             \end{enumerate}
             
-        Везде должна быть приговорка ''при почти всех $x$''.
+        \textit{Везде должна быть приговорка \glqqпри почти всех $x$\grqq }.
         
-    \subsection{Теорема Фубини}
+    \newpage
+    
+    \section{Теорема Фубини}
     
         $(X, \mathcal{A}, \mu)$, $(Y, \mathcal{B}, \nu)$, $\mu$, $\nu$~--- $\sigma$-конечные, полные.
         
