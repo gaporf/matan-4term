@@ -358,7 +358,7 @@
                 
                 $\int\limits_{E} S(x) = \sum\limits^{+\infty}_{n = 1} \int\limits | u_n(x) | < +\infty$, значит $S(x)$ конечна почти всюду.
     
-\newpage
+    \newpage
     
     \section{Абсолютная непрерывность интеграла}
     
@@ -380,6 +380,127 @@
         
             $e_n$~--- измеримое множество, $\mu e_n \rightarrow 0$, $f$~--- суммируемая. Тогда $\int\limits_{e_n} f \rightarrow 0$.
  
+    \newpage
+    
+    \section{02.03.2020}
+    
+        $f_n \rightrightarrows f$ по мере то же самое, что и $\mu X( |f_n - f| \geqslant \varepsilon) \rightarrow 0$. Ещё есть способ $\int\limits_X |f_n - f| d \mu \rightarrow 0$. Можно ли вывести хоть какую-нибудь импликацию.
+        
+        $\Rightarrow$ нельзя, пример: $f_n(x) = \dfrac{1}{nx}$ в $(\mathbb{R}, \lambda)$, тогда $f_n \rightrightarrows 0$ по мере. а $\int \left| \dfrac{1}{nx} \right| d \mu = +\infty$.
+        
+        $\Leftarrow$ можно: $\mu X ( |f_n - f| \geqslant \varepsilon) = \int\limits_{x_n} 1 d \mu \leqslant \int\limits_{x_n} \dfrac{|f_n - f|}{\varepsilon} d \mu \leqslant \dfrac{1}{\varepsilon} \int\limits_X |f_n - f| \rightarrow 0$.
+        
+        Хотим доказать подобие $f_n \rightarrow f$, то $\int f_n \rightarrow \int f$.
+        
+        \subsection{Теорема Лебега о мажорированной сходимости}
+        
+            $f_n$, $f$~--- измеримые, почти везде конечные функции. $f_n \xRightarrow[\mu]{} f$. Также существует $g$, что:
+            
+            \begin{enumerate}
+            
+                \item $\forall n : |f_n| \leqslant g$ почти везде;
+                
+                \item $g$~--- суммируема на $X$ ($g$~--- мажоранта).
+                
+            \end{enumerate}
+        
+            Тогда $\int\limits_X |f_n - f| d \mu \rightarrow 0$, и тем более $\int\limits_X f_n \rightarrow \int\limits_X f$.
+            
+            \subsubsection{Доказательство}
+            
+                $f_n$~--- суммируема в силу первого утверждения про $g$, $f$~--- суммируема по следствию теоремы Рисса. Тем более $\left| \int\limits_X f_n - \int\limits_X f \right| \leqslant \left| \int\limits_X f_n - f \right| \leqslant \int |f_n  - f|$.
+                
+                \begin{enumerate}
+                
+                    \item $\mu X < +\infty$. Фиксируем $\varepsilon > 0$. $X_n := X(|f_n - f| \geqslant \varepsilon)$, $\mu X_n \rightarrow 0$.
+                    
+                        $\int\limits_X |f_n - f| = \int\limits_{x_n} + \int\limits_{x_n^c} \leqslant \int\limits_{x_n} 2g + \int\limits_{x_n^c} \varepsilon_0 \leqslant \int\limits_{x_n} 2g + \int\limits_x \varepsilon < \varepsilon (1 + \mu X)$. (при больших $n$ выражение $\int\limits_{x_n} 2g \leqslant \varepsilon$).
+                        
+                    \item $\mu X = +\infty$, $\varepsilon > 0$. 
+                    
+                        Утверждение: $\exists A$~--- измеримое, $\mu A$~--- конечное, $\int\limits_{X \setminus A} g < \varepsilon$.
+                    
+                        \textit{Доказательство}
+                        
+                            $\int G = \sup \left\{ \int g_n : h - \text{ступенчатая функция} 0 \leqslant h \leqslant g \right\}$
+                            
+                        $\exists h_0 : \int\limits_X g - \int\limits_X h_0 < \varepsilon$, $A := \mathrm{supp \ } h_0$. (где supp~--- носитель (support))
+                        
+                        $\int\limits_{X \setminus A} g + \int\limits_A g - h_0 < \varepsilon$.
+                        
+                        $\int\limits_X |f_n - f| = \int\limits_A + \int\limits_{X \setminus A} \leqslant \int\limits_A |f_n - f| + 2 \varepsilon < 3 \varepsilon$ при больших $n$.
+                        
+                \end{enumerate}
+                
+        \subsection{Теорема Лебега о мажорированной сходимости почти везде}
+        
+            $(X, \mathcal{A}, \mu)$, $f_n$, $f$~--- измеримые, $f_n \rightarrow f$~--- почти везде.
+            
+            Существует такая $g$, что:
+            
+            \begin{enumerate}
+            
+                \item $|f_n| \leqslant g$ почти везде;
+                
+                \item $g$~--- суммируема.
+                
+            \end{enumerate}
+            
+            \subsubsection{Доказательство}
+            
+                $f_n$, $f$~--- суммируемая, тем более~--- как и раньше.
+                
+                $h_n := \sup( |f_n - f|, |f_{n + 1} - f|, \ldots )$, $h_n$ убывает. $0 \leqslant h_n \leqslant 2g$.
+                
+                $\lim\limits_{n \rightarrow +\infty} h_n(x) = \overline{\lim} |f_n - f| = 0$ почти везде.
+                
+                $2g - h \geqslant 0$, возрастают, тогда по теореме Леви $\int\limits_X 2g - h \rightarrow \int\limits_X 2g$, значит $\int\limits_X h_n \rightarrow 0$, тогда $\int\limits_X |f_n - f| \leqslant \int\limits_X h_n \rightarrow 0$.
+                
+        \subsection{Теорема Фату}
+        
+            $(X, \mathcal{A}, \mu$, $f_n \geqslant 0$~--- измеримые, $f_n \rightarrow f$ почти везде. Если $\exists C > 0$, что $\forall n : \int\limits_X f_n \leqslant C$, то $\int\limits_X f \leqslant C$.
+            
+            \subsubsection{Замечание}
+            
+                Вообще говоря $\int\limits_X f_n \not\rightarrow \int\limits_X f$.
+                
+            \subsubsection{Доказательство}
+            
+                $g_n = \int (f_n, f_{n + 1}, \ldots)$.
+                
+                $g_n$ возрастает, $g_n \rightarrow f$ почти везде. $\lim g_n = \underline{\lim} f_n = f$ почти везде.
+                
+                $\int\limits_X g_n \leqslant \int\limits_X f_n \leqslant C$, тогда $\int F \leqslant C$.
+                
+            Примерчик
+            
+            $f_n = n \cdot \chi_{[0, \frac{1}{n}} \rightarrow 0$ почти везде.
+            
+            $\int\limits_{\mathbb{R}} f_n = 1$, $\int f = 0$.
+            
+            Положительность важна:
+            
+            $f_n \geqslant 0$, тогда $\int -f_n \leqslant -1$, но $\int f = 0 \geqslant -1$.
+            
+            \subsubsection{Следствие}
+            
+                $f_n \xRightarrow[\mu]{} f$ ($f_{n_k} \rightarrow f$).
+                
+            \subsubsection{Следствие 2}
+            
+                $f_n \geqslant 0$, измеримая. Тогда
+                
+                $\int\limits_X \underline{\lim} f_n \leqslant \underline{\lim} \int\limits_X f_n$.
+                
+                \text{Доказательство}
+                
+                    $\int\limits_X g_n \leqslant \int\limits_X f_n \leqslant C$.
+                
+                    Берём $n_k$
+                    
+                    $\underline{\lim} \left( \int\limits_X f_n \right) = \lim\limits_{k \rightarrow +\infty} \left( \int\limits_X f_{n_k} \right)$.
+                    
+                    $\int\limits_X f_{n_k} \rightarrow \lim \left( \int\limits_X f_n \right)$, а $\int\limits_x g_n \rightarrow \int\limits_X \underline{\lim} f_n$.
 \newpage
 
 \part{Произведение мер}
@@ -647,7 +768,7 @@
             
         \end{enumerate}
         
-        \textit{без доказательства}
+        \textit{без доказательства} 
     
         \subsubsection{Следствие}
         
@@ -675,5 +796,52 @@
     
         Тогда объём шара в $\mathbb{R}^m$ равен $\alpha_{m - 1} 2 \int\limits^1_0 (1 - t)^{\frac{m - 1}{2}} t^{-\frac{1}{2}} dt = B(\frac{1}{2}, \frac{m + 1}{2}) \alpha_{m - 1}$. Тогда объём шара можно переписать как $\dfrac{\Gamma (\frac{1}{2}) \Gamma (\frac{m + 1}{2})}{\Gamma (\frac{m}{2} + 1) \alpha_{m - 1}}$.
     
+\newpage
+
+\part{Замена переменных в интеграле}
+
+\newpage
+
+    $(X, \mathcal{A}, \mu)$ и $(Y, \mathcal{B}, )$ (пространство и алгебру изобрели, а меру нет)
     
+    $\Phi : X \rightarrow Y$, $\forall B \in \mathcal{B}$, тогда $\Phi^{-1}(B)$~--- измеримое ($\in \mathcal{A}$)
+    
+    Утверждение: $\Phi^{-1}(\mathcal{B})$~--- $\sigma$-алгебра (упражнение).
+    
+    Определение: $\nu : \mathcal{B} \rightarrow \overline{\mathbb{R}}$, $E \in \mathcal{B}$, $\nu E := \mu(\Phi^{-1}(E))$~--- это мера на $\mathcal{B}$~--- образ $\mu$ при отображении $\Phi$.
+    
+    И кстати: $\nu E = \int\limits_{\Phi^{-1}(E)} 1 d \mu$.
+    
+    $\nu( \bigsqcup B_i) = \mu \left( \Phi^{-1}(\bigsqcup B_i) \right) = \mu \left( \bigsqcup \Phi^{-1}(B_i) \right) = \sum \mu \Phi^{-1}(B_i) \sum \nu B_i$.
+    
+    $f$~--- измерима относительна $\mathcal{B}$. Тогда $f \circ \Phi$~--- измерима относительна $\mathcal{A}$. $X \left( f \left( \Phi(x) \right) < a \right) = \Phi^{-1} \left( Y (f < a) \right)$
+    
+    Третье замечание: $\omega : X \rightarrow \overline{\mathbb{R}}$, $\omega \geqslant 0$, измеримая. $\nu(B) := \int\limits_{\Phi^{-1}(B)} \omega d \mu$~--- мера, которая назначает взвешенный образ меры $\omega$~--- вес.
+    
+    \subsection{Интегрирование по взвешенному образу меры}
+    
+        $\Phi : X \rightarrow Y$~--- измеримое отображение, $\omega : X \rightarrow \overline{\mathbb{R}}$, $\omega \geqslant 0$~---измеримая на $X$. $\omega$~--- взвешенный образ меры $\nu$. Тогда
+        
+        $\forall f \geqslant 0$~--- измеримой на $Y$. $f \circ \Phi$~--- измерима на $X$ и выполняется следующее свойство:
+        
+            $\int\limits_Y f(y) d \nu(y) = \int\limits_x f (\Phi(x)) \omega(x) d \mu(x)$.
+            
+        То же верно для случая $f$~--- суммируемая.
+    
+        \subsubsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $f = \chi_B$, $B \in \mathcal{B}$. Тогда $f \circ \Phi(x) = \begin{cases} 1 & \Phi(X) \in B \\ 0 & \Phi(x) \notin B \end{cases} = \chi_{\Phi^{-1}(B)}$.
+                
+                    Доказывать нечего (и весёлый смайлик) $\nu B = \int\limits_{\Phi(B)} \omega d \mu$;
+                    
+                \item $f$~-- ступенчатая, для каждой ступеньки~--- правда, и по линейности интеграла получаем результат;
+                
+                \item $f \geqslant 0$~--- измеримая. Теорема об аппроксимизации измеримых функций ступенчатыми плюс предельный переход по теореме Леви;
+                
+                \item $f$~--- измеримая, значит $|f|$~--- всё верно.
+                
+            \end{enumerate}
+            
 \end{document}
