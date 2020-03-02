@@ -633,45 +633,47 @@
     
     \section{Теорема Фубини}
     
-        $(X, \mathcal{A}, \mu)$, $(Y, \mathcal{B}, \nu)$, $\mu$, $\nu$~--- $\sigma$-конечные, полные.
+        $(X, \mathcal{A}, \mu)$, $(Y, \mathcal{B}, \nu)$ и $\mu$, $\nu$~--- $\sigma$-конечные и полные.
         
         $f : X \times Y \rightarrow \overline{\mathbb{R}}$, суммируемая. Тогда
         
         \begin{enumerate}
         
-            \item при почти всех $x$ функция $f_x$~--- суммируемая почти везде на $Y$ [аналогично при почти всех $y$ функция $f^y$ также измерима на $X$].
+            \item при почти всех $x$ функция $f_x$~--- суммируемая почти везде на $Y$ (аналогично при почти всех $y$ функция $f^y$ также измерима на $X$).
             
-            \item $x \mapsto \varphi(x) = \int\limits_Y f_x(y) d \nu (y) = \int\limits_Y f(x, y) d \nu (y)$~--- суммируемая* на $X$ [аналогично $y \mapsto \psi(y) = \int\limits_X f(x, y) d \mu(x)$~--- суммируемая* на $Y$].
+            \item $x \mapsto \varphi(x) = \int\limits_Y f_x(y) d \nu (y) = \int\limits_Y f(x, y) d \nu (y)$~--- суммируемая почти везде на $X$ (аналогично $y \mapsto \psi(y) = \int\limits_X f(x, y) d \mu(x)$~--- суммируемая почти везде на $Y$).
             
             \item $\int\limits_{X \times Y} f(x, y) d \mu = \int\limits_{Y} \left( \int\limits_{X} f (x, y) d \mu (x) \right) d \nu (y) = \int\limits_X \left( \int\limits_Y f(x, y) d \nu (y) \right) d \mu (x)$
             
         \end{enumerate}
         
-        *почти везде
-        
-        без доказательства
+        \textit{без доказательства}
     
         \subsubsection{Следствие}
         
             $\int\limits_C f = \int\limits_{X \times Y} f \chi_C = \int\limits_X \left( \int\limits_Y f \cdot \chi_C \right) d \mu = \int\limits_{P_1(C)} \left( \int\limits_{C_x} f(x, y) d \nu(y) \right) d \mu (x)$.
             
             $P_1(C)$~--- проекция, измеримая, $\left\{ x : C_x \neq \varnothing \right\}$.
-            
-    $B(0, 1) \subset \mathbb{R}^m$, Хотим найти $\lambda_m B(0, 1) = \alpha_m$.
     
-    $\lambda_m B(0, R) = \alpha_m \cdot R^M$.
+    \newpage
     
-    $x_1^2 + x_2^2 + \ldots + x_m^2 \leqslant 1$.
+    \section{Какая-то нужная штука для лекции 02.03.2020, потом удалю}
     
-    интеграл обычного кружочка: $\int \chi_B d \lambda_2 = \int\limits^1_{-1} \int\limits^{\sqrt{1 - x^2}}_{-\sqrt{1 - x^2}} 1 dy dy dx = \int\limits^1_{-1} 2 \sqrt{1 - x^2} dx = \pi$
+        $B(0, 1) \subset \mathbb{R}^m$, Хотим найти $\lambda_m B(0, 1) = \alpha_m$.
     
-    $\alpha_m = \int\limits_{\mathbb{R}^m} \chi_B = \int\limits^1_{-1} \left( \int\limits_{B(0, \sqrt{1 - x_1^2}) \subset \mathbb{R}^{m -1}} 1 d \nu \right) dx_1 = \int\limits^1_{-1} (1 - x_1^2)^{\frac{m - 1}{2}} \alpha_{m - 1} d x_1$.
+        $\lambda_m B(0, R) = \alpha_m \cdot R^M$.
     
-    $B(x, y) = \int\limits^1_) t^{x - 1} (1 - t)^{y - 1} dt$.
+        $x_1^2 + x_2^2 + \ldots + x_m^2 \leqslant 1$.
     
-    $B(x, y) = \dfrac{\Gamma(x) \Gamma(y)}{\Gamma(x + y)}$, $\Gamma(n) = (n - 1)!$, $\Gamma(x + 1) = \Gamma(x) \cdot x$.
+        интеграл обычного кружочка: $\int \chi_B d \lambda_2 = \int\limits^1_{-1} \int\limits^{\sqrt{1 - x^2}}_{-\sqrt{1 - x^2}} 1 dy dy dx = \int\limits^1_{-1} 2 \sqrt{1 - x^2} dx = \pi$
     
-    Тогда объём шара в $\mathbb{R}^m$ равен $\alpha_{m - 1} 2 \int\limits^1_0 (1 - t)^{\frac{m - 1}{2}} t^{-\frac{1}{2}} dt = B(\frac{1}{2}, \frac{m + 1}{2}) \alpha_{m - 1}$. Тогда объём шара можно переписать как $\dfrac{\Gamma (\frac{1}{2}) \Gamma (\frac{m + 1}{2})}{\Gamma (\frac{m}{2} + 1) \alpha_{m - 1}}$.
+        $\alpha_m = \int\limits_{\mathbb{R}^m} \chi_B = \int\limits^1_{-1} \left( \int\limits_{B(0, \sqrt{1 - x_1^2}) \subset \mathbb{R}^{m -1}} 1 d \nu \right) dx_1 = \int\limits^1_{-1} (1 - x_1^2)^{\frac{m - 1}{2}} \alpha_{m - 1} d x_1$.
+    
+        $B(x, y) = \int\limits^1_0 t^{x - 1} (1 - t)^{y - 1} dt$.
+    
+        $B(x, y) = \dfrac{\Gamma(x) \Gamma(y)}{\Gamma(x + y)}$, $\Gamma(n) = (n - 1)!$, $\Gamma(x + 1) = \Gamma(x) \cdot x$.
+    
+        Тогда объём шара в $\mathbb{R}^m$ равен $\alpha_{m - 1} 2 \int\limits^1_0 (1 - t)^{\frac{m - 1}{2}} t^{-\frac{1}{2}} dt = B(\frac{1}{2}, \frac{m + 1}{2}) \alpha_{m - 1}$. Тогда объём шара можно переписать как $\dfrac{\Gamma (\frac{1}{2}) \Gamma (\frac{m + 1}{2})}{\Gamma (\frac{m}{2} + 1) \alpha_{m - 1}}$.
     
     
 \end{document}
