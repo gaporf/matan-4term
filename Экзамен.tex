@@ -413,44 +413,54 @@
             
         \end{enumerate}
         
-        \subsubsection{Доказательство}
+        \subsection{Доказательство}
         
-            Проверим счётную аддитивность $\mu_0$. $\chi_{A \times B} (x, y) = \chi_A(x) \cdot \chi_B(y)$, $(x, y) \in X \times Y$.
+            \begin{enumerate}
             
-            $P = \bigsqcup\limits_{\text{сч.}} P_k$~--- измеримые прямоугольники. $P = A \times B$ и $P_k = A_k \times B_k$, $\chi_P = \sum \chi_{P_k}$.
+                \item 
+
+                    Проверим счётную аддитивность $\mu_0$. $\chi_{A \times B} (x, y) = \chi_A(x) \cdot \chi_B(y)$, $(x, y) \in X \times Y$.
             
-            $\chi_A(x) \chi_B(y) = \sum\limits_k \chi_{A_k}(x) \chi_{B_k}(y)$. Интегрируем по $\nu$ (по пространству $Y$).
+                    $P = \bigsqcup\limits_{\text{сч.}} P_k$~--- измеримые прямоугольники. $P = A \times B$ и $P_k = A_k \times B_k$, $\chi_P = \sum \chi_{P_k}$.
             
-            $\chi_A(x) \cdot \nu(B) = \sum \chi_{A_k}(x) \nu (B_k)$. Интегрируем по $\mu$.
+                    $\chi_A(x) \chi_B(y) = \sum\limits_k \chi_{A_k}(x) \chi_{B_k}(y)$. Интегрируем по $\nu$ (по пространству $Y$).
             
-            $\mu A \nu B = \sum \mu A_k \cdot \nu B_k$.
+                    $\chi_A(x) \cdot \nu(B) = \sum \chi_{A_k}(x) \nu (B_k)$. Интегрируем по $\mu$.
             
-            $X = \bigcup X_k$, $Y = \bigcup Y_j$, где $\mu X_k$ и $\nu Y_j$~--- конечные, $X \times Y = \bigcup\limits_{k, j} X_k \times Y_j$.
-    
-    $\left( \mathbb{R}^m, \mathcal{M}^m, \lambda_m \right)$ и $\left( \mathbb{R}^n, \mathcal{M}^n, \lambda_n r\right)$.
-    
-    $\left( X \times Y, \mathcal{A} \times \mathcal{B}, \mu_0 \right)$, где $\mathcal{A} \times \mathcal{B}$~--- полукольцо.
-    
-    Запускаем теорему о продолжении меры
-    
-    $\rightsquigarrow \left( X \times Y, \mathcal{A} \otimes \mathcal{B}, \mu \right)$ (крестик в кружочке), где $\mathcal{A} \times \mathcal{B}$~--- $\sigma$-алгебра.
-    
-    $\mu$, $\nu$~--- $\sigma$-конечная, следовательно продолжение определено однозначно.
+                    $\mu A \cdot \nu B = \sum \mu A_k \cdot \nu B_k$.
             
-    \subsection{Замечание}
+                \item
+                
+                    $X = \bigcup X_k$, $Y = \bigcup Y_j$, где $\mu X_k$ и $\nu Y_j$~--- конечные, $X \times Y = \bigcup\limits_{k, j} X_k \times Y_j$.
     
-        произведение мер ассоциативна.
+                    $\left( \mathbb{R}^m, \mathcal{M}^m, \lambda_m \right)$ и $\left( \mathbb{R}^n, \mathcal{M}^n, \lambda_n \right)$.
     
-    \subsection{Теорема}
+                    $\left( X \times Y, \mathcal{A} \otimes \mathcal{B}, \mu_0 \right)$, где $\mathcal{A} \times \mathcal{B}$~--- полукольцо.
     
-        $\lambda_{m + n}$ если произведение мер $\lambda_m$ и $\lambda_n$.
+                    Запускаем теорему о продолжении меры.
+    
+                    $\rightsquigarrow \left( X \times Y, \mathcal{A} \otimes \mathcal{B}, \mu \right)$, где $\mathcal{A} \times \mathcal{B}$~--- $\sigma$-алгебра.
+    
+                    $\mu$, $\nu$~--- $\sigma$-конечная, следовательно продолжение определено однозначно.
+            
+            \end{enumerate}
+            
+        \subsection{Замечание}
+    
+            Произведение мер ассоциативно.
+    
+        \subsection{Дополнительная теорема (без доказательства)}
+    
+            $\lambda_{m + n}$ есть произведение мер $\lambda_m$ и $\lambda_n$.
         
-        без доказательства.
-        
+    \newpage
+    
     $X$, $Y$ $C \subset X \times Y$, $C_x = \left\{ y \in Y : (x, y) \in C \right\} \subset Y$~--- сечение множества $C$, $C^y = \left\{ x \in X : (x, y) \in C \right\}$.
     
     Допустимы и объедения, пересечения и т.п.
     
+    \newpage
+
     \subsection{Принцип Кавальери}
     
         $(X, \mathcal{A}, \mu)$ и $(Y, \mathcal{B}, \nu)$, $\mu$, $\nu$~--- $\sigma$-конечные, полные. 
