@@ -362,13 +362,13 @@
     
     \section{Абсолютная непрерывность интеграла}
     
-        $f$~--- суммируемая функция, тогда
+        $f$~--- суммируемая функция, тогда верно:
         
-        $\forall \varepsilon > 0 : \exists \delta > 0 : \forall E \in \mathcal{A} : \mu E < \delta : \left| \int\limits_{E} f \right| < \varepsilon$.
+        $$\forall \varepsilon > 0 : \exists \delta > 0 : \forall E \in \mathcal{A} : \mu E < \delta : \left| \int\limits_{E} f \right| < \varepsilon$$.
         
         \subsubsection{Доказательство}
         
-            $X_n = X \left( f \geqslant n \right)$, $X_n \supset X_{n + 1} \supset \ldots$, $\mu \left( \bigcap\limits^{+\infty}_{n = 1} X_n \right) = 0$.
+            $X_n = X \left( f \geqslant n \right)$, $X_n \supset X_{n + 1} \supset \ldots$ и $\mu \left( \bigcap\limits^{+\infty}_{n = 1} X_n \right) = 0$.
             
             Тогда $\forall \varepsilon > 0 : \exists n_{\varepsilon} : \int\limits_{X_{n_{\varepsilon}}} |f| < \frac{\varepsilon}{2}$ ($A \mapsto \int\limits_{A} |f|$~--- мера, тогда $\int\limits_{\bigcap X_n} |f| = 0$ и по непрерывности меры сверху).
             
@@ -378,7 +378,7 @@
             
         \subsubsection{Следствие}
         
-            $e_n$~--- измеримное множество, $\mu e_n \rightarrow 0$, $f$~--- суммируемая. Тогда $\int\limits_{e_n} f \rightarrow 0$.
+            $e_n$~--- измеримое множество, $\mu e_n \rightarrow 0$, $f$~--- суммируемая. Тогда $\int\limits_{e_n} f \rightarrow 0$.
  
 \newpage
 
