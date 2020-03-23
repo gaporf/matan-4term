@@ -879,11 +879,11 @@
     
     \newpage
             
-    \subsection{Критерий плотности}
+    \section{Критерий плотности}
     
         $(X, \mathcal{A}, \mu)$, $\nu$~--- ещё одна мера на $\mathcal{A}$, $\omega \geqslant 0$~--- измеримая. Тогда
         
-        $\omega$~--- плотность $\nu$ относительна $\mu$ $\Leftrightarrow \forall A \in \mathcal{A}$ верное $\inf\limits_{A} \omega \cdot \mu A \leqslant \nu A \leqslant \sup\limits_{A} \omega \cdot \mu A$ ($0 \cdot \infty = 0$).
+        $\omega$~--- плотность $\nu$ относительно $\mu$ $\Longleftrightarrow \forall A \in \mathcal{A}$ верно: $\inf\limits_{A} \omega \cdot \mu A \leqslant \nu A \leqslant \sup\limits_{A} \omega \cdot \mu A$ ($0 \cdot \infty = 0$).
         
         \subsubsection{Доказательство}
         
@@ -891,7 +891,9 @@
             
                 \item $\Rightarrow$ Очевидно (интеграл $\mu A$ обладает этими свойствами из-за плотностей);
                 
-                \item $\Leftarrow$ Считаем, что $\omega > 0$. Для $\omega = 0$ получаем: $e := X(\omega = 0)$, $\nu e = 0 = \int\limits_e \omega d \mu$, тогда $\nu (A) = \int\limits_{A} \omega d \mu$, $x \setminus e$ $\omega > 0$. Теперь пусть $\omega > 0$, то $q \in (0, 1)$. $A_j := A(q^j \leqslant \omega \leqslant q^{j - 1})$, $j \in \mathbb{Z}$, $A = \bigsqcup\limits_{j \in \mathbb{Z}} A_j$.
+                \item $\Leftarrow$ Считаем, что $\omega > 0$. Для $\omega = 0$ получаем: $e := X(\omega = 0)$, $\nu e = 0 = \int\limits_e \omega d \mu$, тогда $\nu (A) = \int\limits_{A} \omega d \mu = 0$. 
+                
+                Теперь пусть $\omega > 0$, то $q \in (0, 1)$. $A_j := A(q^j \leqslant \omega \leqslant q^{j - 1})$, $j \in \mathbb{Z}$, $A = \bigsqcup\limits_{j \in \mathbb{Z}} A_j$.
                 
                     $q^j \mu A_j \leqslant \nu A_j \leqslant q^{j - 1} \mu A_j$.
                     
@@ -902,7 +904,9 @@
                     Устремим $q \rightarrow 1$ и получим доказательство равенства.
                     
             \end{itemize}
-            
+           
+    \newpage
+    
     \subsection{Лемма}
     
         $f$, $g$~--- суммируемые на $X$, $\forall A$~--- измеримых $\int\limits_A f = \int\limits_a g$. Тогда $f = g$ почти везде.
