@@ -809,14 +809,25 @@
         $\Phi : X \rightarrow Y$, $\forall B \in \mathcal{B}$ $\Phi^{-1}(B)$~--- измеримо ($\in \mathcal{A}$).
     
         $\nu : \mathcal{B} \rightarrow \overline{\mathbb{R}}$, $E \in \mathcal{B}$, $\nu E := \mu(\Phi^{-1}(E))$~--- это мера на $\mathcal{B}$, а также \textit{образ меры $\mu$ при отображении $\Phi$}.
+
+        \subsection{Замечание}
+        
+            $\nu E = \int\limits_{\Phi^{-1}(E)} 1 d \mu$.
     
-    И кстати: $\nu E = \int\limits_{\Phi^{-1}(E)} 1 d \mu$.
+    \newpage
     
+    \section{Взвешенный образ меры}
+        
+        $\omega : X \rightarrow \overline{\mathbb{R}}$, $\omega \geqslant 0$, измеримая. 
+        
+        Тогда $\nu(B) := \int\limits_{\Phi^{-1}(B)} \omega d \mu$~--- мера, которая назначает \textit{взвешенный образ меры $\mu$}, где $\omega$~--- её вес.
+        
+    \newpage
+    
+
     $\nu( \bigsqcup B_i) = \mu \left( \Phi^{-1}(\bigsqcup B_i) \right) = \mu \left( \bigsqcup \Phi^{-1}(B_i) \right) = \sum \mu \Phi^{-1}(B_i) \sum \nu B_i$.
     
     $f$~--- измерима относительна $\mathcal{B}$. Тогда $f \circ \Phi$~--- измерима относительна $\mathcal{A}$. $X \left( f \left( \Phi(x) \right) < a \right) = \Phi^{-1} \left( Y (f < a) \right)$
-    
-    Третье замечание: $\omega : X \rightarrow \overline{\mathbb{R}}$, $\omega \geqslant 0$, измеримая. $\nu(B) := \int\limits_{\Phi^{-1}(B)} \omega d \mu$~--- мера, которая назначает взвешенный образ меры $\omega$~--- вес.
     
     \subsection{Интегрирование по взвешенному образу меры}
     
