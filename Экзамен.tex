@@ -959,17 +959,19 @@
             
     \newpage
     
-    \subsection{Лемма 2}
+    \section{Теорема об образе меры Лебега  при диффеоморфизме}
     
-        $f : \underset{\text{откр.}}{O} \subset \mathbb{R}^m \rightarrow \mathbb{R}$, $O$~--- непрерывное. $A$~--- измеримое, $A \subset Q \subset \overline{Q} \subset O$.
+        \subsection{Лемма}
+    
+            $f : \underset{\text{откр.}}{O} \subset \mathbb{R}^m \rightarrow \mathbb{R}$, $O$~--- непрерывное. $A$~--- измеримое, $A \subset Q \subset \overline{Q} \subset O$.
         
-        Тогда $\int\limits_{A \subset G \text{открытое}} \left( \lambda (G) \sup\limits_{G} f \right) = \lambda A \sup\limits_{A} f$.
-    
-    \subsection{Теорема 2}
-    
-        $\Phi : O \subset \mathbb{R}^m \rightarrow \mathbb{R}^m$~--- диффеоморфизм. $A \in \mathcal{M}^m$, $A \subset O$. Тогда
+            Тогда $\int\limits_{A \subset G \text{открытое}} \left( \lambda (G) \sup\limits_{G} f \right) = \lambda A \sup\limits_{A} f$.
         
-        $\lambda \Phi(A) = \int\limits_{A} \left| \det \Phi'(a) \right| d \lambda$.
+        \subsection{Теорема}
+        
+            $\Phi : O \subset \mathbb{R}^m \rightarrow \mathbb{R}^m$~--- диффеоморфизм. $A \in \mathcal{M}^m$, $A \subset O$. Тогда
+        
+            $\lambda \Phi(A) = \int\limits_{A} \left| \det \Phi'(a) \right| d \lambda$.
         
         \subsubsection{Доказательство}
         
@@ -979,7 +981,7 @@
             
             Достаточно проверить правое неравенство. Левое~--- правое для $\Phi^{-1}$ и $\widetilde{A} = \Phi(A)$.
             
-            $\lambda \Phi^{-1} \left( \widetilde{A} \right) \leqslant \sum J_{\Phi^{-1}} \cdot \lambda \widetilde{A}$.
+            $\lambda \Phi^{-1} \left( \widetilde{A} \right) \leqslant \sup J_{\Phi^{-1}} \cdot \lambda \widetilde{A}$.
             
             $\lambda A \leqslant \sup \left| \det (\Phi^{-1})' \right| \lambda \Phi(A)$.
             
