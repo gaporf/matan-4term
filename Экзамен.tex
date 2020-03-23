@@ -931,15 +931,17 @@
         
     \section{Лемма об образе малых кубических ячеек}
     
-        $\Phi : O \subset \mathbb{R}^m \rightarrow \mathbb{R}^m$, $a \in O$. $\Phi$~--- дифференцируема $G$ в окрестности точки $a$, $\det \Phi'(a) \neq 0$. Пусть $c > | \det \Phi'(a) |$. Тогда
+        $\Phi : O \subset \mathbb{R}^m \rightarrow \mathbb{R}^m$, $a \in O$. $\Phi$~--- дифференцируема $G$ в окрестности точки $a$, $\det \Phi'(a) \neq 0$. Пусть $c > | \det \Phi'(a) |$. 
         
-        существует такое $\delta > 0$, что для любого куба $Q \subset B(a, \delta)$, $a \in Q$ верно, что $c \lambda \Phi(Q)$.
+        Тогда существует такое $\delta > 0$, что для любого куба $Q \subset B(a, \delta)$, $a \in Q$ верно, что $c \cdot \lambda Q > \lambda \Phi(Q)$.
         
         \subsubsection{Доказательство}
         
-            $L := \Phi'(a)$~--- обратимое линейное отображение линейное отображение. $\Phi(x) = \Phi(a) + L (x - a) + o(x - a)$.
+            $L := \Phi'(a)$~--- обратимое линейное отображение. 
             
-            $a + L^{-1}(\Phi(x) - \Phi(a)) = x + o(x - a)$ (увеличили в константу, поэтому о маленькое остаётся о маленьким).
+            $\Phi(x) = \Phi(a) + L (x - a) + o(x - a)$.
+            
+            $a + L^{-1}(\Phi(x) - \Phi(a)) = x + o(x - a)$ (увеличили в константу, поэтому \textit{о маленькое} остаётся \textit{о маленьким}).
             
             $\forall \varepsilon > 0$ можно записать шар $B_{\varepsilon}(a)$, что при $x \in B_{\varepsilon}(a)$ $\left| \psi(x) - x \right| < \dfrac{\varepsilon}{\sqrt{m}} |x - a|$.
             
@@ -949,21 +951,19 @@
             
             $\psi(Q)$~--- содержится в кубе со стороной $(1 + 2 \varepsilon) h$, тогда $\lambda \psi(Q) \leqslant (1 + 2 \varepsilon)^m \lambda Q$.
             
-            $\lambda \Phi(Q) \leqslant (1 + 2 \varepsilon)^m | \det L | \lambda Q$.
-            
-            $< C \lambda Q$.
+            $\lambda \Phi(Q) \leqslant (1 + 2 \varepsilon)^m | \det L | \lambda Q < C \lambda Q$.
             
             Берём $\varepsilon : (1 + 2 \varepsilon) | \det L | < C$, где $\delta$~--- радиус $B_{\varepsilon} (a)$.
             
     $\lambda A = \inf\limits_{\text{G - открытое}, A \subset G} \lambda G$
             
+    \newpage
+    
     \subsection{Лемма 2}
     
         $f : \underset{\text{откр.}}{O} \subset \mathbb{R}^m \rightarrow \mathbb{R}$, $O$~--- непрерывное. $A$~--- измеримое, $A \subset Q \subset \overline{Q} \subset O$.
         
         Тогда $\int\limits_{A \subset G \text{открытое}} \left( \lambda (G) \sup\limits_{G} f \right) = \lambda A \sup\limits_{A} f$.
-        
-    \newpage
     
     \subsection{Теорема 2}
     
