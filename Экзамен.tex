@@ -1165,4 +1165,196 @@
         
         Тогда на $\mathcal{B}$, $\mu_H$ совпадает с $h(\mu)$.
         
+        Это очевидно $\smiley{}$.
+        
+        Если потрудитесь хоть как-то расшифровать, то получится, что написана тут тривиальность.
+        
+        \subsection{Доказательство}
+        
+            $\mu_h[a, gg) = H(b - 0) - H(a - 0) = H(b) - H(a)$~--- непрерывность меры снизу.
+            
+            $H(b) - H(a) = \mu X(a \leqslant h < b) = \mu \left( h^{-1} [a, b) \right) = \nu [a, b]$, где $\nu = h(\mu)$
+            
+            Значит $\mu_H = \nu$ на $\mathcal{B}$.
+            
+    \subsection{Теорема}
+    
+        $f : \mathbb{R} \rightarrow \mathbb{R}$, $\geqslant 0$, измеримое по Борелю.
+        
+        $h : X \rightarrow \overline{\mathbb{R}}$, измеримая, почти везде конечная, с функцией распределения $H$.
+        
+        $\mu_H$~--- мера Бореля-Стилтьеса. Тогда
+        
+        $\int\limits_X f \left( h(x) \right) d \mu(x) = \int\limits_{\mathbb{R}} f(t) d \mu_H (t)$.
+        
+        \subsubsection{Доказательство}
+        
+            По теореме о взвешенном образе меры:
+            
+            $(X, \mathcal{A}, \mu)$, $(Y = \mathbb{R}, \mathcal{B}, h(\mu))$,
+            
+            $\Phi = h : X \rightarrow Y$, $\omega = 1$.
+            
+            $\int\limits_Y f(y) d \nu = \int\limits_X f(\Phi(x)) 1 d \mu(x)$.
+            
+    Путь $f \geqslant 0$, измеримая, $\mathbb{R} \rightarrow \mathbb{R}$.
+    
+    $\int\limits_{\mathbb{R}^m} f \left( | x | \right) d \lambda_m = \int\limits_0^{+\infty} f(t) d \mu_H$ при $h(x) = |x|$, где $H(r) = \mu \mathbb{R}^m \left( |x| < r \right) = \alpha_m r^m$.
+    
+    $\mu_H [a, b) = H(b) - H(a) = \int\limits^b_a H'(t) dt = \int\limits^b_a m \alpha_m t^{m - 1} dt$.
+    
+    $\mu_H$ и мера $\nu : \nu(A) = \int\limits_A m \alpha_m t^{m - 1} dt$, значит $\mu_h = \nu$ на $\mathcal{B}$. 
+    
+    $\int\limits^{+\infty}_0 f(t) m \alpha_m t^{m - 1} dt$.
+    
+        \subsubsection{Следствие}
+        
+            Мы проверили, что $g$ возрастает, $g \in C^1 \left( \mathbb{R} \right)$ и $M_g(A) = \int\limits_A g'(x) dx$.
+            
+\newpage
+
+\part{Ряды Фурье}
+
+\newpage
+
+    Пространство $L^p$:
+    
+    \begin{enumerate}
+    
+        \item $(X, \mathcal{A}, \mu)$, $f : X \rightarrow \mathbb{C}$, $f(x) = g(x) + i h(x)$.
+        
+            $f$~--- измерима $\Leftrightarrow g = \Re f$ и $h = \Im f$~--- измеримая.
+            
+            $f$~--- суммируемая $\Leftrightarrow g = \Re f$ и $h = \Im f$~--- суммируемые.
+            
+            $\int\limits_E g d\mu = \int\limits_E g + i \int\limits_E h$.
+            
+            Вывод: $\left| \int\limits_E f d \mu \right| \leqslant \int\limits_E |f| d\mu$.
+            
+        \item Неравенство Гёльдера:
+        
+            $p$, $q > q$, $\frac{1}{p} + \frac{1}{q} = 1$
+            
+            заданы почти везде, измеримы.
+            
+            $(X, \mathcal{A}, \mu)$, $f$, $g : X \rightarrow \mathbb{C}$ ($\mathbb{R}$)
+            
+            Тогда $\int\limits_X |fg| d mu \leqslant \left( \int\limits_x |f|^p \right)^{1/p} \left( \int\limits_X |f|^q \right)^{1/q}$
+            
+            Ступенчатые функции и Леви.
+            
+        \item Неравенство Минковского
+        
+            $(X, \mathcal{A}, \mu)$, $f$, $g : X \rightarrow \mathbb{C}$~--- измерима почти везде, конечна, $1 \leqslant p < +\infty$.
+            
+            Тогда $\left( \int\limits_X |f + g|^p \right)^{1/p} \leqslant \left( \int\limits_x |f|^p \right)^{1/p} + \left( \int\limits_X |g|^q \right)^{1/q}$
+        
+            Без доказательств.
+            
+        \item $L^p(X, \mu)$, $1 \leqslant p < |infty$
+        
+            $\mathcal{L}^p (X, \mu) = \left\{ f : \text{п.в.} X \rightarrow \overline{\mathbb{R}} (\overline{\mathbb{C}}), f \text{~--- измерима}, \int\limits_X |f|^p d \mu < +\infty \right\}$
+            
+            \begin{itemize}
+            
+                \item $\mathcal{L}^p (X, \mu)$~--- линейное пространство~---по н. Минковского
+            
+                \item $f$ эквивалентно $g$~--- $f(x) = g(x)$ при почти всех $x$
+                
+                    Отождествим все эквивалентные функции.
+                
+            \end{itemize}
+            
+            Спасибо инету ИТМО за понятную доску.
+            
+    \end{enumerate}
+    
+    Существенный супремум.
+    
+    $f$ почти всюду $X \rightarrow \mathbb{R}$, $\mathrm{ess}\sup f = \inf \left\{ A \in \overline{\mathbb{R}} : f(x) \in A \text{п.в.} \right\}$.
+    
+    (почти супремум)
+    
+    \subsection{Свойства}
+    
+        \begin{enumerate}
+        
+            \item $\mathrm{ess} \sup f \leqslant \sup f$;
+            
+            \item $f(x) \leqslant \mathrm{ess} \sup f$ при почти всех $x$;
+            
+            \item $\left| \int\limits_\mathbb{R} fg \right| \leqslant \mathrm{ess} \sup |f| \cdot \int\limits_X |g|$.
+            
+        \end{enumerate}
+        
+    \subsubsection{Доказательство}
+    
+        \begin{enumerate}
+        
+            \item Очевидно
+            
+            \item $M = \mathrm{ess}\sup f$
+            
+                $\forall n \in \mathbb{N}$ верно $f(x) \leqslant M + \frac{1}{n}$ почти везде.
+            
+            \item Очевидно $\left| \int\limits_X fg \right| \leqslant \int\limits_x |fg|$,
+            
+                $|fg| \leqslant M|g|$ почти везде.
+            
+        \end{enumerate}
+        
+    Тогда определим $\mathcal{L}^{\infty} (X, \mu) = \left\{ f : \text{п.в.} X \rightarrow \mathbb{R} (\mathbb{C}) : \text{изм.}, \mathrm{ess}\sup |f| < +\infty \right\}$
+    
+    $f$, $g \in \mathcal{L}^{\infty} \Rightarrow f + g \in \mathcal{L}^{\infty}$.
+    
+    т.е. $\mathcal{L}^{\infty}$~--- линейное пространство, норма $\| f |\ = \mathrm{ess}\sup\limits_x |f|$.
+    
+    $\mathrm{ess}\sup |f + g| \leqslant \mathrm{ess}\sup |f| + \mathrm{ess}\sup |g|$.
+    
+    \subsubsection{Замечание}
+    
+        $\| fg \|_1 \leqslant \| f \|_p \| g \|_q$~--- неравенство Гёльдера.
+        
+        $\smiley{}$, можно брать $p = 1$ и $q = +\infty$.
+        
+        $f \in \mathcal{L}^p (X, \mu)$, $1 \leqslant p \leqslant +\infty$
+        
+        $\Rightarrow f$~--- почти всюду конечно $\Rightarrow$ можно считать, что $f$ задана почти всюду на $X$ и всюду конечна.
+        
+        $l^^ \left( [0, 1], \lambda \right)$, $f(x) =$ квадратная скобка $\frac{1}{\sqrt{x}}, x \neq 0$ и $+\infty$, $x = 0$.
+        
+        $\int\limits^1_0 \frac{1}{\sqrt{x}} < +\infty$, $\dfrac{1}{\sqrt{x}} \in L^^ $.
+    
+    \subsection{Теорема}
+    
+        $X$, $\mu X < +\infty$, $1 \leqslant s < r \leqslant +\infty$
+        
+        Тогда 
+        
+        \begin{enumerate}
+            
+            \item $L^r(X, \mu) \subset L^s(x, \mu)$;
+            
+            \item $\| f \|_s \leqslant (\mu X)^{\frac{1}{s} \frac{1}{r}}$
+            
+        \end{enumerate}
+        
+        \subsubsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item следует из $2$;
+                
+                \item $r = \infty$~--- очевидно
+                
+                    $\| f \|_s = \left( \int\limits_X |f|^s \right)^{\frac{1}{s}} \leqslant \left( \int\limits_X \| f ||^s_{\infty} \right)^{\frac{1}{s}}$
+                    
+                    $|f| \leqslant \mathrm{ess}\sup f = \| f \|_{\infty} = \| f \|_{\infty} \mu X^{1/s}$
+                    
+                    $\| f \|^s_s = \int\limits_X |f|^s 1 d \mu$ по Гёльдеру получаем неравенство
+                    
+                    $\left( \int\limits_X \left( |f|^s \right)^{r/s} \right)^{s/r} \left( \int\limits_X 1 \right)^{\frac{r - s}{r}} = \left( \int\limits_x |f|^r \right)^{s/r} \left( \mu X \right)^{1 - \frac{s}{r}}$.
+                
+            \end{enumerate}
+        
 \end{document}
