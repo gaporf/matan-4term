@@ -907,9 +907,9 @@
            
     \newpage
     
-    \subsection{Лемма}
+    \section{Единственность плотности}
     
-        $f$, $g$~--- суммируемые на $X$, $\forall A$~--- измеримых $\int\limits_A f = \int\limits_a g$. Тогда $f = g$ почти везде.
+        $f$, $g$~--- суммируемые на $X$, $\forall A$~--- измеримых верно: $\int\limits_A f = \int\limits_a g$. Тогда $f = g$ почти везде.
         
         \subsubsection{Доказательство}
         
@@ -921,11 +921,15 @@
             
             $\int\limits_{A_-} |h| = - \int\limits_{A_-} h = 0$.
             
-            $X = A_+ \bigsqcup A_-$, $\int\limits_{X} |h| = 0$.
+            $X = A_+ \bigsqcup A_-$, $\int\limits_{X} |h| = 0$, тогда $h = 0$.
             
-    $L$ и $A$, тогда $\lambda (L(A)) = | \det L | \lambda A$.
+        \subsection{Следствие}
+        
+            Плотность $\nu$ относительно $\nu$ определена однозначно с точностью до $\mu$ почти везде.
     
-    \subsection{Лемма об образе малых кубических ячеек}
+    \newpage
+        
+    \section{Лемма об образе малых кубических ячеек}
     
         $\Phi : O \subset \mathbb{R}^m \rightarrow \mathbb{R}^m$, $a \in O$. $\Phi$~--- дифференцируема $G$ в окрестности точки $a$, $\det \Phi'(a) \neq 0$. Пусть $c > | \det \Phi'(a) |$. Тогда
         
@@ -959,6 +963,8 @@
         
         Тогда $\int\limits_{A \subset G \text{открытое}} \left( \lambda (G) \sup\limits_{G} f \right) = \lambda A \sup\limits_{A} f$.
         
+    \newpage
+    
     \subsection{Теорема 2}
     
         $\Phi : O \subset \mathbb{R}^m \rightarrow \mathbb{R}^m$~--- диффеоморфизм. $A \in \mathcal{M}^m$, $A \subset O$. Тогда
