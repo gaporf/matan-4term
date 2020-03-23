@@ -16,6 +16,7 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{mathtools}
+\usepackage{MnSymbol,wasysym}
 \graphicspath{ {./images/} }
 
 \doublespacing
@@ -834,21 +835,23 @@
     
     \section{Теорема о вычислении интеграла по взвешенному образу меры}
     
-        $\Phi : X \rightarrow Y$~--- измеримое отображение, $\omega : X \rightarrow \overline{\mathbb{R}}$, $\omega \geqslant 0$~---измеримая на $X$. $\omega$~--- взвешенный образ меры $\nu$. Тогда
+        $\Phi : X \rightarrow Y$~--- измеримое отображение, $\omega : X \rightarrow \overline{\mathbb{R}}$, $\omega \geqslant 0$~---измеримая на $X$. $\nu$~--- взвешенный образ меры $\mu$ ($\omega$~--- её вес). Тогда
         
-        $\forall f \geqslant 0$~--- измеримой на $Y$. $f \circ \Phi$~--- измерима на $X$ и выполняется следующее свойство:
+        $\forall f \geqslant 0$~--- измеримой на $Y$ верно, что $f \circ \Phi$~--- измерима на $X$ и выполняется следующее свойство:
         
-            $\int\limits_Y f(y) d \nu(y) = \int\limits_x f (\Phi(x)) \omega(x) d \mu(x)$.
+        $\int\limits_Y f(y) d \nu(y) = \int\limits_X f (\Phi(x)) \omega(x) d \mu(x)$.
             
-        То же верно для случая $f$~--- суммируемая.
+        \subsection{Замечание}
+        
+            То же верно для случая $f$~--- суммируемая.
     
         \subsection{Доказательство}
         
             \begin{enumerate}
             
-                \item $f = \chi_B$, $B \in \mathcal{B}$. Тогда $f \circ \Phi(x) = \begin{cases} 1 & \Phi(X) \in B \\ 0 & \Phi(x) \notin B \end{cases} = \chi_{\Phi^{-1}(B)}$.
+                \item $f = \chi_B$, $B \in \mathcal{B}$. Тогда $\left(f \circ \Phi \right)(x) = \begin{cases} 1 & \Phi(X) \in B \\ 0 & \Phi(x) \notin B \end{cases} \ = \chi_{\Phi^{-1}(B)}$.
                 
-                    Доказывать нечего (и весёлый смайлик) $\nu B = \int\limits_{\Phi(B)} \omega d \mu$;
+                    Доказывать нечего \smiley{} : $\nu B = \int\limits_{\Phi(B)} \omega d \mu$;
                     
                 \item $f$~-- ступенчатая, для каждой ступеньки~--- правда, и по линейности интеграла получаем результат;
                 
@@ -860,7 +863,7 @@
             
         \subsection{Следствие}
         
-            $f$~--- суммируема на $Y$, $B \in \mathcal{B}$, $\int\limits_B f d \nu(y) = \int\limits_{\Phi^{-1}}(B) f \circ \Phi w d \mu$.
+            $f$~--- суммируема на $Y$, $B \in \mathcal{B}$, $\int\limits_B f d \nu(y) = \int\limits_{\Phi^{-1}}(B) \left(f \circ \Phi\right) w d \mu$.
             
             Частный случай: $X = Y$, $\mathcal{A} = \mathcal{B}$, $\Phi = \mathrm{id}$, $\omega \geqslant 0$~--- измерима.
             
