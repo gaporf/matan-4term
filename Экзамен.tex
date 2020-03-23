@@ -959,13 +959,15 @@
             
     \newpage
     
-    \section{Теорема об образе меры Лебега  при диффеоморфизме}
+    \section{Теорема об образе меры Лебега при диффеоморфизме}
     
         \subsection{Лемма}
     
             $f : \underset{\text{откр.}}{O} \subset \mathbb{R}^m \rightarrow \mathbb{R}$, $O$~--- непрерывное. $A$~--- измеримое, $A \subset Q \subset \overline{Q} \subset O$.
         
             Тогда $\int\limits_{A \subset G \text{открытое}} \left( \lambda (G) \sup\limits_{G} f \right) = \lambda A \sup\limits_{A} f$.
+            
+            Без доказательства.
         
         \subsection{Теорема}
         
@@ -1011,4 +1013,156 @@
                     
             \end{enumerate}
             
+\newpage
+
+\part{23.03.2020}
+
+    У нас давно не было занятий $\smiley{}$:
+    
+    $\forall A \in \mathcal{M}^m$, $\Phi(A)$~--- измерима
+    
+    $\lambda \Phi(A) = \int\limits_A \left| \det \Phi'(x) \right| d \lambda (x)$.
+    
+    $\Phi: X \rightarrow Y$
+    
+    $\nu(E) = \int\limits-{\Phi^{-1}(E)} \omega d \mu$.
+    
+    $E = \Phi(A)$.
+    
+    \subsection{Теорема (самая лучшая теорема, которую и доказывать не надо)}
+    
+        $\Phi: O \subset \mathbb{R}^m \rightarrow \mathbb{R}^m$~--- диффеоморфизм, $f$ ~--- измеримое, $f \geqslant 0$, $\mathcal{O} = \Phi \left( O \right)$. Тогда
+            
+        $\int\limits_{\mathcal{O}} f(y) dy = \int\limits_O f \left(\Phi(x)\right) \left| \det \Phi'(x) \right| dx$.
+            
+        То же верно для суммируемой функции $f$.
+        
+        \subsubsection{Доказательство}
+        
+            Следует из теоремы об образе меры Лебега.
+        
+        \subsection{Примеры}
+        
+            \begin{enumerate}
+            
+                \item Полярные координаты: $\mathbb{R}^2$, $x = r \cos \varphi$, $y = r \sin \varphi$, тогда $\mathcal{I} = r$.
+                
+                \item Цилиндрический координаты: $(r, \varphi, z)$, тогда
+                
+                    $x = r \cos \varphi$,
+                    
+                    $y = r \sin \varphi$,
+                    
+                    $z = z$, тогда
+                    
+                    $\mathcal{I} = r$.
+                    
+                \item Сферические координаты в $\mathbb{R}^3$: 
+                
+                    $x = r \cos \varphi \cos \psi$,
+                    
+                    $y = r \sin \varphi \cos \psi$,
+                    
+                    $z = r \sin \psi$.
+                    
+                    $\mathcal{I} = r \cos \phi$.
+                    
+                    Сферические координаты в $\mathbb{R}^m$:
+                    
+                    $r$~--- расстояние от центра до точки
+                    
+                    $\varphi_1$, $\varphi_2$, $\ldots$, $\varphi_{m - 1}$~--- углы.
+                    
+                    $x_1 = r \cos \varphi_1$,
+                    
+                    $x_2 = r \sin \varphi_1 \cos \varphi_2$,
+                    
+                    $\ldots$,
+                    
+                    $x_m = r \sin \varphi_1 \sin \varphi_2 \ldots \sin \varphi_{m - 1}$.
+                    
+                    $x_1, \ldots, x_m$.
+                    
+                    $x_1, \ldots, x_{m - 2}$, $\rho_{m - 1}$, $\varphi_{m - 1}$, тогда
+                    
+                    $x_{m - 1} = \rho_{m - 1} \cos \varphi_{m - 1}$,
+                    
+                    $x_m = \rho_{m - 1} \sin \varphi_{m - 1}$.
+                    
+                    $\rho_{m - 1} = \rho_{m - 2}$
+                    
+                    $x_{m - 2} = \rho_{m - 2} \cos \varphi_{m - 2}$
+                    
+                    Пусть осталось только $x_1$, тогда $x_1 = r \cos \varphi_1$ и $\rho_2 = r \sin \varphi_1$, т.е. $\rho_1 = r$.
+                    
+                    Потом преобразование интегралов (не понятно на видео)
+                    
+                    $\int dx_1 \ldots dx_m = \int \rho_{m - 1} dx_1 \ldots dx_{m - 2} d\rho_{m - 1} d \varphi_{m - 1} = \int \rho^2_{m - 2} \sin \varphi_{m - 2} dx1\ldots dx_{m - 3} d \rho_{m - 2} d \varphi_{m - 2} d \varphi_{m - 1} = \rho^3_{m - 3} \sin^2 \varphi_{m - 3} \sin \varphi_{m - 2} dx \ldots$
+                    
+                    $r^{m - 1} sin^{m - 2} \varphi_1 \sin^{m - 3} \varphi_2 \ldots \sin \varphi_{m - 2}$~--- это Якобиан
+                
+            \end{enumerate}
+            
+            Примеры при $s$, $t > 0$
+            
+    \subsection{Теорема}
+    
+        $B(s, t) = \int\limits^1_) x^{s - 1} (1 - x)^{t - 1} dx = \dfrac{\Gamma(s) \Gamma(t)}{\Gamma (s + t)}$.
+            
+        \subsubsection{Доказательство}
+            
+            По определению гаммы-функции:
+            
+            $\Gamma(s) \Gamma(t) = \int\limits^{+\infty}_0 x^{s - 1} e^x \left( \int\limits^{+\infty}_0 y^{t - 1} e^{-y}dy \right) dx = \int\limits^{+\infty}_0 x^{s - 1} e^{-x} \int\limits_X (u - x)^{t - 1} e^{-u + x} du dx$, где $y = u - x$.
+            
+            $\int\limits^{+\infty}_0 du \int\limits^u_0 dx x^{s - 1} (u - x)^{t - 1} e^{-u}$, 
+            
+            пусть $x = uv$ получаем
+            
+            $\int\limits^{+\infty}_0 du \int\limits^1_0 dv u^{s - 1} v^{s - 1} u^{t - 1} (1 - v)^{t - 1} u e^{-u} = \int\limits^{+\infty}_0 du u^{s + t - 1} e^{-u} \int\limits^1_0 v^{s - 1}(1 - v)^{t - 1}dv = \Gamma(s + t) B(s, t)$.
+            
+    Пример объём шара в $\mathbb{R}^m$:
+    
+        $\lambda_m B(0, R) = \int\limits_{x_1^2 + \ldots + x_m^2 = R^2} 1 dx$, введём сферические координаты.
+        
+        $\int\limits^R_0 dr \int\limits^{\pi}_0d\varphi_1 \ldots \int\limits^{\pi}_0 d \varphi_{m - 2} \int\limits^{2 \pi}_0 d \varphi_{m - 1} r^{m - 1} \sin^{m - 2} \varphi_1, \sin^{m - 3} \varphi_2 \ldots \sin \varphi_{m - 2}$, а дальше берём бету-функцию и будем счастливы.
+        
+        $\int\limits^{\pi}_0 \left(\sin \varphi_k \right)^{m - 1 - k} = 2 \int\limits^{\pi / 2}_0 t^{\frac{m - 1 - k}{2} - \frac{1}{2}} (1 - t)^{-0.5} dt = B(\frac{m - k}{2}, \frac{1}{2}) =\dfrac{\Gamma\left( \frac{m - k}{2} \right) \Gamma\left( \frac{1}{2} \right)}{\Gamma \left( \frac{m - k}{2} + \frac{1}{2} \right)}$
+   
+\newpage
+
+\part{Функция распределения}
+
+\newpage
+
+    Определение:
+    
+    $\left( X, \mathcal{O}, \mu \right)$, $h : X \rightarrow \overline{\mathbb{R}}$~--- измеримая, пространство конечное.
+    
+    Пусть $\forall t \in \mathbb{R}$, $\mu X(h < t) < +\infty$.
+    
+    $H(t) := \mu X(h < t)$~--- функция распределения функции $h$ по $\mu$.
+    
+    $(H : \mathbb{R} \rightarrow \mathbb{R})$.
+    
+    Очевидно, что $H$ возрастает.
+    
+    $h : X \rightarrow \overline{\mathbb{R}}, \nu := h(\mu)$.
+    
+    $\nu(A) = \mu \left( h^{-1}(A) \right)$
+    
+    Факт, что $h$~--- измеримая.
+    
+    Тогда $\forall B \in \mathcal{B} \left( \mathbb{R} \right)$, $h^{-1} \left( \mathcal{B} \right)$~--- измеримая.
+    
+    $\mu_H[a, b) = H(b - 0) - H(a - 0)$~--- мера Бореля-Стилтьеса.
+    
+    \subsection{Лемма}
+    
+        $h : X \rightarrow \overline{\mathbb{R}}$~--- измеримая, почти везде конечная.
+        
+        $H$~--- функция распределения (корректно заданная), $\forall t$ $\mu X(h < t) < +\infty$.
+        
+        Тогда на $\mathcal{B}$, $\mu_H$ совпадает с $h(\mu)$.
+        
 \end{document}
