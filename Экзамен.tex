@@ -1179,39 +1179,41 @@
 
 \newpage
 
+    \section{Интегральные неравенства Гельдера и Минковского}
+    
+        \begin{enumerate}
+        
+            \item Неравенство Гёльдера:
+        
+                $p$, $q > 1$, $\dfrac{1}{p} + \dfrac{1}{q} = 1$, заданы почти везде, измеримы.
+            
+                $(X, \mathcal{A}, \mu)$, $f$, $g : X \rightarrow \mathbb{C}$ ($\mathbb{R}$). Тогда
+            
+                $\int\limits_X |fg| d \mu \leqslant \left( \int\limits_X |f|^p \right)^{1/p} \left( \int\limits_X |g|^q \right)^{1/q}$
+            
+            \item Неравенство Минковского
+        
+                $(X, \mathcal{A}, \mu)$, $f$, $g : X \rightarrow \mathbb{C}$~--- измерима почти везде, конечна, $1 \leqslant p < +\infty$. Тогда
+            
+                $\left( \int\limits_X |f + g|^p \right)^{1/p} \leqslant \left( \int\limits_X |f|^p \right)^{1/p} + \left( \int\limits_X |g|^p \right)^{1/p}$
+            
+        \end{enumerate}
+        
+    \newpage
+
     Пространство $L^p$:
     
     \begin{enumerate}
     
         \item $(X, \mathcal{A}, \mu)$, $f : X \rightarrow \mathbb{C}$, $f(x) = g(x) + i h(x)$.
         
-            $f$~--- измерима $\Leftrightarrow g = \Re f$ и $h = \Im f$~--- измеримая.
+            $f$~--- измерима $\Leftrightarrow g = \mathrm{Re} f$ и $h = \mathrm{Im} f$~--- измеримая.
             
-            $f$~--- суммируемая $\Leftrightarrow g = \Re f$ и $h = \Im f$~--- суммируемые.
+            $f$~--- суммируемая $\Leftrightarrow g = \mathrm{Re} f$ и $h = \mathrm{Im} f$~--- суммируемые.
             
             $\int\limits_E g d\mu = \int\limits_E g + i \int\limits_E h$.
             
             Вывод: $\left| \int\limits_E f d \mu \right| \leqslant \int\limits_E |f| d\mu$.
-            
-        \item Неравенство Гёльдера:
-        
-            $p$, $q > q$, $\frac{1}{p} + \frac{1}{q} = 1$
-            
-            заданы почти везде, измеримы.
-            
-            $(X, \mathcal{A}, \mu)$, $f$, $g : X \rightarrow \mathbb{C}$ ($\mathbb{R}$)
-            
-            Тогда $\int\limits_X |fg| d mu \leqslant \left( \int\limits_x |f|^p \right)^{1/p} \left( \int\limits_X |f|^q \right)^{1/q}$
-            
-            Ступенчатые функции и Леви.
-            
-        \item Неравенство Минковского
-        
-            $(X, \mathcal{A}, \mu)$, $f$, $g : X \rightarrow \mathbb{C}$~--- измерима почти везде, конечна, $1 \leqslant p < +\infty$.
-            
-            Тогда $\left( \int\limits_X |f + g|^p \right)^{1/p} \leqslant \left( \int\limits_x |f|^p \right)^{1/p} + \left( \int\limits_X |g|^q \right)^{1/q}$
-        
-            Без доказательств.
             
         \item $L^p(X, \mu)$, $1 \leqslant p < |infty$
         
