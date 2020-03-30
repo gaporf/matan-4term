@@ -1091,13 +1091,15 @@
        
     \newpage
     
-    Пример объём шара в $\mathbb{R}^m$:
+    \section{Объем шара в $\mathbb R^m$}
     
         $\lambda_m B(0, R) = \int\limits_{x_1^2 + \ldots + x_m^2 = R^2} 1 dx$, введём сферические координаты.
         
-        $\int\limits^R_0 dr \int\limits^{\pi}_0d\varphi_1 \ldots \int\limits^{\pi}_0 d \varphi_{m - 2} \int\limits^{2 \pi}_0 d \varphi_{m - 1} r^{m - 1} \sin^{m - 2} \varphi_1, \sin^{m - 3} \varphi_2 \ldots \sin \varphi_{m - 2}$, а дальше берём бету-функцию и будем счастливы.
+        $\int\limits^R_0 dr \int\limits^{\pi}_0d\varphi_1 \ldots \int\limits^{\pi}_0 d \varphi_{m - 2} \int\limits^{2 \pi}_0 d \varphi_{m - 1} r^{m - 1} \sin^{m - 2} \varphi_1 \sin^{m - 3} \varphi_2 \ldots \sin \varphi_{m - 2}$, а дальше воспользуемся бетой-функцией.
         
-        $\int\limits^{\pi}_0 \left(\sin \varphi_k \right)^{m - 1 - k} = 2 \int\limits^{\pi / 2}_0 t^{\frac{m - 1 - k}{2} - \frac{1}{2}} (1 - t)^{-0.5} dt = B(\frac{m - k}{2}, \frac{1}{2}) =\dfrac{\Gamma\left( \frac{m - k}{2} \right) \Gamma\left( \frac{1}{2} \right)}{\Gamma \left( \frac{m - k}{2} + \frac{1}{2} \right)}$
+        Пример как вычислять $\sin$ в какой-то степени:
+        
+        $\int\limits^{\pi}_0 \left(\sin \varphi_k \right)^{m - 1 - k} = 2 \int\limits^{\pi / 2}_0 t^{\frac{m - 1 - k}{2} - \frac{1}{2}} (1 - t)^{-0.5} dt = B \left( \frac{m - k}{2}, \frac{1}{2} \right) =\dfrac{\Gamma\left( \frac{m - k}{2} \right) \Gamma\left( \frac{1}{2} \right)}{\Gamma \left( \frac{m - k}{2} + \frac{1}{2} \right)}$.
    
 \newpage
 
