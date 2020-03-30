@@ -1041,70 +1041,40 @@
         
     \newpage
     
-        \subsection{Примеры}
+    \section{Сферические координаты в $\mathbb{R}^m$}
+    
+        $r$~--- расстояние от центра до точки
+                    
+        $\varphi_1$, $\varphi_2$, $\ldots$, $\varphi_{m - 1}$~--- соответствующие углы, определяются по индукции на меньшие подпространства.
+                    
+        $x_1 = r \cos \varphi_1$;
+                    
+        $x_2 = r \sin \varphi_1 \cos \varphi_2$;
+                    
+        $\vdots$
+                    
+        $x_m = r \sin \varphi_1 \sin \varphi_2 \ldots \sin \varphi_{m - 1}$.
+                    
+        $x_1, \ldots, x_m$. Выразим последние две переменные через угол $\varphi_{m - 1}$ и какое-то расстояние $\rho_{m - 1}$.
+                    
+        $x_1, \ldots, x_{m - 2}$, $\rho_{m - 1}$, $\varphi_{m - 1}$, тогда
+                    
+        $x_{m - 1} = \rho_{m - 1} \cos \varphi_{m - 1}$, а $x_m = \rho_{m - 1} \sin \varphi_{m - 1}$.
+    
+        $x_{m - 2} = \rho_{m - 2} \cos \varphi_{m - 2}$.
+                    
+        $\vdots$
+                    
+        Пусть осталось только $x_1$, тогда $x_1 = r \cos \varphi_1$ и $\rho_2 = r \sin \varphi_1$, т.е. $\rho_1 = r$.
+                    
+        $\int dx_1 \ldots dx_m = \int \rho_{m - 1} dx_1 \ldots dx_{m - 2} d\rho_{m - 1} d \varphi_{m - 1} = \int \rho^2_{m - 2} \sin \varphi_{m - 2} dx_1\ldots dx_{m - 3} d \rho_{m - 2} d \varphi_{m - 2} d \varphi_{m - 1} =$
         
-            \begin{enumerate}
-            
-                \item Полярные координаты: $\mathbb{R}^2$, $x = r \cos \varphi$, $y = r \sin \varphi$, тогда $\mathcal{I} = r$.
+        $= \int \rho^3_{m - 3} \sin^2 \varphi_{m - 3} \sin \varphi_{m - 2} dx_1 \ldots = \int r^{m - 1} \sin^{m - 2} \varphi_1 \sin^{m - 3} \varphi_2 \ldots \sin \varphi_{m - 2} \ldots$
+                    
+        $r^{m - 1} sin^{m - 2} \varphi_1 \sin^{m - 3} \varphi_2 \ldots \sin \varphi_{m - 2}$~--- это Якобиан.
                 
-                \item Цилиндрический координаты: $(r, \varphi, z)$, тогда
-                
-                    $x = r \cos \varphi$,
-                    
-                    $y = r \sin \varphi$,
-                    
-                    $z = z$, тогда
-                    
-                    $\mathcal{I} = r$.
-                    
-                \item Сферические координаты в $\mathbb{R}^3$: 
-                
-                    $x = r \cos \varphi \cos \psi$,
-                    
-                    $y = r \sin \varphi \cos \psi$,
-                    
-                    $z = r \sin \psi$.
-                    
-                    $\mathcal{I} = r \cos \phi$.
-                    
-                    Сферические координаты в $\mathbb{R}^m$:
-                    
-                    $r$~--- расстояние от центра до точки
-                    
-                    $\varphi_1$, $\varphi_2$, $\ldots$, $\varphi_{m - 1}$~--- углы.
-                    
-                    $x_1 = r \cos \varphi_1$,
-                    
-                    $x_2 = r \sin \varphi_1 \cos \varphi_2$,
-                    
-                    $\ldots$,
-                    
-                    $x_m = r \sin \varphi_1 \sin \varphi_2 \ldots \sin \varphi_{m - 1}$.
-                    
-                    $x_1, \ldots, x_m$.
-                    
-                    $x_1, \ldots, x_{m - 2}$, $\rho_{m - 1}$, $\varphi_{m - 1}$, тогда
-                    
-                    $x_{m - 1} = \rho_{m - 1} \cos \varphi_{m - 1}$,
-                    
-                    $x_m = \rho_{m - 1} \sin \varphi_{m - 1}$.
-                    
-                    $\rho_{m - 1} = \rho_{m - 2}$
-                    
-                    $x_{m - 2} = \rho_{m - 2} \cos \varphi_{m - 2}$
-                    
-                    Пусть осталось только $x_1$, тогда $x_1 = r \cos \varphi_1$ и $\rho_2 = r \sin \varphi_1$, т.е. $\rho_1 = r$.
-                    
-                    Потом преобразование интегралов (не понятно на видео)
-                    
-                    $\int dx_1 \ldots dx_m = \int \rho_{m - 1} dx_1 \ldots dx_{m - 2} d\rho_{m - 1} d \varphi_{m - 1} = \int \rho^2_{m - 2} \sin \varphi_{m - 2} dx1\ldots dx_{m - 3} d \rho_{m - 2} d \varphi_{m - 2} d \varphi_{m - 1} = \rho^3_{m - 3} \sin^2 \varphi_{m - 3} \sin \varphi_{m - 2} dx \ldots$
-                    
-                    $r^{m - 1} sin^{m - 2} \varphi_1 \sin^{m - 3} \varphi_2 \ldots \sin \varphi_{m - 2}$~--- это Якобиан
-                
-            \end{enumerate}
-            
-            Примеры при $s$, $t > 0$
-            
+    \newpage
+    
     \subsection{Теорема}
     
         $B(s, t) = \int\limits^1_) x^{s - 1} (1 - x)^{t - 1} dx = \dfrac{\Gamma(s) \Gamma(t)}{\Gamma (s + t)}$.
