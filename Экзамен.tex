@@ -1201,21 +1201,25 @@
         
     \newpage
 
-    Пространство $L^p$:
+    \section{Интеграл комплекснозначной функции}
     
-    \begin{enumerate}
-    
-        \item $(X, \mathcal{A}, \mu)$, $f : X \rightarrow \mathbb{C}$, $f(x) = g(x) + i h(x)$.
+        $(X, \mathcal{A}, \mu)$, $f : X \rightarrow \mathbb{C}$, $f(x) = g(x) + i h(x)$.
         
-            $f$~--- измерима $\Leftrightarrow g = \mathrm{Re} f$ и $h = \mathrm{Im} f$~--- измеримая.
+        $f$~--- измерима $\Longleftrightarrow g = \mathrm{Re} f$ и $h = \mathrm{Im} f$~--- измеримые.
             
-            $f$~--- суммируемая $\Leftrightarrow g = \mathrm{Re} f$ и $h = \mathrm{Im} f$~--- суммируемые.
+        $f$~--- суммируемая $\Longleftrightarrow g = \mathrm{Re} f$ и $h = \mathrm{Im} f$~--- суммируемые.
             
-            $\int\limits_E g d\mu = \int\limits_E g + i \int\limits_E h$.
+        $\int\limits_X f = \int\limits_X g + i \int\limits_X h$.
             
-            Вывод: $\left| \int\limits_E f d \mu \right| \leqslant \int\limits_E |f| d\mu$.
+        \subsection{Вывод}
+        
+            $\left| \int\limits_X f d \mu \right| \leqslant \int\limits_X |f| d\mu$.
             
-        \item $L^p(X, \mu)$, $1 \leqslant p < |infty$
+    \newpage
+    
+    Пространство $L^p$:
+            
+        $L^p(X, \mu)$, $1 \leqslant p < |infty$
         
             $\mathcal{L}^p (X, \mu) = \left\{ f : \text{п.в.} X \rightarrow \overline{\mathbb{R}} (\overline{\mathbb{C}}), f \text{~--- измерима}, \int\limits_X |f|^p d \mu < +\infty \right\}$
             
@@ -1230,8 +1234,6 @@
             \end{itemize}
             
             Спасибо инету ИТМО за понятную доску.
-            
-    \end{enumerate}
     
     Существенный супремум.
     
