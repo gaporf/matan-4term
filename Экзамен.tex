@@ -1075,22 +1075,22 @@
                 
     \newpage
     
-    \subsection{Теорема}
+    \section{Формула для Бета-функции}
     
-        $B(s, t) = \int\limits^1_) x^{s - 1} (1 - x)^{t - 1} dx = \dfrac{\Gamma(s) \Gamma(t)}{\Gamma (s + t)}$.
+        $B(s, t) = \int\limits^1_0 x^{s - 1} (1 - x)^{t - 1} dx = \dfrac{\Gamma(s) \Gamma(t)}{\Gamma (s + t)}$.
             
         \subsubsection{Доказательство}
             
             По определению гаммы-функции:
             
-            $\Gamma(s) \Gamma(t) = \int\limits^{+\infty}_0 x^{s - 1} e^x \left( \int\limits^{+\infty}_0 y^{t - 1} e^{-y}dy \right) dx = \int\limits^{+\infty}_0 x^{s - 1} e^{-x} \int\limits_X (u - x)^{t - 1} e^{-u + x} du dx$, где $y = u - x$.
+            $\Gamma(s) \Gamma(t) = \int\limits^{+\infty}_0 x^{s - 1} e^x \left( \int\limits^{+\infty}_0 y^{t - 1} e^{-y}dy \right) dx = \int\limits^{+\infty}_0 x^{s - 1} e^{-x} \int\limits_X (u - x)^{t - 1} e^{-u + x} du dx$, где $y = u - x$, 
             
-            $\int\limits^{+\infty}_0 du \int\limits^u_0 dx x^{s - 1} (u - x)^{t - 1} e^{-u}$, 
-            
-            пусть $x = uv$ получаем
+            $\int\limits^{+\infty}_0 du \int\limits^u_0 dx x^{s - 1} (u - x)^{t - 1} e^{-u}$, заменим $x = uv$ и получим
             
             $\int\limits^{+\infty}_0 du \int\limits^1_0 dv u^{s - 1} v^{s - 1} u^{t - 1} (1 - v)^{t - 1} u e^{-u} = \int\limits^{+\infty}_0 du u^{s + t - 1} e^{-u} \int\limits^1_0 v^{s - 1}(1 - v)^{t - 1}dv = \Gamma(s + t) B(s, t)$.
-            
+       
+    \newpage
+    
     Пример объём шара в $\mathbb{R}^m$:
     
         $\lambda_m B(0, R) = \int\limits_{x_1^2 + \ldots + x_m^2 = R^2} 1 dx$, введём сферические координаты.
