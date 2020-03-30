@@ -1237,9 +1237,7 @@
     
     \section{Существенный супремум}
     
-    $f$ почти всюду $X \rightarrow \mathbb{R}$, $\mathrm{ess}\sup f = \inf \left\{ A \in \overline{\mathbb{R}} : f(x) \in A \text{п.в.} \right\}$.
-    
-    (почти супремум)
+    $f : X \xrightarrow[\text{п.в.}]{} \overline{\mathbb{R}}$, $\mathrm{ess}\sup f = \inf \left\{ A \in \overline{\mathbb{R}} : f(x) \leqslant A \ \text{п.в.} \right\}$.
     
     \subsection{Свойства}
     
@@ -1263,11 +1261,13 @@
             
                 $\forall n \in \mathbb{N}$ верно $f(x) \leqslant M + \frac{1}{n}$ почти везде.
             
-            \item Очевидно $\left| \int\limits_X fg \right| \leqslant \int\limits_x |fg|$,
+            \item Очевидно $\left| \int\limits_X fg \right| \leqslant \int\limits_X |fg|$,
             
                 $|fg| \leqslant M|g|$ почти везде.
             
         \end{enumerate}
+        
+    \newpage
         
     Тогда определим $\mathcal{L}^{\infty} (X, \mu) = \left\{ f : \text{п.в.} X \rightarrow \mathbb{R} (\mathbb{C}) : \text{изм.}, \mathrm{ess}\sup |f| < +\infty \right\}$
     
