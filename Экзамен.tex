@@ -1239,54 +1239,55 @@
     
     $f : X \xrightarrow[\text{п.в.}]{} \overline{\mathbb{R}}$, $\mathrm{ess}\sup f = \inf \left\{ A \in \overline{\mathbb{R}} : f(x) \leqslant A \ \text{п.в.} \right\}$.
     
-    \subsection{Свойства}
+        \subsection{Свойства}
     
-        \begin{enumerate}
+            \begin{enumerate}
         
-            \item $\mathrm{ess} \sup f \leqslant \sup f$;
+                \item $\mathrm{ess} \sup f \leqslant \sup f$;
             
-            \item $f(x) \leqslant \mathrm{ess} \sup f$ при почти всех $x$;
+                \item $f(x) \leqslant \mathrm{ess} \sup f$ при почти всех $x$;
             
-            \item $\left| \int\limits_\mathbb{R} fg \right| \leqslant \mathrm{ess} \sup |f| \cdot \int\limits_X |g|$.
+                \item $\left| \int\limits_\mathbb{R} fg \right| \leqslant \mathrm{ess} \sup |f| \cdot \int\limits_X |g|$.
             
-        \end{enumerate}
+            \end{enumerate}
         
-    \subsubsection{Доказательство}
+            \subsubsection{Доказательство}
     
-        \begin{enumerate}
+                \begin{enumerate}
         
-            \item Очевидно
+                    \item Очевидно
             
-            \item $M = \mathrm{ess}\sup f$
+                    \item $M = \mathrm{ess}\sup f$
             
-                $\forall n \in \mathbb{N}$ верно $f(x) \leqslant M + \frac{1}{n}$ почти везде.
+                        $\forall n \in \mathbb{N}$ верно $f(x) \leqslant M + \frac{1}{n}$ почти везде.
             
-            \item Очевидно $\left| \int\limits_X fg \right| \leqslant \int\limits_X |fg|$,
+                    \item Очевидно $\left| \int\limits_X fg \right| \leqslant \int\limits_X |fg|$,
             
-                $|fg| \leqslant M|g|$ почти везде.
+                        $|fg| \leqslant M|g|$ почти везде.
             
-        \end{enumerate}
+                \end{enumerate}
         
     \newpage
-        
-    Тогда определим $\mathcal{L}^{\infty} (X, \mu) = \left\{ f : \text{п.в.} X \rightarrow \mathbb{R} (\mathbb{C}) : \text{изм.}, \mathrm{ess}\sup |f| < +\infty \right\}$
     
-    $f$, $g \in \mathcal{L}^{\infty} \Rightarrow f + g \in \mathcal{L}^{\infty}$.
-    
-    т.е. $\mathcal{L}^{\infty}$~--- линейное пространство, норма $\| f |\ = \mathrm{ess}\sup\limits_x |f|$.
-    
-    $\mathrm{ess}\sup |f + g| \leqslant \mathrm{ess}\sup |f| + \mathrm{ess}\sup |g|$.
-    
-    \subsubsection{Замечание}
-    
-        $\| fg \|_1 \leqslant \| f \|_p \| g \|_q$~--- неравенство Гёльдера.
+    \section{Пространство $L^\infty(E,\mu)$}
         
-        $\smiley{}$, можно брать $p = 1$ и $q = +\infty$.
+        $\mathcal{L}^{\infty} (X, \mu) = \left\{ f : X \xrightarrow[\text{п.в.}]{} \mathbb{R} (\mathbb{C}), f \text{~--- измерима}, \mathrm{ess}\sup |f| < +\infty \right\}$
+    
+        $f$, $g \in \mathcal{L}^{\infty} \Rightarrow f + g \in \mathcal{L}^{\infty}$.
+    
+        т.е. $\mathcal{L}^{\infty}$~--- линейное пространство, норма $\| f \|_{\infty} = \mathrm{ess}\sup\limits_x |f|$.
+    
+        $\mathrm{ess}\sup |f + g| \leqslant \mathrm{ess}\sup |f| + \mathrm{ess}\sup |g|$.
+    
+        \subsection{Замечание}
+    
+            $\| fg \|_1 \leqslant \| f \|_p \| g \|_q$~--- неравенство Гёльдера (можно брать $p = 1$ и $q = +\infty$).
         
-        $f \in \mathcal{L}^p (X, \mu)$, $1 \leqslant p \leqslant +\infty$
-        
-        $\Rightarrow f$~--- почти всюду конечно $\Rightarrow$ можно считать, что $f$ задана почти всюду на $X$ и всюду конечна.
-        
+            $f \in \mathcal{L}^p (X, \mu)$, $1 \leqslant p \leqslant +\infty$, $\Rightarrow f$~--- почти всюду конечно $\Rightarrow$ можно считать, что $f$ задана почти всюду на $X$ и всюду конечна.
+    
+    \newpage
+    
+            
         $l^^ \left( [0, 1], \lambda \right)$, $f(x) =$ квадратная скобка $\frac{1}{\sqrt{x}}, x \neq 0$ и $+\infty$, $x = 0$.
         
         $\int\limits^1_0 \frac{1}{\sqrt{x}} < +\infty$, $\dfrac{1}{\sqrt{x}} \in L^^ $.
