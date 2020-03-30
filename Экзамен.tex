@@ -1107,57 +1107,47 @@
 
 \newpage
 
-    Определение:
+    \section{Теорема о вычислении интеграла по мере Бореля---Стилтьеса (с леммой)}
     
-    $\left( X, \mathcal{O}, \mu \right)$, $h : X \rightarrow \overline{\mathbb{R}}$~--- измеримая, пространство конечное.
-    
-    Пусть $\forall t \in \mathbb{R}$, $\mu X(h < t) < +\infty$.
-    
-    $H(t) := \mu X(h < t)$~--- функция распределения функции $h$ по $\mu$.
-    
-    $(H : \mathbb{R} \rightarrow \mathbb{R})$.
-    
-    Очевидно, что $H$ возрастает.
-    
-    $h : X \rightarrow \overline{\mathbb{R}}, \nu := h(\mu)$.
-    
-    $\nu(A) = \mu \left( h^{-1}(A) \right)$
-    
-    Факт, что $h$~--- измеримая.
-    
-    Тогда $\forall B \in \mathcal{B} \left( \mathbb{R} \right)$, $h^{-1} \left( \mathcal{B} \right)$~--- измеримая.
-    
-    $\mu_H[a, b) = H(b - 0) - H(a - 0)$~--- мера Бореля-Стилтьеса.
-    
-    \subsection{Лемма}
-    
-        $h : X \rightarrow \overline{\mathbb{R}}$~--- измеримая, почти везде конечная.
+        \subsection{Определение}
         
-        $H$~--- функция распределения (корректно заданная), $\forall t$ $\mu X(h < t) < +\infty$.
+            $\left( X, \mathcal{O}, \mu \right)$, $h : X \rightarrow \overline{\mathbb{R}}$~--- измеримая, пространство конечное.
+    
+            Пусть $\forall t \in \mathbb{R}$, $\mu X(h < t) < +\infty$.
+    
+            $H(t) := \mu X(h < t)$~--- функция распределения функции $h$ по $\mu$ $(H : \mathbb{R} \rightarrow \mathbb{R})$.
+    
+            Очевидно, что $H$ возрастает, $h : X \rightarrow \overline{\mathbb{R}}$, $\nu := h(\mu)$, $\nu(A) = \mu \left( h^{-1}(A) \right)$.
+    
+            Пусть $h$~--- измеримая, тогда $\forall B \in \mathcal{B} \left( \mathbb{R} \right)$, $h^{-1} \left( \mathcal{B} \right)$~--- измеримая.
+    
+            $\mu_H[a, b) = H(b - 0) - H(a - 0)$~--- \textit{мера Бореля-Стилтьеса}.
+    
+        \subsection{Лемма}
+    
+            $h : X \rightarrow \overline{\mathbb{R}}$~--- измеримая, почти везде конечная.
         
-        Тогда на $\mathcal{B}$, $\mu_H$ совпадает с $h(\mu)$.
+            $H$~--- функция распределения (корректно заданная), $\forall t$ $\mu X(h < t) < +\infty$.
         
-        Это очевидно $\smiley{}$.
+            Тогда на $\mathcal{B}$, $\mu_H$ совпадает с $h(\mu)$.
         
-        Если потрудитесь хоть как-то расшифровать, то получится, что написана тут тривиальность.
+        \subsubsection{Доказательство}
         
-        \subsection{Доказательство}
-        
-            $\mu_h[a, gg) = H(b - 0) - H(a - 0) = H(b) - H(a)$~--- непрерывность меры снизу.
+            $\mu_h[a, b) = H(b - 0) - H(a - 0) = H(b) - H(a)$~--- непрерывность меры снизу.
             
             $H(b) - H(a) = \mu X(a \leqslant h < b) = \mu \left( h^{-1} [a, b) \right) = \nu [a, b]$, где $\nu = h(\mu)$
             
             Значит $\mu_H = \nu$ на $\mathcal{B}$.
             
-    \subsection{Теорема}
+        \subsection{Теорема}
     
-        $f : \mathbb{R} \rightarrow \mathbb{R}$, $\geqslant 0$, измеримое по Борелю.
+            $f : \mathbb{R} \rightarrow \mathbb{R}$, $\geqslant 0$, измеримое по Борелю.
         
-        $h : X \rightarrow \overline{\mathbb{R}}$, измеримая, почти везде конечная, с функцией распределения $H$.
+            $h : X \rightarrow \overline{\mathbb{R}}$, измеримая, почти везде конечная, с функцией распределения $H$.
         
-        $\mu_H$~--- мера Бореля-Стилтьеса. Тогда
+            $\mu_H$~--- мера Бореля-Стилтьеса. Тогда
         
-        $\int\limits_X f \left( h(x) \right) d \mu(x) = \int\limits_{\mathbb{R}} f(t) d \mu_H (t)$.
+            $\int\limits_X f \left( h(x) \right) d \mu(x) = \int\limits_{\mathbb{R}} f(t) d \mu_H (t)$.
         
         \subsubsection{Доказательство}
         
@@ -1169,19 +1159,19 @@
             
             $\int\limits_Y f(y) d \nu = \int\limits_X f(\Phi(x)) 1 d \mu(x)$.
             
-    Путь $f \geqslant 0$, измеримая, $\mathbb{R} \rightarrow \mathbb{R}$.
+        Путь $f \geqslant 0$, измеримая, $\mathbb{R} \rightarrow \mathbb{R}$.
     
-    $\int\limits_{\mathbb{R}^m} f \left( | x | \right) d \lambda_m = \int\limits_0^{+\infty} f(t) d \mu_H$ при $h(x) = |x|$, где $H(r) = \mu \mathbb{R}^m \left( |x| < r \right) = \alpha_m r^m$.
+        $\int\limits_{\mathbb{R}^m} f \left( | x | \right) d \lambda_m = \int\limits_0^{+\infty} f(t) d \mu_H$ при $h(x) = |x|$, где $H(r) = \mu \mathbb{R}^m \left( |x| < r \right) = \alpha_m r^m$.
     
-    $\mu_H [a, b) = H(b) - H(a) = \int\limits^b_a H'(t) dt = \int\limits^b_a m \alpha_m t^{m - 1} dt$.
+        $\mu_H [a, b) = H(b) - H(a) = \int\limits^b_a H'(t) dt = \int\limits^b_a m \alpha_m t^{m - 1} dt$.
     
-    $\mu_H$ и мера $\nu : \nu(A) = \int\limits_A m \alpha_m t^{m - 1} dt$, значит $\mu_h = \nu$ на $\mathcal{B}$. 
+        $\mu_H$ и мера $\nu : \nu(A) = \int\limits_A m \alpha_m t^{m - 1} dt$, значит $\mu_h = \nu$ на $\mathcal{B}$. 
     
-    $\int\limits^{+\infty}_0 f(t) m \alpha_m t^{m - 1} dt$.
+        $\int\limits^{+\infty}_0 f(t) m \alpha_m t^{m - 1} dt$.
     
-        \subsubsection{Следствие}
+            \subsubsection{Следствие}
         
-            Мы проверили, что $g$ возрастает, $g \in C^1 \left( \mathbb{R} \right)$ и $M_g(A) = \int\limits_A g'(x) dx$.
+                Мы проверили, что $g$ возрастает, $g \in C^1 \left( \mathbb{R} \right)$ и $M_g(A) = \int\limits_A g'(x) dx$.
             
 \newpage
 
