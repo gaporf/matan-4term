@@ -1225,13 +1225,15 @@
         
         \begin{itemize}
             
-            \item $\mathcal{L}^p (X, \mu)$~--- линейное пространство~---по н. Минковского;
+            \item $\mathcal{L}^p (X, \mu)$~--- линейное пространство~--- по н. Минковского;
             
             \item Введём норму $\| f \| = \left( \int\limits_X |f|^p \right)^{1/p}$;
             
             \item $f$ эквивалентно $g$ если $f(x) = g(x)$ при почти всех $x$
                 
         \end{itemize}
+        
+        $L^p$~--- уберём из $\mathcal{L}$ все одинаковые функции, оставив только одного представителя из каждого класса эквивалентности.
             
     \newpage
     
@@ -1307,6 +1309,8 @@
                 
                 \item $r = \infty$~--- очевидно
                 
+                    $r$~--- конечно, тогда:
+                
                     $\| f \|_s = \left( \int\limits_X |f|^s \right)^{\frac{1}{s}} \leqslant \left( \int\limits_X \| f ||^s_{\infty} \right)^{\frac{1}{s}}$
                     
                     $|f| \leqslant \mathrm{ess}\sup f = \| f \|_{\infty} = \| f \|_{\infty} \mu X^{1/s}$
@@ -1316,5 +1320,82 @@
                     $\left( \int\limits_X \left( |f|^s \right)^{r/s} \right)^{s/r} \left( \int\limits_X 1 \right)^{\frac{r - s}{r}} = \left( \int\limits_x |f|^r \right)^{s/r} \left( \mu X \right)^{1 - \frac{s}{r}}$.
                 
             \end{enumerate}
+            
+        \subsection{Следствие}
         
+            $\mu E < +\infty$, $1 \geqslant s < r \geqslant +\infty$.
+            
+            $f_n$, $f \in L^s$, $f_n \rightarrow f$ на $L^r$. Тогда $f_n \rightarrow f$ на $L^s$.
+            
+        \subsubsection{Доказательство}
+        
+            очевидно, потому что $\| f \|_s \leqslant \mu E^{\frac{1}{s} - \frac{1}{r}} \| f \|_r$.
+
+\newpage
+
+\part{Поверхностный интеграл}
+
+    \subsection{Определение}
+    
+        $M$~--- просто гладкое двумерное многообразие в $\mathbb{R}^3$.
+        
+        $\varphi : O \subset \mathbb{R}^2 \rightarrow \mathbb{R}^3$~--- параметризация.
+        
+        $E \subset M$~--- измеримое (по Лебегу), если его $\varphi^{-1}(E)$~--- измерим в $\mathbb{R}^2$.
+        
+        $\mathcal{A}_M = \left\{ E \subset M, E \text{~--- изм.} \right\}$~--- $\sigma$-алгебра.
+        
+        мера на $\mathcal{A}_M$, $S(E) = \iint\limits_{\varphi^{-1}(E)} \left| \varphi'_u \times \varphi'_v \right| du dv$.
+        
+    \subsection{Пример}
+    
+        $E \subset M$~--- компактное, $\varphi : O \rightarrow M$~--- гомеоморфизм.
+        
+        компактно, значит лежит в $\mathcal{A}_m$.
+        
+        замкнутые измеримы, значит и открытые измеримы.
+        
+        Замечание: определение $S(E)$ не зависит от параметризации.
+        
+    \subsection{Определение}
+    
+        $f : M \rightarrow \mathbb{R}$~--- измеримая, если измерима $f \circ \varphi$ на $O$.
+        
+        $\left\{ x \in M, f(x) < a \right\} = M(f < a)$
+        
+        на $\varphi^{-1}(E)$ $f(\varphi(u, v)) < a$.
+        
+    \subsection{Определение}
+    
+        Поверхностный интеграл $I$ рода:
+        
+        $M$~--- простое двумерное гладкое многообразие, $\varphi$~--- гладкая параметризация, $f : M \rightarrow \overline{\mathbb{R}}$, $f \geqslant 0$, измеримая, тогда
+        
+        $\iint\limits_M f ds$~--- Поверхностный интеграл $I$ рода.
+        
+        $\iint\limits_M f ds = \iint\limits_{\varphi^{-1} M} f(x(u, v), y(u, v), z(u, v)) | \varphi'_u \times \varphi'_v | dv du$.
+        
+        Пример: $M$~--- график гладкой функции, $G \subset \mathbb{R}^2$, $f : G \rightarrow\mathbb{R}$, $M = \left\{(x, y, f(x, y)) : (x, y) \in G \right\}$.
+        
+        $\int\limits_M 1 ds$, параметризация: $\varphi(u, v) = (u, v, f(u, v))$.
+        
+        $| \varphi'_u \times \varphi'_v | = \sqrt{1 + f'^2_u + f'^2_v}$.
+        
+        $\int\limits_M hds = \iint\limits_G h(u, v, f(u, v)) \sqrt{1 + h'^2_u + h'^2_v} du dv$.
+        
+    \subsection{Определение}
+    
+        $M \subset \mathbb{R}^3$~--- кусочно-гладкое многообразие в $\mathbb{R}^3$
+        
+        $M$~--- объекты конечного числа элементов~--- простое двумерное гладкое многообразия, гладкая кривая~--- простое $k$-мерное многообразие в $\mathbb{R}^3$, точки.
+        
+        $M = \bigsqcup M_i \bigsqcup l_i \bigsqcup p_i$.
+        
+        $S(E) = \sum S(E \bigcap M_i)$.
+        
+\newpage
+
+\part{Преобразование Фурье}
+
+    
 \end{document}
