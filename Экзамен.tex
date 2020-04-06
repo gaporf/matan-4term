@@ -1397,5 +1397,160 @@
 
 \part{Преобразование Фурье}
 
+    \subsection{Теорема о сходимости в пространствах $L^p$ и по мере}
     
+        $1 \leqslant p < +\infty$, $f_n$, $f \in L^p(X, \mu)$.
+        
+        \begin{enumerate}
+        
+            \item $f_n \rightarrow f$ в $L^p$, тогда $f_n \rightrightarrows f$ по мере $\mu$.
+            
+            \item $f_n \rightrightarrows f$ по мере $\mu$ (либо $f_n \rightarrow f$ почти везде).
+                
+                Если $\exists g \in L^p : |f_n| \leqslant g$. Тогда $f_n \rightarrow f$ в $L^p$.
+            
+        \end{enumerate}
+        
+        \subsubsection{Доказательство}
+            
+            \begin{enumerate}
+            
+                \item $X_n(\varepsilon) := X \left( |f_n - f| \geqslant \varepsilon \right)$.
+            
+                    $\mu X_n(\varepsilon) = \int\limits_{X_n(\varepsilon)} 1 \leqslant \dfrac{1}{\varepsilon^p} \int\limits_{X_n(\varepsilon)} |f_n - f| d \mu \leqslant \dfrac{1}{\varepsilon^p} \| f_n - f \|^p_p \rightarrow 0$.
+            
+                \item $f_n \rightrightarrows f$, тогда $f_{n_k} \rightarrow f$ п.в.. Тогда $|f| \leqslant g$ п.в. $|f_n - f|^p \leqslant (1g)^p$, $\| f_n - f \|^p_p = \int\limits_X |f_n - f|^p d\mu \rightarrow 0$ по теореме Лебега.
+                
+            \end{enumerate}
+    
+    \subsection{Теорема}
+    
+        $L^P(X, \mu)$, $1 \leqslant p < +\infty$~--- полное.
+        
+        \subsubsection{Доказательство}
+        
+            $f_n$~--- фундаментальная. 
+            
+            Для $\varepsilon = \frac{1}{2}$ $\exists N_1$ при $n = n_1 > N_1$, $\forall k > n_1$ $\| f_{n_1} - f_k \| < \frac{1}{2}$.
+            
+            Для $\varepsilon = \frac{1}{4}$ $\exists N_2 > n1$ при $n = n_2 > N_2$, $\forall k > n_2$ $\| f_{n_2} - f_k \| < \frac{1}{4}$.
+            
+            $\varepsilon = \dfrac{1}{2^m}$ $\exists N_m > n_m$ при $n = n_m > N_m$, $\forall k > n_m$ $\| f_{n_m} - f_k \| < \dfrac{1}{2^m}$.
+            
+            Таким образом, $\sum\limits_{k = 1}^{+\infty} \| f_{n_{k + 1}} - f_{n_k} \|_p < 1$.
+            
+            Рассмотрим $S(x) = \sum\limits_{k = 1}^{+\infty} | f_{n_{k + 1}}(x) - f_{n_k}(x) | \in [0, +\infty]$.
+            
+            $S_n$, $\| S_n \|_p \leqslant \sum \| f_{n_{k + 1}} - f_{n_k} \|$
+            
+            $S_n$, $\| S_n \|_p \leqslant \sum\limits^N_{k = 1} \| f_{n_{k + 1}} - f_{n_k} \|_p < 1$.
+            
+            $\int\limits_X S_n^p \leqslant 1$, по т. Фату $\int S^p \leqslant 1$, тогда $S^p$~--- сходится, значит $S$ конечно почти везде, тогда
+            
+            $\sum \left( f_{n_{k + 1}}  f_{n_k} \right)$~--- сходится почти везде.
+            
+            $f(x) := f_{n_1} + \sum\limits_{k = 1}^{+\infty} \left( f_{n_{k + 1}} - f_{n_k} \right)$~--- сходится с потрам
+            
+            $f_{n_1} + \sum\limits_{k = 1}^{m - 1} \left( f_{n_{k + 1}} - f_{n_k} \right) = f_{n_m}$.
+            
+            $f_{n_m} \rightarrow f$ почти везде.
+            
+            Проверим, что $\| f_n - f \|_p \rightarrow 0$.
+            
+            $\forall \varepsilon > 0$ $\exists N$ $\forall m, n > N$ $\| f_n - f_m \|_p < \varepsilon$
+            
+            $\| f_n - f_{n_k} \|^p_p = \int\limits_X |f_n - f_{n_k}|^p d\mu < \varepsilon^p$ верно при всех больших $k$.
+            
+            по теорему Фату: $\int\limits_X |f_n - f|^p d\mu < \varepsilon^P$, т.е. $\| f_n - f \|_p < \varepsilon$, т.е. $f_n \rightarrow f$ в $L^p$.
+            
+    \subsection{Всюду плотное множество}
+    
+        $Y$~--- множество, $\mathcal{A} \subset Y$~--- (всюду) плотное множество, если $\forall y \in Y$ $\forall U(y)$ верно $U(y) \bigcap \mathcal{A} \neq \varnothing$.
+        
+        Пример: $\mathcal{A} = \mathbb{Q} \subset Y = \mathbb{R}$.
+        
+    \subsection{Лемма} 
+    
+        $(X, \mathcal{A}, \mu)$, $1 \leqslant p \leqslant +\infty$
+        
+        Тогда
+        
+        $\left\{ f \in L^p : f \text{~--- ступ.} \right\}$~--- плотно $L^p$.
+        
+        \subsubsection{Замечание}
+    
+            $p < +\infty$, $\varphi \in L^p$~--- ступенчатая, тогда $\mu X(\varphi \neq 0) < +\infty$.
+        
+        \subsubsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $p = +\infty$, $f \in L^{\infty}$, подменим $f$ на множество меры $0 : |f| \leqslant \| f \|_{\infty}$ всюду.
+                
+                    $\exists$ ступ. $\varphi_n \rightrightarrows f_+$, $\psi_m \rightrightarrows f_-$, т.е. $\| \varphi_n - f_+ \|_{\infty} \rightarrow 0$, $\varphi_n \rightarrow f_+$ в $C^{\infty}$, $\psi_m \rightarrow f_-$.
+                
+                \item $p < +\infty$, $f \geqslant 0$, $\exists \varphi_n$~--- ступенчатая, $\varphi_n \rightarrow f$ всюду.
+                
+                $\| \varphi_n - f \|^p_p = \int\limits_X |\varphi_n - f|^p d \mu \rightarrow 0$, $| \varphi - f|^p \leqslant |f|^p$.
+                
+            \end{enumerate}
+            
+    \subsection{Определение}
+        
+        $X$~--- топологическое пространство
+        
+            $\forall F_1$, $F_2$~--- замкнутых подмножеств, $F_1 \bigcap F_2 = \varnothing$.
+            
+            $\exists$ открытые $U(F_1)$, $U(F_2)$~--- которые не пересекаются~--- это свойство $X$ называются нормальностью (дополнительно требуется, чтобы $\forall y \in X$ $\left\{ y \right\}$~--- замкнутое).
+            
+    \subsection{Лемма Урысона}
+        
+        $X$~--- норм, $F_0$, $F_1$~--- замкнута, $F_0 \bigcap F_1 = \varnothing$.
+        
+        Тогда $\exists f : X \rightarrow \mathbb{R}$, $0 \leqslant f \leqslant 1$, непрерывное.
+        
+        $f|_{F_0} = 0$, $f_{F_1} = 1$.
+        
+        \subsection{Доказательство}
+        
+            Переформулируем нормальность:
+            
+            $\forall F_1$~--- замкнутого, $\subset G$~--- открытого, $\exists U(F_1)$~--- открытое, что выполняется $F_1 \subset U(F_1) \subset \overline{U(F_1)} \subset G$.
+            
+            \begin{enumerate}
+            
+                \item $F_0 \subset U(F_0) \subset \overline{U(F_1)} \subset F_1^C$
+                
+                \item $\overline{G_0} \subset U(\overline{G_0}) \subset G_1$
+                
+                \item $\overline{G_0} \subset U'(\overline{G}_0) \subset \overline{U'(\overline{G_0})} \subset G_{1/2}$
+                
+                $G_{1/2} \subset U(\overline{G}_{1/2}) \subset \overline{U} \subset G_1$, где $U(\overline{G}_{1/2}) = G_{3/4}$.
+                
+            \end{enumerate}
+            
+            $f$~--- непрерывна, значит $f^{-1}(a, b)$~--- открыто. Достаточно проверить, что:
+            
+            \begin{enumerate}
+            
+                \item $f^{-1}(-\infty, s)$~--- открыто;
+                
+                \item $f^{-1}(-\infty, s)$~--- замкнуто.
+                
+            \end{enumerate}
+            
+            $f^{-1}(a, b) = f^{-1}(-\infty, b) \setminus f^{-1}(-\infty, a)$.
+            
+            \begin{enumerate}
+            
+                \item $\forall s : f^{-1} (-\infty, s) = \bigcup\limits_{q \in s, q\text{-дв. рац.}} G_q$~--- открыто.
+                
+                    $\subset$ $f(y) < S$, где $f(y) = \inf \left\{ q : x \in G_q \right\}$.
+                    
+                    $\supset$ $x \in \text{ЛЧ}$, $f(x) = S_0 < q_1 < S$, $x \in G_{q_1}$.
+                    
+                \item 
+                
+            \end{enumerate}
+            
 \end{document}
