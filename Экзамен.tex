@@ -1385,9 +1385,9 @@
 
 \part{Преобразование Фурье}
 
-    \subsection{Теорема о сходимости в пространствах $L^p$ и по мере}
+    \section{Теорема о сходимости в пространствах $L^p$ и по мере}
     
-        $1 \leqslant p < +\infty$, $f_n$, $f \in L^p(X, \mu)$.
+        $1 \leqslant p < +\infty$, $f_n$, $f \in L^p(X, \mu)$. Тогда верны следующие утверждения:
         
         \begin{enumerate}
         
@@ -1399,17 +1399,19 @@
             
         \end{enumerate}
         
-        \subsubsection{Доказательство}
+        \subsection{Доказательство}
             
             \begin{enumerate}
             
                 \item $X_n(\varepsilon) := X \left( |f_n - f| \geqslant \varepsilon \right)$.
             
-                    $\mu X_n(\varepsilon) = \int\limits_{X_n(\varepsilon)} 1 \leqslant \dfrac{1}{\varepsilon^p} \int\limits_{X_n(\varepsilon)} |f_n - f| d \mu \leqslant \dfrac{1}{\varepsilon^p} \| f_n - f \|^p_p \rightarrow 0$.
+                    $\mu X_n(\varepsilon) = \int\limits_{X_n(\varepsilon)} 1 \leqslant \dfrac{1}{\varepsilon^p} \int\limits_{X_n(\varepsilon)} |f_n - f|^p d \mu \leqslant \dfrac{1}{\varepsilon^p} \| f_n - f \|^p_p \rightarrow 0$.
             
-                \item $f_n \rightrightarrows f$, тогда $f_{n_k} \rightarrow f$ п.в.. Тогда $|f| \leqslant g$ п.в. $|f_n - f|^p \leqslant (1g)^p$, $\| f_n - f \|^p_p = \int\limits_X |f_n - f|^p d\mu \rightarrow 0$ по теореме Лебега.
+                \item $f_n \rightrightarrows f$, тогда $f_{n_k} \rightarrow f$ п.в.. Тогда $|f| \leqslant g$ п.в. $|f_n - f|^p \leqslant (2g)^p$, $\| f_n - f \|^p_p = \int\limits_X |f_n - f|^p d\mu \rightarrow 0$ по теореме Лебега.
                 
             \end{enumerate}
+    
+    \newpage
     
     \subsection{Теорема}
     
