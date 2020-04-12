@@ -1455,37 +1455,41 @@
     
     \newpage
     
-    \subsection{Всюду плотное множество}
+    \section{Плотность в $L^p$ множества ступенчатых функций}
     
-        $Y$~--- множество, $\mathcal{A} \subset Y$~--- (всюду) плотное множество, если $\forall y \in Y$ $\forall U(y)$ верно $U(y) \bigcap \mathcal{A} \neq \varnothing$.
+        \subsection{Определение}
         
-        Пример: $\mathcal{A} = \mathbb{Q} \subset Y = \mathbb{R}$.
+            $Y$~--- множество, $\mathcal{A} \subset Y$~--- (всюду) плотное множество, если $\forall y \in Y : \forall U(y)$ верно $U(y) \bigcap \mathcal{A} \neq \varnothing$.
         
-    \subsection{Лемма} 
+            Пример: $\mathcal{A} = \mathbb{Q} \subset Y = \mathbb{R}$.
+        
+        \subsection{Лемма} 
     
-        $(X, \mathcal{A}, \mu)$, $1 \leqslant p \leqslant +\infty$
+            $(X, \mathcal{A}, \mu)$, $1 \leqslant p \leqslant +\infty$
         
-        Тогда
+            Тогда
         
-        $\left\{ f \in L^p : f \text{~--- ступ.} \right\}$~--- плотно $L^p$.
+            $\left\{ f \in L^p : f \text{~--- ступ.} \right\}$~--- плотно $L^p$.
         
-        \subsubsection{Замечание}
+            \subsubsection{Замечание}
     
-            $p < +\infty$, $\varphi \in L^p$~--- ступенчатая, тогда $\mu X(\varphi \neq 0) < +\infty$.
+                $p < +\infty$, $\varphi \in L^p$~--- ступенчатая, тогда $\mu X(\varphi \neq 0) < +\infty$.
         
-        \subsubsection{Доказательство}
+            \subsubsection{Доказательство}
         
-            \begin{enumerate}
+                \begin{enumerate}
             
-                \item $p = +\infty$, $f \in L^{\infty}$, подменим $f$ на множество меры $0 : |f| \leqslant \| f \|_{\infty}$ всюду.
+                    \item $p = +\infty$, $f \in L^{\infty}$, подменим $f$ на множество меры $0 : |f| \leqslant \| f \|_{\infty}$ всюду.
                 
-                    $\exists$ ступ. $\varphi_n \rightrightarrows f_+$, $\psi_m \rightrightarrows f_-$, т.е. $\| \varphi_n - f_+ \|_{\infty} \rightarrow 0$, $\varphi_n \rightarrow f_+$ в $C^{\infty}$, $\psi_m \rightarrow f_-$.
+                        $\exists$ ступ. $\varphi_n \rightrightarrows f_+$, $\psi_m \rightrightarrows f_-$, т.е. $\| \varphi_n - f_+ \|_{\infty} \rightarrow 0$, $\varphi_n \rightarrow f_+$ в $C^{\infty}$, $\psi_m \rightarrow f_-$.
                 
-                \item $p < +\infty$, $f \geqslant 0$, $\exists \varphi_n$~--- ступенчатая, $\varphi_n \rightarrow f$ всюду.
+                    \item $p < +\infty$, $f \geqslant 0$, $\exists \varphi_n$~--- ступенчатая, $\varphi_n \rightarrow f$ всюду.
                 
-                $\| \varphi_n - f \|^p_p = \int\limits_X |\varphi_n - f|^p d \mu \rightarrow 0$, $| \varphi - f|^p \leqslant |f|^p$.
+                        $\| \varphi_n - f \|^p_p = \int\limits_X |\varphi_n - f|^p d \mu \rightarrow 0$, $| \varphi - f|^p \leqslant |f|^p$.
                 
-            \end{enumerate}
+                \end{enumerate}
+                
+    \newpage
             
     \subsection{Определение}
         
