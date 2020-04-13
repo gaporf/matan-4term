@@ -1547,4 +1547,106 @@
                 
             \end{enumerate}
             
+\newpage
+
+\part{Поверхностный интеграл II рода}
+
+    Поверхность~--- простое гладкое двумерное многообразие.
+    
+    \subsection{Определение}
+    
+        Сторона поверхности (гладкой)~--- непрерывное векторное поле единичных нормалей к поверхности.
+        
+        Если не существует непрерывного поля единичных нормалей, то такая поверхность~--- односторонняя.
+        
+    \subsection{Пример}
+    
+        График $z = z(x, y)$, $(x, y) \in \Omega \in \mathbb{R}^2$.
+        
+        $x = x$, $y = y$, $z = z(x, y)$,
+        
+        $(1, 0, z'_x) \times (0, 1, z'_y) = (-z'_x, -z'_y, 1)$.
+        
+        нормируем, получаем какую-то хрень $\frownie$.
+        
+    \subsection{Репер}
+    
+        Пара ЛНЗ касательных векторов~--- репер.
+        
+        Способ задания стороны~--- задать поле касательных реперов.
+        
+    \subsection{Способ 3 задания стороны}
+    
+        Геометрический способ~--- нарисовать замкнутый путь и ориентировать его.
+        
+        $T_2$~--- вектор касательный к контуру;
+        
+        $T_n$~--- вектор в касательной плоскости перпендикулярной $T_2$.
+        
+        $(T_n, T_2)$~--- будет ориентируемым репером.
+        
+        $T_n \times T_2$~--- вектор нормали.
+        
+    \subsection{Поверхностый интеграл второго рода}
+    
+        $\Omega$~--- двусторонняя поверхность в $\mathbb{R}^3$.
+        
+        $F : \Omega \rightarrow \mathbb{R}^3$, $n_0$~--- сторона поверхности.
+        
+        Интеграл $\mathrm{II}$ рода (поля $F$ на $\Omega$) :
+        
+        $\int\limits_{\Omega} \langle F, n_0 \rangle ds$.
+        
+        \subsubsection{Замечания}
+        
+            \begin{enumerate}
+        
+                \item поменяем сторону~--- поменяем знак;
+                
+                \item Не зависит от параметризации;
+                
+                \item Обозначения: $F = (P, Q, R)$
+                
+                    $\int\limits_{\Omega} = \int\limits_{\Omega} P dy dz + Q dz dx + R dx dy$ (держим всё ''в уме'').
+                
+                    $x(u, v)$, $y(u, v)$, $z(u, v)$, тогда
+                    
+                    $(x'_u, y'_u, z'_u) \times (x'_v, y'_v, z'_v) = \vec{n}$
+                
+                    $dy dz = (y'_u du + y'_v dv) \wedge (z'_u du + z'_v dv) = du \wedge dv (y'_u z'_v - y'_v z'_u)$
+                    
+                    $\wedge$~--- косо-коммутативная операция
+                    
+                    $da \wedge db = -db \wedge da$
+                    
+                    $da \wedge da = -da \wedge da = 0$.
+                    
+            \end{enumerate}
+    
+        \subsubsection{Пример}
+        
+            $F = (0, 0, R(x, y, z)) = \iint\limits_{\Omega} R dx dy = \iint\limits_{\widetilde{\Omega}} \dfrac{R(x, y, z(x, y))}{\sqrt{1 + z'^2_x + z'^2_y}} \cdot \sqrt{ } dx dy = \iint\limits_{\widetilde{\Omega}} R(x, y, z(x, y)) dx dy$.
+            
+        \subsubsection{Следствие}
+        
+            $V \subset \mathbb{R}^3$, $\lambda_3V = \iint\limits_{\partial V^+} z dx dy$, где $\partial V^+$~--- внешняя сторона.
+            
+            $V_{\text{верх.}} = \Gamma (z_1(x, y), \widetilde{\Omega})$
+            
+            $V_{\text{ниж.}} = \Gamma (Z_2 (x, y), \widetilde{\Omega})$
+            
+            $\int\limits_{\partial V_{\text{верх.}}} z dx dy = \iint\limits_{\widetilde{\Omega}} z_1(x, y) dx dy$.
+            
+            $\int\limits_{\partial V_{\text{ниж.}}} z dx dy = -\iint\limits_{\widetilde{\Omega}} z_2(x, y) dx dy$.
+            
+            $\lambda_3 V = \iint\limits_{\partial V^+} z dx dy = \dfrac{1}{3} \iint\limits_{\partial V^+} x dy dz + y dz dx + z dx dz$.
+            
+        \subsubsection{Следствие}
+        
+            $\gamma$~--- гладкая кривая в $\mathbb{R}^3$;
+        
+            $\Omega$~--- цилиндр над $\gamma$;
+            
+            $\iint\limits_{\Omega} R dx dy = 0$.
+            
 \end{document}
