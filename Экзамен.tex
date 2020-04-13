@@ -1499,6 +1499,8 @@
             
     \subsection{Лемма Урысона}
         
+        Будет дописано позже.
+        
         $X$~--- норм, $F_0$, $F_1$~--- замкнуты, $F_0 \bigcap F_1 = \varnothing$.
         
         Тогда $\exists f : X \rightarrow \mathbb{R}$, $0 \leqslant f \leqslant 1$, непрерывное.
@@ -1542,8 +1544,6 @@
                     $\subset$ $f(y) < S$, где $f(y) = \inf \left\{ q : x \in G_q \right\}$.
                     
                     $\supset$ $x \in \text{ЛЧ}$, $f(x) = S_0 < q_1 < S$, $x \in G_{q_1}$.
-                    
-                \item 
                 
             \end{enumerate}
             
@@ -1648,5 +1648,108 @@
             $\Omega$~--- цилиндр над $\gamma$;
             
             $\iint\limits_{\Omega} R dx dy = 0$.
+            
+    \subsection{Финитная функция в $\mathbb{R}^m$}
+    
+        Финитная функция~--- функция, равная $0$ вне некоторого шара и непрерывная $C_0 \left( \mathbb{R}^m \right)$.
+        
+        Очевидно, что $\forall p \in [1, +\infty)$ $C_0 \left( \mathbb{R}^m \right) \subset L^p \left( \mathbb{R}^m, \lambda_m \right)$.
+        
+    \subsection{Теорема}
+    
+        $\left( \mathbb{R}^m, \mathcal{M}^m, \lambda_m \right)$, $E \subset \mathbb{R}^m$~--- измеримая.
+        
+        Тогда множество финитных функция (непрерывных) плотно в $L^p \left( E, \lambda_m \right)$
+        
+        \subsubsection{Замечание}
+        
+            $f$~--- финитная функция в $L^p(E, \lambda_m)$. Если $f = f_0 \big|E$, где $f_0$~--- финитная в $\mathbb{R}^m$.
+            
+        \subsubsection{Доказательство}
+        
+            $g \in L^p(E, \mu)$
+            
+            $\forall \varepsilon > 0 : \exists f \in C_0 \left( \mathbb{R}^m \right)$, $\| g - f \big|_E \|_p < \varepsilon$. Пусть $g = 0$ вне $E$, то $\| g - f \big|E \|_{2^p(E, \mu)} \leqslant \| g - f \| < \varepsilon$ в $L^p \left( \mathbb{R}^m \right)$.
+            
+            $g = g^+ - g^-$, $g^+$~--- приблизим ступенчатыми, $\exists$ ступ. $h : \| g^+ - h \| < \varepsilon$.
+            
+            $h = \sum c_k \chi_{a_k}$. Каждую $\chi_{A_k}$ приблизим финитной непрерывной функцией:
+            
+            $\forall \varepsilon > 0 : \exists$ замкнутая $F_k \subset A_k \subset G_k$(откр.), $\lambda_m \left( G_k \setminus F_k \right) < \left(\dfrac{\varepsilon}{|c_k|\cdot q}^p \right)$.
+            
+            По лемме Урысона $\exists f_k : 0 \leqslant f_k \leqslant 1$, $f = 1$ на $F_k$, $f = 0$ на $\mathbb{R}^m \setminus G_k$.
+            
+            $\| g^+ - \sum c_k f_k \|_p \leqslant \| g^+ - h \|_p + \| h - \sum c_k f_k \| \leqslant \varepsilon + \sum |c_k| \cdot \| \chi_{A_k} - f_k \| \leqslant \int \left| \chi_{A_k} - f_k \right|^p \leqslant \varepsilon + \sum \dfrac{\varepsilon}{q} = 2 \varepsilon$
+            
+            $\int\limits_{G_k \setminus F_k} 1^p < \left( \dfrac{\varepsilon}{|c_k|q} \right)^p$.
+            
+            $1 \leqslant p < +\infty$.
+            
+        \subsubsection{Замечание}
+        
+            \begin{enumerate}
+            
+                \item В $L^{\infty} \left( \mathbb{R}^m \right)$ этот факт не работает.
+                
+                    $L^{\infty} \left( [0, 2] \right)$ функцию $\chi_{[0, 1]}$ не приблизить непрерывной.
+                    
+                \item В $L^p \left( E, \lambda_m \right)$ плотны:
+                
+                    \begin{itemize}
+                    
+                        \item Линейная комбинация характеристических функций ячеек;
+                
+                        \item Гладкие финитные функции;
+                        
+                        \item Рациональные линейные комбинации рациональных ячеек;
+                        
+                        \item Просто непрерывные функции.
+                        
+                    \end{itemize}
+                    
+            \end{enumerate}
+    
+    $L^p [0, T]$, $T \in \mathbb{R}$, можем понимать как пространство $T$-периодических функций $\left( \mathbb{R} \rightarrow \mathbb{R} \right)$, $\int\limits^T_0 f = \int\limits^{a + T}_a f$.
+    
+    $C [0, T]$~--- пространство непрерывных функций, $\| f \| = \max\limits_{x \in [0, T]} | f(x) |$.
+    
+    $\widetilde{C} [0, T]$~--- пространство непрерывных $T$-пер. функций.
+        
+    $f \in \widetilde{C} [0, T] \Rightarrow f$~--- равномерно непрерывные.
+    
+    $\widetilde{C} [0, T]$ плотно в $L^P [0, T]$, $p < +\infty$.
+    
+    \subsection{Теорема о непрерывности сдвига}
+    
+        $f_h(x) := f(x + h)$.
+        
+        \begin{enumerate}
+        
+            \item $f$~--- равномерно непрерывная на $\mathbb{R}^m \Rightarrow \| f_h - f \| \rightarrow 0$ при $n \Rightarrow 0$;
+            
+            \item $1 \leqslant p < +\infty$, $f \in L^p \left( \mathbb{R}^m \right) \Rightarrow \| f_n - f \|_p \Rightarrow 0$ при $n \rightarrow 0$;
+            
+            \item $f \in \widetilde{C} [0, T] \Rightarrow \| f_n \ f \|_{+\infty} \rightarrow 0$;
+            
+            \item $1 \leqslant p < +\infty$ $f \in L^p [0, T] \Rightarrow \| f_n - f \|_p \rightarrow 0$.
+            
+        \end{enumerate}
+        
+        \subsubsection{Доказательство}
+        
+            $1$ и $3$ очевидные утверждения по определению равномерной непрерывности.
+            
+            $\forall \varepsilon > 0 : \exists \delta : \forall x, x' : |x - x'| < \delta$ $| f(x) - f(x')| < \varepsilon$
+            
+            $\forall |h| < \delta : \| f_h - f \|_{\infty} \leqslant \varepsilon$.
+        
+            $g$~--- финитно непрерывная: $\| f - g \|_p < \dfrac{\varepsilon}{3}$.
+            
+            $\| f_h - f \|_p \leqslant \| f_h - g_h \|_p + \| g_h - g \|_p + \| g - f \|_p \leqslant \dfrac{2 \varepsilon}{3} + \| g_h - g \|_p$
+            
+            $g = 0$ вне $B(0, r)$, пусть $|h| < 1$, тогда $\| g_h - g \|_p = \| g_h - g\|_{L^p \left( B(0, r + 1) \right)} \leqslant \| g_h - g \|_{+\infty} \cdot \lambda B^{1/p}$
+            
+            и 4) $\| g_h - g \|_p \leqslant \| g_h - g \|_{\infty} T^{1/p}$
+            
             
 \end{document}
