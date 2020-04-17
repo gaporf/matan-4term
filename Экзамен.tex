@@ -1667,37 +1667,40 @@
                     
             \end{enumerate}
             
-    \newpage
-    
-    $L^p [0, T]$, $T \in \mathbb{R}$, можем понимать как пространство $T$-периодических функций $\left( \mathbb{R} \rightarrow \mathbb{R} \right)$, $\int\limits^T_0 f = \int\limits^{a + T}_a f$.
-    
-    $C [0, T]$~--- пространство непрерывных функций, $\| f \| = \max\limits_{x \in [0, T]} | f(x) |$.
-    
-    $\widetilde{C} [0, T]$~--- пространство непрерывных $T$-пер. функций.
-        
-    $f \in \widetilde{C} [0, T] \Rightarrow f$~--- равномерно непрерывные.
-    
-    $\widetilde{C} [0, T]$ плотно в $L^P [0, T]$, $p < +\infty$.
     
     \newpage
     
     \section{Теорема о непрерывности сдвига}
     
-        $f_h(x) := f(x + h)$.
+        \subsection{Необходимое определение}
         
-        \begin{enumerate}
+            $L^p [0, T]$, $T \in \mathbb{R}$, можем понимать как пространство $T$-периодических функций $\left( \mathbb{R} \rightarrow \mathbb{R} \right)$, $\int\limits^T_0 f = \int\limits^{a + T}_a f$.
+    
+            $C [0, T]$~--- пространство непрерывных функций, $\| f \| = \max\limits_{x \in [0, T]} | f(x) |$.
+    
+            $\widetilde{C} [0, T]$~--- пространство непрерывных $T$-пер. функций.
         
-            \item $f$~--- равномерно непрерывная на $\mathbb{R}^m \Rightarrow \| f_h - f \| \rightarrow 0$ при $n \Rightarrow 0$;
-            
-            \item $1 \leqslant p < +\infty$, $f \in L^p \left( \mathbb{R}^m \right) \Rightarrow \| f_n - f \|_p \Rightarrow 0$ при $n \rightarrow 0$;
-            
-            \item $f \in \widetilde{C} [0, T] \Rightarrow \| f_n \ f \|_{+\infty} \rightarrow 0$;
-            
-            \item $1 \leqslant p < +\infty$ $f \in L^p [0, T] \Rightarrow \| f_n - f \|_p \rightarrow 0$.
-            
-        \end{enumerate}
+            $f \in \widetilde{C} [0, T] \Rightarrow f$~--- равномерно непрерывные.
+    
+            $\widetilde{C} [0, T]$ плотно в $L^P [0, T]$, $p < +\infty$.
+    
+        \subsection{Формулировка теоремы}
         
-        \subsubsection{Доказательство}
+            $f_h(x) := f(x + h)$.
+        
+            \begin{enumerate}
+        
+                \item $f$~--- равномерно непрерывная на $\mathbb{R}^m \Rightarrow \| f_h - f \| \rightarrow 0$ при $n \Rightarrow 0$;
+            
+                \item $1 \leqslant p < +\infty$, $f \in L^p \left( \mathbb{R}^m \right) \Rightarrow \| f_n - f \|_p \rightarrow 0$ при $n \rightarrow 0$;
+            
+                \item $f \in \widetilde{C} [0, T] \Rightarrow \| f_n \ f \|_{+\infty} \rightarrow 0$;
+            
+                \item $1 \leqslant p < +\infty$ $f \in L^p [0, T] \Rightarrow \| f_n - f \|_p \rightarrow 0$.
+            
+            \end{enumerate}
+        
+        \subsection{Доказательство}
         
             $1$ и $3$ очевидные утверждения по определению равномерной непрерывности.
             
