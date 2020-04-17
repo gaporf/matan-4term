@@ -1579,13 +1579,13 @@
         
     \newpage
     
-    \subsection{Поверхностый интеграл второго рода}
+    \section{Интеграл II рода}
     
-        $\Omega$~--- двусторонняя поверхность в $\mathbb{R}^3$.
+        $\Omega$~--- двусторонняя поверхность в $\mathbb{R}^3$, $F : \Omega \rightarrow \mathbb{R}^3$.
         
-        $F : \Omega \rightarrow \mathbb{R}^3$, $n_0$~--- сторона поверхности.
+        $n_0$~--- сторона поверхности.
         
-        Интеграл $\mathrm{II}$ рода (поля $F$ на $\Omega$) :
+        Тогда интегралом $\mathrm{II}$ рода (поля $F$ на $\Omega$) называют:
         
         $\int\limits_{\Omega} \langle F, n_0 \rangle ds$.
         
@@ -1599,7 +1599,7 @@
                 
                 \item Обозначения: $F = (P, Q, R)$
                 
-                    $\int\limits_{\Omega} = \int\limits_{\Omega} P dy dz + Q dz dx + R dx dy$ (держим всё ''в уме'').
+                    $\int\limits_{\Omega} = \int\limits_{\Omega} P dy dz + Q dz dx + R dx dy$.
                 
                     $x(u, v)$, $y(u, v)$, $z(u, v)$, тогда
                     
@@ -1614,33 +1614,9 @@
                     $da \wedge da = -da \wedge da = 0$.
                     
             \end{enumerate}
+     
+    \newpage
     
-        \subsubsection{Пример}
-        
-            $F = (0, 0, R(x, y, z)) = \iint\limits_{\Omega} R dx dy = \iint\limits_{\widetilde{\Omega}} \dfrac{R(x, y, z(x, y))}{\sqrt{1 + z'^2_x + z'^2_y}} \cdot \sqrt{ } dx dy = \iint\limits_{\widetilde{\Omega}} R(x, y, z(x, y)) dx dy$.
-            
-        \subsubsection{Следствие}
-        
-            $V \subset \mathbb{R}^3$, $\lambda_3V = \iint\limits_{\partial V^+} z dx dy$, где $\partial V^+$~--- внешняя сторона.
-            
-            $V_{\text{верх.}} = \Gamma (z_1(x, y), \widetilde{\Omega})$
-            
-            $V_{\text{ниж.}} = \Gamma (Z_2 (x, y), \widetilde{\Omega})$
-            
-            $\int\limits_{\partial V_{\text{верх.}}} z dx dy = \iint\limits_{\widetilde{\Omega}} z_1(x, y) dx dy$.
-            
-            $\int\limits_{\partial V_{\text{ниж.}}} z dx dy = -\iint\limits_{\widetilde{\Omega}} z_2(x, y) dx dy$.
-            
-            $\lambda_3 V = \iint\limits_{\partial V^+} z dx dy = \dfrac{1}{3} \iint\limits_{\partial V^+} x dy dz + y dz dx + z dx dz$.
-            
-        \subsubsection{Следствие}
-        
-            $\gamma$~--- гладкая кривая в $\mathbb{R}^3$;
-        
-            $\Omega$~--- цилиндр над $\gamma$;
-            
-            $\iint\limits_{\Omega} R dx dy = 0$.
-        
     \subsection{Теорема}
     
         $\left( \mathbb{R}^m, \mathcal{M}^m, \lambda_m \right)$, $E \subset \mathbb{R}^m$~--- измеримая.
