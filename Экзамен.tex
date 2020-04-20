@@ -1716,5 +1716,64 @@
             
             и 4) $\| g_h - g \|_p \leqslant \| g_h - g \|_{\infty} T^{1/p}$
             
+\newpage
+
+\part{20.04.2020}
+
+    \subsection{Формула Грина}
+    
+        $D$~--- компактное, связное, односвязное, множество в $\mathbb{R}^2$, ограниченное кусочно-гладкой кривой.
+        
+        На $\partial D$ направление ''против часовой стрелки''.
+        
+    \subsection{Теорема}
+    
+        $D \subset \mathbb{R}^2$~--- см выше.
+        
+        $P$, $Q$~--- векторные поля, гладкие в $U(D)$. Тогда
+        
+        $\iint\limits_D \left( \dfrac{\partial Q}{\partial x} - \dfrac{\partial P}{\partial y} \right) dx dy = \int\limits_{\partial D} P dx + Q dy$.
+        
+        \subsubsection{Доказательство}
+        
+            $D$~--- кривая $4$-угольника относительно $OX$, а также относительно $OY$.
             
+            Рассмотрим поле $(P, \mathbf{0})$ (для $(\mathbf{0}, Q)$ аналогично).
+            
+            ПЧ: $-\iint\limits_{D_b} \dfrac{\partial P}{\partial y} dx dy = \int\limits_{\partial D} Pdx + \mathbf{0} dy$
+            
+            ЛЧ: $-\int\limits^b_a d \int\limits^{f_2(x)}_{f_1(x)} \dfrac{\partial P}{\partial y} dy = - \int\limits^b_a P(x, y) \bigg|^{y = f_2}_{y = f_1} dx = \int\limits^b_a P(x, f_1(x))dx - \int\limits^b_a P(x, f_2(x)) dx$.
+            
+            ПЧ: $\int\limits_{\gamma_1} + \int\limits_{\gamma_2} + \int\limits_{\gamma_3} + \int\limits_{\gamma_4}$, $\int\limits_{\gamma_1} = \int\limits^b_a P(x, f(x)) \cdot 1 + 0 \cdot f'(x) dx$, $\int\limits_{\gamma_2} = \int\limits_{\gamma_4} = 0$, $\int\limits_{\gamma_3} = \int\limits^a_b P(x, f(x)) dx$.
+            
+    \subsection{Формула Стокса}
+    
+        $\Omega$~--- двусторонняя, гладкая поверхность, $\overline{n_0}$~--- сторона.
+        
+        $\partial \Omega$~--- кусочно-гладкая кривая с согласованной ориентацией.
+        
+        $(P, Q, R)$~--- гладкое векторное поле в $U(\Omega)$.
+        
+        Тогда $\int\limits_{\partial \Omega} P dx + Q dy + R dz = \iint\limits_{\Omega} (R'_y - Q'_z) dy dz + (P'_z - R'_x) dzdx + (Q'_x - P'_y) dxdy$.
+        
+        \subsubsection{Доказательство}
+        
+            Считаем, что поверхность $C^r$-гладкая.
+            
+            Достаточно проверить для $(P, 0, 0)$.
+            
+            $\int\limits_{\partial \Omega} P dx = \iint P'_z dzdx - P'_y dxdy$.
+            
+            $\int\limits_{\partial \Omega} P dx = \int P(x(u, v), y(u, v), z(u, v)) \left( \dfrac{\partial x}{\partial u} du + \dfrac{\partial x}{\partial v} dv \right)$ и по формуле Грина получаем
+            
+            $\int\limits_L P x'_u du + P x'_v dv = \iint\limits_G \dfrac{\partial}{\partial u} (P x'_v) - \dfrac{\partial}{\partial v} (P x'_u) du dv = \iint \left( P'_x x'_u + P'_y y'_u + P'_z z'_u \right) x'_v + P x''_vv - \left(P'_x x'_v + P'_y y'_v + P'_y z'_v \right) x'_u - P x''_uv du dv = \iint P'_x \mathbf{0} + P'_y (x'_v y'_u - x'_u y'_v) + P'_z (x'_v z'_u - x'_u z'_v) = \iint\limits_{G}$
+            
+            Получили что хотели.
+        
+        \subsubsection{Какие-то вычисления}
+        
+            $d P dx + d Q dy + dRdz$, $dxdx = 0$, $dxdy = -dydx$.
+        
+            $(P'_x dx + P'_y dy + P'_z dz)dx + \ldots - P'_ydxdy + P'_z dzdx + \ldots$.
+        
 \end{document}
