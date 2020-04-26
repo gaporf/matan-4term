@@ -1812,60 +1812,6 @@
             \end{enumerate}
     
     \newpage
-    
-        \subsubsection{Примеры}
-        
-            \begin{enumerate}
-            
-                \item $\mathbb{R}^m$, $\mathbb{C}^m$, $\langle x, y \rangle = \sum x_i \overline{y_i}$.
-            
-                \item $L^2(X, \mu)$, $\langle f, g \rangle = \int\limits_X f \overline{g} d \mu$.
-                
-                    $f$, $g : X \rightarrow \overline{\mathbb{R}}$~--- измеримые, тогда $\int\limits_X |f g| \leqslant \left( \int\limits_X |f|^2 d \mu \right)^{0.5} \left( \int\limits_X |g|^2 d \mu \right)^{0.5}$.
-                    
-                    $\langle f, f \rangle = \int\limits_X |f|^2 d \mu \geqslant 0$, конечное, 
-                    
-                    $\langle f, f \rangle = 0 \Rightarrow f = 0$ почти всюду.
-                    
-                    $\langle \alpha_1 f_1 + \alpha_2 f_2, g \rangle = \alpha_1 \langle f, g \rangle + \alpha_2 \langle f_2, g \rangle$.
-                    
-                    $\langle f, \beta_1 g_1 + \beta_2 g_2 \rangle = \langle f_1, g_1 \rangle \overline{\beta_1} + \overline{\beta_2} \langle f, g_2 \rangle$.
-                    
-                \item $l^2 = \left\{ (x_1, x_2, x_3, \ldots) : x_i \in \mathbb{R} \text{ или } \mathbb{C} : \sum |x_i|^2 < +\infty \right\}$.
-                
-                    $\langle x, y \rangle = \sum\limits_{i = 1}^{+\infty} x_i \overline{y_i}$
-                
-                    $\sum\limits_{i = 1}^{+\infty} | x_i \overline{y_i} | \leqslant \left( \sum |x_i|^2 \right)^{0.5} \left( \sum |y_i|^2 \right)^{0.5}$.
-                    
-                    $\| x \| = \sqrt{\langle x, x \rangle} = \left( \sum |x_i|^2 \right)^{0.5}$.
-                    
-                    двусторонняя последовательность: $l^2 = \left\{ (\ldots, x_{-1}, x_0, x_1, x_2, \ldots) : \sum\limits_{-\infty}^{+\infty} |x_i|^2 < +\infty \right\}$.
-                    
-            \end{enumerate}
-    
-    $\sum\limits_{n = 1}^{+\infty} a_n$, $a_n \in \mathcal{H}$.
-    
-    $S_N = \sum\limits_{n = 1}^N a_n$.
-    
-    $\exists \lim\limits_{N \rightarrow +\infty} S_N$, т.е. $\exists S \in \mathcal{H}$, что $\| S_N - S \| \rightarrow 0$.
-    
-    \begin{enumerate}
-    
-        \item $x$, $y \in \mathcal{H}$, $x \perp y$, $\langle x, y \rangle = 0$.
-    
-        \item $\mathcal{A} \subset \mathcal{H}$ $x \perp \mathcal{A}$, $\forall a \in \mathcal{A}$ $x \perp a$.
-        
-        \item ряд $\sum x_k$~--- ортогональный. $\forall k, l : k \neq l \Rightarrow x_k \perp x_l$.
-        
-            Пример: $x_k \in l^2$, $x_k = (0, \ldots, \dfrac{1}{k}_{[k]}, 0, \ldots)$.
-        
-            $\| x_k \| = \dfrac{1}{k} \rightarrow 0$, $x_k \perp x_l$.
-            
-            Загадка: $\sum x_k$~--- сходится ли?
-            
-    \end{enumerate}
-    
-    \newpage
         
     \section{Ортогональная система (семейство) векторов}
     
@@ -1882,42 +1828,10 @@
             Если $\left\{ e_k \right\}$~--- ортогональная система, то $\left\{ \dfrac{e_k}{\| e_k \|} \right\}$~--- ортонормированная система.
         
     \newpage
-    
-        \subsubsection{Примеры}
-    
-        \begin{enumerate}
         
-            \item $l^2 : e_k = (0, \ldots, 0, 1_{[k]}, 0, \ldots)$~--- ортонормированная система.
-            
-            \item $L_2 := L^2 [0, 2 \pi]$ (по мере Лебега).
-            
-                $\left\{ 1, \cos x, \sin x, \cos 2x, \sin 2x, \cos 3x, \ldots \right\{$~--- ортогональная система
-                
-                $\langle \cos kx, \sin lx \rangle = \int\limits^{2 \pi}_0 \cos kx \sin lx dx = \int\limits^{2 \pi}_0 \dfrac{1}{2} \left( \sin (k + l) x - \sin (k - l) x \right) dx = 0$ и аналогично остальные случаи.
-                
-                $\| cos kx \|^2 = \int\limits^{2 \pi}_0 cos^2 kx = \pi$.
-            
-                $\| 1 \|^2 = \int\limits^{2 \pi}_0 1 = 2 \pi$.
-            
-                $\left\{ \dfrac{1}{\sqrt{2 \pi}}, \dfrac{\cos{x}}{\sqrt{\pi}}, \dfrac{\sin{x}}{\sqrt{\pi}}, \ldots \right\}$
-            
-            \item $L_2  L^2 [0, 2 \pi]$~--- комплексное.
-            
-                $\left\{ e^{ikx} \right\}_{k \in \mathbb{Z}}$~--- ортонормированная система
-            
-                $\langle e^{ikx}, e^{ilx} \rangle = \int\limits^{2 \pi}_0 e^{ikx} \cdot e^{-ilx} = \int\limits^{2 \pi}_0 e^{i(k - l)x} = \dfrac{1}{i(k - l)} e^{i(k - l)x} \bigg|^{x = 2\pi}_{x = 0} = 0$.
-                
-                Если $k = l$, то получаем $\int\limits^{2 \pi}_0 1 = 2 \pi$.
-                
-                $\left\{ \dfrac{e^{ikx}}{\sqrt{2 \pi}} \right\}$~--- ортонормированная система.
-                
-        \end{enumerate}
-        
-    \subsection{Теорема 2}
+    \section{Теорема о коэффициентах разложения по ортогональной системе}
     
-        $\left\{ e_k \right\}$~--- ортонормированная система в $\mathcal{H}$, $x \in \mathcal{H}$.
-        
-        $\sum\limits_{k = 1}^{+\infty} c_k e_k = x$. Тогда
+        $\left\{ e_k \right\}$~--- ортонормированная система в $\mathcal{H}$, $x \in \mathcal{H}$, $\sum\limits_{k = 1}^{+\infty} c_k e_k = x$. Тогда
         
         \begin{enumerate}
         
@@ -1925,21 +1839,21 @@
             
             \item $c_k = \dfrac{\langle x, e_k \rangle}{\| e_k \|^2}$;
             
-            \item $c_k e_k$~--- ортогональной проекцией $x$ на прямую $\left\{ t e_k, t \in \mathbb{R} \right\}$, т.е. $x = c_k e_k + z, z \perp e_k$.
+            \item $c_k e_k$~--- ортогональная проекция $x$ на прямую $\left\{ t e_k | t \in \mathbb{R} \right\}$, т.е. $x = c_k e_k + z$, где $z \perp e_k$.
             
         \end{enumerate}
         
-        \subsubsection{Доказательство}
+        \subsection{Доказательство}
         
             \begin{enumerate}
             
                 \item $\sum\limits_{k = 1}^N \alpha_k e_k = 0$.
                 
-                    домножим $e_j$ $1 \leqslant j \leqslant N$, $\langle \sum\limits_{k = 1}^N \alpha_k e_k, e_j \rangle = \sum \alpha_k \langle p_k, p_j \rangle \Rightarrow \alpha_j = 0$.
+                    Умножим $e_j$ $1 \leqslant j \leqslant N$, $\langle \sum\limits_{k = 1}^N \alpha_k e_k, e_j \rangle = \sum \alpha_k \langle p_k, p_j \rangle \Rightarrow \alpha_j = 0$.
                     
                 \item $\langle x, e_m \rangle = \langle \sum\limits_{k = 1}^{+\infty} c_k e_k, e_m \rangle = \sum c_k \langle e_k, e_m \rangle = c_m \langle e_m, e_m \rangle$.
                 
-                    $\langle x - c_k e_k, e_k \rangle = \langle x, e_k \rangle - c_k \| e_k \|^2 = 0$.
+                \item $\langle x - c_k e_k, e_k \rangle = \langle x, e_k \rangle - c_k \| e_k \|^2 = 0$.
                 
             \end{enumerate}
         
