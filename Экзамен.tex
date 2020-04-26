@@ -1781,6 +1781,38 @@
         
     \newpage
     
+    \section{Теорема о свойствах сходимости в Гильбертовом пространстве}
+    
+        Пусть $x, y$ лежат в Гильбертовом пространстве. Тогда верны следующие свойства:
+        
+        \begin{enumerate}
+        
+            \item $x_n \rightarrow x_0$, $y_n \rightarrow y_0$. Тогда $\langle x_n, y_n \rangle \rightarrow \langle x_0, y_0 \rangle$.
+            
+            \item $\sum x_k$~--- сходится. Тогда $\forall y \in \mathcal{H} : \langle \sum\limits_{k = 1}^{+\infty} x_k, y \rangle = \sum\limits_{k = 1}^{+\infty} \langle x_k, y \rangle$.
+            
+            \item $\sum x_k$~--- ортогональный ряд. Тогда $\sum x_k$~--- сходится $\Longleftrightarrow \sum \| x_k \|^2 < +\infty$ и при этом $\| \sum x_k \|^2 = \sum \| x_k \|^2$.
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $| \langle x_n, y_n \rangle - \langle x_0, y_0 \rangle | = | \langle  x_n, y_n \rangle - \langle x_n, y_0 \rangle + \langle x_n, y_0 \rangle - \langle x_0, y_0 \rangle | \leqslant | \langle x_n, y_n - y_0 \rangle | + | \langle x_n - x_0, y_0 \rangle | \leqslant \| x_0 \| \| y_n - y_0 \| + \| x_n - x_0 \| \| y_0 \| \rightarrow 0$ при $n \rightarrow +\infty$.
+                
+                \item $S_N = \sum\limits^N_{k = 1} x_k$, тогда $\langle \sum\limits_{k = 1}^N x_k, y \rangle = \sum\limits_{k = 1}^N \langle x_n, y \rangle$. При устремлении к бесконечности получаем необходимое равенство.
+                
+                \item $S_N = \sum\limits_{k = 1}^N x_k$, $\| S_N \|^2 = \langle \sum\limits_{k = 1}^N x_k, \sum\limits_{k = 1}^N x_k \rangle = \sum \langle x_k, x_l \rangle = \sum\limits_{k = 1}^n \langle x_k, x_k \rangle = \sum\limits_{k = 1}^N \| x_k \|^2 = \sum_N$.
+                
+                Аналогично $\| S_N - S_M \|^2 = \left| \sum_N - \sum_M \right|$
+                
+                $S_n$ и $\sum_N$~--- фундаментальны одновременно.
+                
+            \end{enumerate}
+    
+    \newpage
+    
         \subsubsection{Примеры}
         
             \begin{enumerate}
@@ -1832,38 +1864,6 @@
             Загадка: $\sum x_k$~--- сходится ли?
             
     \end{enumerate}
-    
-    \subsection{Теорема о свойствах сходимости в Гильбертовом пространстве}
-    
-        $x, y : \in \mathcal{H}$.
-        
-        Верны следующие свойства:
-        
-        \begin{enumerate}
-        
-            \item $x_n \rightarrow x_0$, $y_n \rightarrow y_0$. Тогда $\langle x_n, y_n \rangle \rightarrow \langle x_0, y_0 \rangle$.
-            
-            \item $\sum x_k$~--- сходится. Тогда $\forall y \in \mathcal{H} : \langle \sum\limits_{k = 1}^{+\infty} x_k, y \rangle = \sum\limits_{k = 1}^{+\infty} \langle x_k, y \rangle$.
-            
-            \item $\sum x_k$~--- отрог. ряд. Тогда $\sum x_k$~--- сходится $\Leftrightarrow \sum \| x_k \|^2 < +\infty$ и при этом $\| \sum x_k \|^2 = \sum \| x_k \|^2$.
-            
-        \end{enumerate}
-        
-        \subsubsection{Доказательство}
-        
-            \begin{enumerate}
-            
-                \item $| \langle x_n, y_n \rangle - \langle x_0, y_0 \rangle | = | \langle  x_n, y_n \rangle - \langle x_n, y_0 \rangle + \langle x_n, y_0 \rangle - \langle x_0, y_0 \rangle | \leqslant | \langle x_n, y_n - y_0 \rangle | + | \langle x_n - x_0, y_0 \rangle | \leqslant \| x_0 \| \| y_n - y_0 \| + \| x_n - x_0 \| \| y_0 \| \rightarrow 0$ при $n \rightarrow +\infty$.
-                
-                \item очевидно
-                
-                \item $S_N = \sum\limits_{k = 1}^N x_k$, $\| S_N \|^2 = \langle \sum\limits_{k = 1}^N x_k, \sum\limits_{k = 1}^N x_k \rangle = \sum \langle x_k, x_l \rangle = \sum\limits_{k = 1}^n \langle x_k, x_k \rangle = \sum\limits_{k = 1}^N \| x_k \|^2 = \sum_N$.
-                
-                Аналогично $\| S_N - S_M \|^2 = \left| \sum_N - \sum_M \right|$
-                
-                $S_n$ и $\sum_N$~--- фундаментальны одновременно.
-                
-            \end{enumerate}
         
     \subsection{Определение}
     
