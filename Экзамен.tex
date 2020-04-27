@@ -1958,5 +1958,135 @@
                 $\varphi'_x(x, y) = A_3(x, y, z_0)$.
                 
                 $\varphi = \int\limits^x_{x_0} A_3(x, y, z_0) dx + g(y)$.
+                
+\newpage
+
+\part{Ряды Фурье}
+
+\newpage
+
+    \subsection{Коэффициенты Фурье}
+    
+        $\left\{ e_k^2 \right\}$~--- ортогональная система векторов, $x \in \mathcal{H}$.
+        
+        $c_k(x) := \dfrac{\langle x, e_k \rangle}{\| e_k \|^2}$~--- \textit{Коэффициенты Фурье} вектора $x$ по системе $\left\{ e_k \right\}$.
+        
+        $\sum c_k(x) e_k$~--- ряд Фурье в выражениях $x$. При перенормировке $\left\{ e_k \right\}$ ряд Фурье не меняется.
             
+    \subsection{Теорема о свойствах частичных сумм ряда Фурье}
+    
+        $\left\{ e_k \right\}$~--- ось $\mathcal{H}$, $x \in \mathcal{H}$, $n \in \mathbb{N}$. $S_n := \sum\limits_{k = 1}^n c_k(x) e_k$, $\mathcal{L} := \Lin(e_1, \ldots, e_n)$.
+        
+        Тогда верны следующие свойства:
+        
+        \begin{enumerate}
+        
+            \item $S_n$~--- проекция $x$ на $S$. $x = S_n + z$, где $z \perp \mathcal{L}$.
+            
+            \item $S_n$~--- элемент наилучшего приближения для $x$ в $\mathcal{L}$.
+            
+                $\| x - S_n \| = \min\limits_{y \in \mathcal{L}} \| x - y \|$.
+            
+            \item $\| S_n \| \leqslant \| x \|$.
+            
+        \end{enumerate}
+        
+        \subsubsection{Доказательство}
+        
+            $z := x - S_n$, $\langle x, e_k \rangle = \langle x, e_k \rangle - \langle S_n, e_k \rangle = \langle x, e_k \rangle - \langle \sum\limits_{i = 1}^n c_i(x)e_i, a_k \rangle = \langle x_i, e_k \rangle - \sum c_i(x) \langle e_i, e_k \rangle = 0$
+            
+            $x = S_n + z$, $z \perp \mathcal{L}$.
+            
+            $y \in \mathcal{L}$, $\| x - y \|^2 = \| S_n - y + z \|^2 = \| S_n - y \|^2 + \| z \|^2 \geqslant \| z \|^2 = \| S_n - x \|^2$
+            
+            $\| x \|^2 = \| S_n \|^2 + \| z \|^2 \geqslant \| S_n \|^2$.
+            
+        \subsubsection{Неравенство Бесселя}
+        
+            В условиях теоремы выполняется следующее равенство:
+            
+            $\sum\limits_{k = 1}^{+\infty} \left| C_k(x) \right|^2 \| e_k \|^2 \leqslant \| x \|^2$.
+            
+            из 3 свойства следует $\| x \|^2 \geqslant \sum\limits_{k = 1}^n \left| c_k(x) \right|^2 \| e_k \|^2$ для любого $n$.
+        
+    \subsection{Теорема Рисса-Фишера}
+    
+        $\left\{ e_k \right\}$~--- ортогональная система в $\mathcal{H}$, $x \in \mathcal{H}$. Тогда выполняеются следующие утверждения:
+        
+        \begin{enumerate}
+        
+            \item Ряд Фурье $x$ сходится в $\mathcal{H}$.
+            
+            \item $x = \sum\limits^{+\infty}_{k = 1} c_k(x) e_k + z$, где $\forall k : z \perp e_k$.
+            
+            \item $x = \sum\limits_{k = 1}^{+\infty} c_k(x) e_k \Longleftrightarrow \sum \left| c_k(x) \right|^2 \| e_k \|^2 = \| x \|^2$ (неравенство Бесселя).
+            
+        \end{enumerate}
+            
+        \subsection{Доказательство}
+        
+            $\sum x_k$~--- ортогональный~--- сх $\Longleftrightarrow \sum \| x_k \|$~--- сходится.
+            
+            Р.Ф.~--- сходится $\Longleftrightarrow \sum \left| c_k(x) \right|^2 \| e_k \|^2$~--- сходится~--- это всё верно по неравенству Бесселя.
+            
+            $z : x - \sum c_k e_k$, $\langle z, e_n \rangle = \langle x, e_n \rangle - \sum = \langle x, e_n \rangle - c_n \langle e_n, e_n \rangle$.
+            
+            $\Rightarrow$~--- очевидно из предыдущей теоремы пункта $3$.
+            
+            $\Leftarrow \| x \|^2 = \| \sum c_k(x) p_k \|^2 + \| z \|^2 = \sum \left| c_k(x) \right|^2 \| e_k \|^2 + \| z \|^2 \Rightarrow z = 0$
+            
+    \subsection{Базис}
+    
+        \begin{enumerate}
+        
+            \item ортогональная система векторов~--- базис, если $\forall x \in \mathcal{H} : x = \sum c_k(x) e_k$.
+            
+            \item ортогональная система векторов полная, если не $\exists z : z \perp \left\{ e_k \right\}$.
+            
+            \item ортогональная система векторов замкнута если $\forall x \in \mathcal{H}$ выполняется уравнение замкнутости, т.е. $\sum \left| c_k(x) \right|^2 \| e_k \|^2 = \| x \|^2$.
+            
+        \end{enumerate}
+            
+    \subsection{Теорема о характеристике базиса}
+    
+        $\left\{ e_k \right\}$~--- ортогональная система векторов, тогда эквивалентны следующие утверждения:
+            
+        \begin{enumerate}
+        
+            \item $\left\{ e_k \right\}$~--- базис.
+            
+            \item $\forall x, y \in \mathcal{H}$ выполняется обобщающее уравнение замкнутости:
+            
+                $\langle x, y \rangle = \sum\limits_{k = 1}^{+\infty} c_k(x) \overline{c_k(y)} \| e_k \|^2$.
+                
+            \item $\left\{ e_k \right\}$~--- замкнутая ортогональная система.
+            
+            \item $\left\{ e_k \right\}$~--- полная ортогональная система.
+            
+            \item $\Lin(e_1, e_2, e_3, \ldots)$~--- плотное в пространстве $\mathcal{H}$.
+            
+        \end{enumerate}
+        
+        \subsubsection{Доказательство}
+        
+            \begin{itemize}
+            
+                \item $1 \Rightarrow 2$) $x = \sum c_k(x) P_k$, $\dfrac{\langle y, e_k \rangle}{\| e_k \|^2} = c_k(y)$. $\langle x, y \rangle = \sum c_k(x) \langle e_k, y \rangle = \sum c_k(x) \overline{c_k(y)} \| e_k \|^2$
+                
+                \item $2 \Rightarrow 3$) $y := x$.
+                
+                \item $3 \Rightarrow 4$) $z \perp e_k : \forall k$, $c_k(z) = 0$.
+                
+                    Уравнение замкнутой системы: $\| z \|^2 = \sum \left| c_k(z) \right|^2 \| e_k \|^2 = 0$.
+
+                \item $4 \Rightarrow 1$) По теореме Рисса-Фишера $x = \sum\limits_{k = 1}^{+\infty} c_k(x) e_k + z$, $z \perp e_k \forall k$, то по условию $z = 0$, значит это и есть базис.
+                
+                \item $4 \Rightarrow 5$) $\mathcal{L} = Cl ( \Lin ( e_1, e_2, \ldots )) ?= \mathcal{H}$.
+                    
+                    Если $\neq$, то $\exists x \in \mathcal{H} \setminus \mathcal{L}$, тогда $x = \sum c_k(x) e_k + z$, $z \perp e_k \forall k \Rightarrow z = 0 \Rightarrow x \in \mathcal{L}$.
+                    
+                \item $5 \Rightarrow 4$) $y \perp e_k \forall k$, $y \perp \mathcal{L} = \mathcal{H}$, $y \perp y$, что значит $\langle y, y \rangle = 0$.
+                
+            \end{itemize}
+        
 \end{document}
