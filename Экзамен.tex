@@ -1965,9 +1965,9 @@
             
     \newpage
     
-    \subsection{Теорема о свойствах частичных сумм ряда Фурье}
+    \section{Теорема о свойствах частичных сумм ряда Фурье}
     
-        $\left\{ e_k \right\}$~--- ось $\mathcal{H}$, $x \in \mathcal{H}$, $n \in \mathbb{N}$. $S_n := \sum\limits_{k = 1}^n c_k(x) e_k$, $\mathcal{L} := \Lin(e_1, \ldots, e_n)$.
+        $\left\{ e_k \right\}$~--- ортогональная система $\mathcal{H}$, $x \in \mathcal{H}$, $n \in \mathbb{N}$. $S_n := \sum\limits_{k = 1}^n c_k(x) e_k$, $\mathcal{L} := \Lin(e_1, \ldots, e_n)$.
         
         Тогда верны следующие свойства:
         
@@ -1983,7 +1983,7 @@
             
         \end{enumerate}
         
-        \subsubsection{Доказательство}
+        \subsection{Доказательство}
         
             $z := x - S_n$, $\langle x, e_k \rangle = \langle x, e_k \rangle - \langle S_n, e_k \rangle = \langle x, e_k \rangle - \langle \sum\limits_{i = 1}^n c_i(x)e_i, a_k \rangle = \langle x_i, e_k \rangle - \sum c_i(x) \langle e_i, e_k \rangle = 0$
             
@@ -1993,7 +1993,7 @@
             
             $\| x \|^2 = \| S_n \|^2 + \| z \|^2 \geqslant \| S_n \|^2$.
             
-        \subsubsection{Неравенство Бесселя}
+        \subsection{Неравенство Бесселя}
         
             В условиях теоремы выполняется следующее равенство:
             
@@ -2001,6 +2001,8 @@
             
             из 3 свойства следует $\| x \|^2 \geqslant \sum\limits_{k = 1}^n \left| c_k(x) \right|^2 \| e_k \|^2$ для любого $n$.
         
+    \newpage
+    
     \subsection{Теорема Рисса-Фишера}
     
         $\left\{ e_k \right\}$~--- ортогональная система в $\mathcal{H}$, $x \in \mathcal{H}$. Тогда выполняеются следующие утверждения:
