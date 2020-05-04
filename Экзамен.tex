@@ -2201,4 +2201,106 @@
             
             $L_{\mathrm{loc}} (h = 0)$, $\left| F(x, h) \right| = \left| f'_y (x, y_0 \rightarrow \theta h ) \right|$ по теорема Лагранжа, и $\left| f'_y (x, y_0 \rightarrow \partial h ) \right| \leqslant g(x)$ по условию $L_{\mathrm{loc}}(y_0)$ для $f'_y$ из $2$ пункта.
             
+\newpage
+
+\part{Тригонометрические ряды Фурье}
+
+    \subsection{Тригонометрический полином порядка $n$}
+    
+        $T_n(x) = \dfrac{a_0}{2} + \sum\limits_{k = 1}^n a_k \cos {kx} + b_k \sin {kx}$~--- \textit{тригонометрический полином не выше $n$}.
+        
+        $\dfrac{a_0}{2} + \sum\limits_{k = 1}^{+\infty} a_k \cos {kx} + b_k \sin {kx}$~--- \textit{тригонометрический ряд}.
+        
+        $\cos{kx} = \dfrac{e^{ikx} + e^{-ikx}}{2}$, $\sin{kx} = \dfrac{e^{ikx} - e^{-ikx}}{2i}$.
+        
+        $S_n = \sum\limits_{k = -n}^n c_k e^{ikx}$~--- тригонометрический полином в экспоненциальной форме.
+        
+        $\sum\limits_{k \in \mathbb{Z}} c_k e^{ikx} = \lim S_n(x)$~--- тригонометрический ряд в экспоненциальной форме.
+        
+        $e^{ikx} = \cos {nx} + i \sin {nx}$.
+        
+    \subsection{Лемма}
+    
+        Дан тригонометрический ряд (вещественный или комлексный), $S_n$, также известно, что $S_n \rightarrow f$ в $L^1 [-\pi, \pi]$. Тогда
+        
+        $a_k = \dfrac{1}{\pi} \int\limits^{\pi}_{-\pi} f(t) \cos kt dt$ (работает и при $k = 0$).
+        
+        $b_k = \dfrac{1}{\pi} \int\limits^{\pi}_{-\pi} f(t) \sin kt dt$.
+        
+        $c_k = \dfrac{1}{2 \pi} \int\limits^{\pi}_{-\pi} f(t) e^{-ikt} dt$.
+
+        \subsection{Доказательство}
+        
+            Докажем только формулу $1$, остальные доказываются аналогично.
+            
+            Возьмём $n > k$, тогда $\int\limits_{-\pi}^{\pi} S_n(t) \cos {kt} = \int\limits^{\pi}_{-\pi} \left( \dfrac{a_0}{2} + \sum a_l \cos {lt} + b_l \sin {lt} \right) \cdot \cos {kt} dt = \int\limits^{\pi}_{-\pi} a_l \cos^2 {kt} = \pi a_k$.
+            
+            $\left| \int\limits^{\pi}_{-\pi} S_n(t) \cos {kt} - \int\limits^{\pi}_{-\pi} f(t) \cos {kt} \right| \leqslant \int\limits^{\pi}_{-\pi} \left| S_n(t) - f(t) \right| \left| \cos {kt} \right| dt \leqslant \int\limits^{\pi}_{-\pi} \left| S_n(t) - f(t) \right| dt = \| S_n - f \|_1 \xrightarrow[n \rightarrow +\infty]{} 0$.
+            
+    \subsection{Определение}
+    
+        $f \in L^1 [-\pi, \pi]$, $a_k(f)$, $b_k(f)$, $c_k(f)$, полученные по формуле из леммы~--- \textit{это назначенные коэффициенты Фурье функции $f$}.
+        
+        Ряд $\dfrac{a_0(f)}{2} + \sum\limits_{k = 1}^{+\infty} a_k(f) \cos {kx} + b_k(f) \sin {kx}$~--- \textit{ряд Фурье функции $f$}.
+        
+        Также можно рассматривать $\sum\limits_{k \in \mathbb{Z}} c_k(f) c^{ikx}$~--- тоже ряд Фурье.
+        
+        \subsubsection{Замечание}
+        
+            $f \in L_1 = L^1 [-\pi, \pi]$~--- чётна.
+            
+            $b_k(f) = \dfrac{1}{\pi} \int\limits^{\pi}_{-\pi} f(t) \sin {kt} t dt = 0$.
+            
+            $a_k(f) = \dfrac{2}{\pi} \int\limits^{\pi}_0 f(t) \cos {kt} t dt$.
+            
+            если $f$~--- нечётная, то меняем местами $a$ и $b$ ($a_k = 0$, $b_k(f) = \dfrac{2}{\pi} \ldots$).
+            
+        \subsubsection{Еще шаманство}
+        
+            Для $f \in L^1 [0, \pi]$ можно считать ряд Фурье по синусам или по косинусам.
+            
+            $f \backsim \dfrac{a_0}{2} + \sum a_k \cos {kx}$, $f \backsim \sum b_k(f) \sin {kx}$.
+    
+    \subsection{Теорема Римана-Лебега}
+    
+        $E \subset \mathbb{R}$, $f \in L^1(E, \lambda_1)$. Тогда
+        
+        $\int\limits_E f(t) e^{i \lambda t} dt \xrightarrow[\lambda \rightarrow +\infty]{} 0$.
+        
+        $\int\limits_E f(t) \cos{t} \xrightarrow[\lambda \rightarrow +\infty]{} 0$ (аналогично для $\sin$).
+        
+        \subsubsection{Следствие}
+        
+            $a_k(f)$, $b_k(f)$, $c_k(f) \xrightarrow[k \rightarrow +\infty]{} 0$.
+            
+        \subsubsection{Доказательство}
+        
+            Пусть $f = 0$ вне $E$, $f \in L^1 (\mathbb{R})$.
+            
+            $\int\limits_{\mathbb{R}} f(t) e^{i \lambda t} dt$ при $t = \tau + \dfrac{\pi}{\lambda}$ равно $\int\limits_{\mathbb{R}} f \left( \tau + \dfrac{\pi}{\lambda} \right) e^{i \lambda \tau + i \pi} d \tau = - \int\limits_{\mathbb{R}} f \left( t + \dfrac{\pi}{\lambda} \right) e^{i \lambda t} dt$.
+            
+            $2 \int\limits_{\mathbb{R}} f(t) e^{i \lambda t} = \int\limits_{\mathbb{R}} \left( f(t) - f(t + \dfrac{\pi}{\lambda}) \right) e^{i \lambda t} dt$
+            
+            $\left| \int\limits_{\mathbb{R}} f(t) e^{i \lambda t} \right| \leqslant \dfrac{1}{2} \int\limits_{\mathbb{R}} \left| f(t) - f(t + \dfrac{\pi}{\lambda} \right| \cdot \left| e^{i \lambda t} \right| dt = \dfrac{1}{2} \| f - f_{\pi / \lambda} \| \xrightarrow[h \rightarrow 0]{} 0$.
+        
+    \subsection{Модуль непрерывности}
+    
+        $w(f, h) = \sum\limits_{x, y \in E, |x - y| < h} | f(x) - f(y) |$~--- \textit{модуль непрерывности}.
+        
+    Пусть $f$~--- дифференцируема на $[a, b]$, тогда $| w(f, h)| \leqslant \max |f'| h$.
+    
+    \subsection{Теорема}
+    
+        \begin{enumerate}
+        
+            \item $f \in \widetilde{C} [-\pi, \pi]$. Тогда $|a_k(f)|$, $|b_k(f)|$, $2|c_k(f)| \leqslant w(f, \frac{\pi}{k})$.
+            
+        \end{enumerate}
+        
+        \subsubsection{Доказательство}
+        
+            Как в теореме Римана-Лебега делаем рассуждение $[-\pi, \pi]$.
+            
+            $\int\limits^{\pi}_{-\pi} f(t) \cos {kt} dt = - \int\limits^{\pi}_{-\pi} f(\tau + \dfrac{\pi}{k}) \cos {kt}$ (сделали замену), тогда $\pi w(f, \frac{\pi}{k}$.
+            
 \end{document}
