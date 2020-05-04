@@ -2093,4 +2093,112 @@
                 
             \end{itemize}
         
+\newpage
+
+\part{Интегралы, зависящие от параметра}
+
+\newpage
+
+    \subsection{Несобственный интеграл в $\mathbb{R}$}
+    
+        $\int\limits^b_a f(x) dx = \int\limits-{[a, b]} f d \lambda_1$.
+        
+        $\int\limits^{\rightarrow b}_a f dx = \lim\limits_{B \rightarrow b - 0} \int\limits^B_a f dx$~--- \textit{несобственный интеграл}.
+        
+        Здесь $f$~--- локально суммируемая, т.е. $\forall B \in [a, b) : f$~--- суммируемая на $[a, B]$. (возможно, что $b = +\infty$.
+        
+    \subsection{Теорема}
+    
+        $\int\limits^{\rightarrow b}_a f dx$~--- абсолютно сходится $\Longleftrightarrow f$~--- суммируемая на $[a, b)$.
+        
+        \subsubsection{Доказательство}
+        
+            \begin{itemize}
+            
+                \item $\Leftarrow)$ 
+                
+                    $f$~--- суммируемая $\Rightarrow \int\limits_{[a, b)} |f| d\lambda$~--- конечный, тогда $\int\limits^{\rightarrow b}_a$ существует.
+                
+                    $\int\limits^B_a |f| \leqslant \int\limits_{[a, b)} |f|$.
+                    
+                \item $\Rightarrow)$
+                
+                    $\lim\limits_{B \rightarrow b - 0} \int\limits^B_a |f| d \lambda = \int\limits_{[a, b)} |f| d \lambda$~--- в силу непрерывности меры снизу $g \geqslant 0$.
+                    
+                    Измеримость $E \mapsto \int\limits_{E} g dx$.
+                
+            \end{itemize}
+            
+    $f : X \times Y \rightarrow \overline{\mathbb{R}}$
+    
+    $X$~--- пространство с мерой, $y \subset Y_0$~--- метрическое пространство (или даже метризуемое).
+    
+    Считаем, что $\forall y : f( \cdot, y )$~--- суммируемая на $X$.
+    
+    \subsection{Теорема о предельном переходе по параметру в интеграле}
+    
+        $\mu X < +\infty$, $\varphi : X \rightarrow \mathbb{R}$, $f(x, y) \rightrightarrows \varphi$ при $y \rightarrow y_0$ ($y_0 \in Y_0$ или $y_0$~--- предельная точка $Y$). Тогда
+        
+        $\varphi$~--- суммируемая на $X$, $\lim\limits_y \rightarrow Y_0 \int\limits_X f(x, y) d \mu = \int\limits_X \varphi d \mu$.
+        
+        \subsubsection{Доказательство}
+        
+            По Гейне выбираем $y_n \rightarrow y_0$ при больших $n : \forall x : \left| f(x, y) - \varphi(x) \right| < 1 \Rightarrow \varphi$~--- суммируемая.
+        
+            $\left| \int\limits_X F(x, y) d \mu - \int\limits_X \varphi d \mu \right| \leqslant \int\limits_X | f - \varphi | d \mu \leqslant \sup\limits_{x \in X} \left| f (x, y_0) - \varphi(x) \right| \mu X \xrightarrow[n \rightarrow +\infty]{} 0$. 
+    
+    \subsection{Определение}
+    
+        $f : X \times Y \rightarrow \overline{\mathbb{R}}$ (как выше).
+        
+        $y_0 \in Y$, $f$~--- \textit{удовлетворяет условию} $L_{\mathrm{loc}}(y_0)$, если $\exists g : X \rightarrow \overline{\mathbb{R}}$~--- суммируемая, $\exists U(y_0)$, что для почти всех $x \in X$ и $\forall y \in Y(y_0) : \left| f(x, y) \right| \leqslant g(x)$.
+        
+    \subsection{Теорема Лебега о мажорирующей сходимости}
+    
+        $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $\varphi : X \rightarrow \overline{\mathbb{R}}$, что $\lim\limits_{y \rightarrow Y_0} f(x, y) = \varphi(x)$ при почти всех $x$, $f$~--- удовлетворяет $L_{\mathrm{loc}} (y_0)$. Тогда 
+        
+        $\varphi$~--- суммируемая, $\lim\limits_{y \rightarrow y_0} \int\limits_X f(x, y) d \mu = \int\limits_X \varphi d \mu$.
+    
+        \subsubsection{Доказательство}
+        
+            Из теоремы Лебега по Гейне $y_n \rightarrow y_0$, при почти всех $x$, при $y \in U(y_0)$ верное $\left| f(x, y) \right| \leqslant g(x)$, для больших $n$ получаем $\left| f(x, y_n) \right| \leqslant g(x)$, при $n \rightarrow +\infty$ $\left| \varphi(x) \right| \leqslant g(x) \Rightarrow \varphi$~--- суммируемая.
+            
+            $\int\limits_X f(x, y_n) d \mu \xrightarrow[n \rightarrow +\infty]{} \int\limits_X \varphi d \mu$.
+            
+        \subsubsection{Следствие}
+        
+            $f$~--- при почти всех $x$~--- непрерывно по $y$ в точке $y_0$, $f$~--- удовлетворяет $L_{\mathrm{loc}}(y_0)$. Тогда
+            
+            $J(y) := \int\limits_X f(x, y) d \mu (x)$~--- непрерывна в $y_0$.
+            
+            $\varphi \leftarrow -f(x, y_0)$.
+            
+    \subsection{Правило Лейбница}
+    
+        $Y \subset \mathbb{R}$~--- промежуток.
+        
+        $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $\forall y : f (\cdot, y)$~-- суммируемая на $X$. 
+        
+        Пусть:
+        
+        \begin{enumerate}
+        
+            \item для почти всех $x$ и $\forall y \in Y : \exists f'_y(x, y)$.
+            
+            \item $f'_y$~--- удовлетворяет $L_{\mathrm{loc}}(y_0)$.
+            
+        \end{enumerate}
+        
+        $J(y) = \int\limits_X f(x, y) d \mu(x)$. Тогда
+        
+        $J(y)$~--- дифференцируемая в $y_0$ и $J'(y) = \int\limits_X f'_y(x, y) d \mu (x)$.
+        
+        \subsubsection{Доказательство}
+        
+            $F(x, h) := \dfrac{f(x, y_0 + h) - f(x, y_0)}{h} \xrightarrow[h \rightarrow 0]{} f'_y (x, y_0)$.
+            
+            $\dfrac{J(y_0 + h) - J(y_0)}{h} = \int\limits_X F(x, h) d \mu \xrightarrow[h \rightarrow 0]{} \int\limits_X f'_y(x_0, y_0) d \mu$.
+            
+            $L_{\mathrm{loc}} (h = 0)$, $\left| F(x, h) \right| = \left| f'_y (x, y_0 \rightarrow \theta h ) \right|$ по теорема Лагранжа, и $\left| f'_y (x, y_0 \rightarrow \partial h ) \right| \leqslant g(x)$ по условию $L_{\mathrm{loc}}(y_0)$ для $f'_y$ из $2$ пункта.
+            
 \end{document}
