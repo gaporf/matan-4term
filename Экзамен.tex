@@ -1768,7 +1768,99 @@
             $\int\limits_L P x'_u du + P x'_v dv = \iint\limits_G \dfrac{\partial}{\partial u} (P x'_v) - \dfrac{\partial}{\partial v} (P x'_u) du dv = \iint \left( P'_x x'_u + P'_y y'_u + P'_z z'_u \right) x'_v + P x''_vv - \left(P'_x x'_v + P'_y y'_v + P'_y z'_v \right) x'_u - P x''_uv du dv = \iint P'_x \mathbf{0} + P'_y (x'_v y'_u - x'_u y'_v) + P'_z (x'_v z'_u - x'_u z'_v) = \iint\limits_{G} P'_z dzdx - P'_y dxdy$
             
             Получили что хотели.
-
+            
+    \newpage
+    
+    \section{Формула Гаусса-Остроградского}
+    
+        $V = \left\{ (x, y, z) : (x, y) \in \Omega \text{ и } f(x, y) \leqslant z \leqslant F(x, y) \right\}$
+        
+        $\Omega\underset{\text{замкн.}} \subset \mathbb{R}^2$, $\partial \Omega$~--- кусочно-гладкая кривая, $f$, $F \in C^1 \left( \Omega \right)$.
+        
+        $R : U(V) \rightarrow \mathbb{R}$, $R \in C^1$. Тогда
+        
+        $\iiint_V \dfrac{\partial R}{\partial z} dx dy dz = \iint\limits_{\partial V^+} R dx dy$.
+        
+        \subsection{Доказательство}
+        
+            $\iiint\limits_V \dfrac{\partial R}{\partial z} dx dy dz = \iint\limits_{\Omega} dx dy \int\limits_{f(x, y)}^{F(x, y)} \dfrac{\partial R}{\partial z} dz = \iint\limits_{\Omega} R(x, y, F(x, y)) - \iint\limits_{\Omega} R(x, y f(x, y)) dx dy = \iint\limits_{\text{график F (верх)}} R dx dy + \iint\limits_{\text{график f (низ)}} R dx dy$.
+            
+            $0 = \iint\limits_{\text{цил. } \partial V} R dx dy$.
+        
+        \subsection{Следствие}
+        
+            $\iint\limits_V \left( \dfrac{\partial P}{\partial x} + \dfrac{\partial Q}{\partial y} + \dfrac{\partial R}{\partial z} \right) dx dy dz = \iint\limits_{\partial V^+} P dydz + Q dzdx + R dxdy$.
+    
+    \newpage
+    
+    \section{Соленоидальность бездивергентного векторного поля}
+    
+        \subsection{Дивергенция}
+    
+            $\mathrm{div} A$~--- это функция $\dfrac{\partial P}{\partial x} + \dfrac{\partial Q}{\partial y} + \dfrac{\partial R}{\partial z}$.
+        
+            $\mathrm{div} A(a) = \lim\limits_{r \rightarrow 0} \dfrac{1}{\lambda_3 B} \iiint\limits_{B(a, r)} \mathrm{div} A dx dy dz = \lim\limits_{r \rightarrow 0} \dfrac{1}{\lambda_3 B} \iint\limits_{S(a, r)} \langle (P, Q, R), n_0 \rangle dS$.
+            
+        \subsection{Ротор}
+    
+            $(P, Q, R) \in C^1$~--- ротор (вихрь).
+        
+            $\mathrm{rot} A = (R'_y - Q'_z, P'_z - R'_x, Q'_x - P'_y)$.
+    
+        $\mathrm{rot} V = 0$, $\gamma = 0$. Тогда $\int\limits_{\gamma} P dx + Q dy + R dz = 0 $.
+        
+        $\gamma$~--- путь от $A$ до $B$. Тогда $\int\limits_{\gamma}$~--- зависит от $A$ и $B$, но не от самого пути.
+        
+        Если $O \subset \mathbb{R}^3$~--- не односвязная, $\mathrm{rot} V = 0$. $I(v, \gamma)$ не зависит от $\gamma$
+    
+        $\int\limits_{\Omega} \mathrm{rot} V = \int\limits_{\gamma_2} V + \int\limits_{\gamma_1} V$.
+    
+        $\mathrm{div} (P, Q, R) = 0$.
+    
+        $\forall V : \iint\limits_{\partial V} \langle (P, Q, R), n_0 \rangle dS = 0$.
+    
+        \subsection{Вспомогательная теорема}
+    
+            $V$~--- поле. Если $\mathrm{rot} V = 0$ и область односвязная, то поле гладкое.
+    
+            $\mathrm{rot} = 0$~--- дифференциальный критерий потенциальности $\Leftrightarrow$ поле локально-потенциальное $\Leftrightarrow V$~--- потенциальное.
+        
+        \subsection{Соленоидальное поле}
+    
+            Поле $V$~--- \textit{соленоидальное} в $\Omega$ если существует векторный потенциал, т.е. существует такое векторное поле $B$, что $\mathrm{rot} B = V$.
+        
+        \subsection{Теорема}
+    
+            $\Omega$~--- параллелепипед, $(A_1, A_2, A_3) = A$~--- соленоид в $\Omega \Leftrightarrow \mathrm{div} A = 0$ в $\Omega$.
+    
+            \subsubsection{Доказательство}
+        
+                $\Rightarrow$ Тривиально $\mathrm{div} \mathrm{rot} B = 0$~--- упражнение.
+            
+                $\Leftarrow$. 
+            
+                    $\mathrm{div} A = 0$. Ищем векторный потенциал $B : \mathrm{rot} B = A$.
+            
+                    $B = (P, Q, R)$, $R'_y - Q'_z = A_1$, $P'_z - R'_x = A_2$, $Q'_z - P'_y = A_3$.
+                
+                    Забавный факт: можем подменить $B$ на $B_1$, что $\mathrm{B - B_1} = 0$ и $B - b_1$~--- потенциал $f$.
+                
+                    Пусть $R = 0$, тогда $-Q'_z = A_1$, $P'_z = A_2$ и $Q'_x - P'_y = A_3$. $P(x, y, z) = \int\limits^z_{z_0} A_2 (x, y, z) dt$
+                
+                    $Q(x, y, z) = - \int\limits^z_{z_0} A_1 dz + \varphi(x, y)$.
+                
+                    $I(y) = \int\limits^b_a f(x, y) dx$, $I'_(y)= \int\limits^b_a f'_y (x, y) dx$.
+                
+                    $\varphi'_x -\int\limits^z_{z_0} \dfrac{\partial A_1}{\partial x} - \int\limits^z_{z_0} \dfrac{\partial A_2}{\partial y} = A_3$.
+                
+                    $\mathrm{div} = 0$ по условию, тогда $\varphi'_x + \int\limits^z_{z_0} \dfrac{\partial A_3}{\partial z} dz = A_3$.
+                    
+                    $\varphi'_x(x, y) + A_3(x, y, z) - A_3(x, y, z_0) = A_3$.
+                
+                    $\varphi'_x(x, y) = A_3(x, y, z_0)$.
+                
+                    $\varphi = \int\limits^x_{x_0} A_3(x, y, z_0) dx + g(y)$.
+                
 \newpage
     
 \part{Гильбертовы пространства}
@@ -1856,108 +1948,6 @@
                 \item $\langle x - c_k e_k, e_k \rangle = \langle x, e_k \rangle - c_k \| e_k \|^2 = 0$.
                 
             \end{enumerate}
-        
-\newpage
-
-\part{27.04.2020}
-
-    \subsection{Формула Гаусса-Остроградского}
-    
-        $V = \left\{ (x, y, z) : (x, y) \in \Omega \text{ и } f(x, y) \leqslant z \leqslant F(x, y) \right\}$
-        
-        $\Omega\underset{\text{замкн.}} \subset \mathbb{R}^2$, $\partial \Omega$~--- кусочно-гладкая кривая, $f$, $F \in C^1 \left( \Omega \right)$.
-        
-        $R : U(V) \rightarrow \mathbb{R}$, $R \in C^1$. Тогда
-        
-        $\iiint_V \dfrac{\partial R}{\partial z} dx dy dz = \iint\limits_{\partial V^+} R dx dy$.
-        
-        \subsubsection{Доказательство}
-        
-            $\iiint\limits_V \dfrac{\partial R}{\partial z} dx dy dz = \iint\limits_{\Omega} dx dy \int\limits_{f(x, y)}^{F(x, y)} \dfrac{\partial R}{\partial z} dz = \iint\limits_{\Omega} R(x, y, F(x, y)) - \iint\limits_{\Omega} R(x, y f(x, y)) dx dy = \iint\limits_{\text{график F (верх)}} R dx dy + \iint\limits_{\text{график f (низ)}} R dx dy$.
-            
-            $0 = \iint\limits_{\text{цил. } \partial V} R dx dy$.
-        
-        \subsubsection{Следствие}
-        
-            $\iint\limits_V \left( \dfrac{\partial P}{\partial x} + \dfrac{\partial Q}{\partial y} + \dfrac{\partial R}{\partial z} \right) dx dy dz = \iint\limits_{\partial V^+} P dydz + Q dzdx + R dxdy$.
-            
-    \subsection{Дивергенция}
-    
-        $\mathrm{div} A$~--- это функция $\dfrac{\partial P}{\partial x} + \dfrac{\partial Q}{\partial y} + \dfrac{\partial R}{\partial z}$.
-        
-        $\mathrm{div} A(a) = \lim\limits_{r \rightarrow 0} \dfrac{1}{\lambda_3 B} \iiint\limits_{B(a, r)} \mathrm{div} A dx dy dz = \lim\limits_{r \rightarrow 0} \dfrac{1}{\lambda_3 B} \iint\limits_{S(a, r)} \langle (P, Q, R), n_0 \rangle dS$.
-        
-        \subsubsection{Следствие}
-        
-            $\vec{l}$~--- фиксированное направление в $\mathbb{R}^3$.
-            
-            $\dfrac{\partial f}{\partial l} = \langle \mathrm{grad} f, l \rangle = \dfrac{\partial f}{\partial x_1} l_1 + \dfrac{\partial f}{\partial x_2} l_2 + \dfrac{\partial f}{\partial x_3} l_3$.
-            
-            $\iiint\limits_V \dfrac{\partial f}{\partial l} (x, y, z) dx dy dz = \iint\limits_{\partial V} f(x, y, z) \langle l, n_0 \rangle dS$.
-            
-            $\partial V_\langle (f l_1, f l_2, f l_3), n_0 \rangle dS = \int\limits_{\partial \Omega} Pdx + Q dy + R dz$.
-            
-            $\int ( R'_y - Q'_z) dy dz + (P'_z - R'_x) dz dx + (Q'_x - P'_y) dx dy = \int\limits_{\partial \Omega} P dx + Q dy + R dz$.
-            
-    \subsection{Ротор}
-    
-        $(P, Q, R) \in C^1$~--- ротор (вихрь).
-        
-        $\mathrm{rot} A = (R'_y - Q'_z, P'_z - R'_x, Q'_x - P'_y)$.
-    
-    $\mathrm{rot} V = 0$, $\gamma = 0$. Тогда $\int\limits_{\gamma} P dx + Q dy + R dz = 0 $.
-        
-    $\gamma$~--- путь от $A$ до $B$. Тогда $\int\limits_{\gamma}$~--- зависит от $A$ и $B$, но не от самого пути.
-        
-    Если $O \subset \mathbb{R}^3$~--- не односвязная, $\mathrm{rot} V = 0$. $I(v, \gamma)$ не зависит от $\gamma$
-    
-    $\int\limits_{\Omega} \mathrm{rot} V = \int\limits_{\gamma_2} V + \int\limits_{\gamma_1} V$.
-    
-    $\mathrm{div} (P, Q, R) = 0$.
-    
-    $\forall V : \iint\limits_{\partial V} \langle (P, Q, R), n_0 \rangle dS = 0$.
-    
-    \subsection{Теорема}
-    
-        $V$~--- поле. Если $\mathrm{rot} V = 0$ и область односвязная, то поле гладкое.
-    
-        $\mathrm{rot} = 0$~--- дифференциальный критерий потенциальности $\Leftrightarrow$ поле локально-потенциальное $\Leftrightarrow V$~--- потенциальное.
-        
-    \subsection{Соленоидальное поле}
-    
-        Поле $V$~--- соленоидальное в $\Omega$ если существует векторный потенциал, т.е. существует такое векторное поле $B$, что $\mathrm{rot} B = V$.
-        
-    \subsection{Теорема}
-    
-        $\Omega$~--- параллелепипед, $(A_1, A_2, A_3) = A$~--- соленоид в $\Omega \Leftrightarrow \mathrm{div} A = 0$ в $\Omega$.
-    
-        \subsubsection{Доказательство}
-        
-            $\Rightarrow$ Тривиально $\mathrm{div} \mathrm{rot} B = 0$~--- упражнение.
-            
-            $\Leftarrow$. 
-            
-                $\mathrm{div} A = 0$. Ищем векторный потенциал $B : \mathrm{rot} B = A$.
-            
-                $B = (P, Q, R)$, $R'_y - Q'_z = A_1$, $P'_z - R'_x = A_2$, $Q'_z - P'_y = A_3$.
-                
-                Забавный факт: можем подменить $B$ на $B_1$, что $\mathrm{B - B_1} = 0$ и $B - b_1$~--- потенциал $f$.
-                
-                Пусть $R = 0$, тогда $-Q'_z = A_1$, $P'_z = A_2$ и $Q'_x - P'_y = A_3$. $P(x, y, z) = \int\limits^z_{z_0} A_2 (x, y, z) dt$
-                
-                $Q(x, y, z) = - \int\limits^z_{z_0} A_1 dz + \varphi(x, y)$.
-                
-                $I(y) = \int\limits^b_a f(x, y) dx$, $I'_(y)= \int\limits^b_a f'_y (x, y) dx$.
-                
-                $\varphi'_x -\int\limits^z_{z_0} \dfrac{\partial A_1}{\partial x} - \int\limits^z_{z_0} \dfrac{\partial A_2}{\partial y} = A_3$.
-                
-                $\mathrm{div} = 0$ по условию, тогда $\varphi'_x + \int\limits^z_{z_0} \dfrac{\partial A_3}{\partial z} dz = A_3$.
-                
-                $\varphi'_x(x, y) + A_3(x, y, z) - A_3(x, y, z_0) = A_3$.
-                
-                $\varphi'_x(x, y) = A_3(x, y, z_0)$.
-                
-                $\varphi = \int\limits^x_{x_0} A_3(x, y, z_0) dx + g(y)$.
                 
 \newpage
 
