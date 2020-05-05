@@ -2377,4 +2377,124 @@
             
             Тогда заключение: $J(y)$ непрерывен в точке $y_0$.
             
+    \subsection{Определение}
+    
+        $E = \langle a, b \rangle$, $M \in \mathbb{R}$, $\alpha \in (0, 1)$.
+        
+        $\mathrm{Lip}_M(\alpha) = \left\{ f : E \rightarrow \mathbb{R} : \forall x, y \in E : \left| f(x) - f(y) \right| \leqslant M | x - y | \right\}$~--- класс Липшеца.
+    
+        \subsubsection{Пример}
+        
+            $f$~--- дифференцируема, $\forall x : \left| f'(x) \right| \leqslant M$, $f \in \mathrm{Lip}_M(1)$.
+            
+            $\left| f(x) - f(y) \right| = | f'(X) | x - y | \leqslant M | x - y |$.
+           
+    \subsection{Следствие}
+    
+        $0 \alpha \leqslant 1$, $f \in \mathrm{Lip}_M (\alpha)$. Тогда при $k \neq 0$
+        
+        $\left| a_k(f) \right|$, $\left| b_k(f) \right|$, $2 \left| c_k(f) \right| \leqslant \dfrac{M \pi^{\alpha}}{k^{\alpha}}$.
+        
+    \subsection{Утверждение}
+    
+        $f \in \widetilde{C}^1 [a, b]$. Тогда
+        
+        $a_k(f') = k b_k(f)$, $b_k(f') - ka_k(f)$, $c_k(f') = i k c_k(f)$.
+        
+        $2 \pi C_k(f') = \dfrac{1}{2 \pi} \int\limits^{\pi}_{-\pi} f'(x) e^{-ikx}  = f(x) e^{-ikx} \bigg|^{\pi}_{-\pi} + ik   \int\limits^{\pi}_{-\pi} f(x)e^{-ikx}$
+    
+    \subsection{Следствие}
+    
+        \begin{enumerate}
+        
+            \item $f \in \widetilde{C}^{(r)} [-\pi, \pi]$. Тогда $|a_k(f)|$, $|b_k(f)|$, $|c_k(f)| \leqslant \dfrac{\mathrm{const}}{|k|^2}$.
+        
+            \item $f \in \widetilde{C}^{(r)}$, $f^{(r)} \in \mathrm{Lip}_M (\alpha)$. Тогда $\ldots \leqslant \dfrac{\mathrm{const}}{|k|^{r + \alpha}}$.
+            
+        \end{enumerate}
+        
+        $a_k(f) = \dfrac{1}{k^r} a_k \left( f^{(r)} \right)$
+        
+    \subsection{Ядро Дирихле}
+    
+        $D_n(t) = \dfrac{1}{\pi} \left( \dfrac{1}{2} + \sum\limits_{k = 1}^n \cos {kt} \right)$~--- \textit{ядро Дирихле}, $n = 0, 1, \ldots$.
+        
+    \subsection{Ядро Фейера}
+    
+        $\Phi_n(t) = \dfrac{1}{n + 1} \sum\limits_{k = 0}^n D_k(t)$.
+        
+    \subsection{Свойства}
+    
+        \begin{enumerate}
+        
+            \item $D_n(t) = dfrac{\sin \left( \left(n + \dfrac{1}{2} \right) t \right)}{2 \pi \sin {t / 2}}$.
+            
+            \item $\Phi_n(t) = \dfrac{1}{2 \pi (n + 1)} \cdot \dfrac{\sin^2 \left( \dfrac{n + 1}{2} t \right)}{\sin^2 {t / 2}}$.
+            
+            \item $D_n$, $\Phi_n$~--- чётные, $\Phi_n \geqslant 0$, $\int\limits^{\pi}_{-\pi} D_n = 1$, $\int\limits^{\pi}_{-\pi} \Phi_n = 1$.
+            
+            \item $f \in L^1 [-\pi, \pi]$, тогда $S_n(f, x) = \int\limits_{-\pi}^{\pi} f(x + t) D_n(t) dt$.
+            
+        \end{enumerate}
+    
+        \subsubsection{Доказательство}
+        
+            $2 \sin \dfrac{\pi}{2} \cos {kt} = \sin \left(k + \dfrac{1}{2} \right) t - \sin \left( K - \dfrac{1}{2} \right) t$.
+            
+            $2 \sin \dfrac{t}{2} D_n = \dfrac{1}{\pi} \left( \sin \dfrac{\pi}{2} + \sum \sin \left(k + \dfrac{1}{2} \right) t - \sin \left( k - \dfrac{1}{2} \right) t \right)$
+        
+            $2 \pi (n + 1) \Phi_n = \sum\limits_{k = 0}^n \dfrac{\sin \left(k + \dfrac{1}{2} \right) t}{\sin {t / 2}} = \dfrac{sin^2 \dfrac{n + 1}{2} t }{\sin^2 \dfrac{t}{2}}$.
+            
+            $2 \sum\limits_{k = 0}^n \sin \dfrac{t}{2} \sin \left( k + \dfrac{1}{2} \right) t = 2 \sum \cos {kt} - \cos \left( k + 1 \right) t = (1 - \cos (n + 1) t ) = 2 \sin^2 \left( \dfrac{n + 1}{2} t \right)$
+            
+            $A_k(f, x) \dfrac{1}{\pi} \int\limits^{\pi}_{-\pi} f(x + t) \cos {kt} dt$
+    
+    \subsection{Интеграл Дирихле}
+    
+        $\int\limits^{\pi}_{-\pi} f(x + t) Dn(t) dt$~--- \textit{интеграл Дирихле}.
+        
+    \subsection{Принцип локализации Римана}
+    
+        $f$, $g \in L_1$, $x_0 \in \mathbb{R}$, $\delta > 0$. $f(x) = g(x)$ на $(x_0 - \delta, x_0 + \delta)$. Тогда
+        
+        ряды Фурье $f$ и $g$ ведут себя одинаково, т.е. $S_n(f, x_0) - S_n(g, x_0) \xrightarrow[n \rightarrow +\infty]{} 0$.
+        
+        $h := f - g$, $h = 0$ в $(x_0 - \delta, x_0 + \delta)$, $S_n(h, x_0)$, проверим, что $S_n(h, x_0) \rightarrow 0$.
+        
+        $S_n(h, x_0) = \int\limits^{\pi}_{-\pi} h(x_0 + t) D_n(t)$.
+        
+        $\dfrac{\sin \left(n + \dfrac{1}{2} \right) t}{\sin \dfrac{t}{2}} = \mathrm{ctg} \dfrac{t}{2} \sin{t} + \cos {nt}$.
+        
+        $S_n(h, x_0) = \dfrac{1}{\pi} \int\limits^{\pi}_{-\pi} h(x_0 + t) \ctg \dfrac{t}{2} \sin {nt} + h(x_0 + t) \cos {nt} dt = b_n(h_1) + a_n(h_2) \xrightarrow[h \rightarrow +\infty]{} 0$. по теореме Римана-Лебега.
+        
+        Равенство выполняется в случае $h_1$, $h_2 \in L_1$, $h_2 \in L_1$~--- очевидно.
+        
+        $\int\limits^{\pi}_{-\pi} |h_2| = \int\limits^{\pi}_{-\pi} | h(x_0 + t) | dt$.
+        
+        $h(x_0 + t) \mathrm{ctg} \dfrac{t}{2}$
+        
+        при $|t| < \delta : h_1 = 0$.
+        
+        $|t| > \delta : |h_1| \leqslant |h(x_0 + t)| \cdot \mathrm{ctg} \dfrac{\delta}{2}$.
+        
+    \subsection{Замечания}
+    
+        \begin{enumerate}
+        
+            \item В условиях теоремы пусть $[a, b] \subset (x_0 - \delta, x_0 + \delta)$. Тогда
+            
+                $S_n(h, x) \rightrightarrows 0$ при $n \rightarrow +\infty$ на $[a, b]$.
+                
+            \item $x_0$, $\delta$. Для определения ряда Фурье нужен весь $[-\pi, \pi]$. $A$ для ''поведения'' ряда Фурье существенна лишь окрестность $x_0$.
+            
+            \item $f \in L^1 [0, \pi]$, 
+            
+                $f \backsim \sum b_k(f) \sin {kx}$.
+            
+                $\backsim \sum a_k(f) \cos {kx}$.
+            
+        \end{enumerate}
+        
+        Эти различия везде задаются одинаково на $[0, \pi]$.
+        
 \end{document}
