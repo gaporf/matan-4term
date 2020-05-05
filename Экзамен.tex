@@ -2303,4 +2303,78 @@
             
             $\int\limits^{\pi}_{-\pi} f(t) \cos {kt} dt = - \int\limits^{\pi}_{-\pi} f(\tau + \dfrac{\pi}{k}) \cos {kt}$ (сделали замену), тогда $\pi w(f, \frac{\pi}{k}$.
             
+\newpage
+
+\part{05.05.2020}
+    
+    \subsection{Равномерно сходящийся интеграл}
+    
+        $J(y) = \int\limits^{\rightarrow b}_a f(x, y) d \mu (x)$, $f : \langle a, b \rangle \times Y \rightarrow \overline{\mathbb{R}}$, локально суммируемая.
+        
+        Интеграл $J(y)$ равномерно сходится на $Y \Longleftrightarrow \int\limits^t_a f(x, y) dx \rightrightarrows J(y)$ при $t \rightarrow b - 0$.
+        
+        $\left| \int\limits^t_a f(x, y) dx - J(y) \right| \xrightarrow[t \rightarrow b - 0]{} 0$.
+        
+        $\sup\limits_y \left| \int\limits^{\rightarrow b}_a f(x, y) dx \right| \xrightarrow[t \rightarrow b - 0]{} 0$.
+    
+    \subsection{Что-то похожее на признак Вейерштрасса}
+    
+        $\left| f(x, y) \right| \leqslant g(x)$ и $\int\limits^b_a g(x)$ конечен, тогда интеграл $\int\limits^{\rightarrow b}_a g(x) dx$~--- равномерно сходится.
+        
+    \subsection{Ложное воспоминание Констранина Петровича}
+    
+        $f : T \times Y \rightarrow \mathbb{R}$, $T \subset \widetilde{T}$, $Y \subset \widetilde{Y}$~--- метрические пространства (метризуемые)
+        
+        $t_0$~--- предельная точка $T$, $y_0$~--- предельная точка $Y$. Пусть
+        
+        \begin{enumerate}
+        
+            \item $\forall t \in T : \exists \text{ кон. } L(t) = \lim\limits_{y \rightarrow y_0} f(t, y)$.
+            
+            \item $\forall y \in Y : \exists \text{ кон. } J(y) = \lim\limits_{t \rightarrow t_0} f(t, y)$.
+            
+            \item Хотя бы один из пределов~--- равномерный.
+            
+        \end{enumerate}
+    
+        Тогда существует конечный $\lim\limits_{t \rightarrow t_0} L(t) = \lim\limits_{y \rightarrow y_0} J(y)$.
+        
+        $f_n(x)$, $\lim\limits_{x \rightarrow x_0} f_n(x) = a_n$, $f_n(x) \rightrightarrows S(x)$, тогда $\exists \text { кон. } \lim\limits_{x \rightarrow x_0} S(x) = \lim\limits_{n \rightarrow +\infty} a_n$.
+        
+    \subsection{Теорема}
+    
+        $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $(X, \mathcal{A}, \mu)$~--- пространство с мерой.
+        
+        $Y \subset \widetilde{Y}$~--- метрическое пространство (или $Y$~--- м.п., или $\widetilde{Y}$~--- метризуемое)
+        
+        $Y_0 \in \widetilde{Y}$~--- п. т. $Y$.
+        
+        \begin{enumerate}
+        
+            \item при почти всех $x : \exists f_0(x) = \lim\limits_{y \rightarrow y_0} f(x, y)$.
+            
+            \item $f$~--- локально суммируемая, т.е. суммируемая на каждом $(a, t) : t < b$. $\int\limits^t_a f(x, y) \rightarrow \int\limits^t_a f_0(x)$.
+            
+            \item $|forall y : \exists J(y) = \int\limits^{\rightarrow b}_a f(x, y) d \mu (x)$~--- равномерно сходится на $Y$.
+            
+        \end{enumerate}
+        
+        Тогда $\int\limits^{\rightarrow b}_a f(x, y) d \mu(x) \xrightarrow[y \rightarrow y_0]{} \int\limits^{\rightarrow b}_a f_0(x) d \mu(x)$.
+        
+        \subsubsection{Доказательство}
+        
+            Это ложное вспоминание с точностью до обозначений.
+            
+            $T = (a, b)$, $T_0 = \overline{\mathbb{R}}$, $t_0 = b$.
+            
+            $f(t, y) = \int\limits^t_a f(x, y) d \mu (x)$, $L(t) = \int\limits^t_a f_0(x) d \mu (x)$.
+            
+            Переход конечный $\leftrightarrow$ интеграл равномерно сходится.
+            
+        \subsubsection{Следствие}
+        
+            $1 \leftrightarrow 1'$ при почти всех $x$ $y \mapsto f(x, y)$, непрерывна в точке $y_0$.
+            
+            Тогда заключение: $J(y)$ непрерывен в точке $y_0$.
+            
 \end{document}
