@@ -2271,7 +2271,9 @@
             
             $f \backsim \dfrac{a_0}{2} + \sum a_k \cos {kx}$, $f \backsim \sum b_k(f) \sin {kx}$.
     
-    \subsection{Теорема Римана-Лебега}
+    \newpage
+    
+    \section{Теорема Римана-Лебега}
     
         $E \subset \mathbb{R}$, $f \in L^1(E, \lambda_1)$. Тогда
         
@@ -2279,11 +2281,11 @@
         
         $\int\limits_E f(t) \cos{t} \xrightarrow[\lambda \rightarrow +\infty]{} 0$ (аналогично для $\sin$).
         
-        \subsubsection{Следствие}
+        \subsection{Следствие}
         
             $a_k(f)$, $b_k(f)$, $c_k(f) \xrightarrow[k \rightarrow +\infty]{} 0$.
             
-        \subsubsection{Доказательство}
+        \subsection{Доказательство}
         
             Пусть $f = 0$ вне $E$, $f \in L^1 (\mathbb{R})$.
             
@@ -2292,7 +2294,9 @@
             $2 \int\limits_{\mathbb{R}} f(t) e^{i \lambda t} = \int\limits_{\mathbb{R}} \left( f(t) - f(t + \dfrac{\pi}{\lambda}) \right) e^{i \lambda t} dt$
             
             $\left| \int\limits_{\mathbb{R}} f(t) e^{i \lambda t} \right| \leqslant \dfrac{1}{2} \int\limits_{\mathbb{R}} \left| f(t) - f(t + \dfrac{\pi}{\lambda} \right| \cdot \left| e^{i \lambda t} \right| dt = \dfrac{1}{2} \| f - f_{\pi / \lambda} \| \xrightarrow[h \rightarrow 0]{} 0$.
-        
+    
+    \newpage
+    
     \subsection{Модуль непрерывности}
     
         $w(f, h) = \sum\limits_{x, y \in E, |x - y| < h} | f(x) - f(y) |$~--- \textit{модуль непрерывности}.
