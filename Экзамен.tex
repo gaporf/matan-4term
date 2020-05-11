@@ -2143,7 +2143,7 @@
         
         $\varphi$~--- суммируемая на $X$, $\lim\limits_{y \rightarrow y_0} \int\limits_X f(x, y) d \mu = \int\limits_X \varphi d \mu$.
         
-        \subsubsection{Доказательство}
+        \subsection{Доказательство}
         
             По Гейне выбираем $y_n \rightarrow y_0$ при больших $n : \forall x : \left| f(x, y) - \varphi(x) \right| < 1 \Rightarrow \varphi$~--- суммируемая.
         
@@ -2151,12 +2151,14 @@
     
     \newpage
     
-    \subsection{Определение}
+    \section{Класс Липшица с константой $M$ и показателем $\alpha$}
     
         $f : X \times Y \rightarrow \overline{\mathbb{R}}$ (как выше).
         
-        $y_0 \in Y$, $f$~--- \textit{удовлетворяет условию} $L_{\mathrm{loc}}(y_0)$, если $\exists g : X \rightarrow \overline{\mathbb{R}}$~--- суммируемая, $\exists U(y_0)$, что для почти всех $x \in X$ и $\forall y \in Y(y_0) : \left| f(x, y) \right| \leqslant g(x)$.
+        $y_0 \in Y$, $f$~--- \textit{удовлетворяет условию} $L_{\mathrm{loc}}(y_0)$, если $\exists g : X \rightarrow \overline{\mathbb{R}}$~--- суммируемая, а также существует $U(y_0)$, что для почти всех $x \in X$ и $\forall y \in Y(y_0) : \left| f(x, y) \right| \leqslant g(x)$.
         
+    \newpage
+    
     \subsection{Теорема Лебега о мажорирующей сходимости}
     
         $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $\varphi : X \rightarrow \overline{\mathbb{R}}$, что $\lim\limits_{y \rightarrow Y_0} f(x, y) = \varphi(x)$ при почти всех $x$, $f$~--- удовлетворяет $L_{\mathrm{loc}} (y_0)$. Тогда 
