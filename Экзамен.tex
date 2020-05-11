@@ -2009,7 +2009,7 @@
         
     \newpage
     
-    \section{Теорема Рисса -- Фишера о сумме ряда Фурье. Равенство Парсеваля}
+    \section{Теорема Рисса~--- Фишера о сумме ряда Фурье. Равенство Парсеваля}
     
         $\left\{ e_k \right\}$~--- ортогональная система в $\mathcal{H}$, $x \in \mathcal{H}$. Тогда выполняеются следующие утверждения:
         
@@ -2135,17 +2135,21 @@
     
     Считаем, что $\forall y : f( \cdot, y )$~--- суммируемая на $X$.
     
-    \subsection{Теорема о предельном переходе по параметру в интеграле}
+    \newpage
+    
+    \section{Предельный переход под знаком интеграла при наличии равномерной сходимостичвп}
     
         $\mu X < +\infty$, $\varphi : X \rightarrow \mathbb{R}$, $f(x, y) \rightrightarrows \varphi$ при $y \rightarrow y_0$ ($y_0 \in Y_0$ или $y_0$~--- предельная точка $Y$). Тогда
         
-        $\varphi$~--- суммируемая на $X$, $\lim\limits_y \rightarrow Y_0 \int\limits_X f(x, y) d \mu = \int\limits_X \varphi d \mu$.
+        $\varphi$~--- суммируемая на $X$, $\lim\limits_{y \rightarrow y_0} \int\limits_X f(x, y) d \mu = \int\limits_X \varphi d \mu$.
         
         \subsubsection{Доказательство}
         
             По Гейне выбираем $y_n \rightarrow y_0$ при больших $n : \forall x : \left| f(x, y) - \varphi(x) \right| < 1 \Rightarrow \varphi$~--- суммируемая.
         
             $\left| \int\limits_X F(x, y) d \mu - \int\limits_X \varphi d \mu \right| \leqslant \int\limits_X | f - \varphi | d \mu \leqslant \sup\limits_{x \in X} \left| f (x, y_0) - \varphi(x) \right| \mu X \xrightarrow[n \rightarrow +\infty]{} 0$. 
+    
+    \newpage
     
     \subsection{Определение}
     
@@ -2495,6 +2499,6 @@
             
         \end{enumerate}
         
-        Эти различия везде задаются одинаково на $[0, \pi]$.
+        Эти различия ведет себя одинаково на $[0, \pi]$.
         
 \end{document}
