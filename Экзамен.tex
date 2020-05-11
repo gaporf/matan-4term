@@ -2513,4 +2513,140 @@
         
             Эти различия ведут себя одинаково на $[0, \pi]$.
         
+\newpage
+
+\section{До свидания, теория меры}
+
+    $(a, b)$
+    
+    Сумм. $(a, t)$
+    
+    $\lim\limits_{t \rightarrow b-0} \int\limits^t_a f(x) d \mu(x)$.
+    
+    $\int\limits^{\rightarrow b}_a f(x, y) d \mu(x)$~--- равномерно сходится, если $\int\limits^t_a \rightrightarrows \int\limits^{\rightarrow b}_a$, если $\sup\limits_{y \in Y} \left| \int\limits^{\rightarrow b}_t f(x, y) d \mu(x) \right| \xrightarrow[t \rightarrow b - 0]{} 0$.
+    
+    \subsection{Теорема об интегрировании по параметру}
+    
+        $f : (a, b) \times Y \rightarrow \overline{\mathbb{R}}$~--- суммируемая по мере $\lambda_1 \times \mu$ на каждом множестве вида $(a, t) \times Y$, где $a < t < b$. $\mu Y < +\infty$. Пусть $J(y) = \int\limits^{\rightarrow b}_a f(x, y) dx$~--- равномерно сходится на $Y$. Тогда
+        
+        \begin{enumerate}
+        
+            \item $J(y)$~--- суммируемая на $Y$.
+            
+            \item $\int\limits^{\rightarrow b}_a \left( \int\limits_Y f(x, y) d \mu(y) \right) dx$~--- сходится.
+            
+            \item $\int\limits_Y \int\limits^{\rightarrow b}_a f(x, y) d \mu(x) = \int\limits^{\rightarrow b}_a \left( \int\limits_Y f(x, y) dy \right)$.
+            
+        \end{enumerate}
+        
+        \subsubsection{Доказательство}
+        
+            Проверим свойство $1$.
+            
+            $J_t(y) = \int\limits^t_a f(x, y) dx$, $a < t < b$, $y \in Y$~--- суммируемая на $Y$ по теореме Фубини.
+            
+            $\left| J(y) - J_t(y) \right| = \int\limits_t = \left| \int\limits^{\rightarrow b}_t f(x, y) dx \right| \leqslant 1$ $\forall y$ при $t$ близких к $b$ (следует из равномерной сходимости), значит $J(y)$~--- суммируемая (поскольку $\mu Y < +\infty$).
+            
+            Остальные свойства сами собой получаются.
+            
+            $x \mapsto \int\limits_Y f(x, y) d \mu(y)$~--- суммируемая по $x$ на промежутке $(a, t)$ (по теореме Фубини).
+            
+            По теореме Фубини $\int\limits^t_a \left( \int\limits_Y f(x, y) d \mu(y) \right) dx = \int\limits_Y \int\limits^t_u f = \int\limits_Y \int \left( \int\limits^{\rightarrow b}_a f dx \right) d \mu(y) - \int\limits_Y \left( \int\limits^{\rightarrow b}_t f dx \right) d \mu(Y)$.
+            
+            $\left| \int\limits^t_a \left( \int\limits_Y f \right) - \int\limits_Y \left( \int\limits^{\rightarrow b}_a f \right) \right| \leqslant \left| \int\limits_Y \left( \int\limits^{\rightarrow b}_t f dx \right) dy \right| \leqslant \int\limits_Y \left| \int\limits^{\rightarrow b}_t f dx \right| dy \leqslant \mu Y \sup\limits_{y \in Y} \left| \int\limits^{\rightarrow b}_t f(x, y) dx \right| \xrightarrow[t \rightarrow b - 0]{} 0$.
+        
+    \subsection{Правило Лейбница для несобственный интегралов}
+    
+        $f : [a, b) \times \langle c, d \rangle \rightarrow \mathbb{R}$~--- непрерывная.
+        
+        $\forall y : J(y) = \int\limits^{\rightarrow b}_a f(x, y) dx$~--- сходится.
+        
+        Пусть $\forall x : \forall y : \exists f'_y(x, y)$~--- непрерывная функция, $[a, b) \times \langle c, d \rangle$.
+        
+        Пусть $I(y) = \int\limits^{\rightarrow b}_a f'_y (x, y) dx$~--- равномерно сходится на $\langle c, d \rangle$. Тогда 
+        
+        \begin{enumerate}
+        
+            \item $J(y) \in C^1 \langle c, d \rangle$.
+        
+            \item $J'(y) = I(y)$, т.е. $\dfrac{d}{dy} \left( \int\limits^{\rightarrow b}_a f(x, y) dx \right) = \int\limits^b_a f'_y(x, y) dx$
+            
+        \end{enumerate}
+        
+        \subsubsection{Доказательство}
+        
+            $I$~--- непрерывно зависит от $y$ (по теореме о непрерывности несобственного интеграла).
+            
+            $s_0$, $s \in \langle c, d \rangle$, $\int\limits^s_{s_0} I(y) dy = \int\limits^s_{s_0} \left( \int\limits^{\rightarrow b}_a f'_y dx \right) dy$.
+            
+            $[x, y) \in [a, t] \times [s_0, s]$, $f'_y$
+            
+            По предыдущей теореме меняем порядок и получаем
+            
+            $\int\limits^{\rightarrow b}_a \left( \int\limits^s_{s_0} f'_y(x, y) dy \right) dx = \int\limits^{\rightarrow b}_a f(x, s) - f(x, s_0) dx = J(s) - J(s_0) \Rightarrow J(s)$~--- дифференцируема, по теореме Барроу $J'(S) = I(S)$.
+            
+\newpage
+
+\part{11.05.2020}
+
+    $D_n := \dfrac{1}{\pi} \left( \dfrac{1}{2} + \sum\limits^n_{k = 1} \cos {kx} \right)$
+    
+    $S_n(f, x) = \int\limits^{\pi}_{-\pi} f(x + t) D_n(t) dt$.
+    
+    \subsection{Признак Дины}
+    
+        $f \in L_1$, $x_0 \in \mathbb{R}$, $S \in \mathbb{R} ( \mathbb{C} )$.
+        
+        $\int\limits^{\pi}_0 \dfrac{\left| f(x_0 + t) - 2 S + f(x_0 - t) \right|}{t} dt < +\infty$. Тогда
+        
+        ряд Фурье в $x_0$ сходится к $S$, или $S_n(f, x_0) \xrightarrow[n \rightarrow +\infty]{} S$.
+        
+        \subsubsection{Доказательство}
+        
+            Обозначим $\varphi(t) = f(x_0 + t) - 2S + f(x_0 - t)$.
+            
+            Если $D_n$~--- четный, то $\int\limits^{\pi}_{-\pi} D_n = 1$.
+            
+            $S_n(f, x_0) - S = \int\limits^{\pi}_{-\pi} f(x_0 + t) D_n(t) - \int\limits^{\pi}_{-\pi} S D_n(t) dt = \int\limits^{\pi}_{-\pi} \left( f(x + t) - S \right) D_n(t) dt = \int\limits^0_{-\pi} + \int\limits^{\pi}_0 = \int\limits^{\pi}_0 \varphi(t) D_n(t) dt$, для $t \in s - t$. Тогда как в предположении теоремы получаем
+            
+            $\int\limits^{\pi}_0 \varphi(t) D_n(t) dt = \dfrac{1}{n} \int\limits_0^{\pi} \dfrac{\varphi(t)}{2} \left( \ctg \dfrac{t}{2} \sin {nt} + \cos {nt} \right) = b_n(h_1) + a_n \left( \dfrac{\varphi(t)}{2} \right)$ (в кавычках).
+            
+            $h_1(t) = \dfrac{\varphi(t)}{2} \cdot \ctg \dfrac{t}{2}$.
+            
+            $h_1(t) = $, $\dfrac{\varphi(t)}{2} \ctg \dfrac{t}{2}$ для $t \in (0, \pi)$ или $0$, если $t \in (-\pi, 0)$.
+            
+            в кавычках $\dfrac{\varphi(t)}{2} = \dfrac{\varphi(t)}{2}$ для $t \in (0, \pi)$ и 0 в противном случае.
+            
+            Теперь проблема с $h_1 \in L_1$.
+            
+            $h_1$, $\dfrac{\varphi}{2} \in L_1$ (в кавычках).
+            
+            в кавычках $\dfrac{\varphi}{2} \in L_1$~--- очевидно.
+            
+            $\left| \dfrac{\varphi(t)}{2} \ctg \dfrac{t}{2} \right| \leqslant \dfrac{| \varphi(t) |}{2 \cdot t / 2} = \dfrac{| \varphi(t) |}{t}$
+            
+            $| \tg x | > |x|$ при $x \in (0, \pi / 2)$, а $\ctg x < x$.
+        
+        \subsection{Замечания}
+        
+            \begin{enumerate}
+            
+                \item $* \Leftrightarrow \forall \delta > 0 : \int\limits^{\delta}_0 \dfrac{|\varphi(t)|}{t} dt < +\infty \leqslant \int\limits^{\pi}_{\delta} \dfrac{|f(x_0 + t)| + |f(x_0 - t)| + 2S}{t} \leqslant \dfrac{1}{\delta} \left( \| f \| + \| f \| + 2 S \pi \right)$.
+                
+                \item $f(x) = \dfrac{1}{\ln |x|}$~--- непрерывна в $0$.
+                
+                    $x_0 = 0$, $S := 0$, то $\int \dfrac{| f(t) + f(-t) - 2S|}{t} dt$,тогда $-\int\limits^{\pi}_0 \dfrac{2}{t \ln t} dt$~--- расходится.
+                
+            \end{enumerate}
+            
+        \subsection{Следствие}
+            
+            $f \in L_1$, $x_0 \in [-\pi, \pi]$. Пусть существуют $4$ предела: $f(x_0 \pm 0)$, $\alpha_{\pm} := \lim\limits_{t \rightarrow \pm 0} \dfrac{f(x_0 + t) - f(x_0 \pm 0)}{t}$. (односторонняя производная). Тогда
+            
+            $S_n(f, x_0) \rightarrow \dfrac{1}{2} \left( f(x_0 + 0) + f(x_0 - 0) \right)$.
+            
+            Берём $S = \dfrac{1}{2} \left( f(x_0 + 0) + f(x_0 - 0) \right)$.
+            
+            $(*) : \int\limits^{\pi}_0 \dfrac{f(x_0 + t) + f(x_0 - t) - f(x_0 + 0) - f(x_0 - 0)}{t} \xrightarrow[t \rightarrow 0]{} \alpha_+ + \alpha_-$.
+            
 \end{document}
