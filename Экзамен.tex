@@ -2649,4 +2649,134 @@
             
             $(*) : \int\limits^{\pi}_0 \dfrac{f(x_0 + t) + f(x_0 - t) - f(x_0 + 0) - f(x_0 - 0)}{t} \xrightarrow[t \rightarrow 0]{} \alpha_+ + \alpha_-$.
             
+            т.е. интеграл (*) не является несобственном в нуле.
+            
+        \subsection{Следствие 2}
+        
+            $f \in L_1$, $f$~--- непрерывна в $x_0$, а также $\exists f'_{\pm} (x_0)$. Тогда
+            
+            $S_n(f, x_0) \rightarrow f(x_0)$.
+            
+            \subsubsection{Доказательство}
+            
+                $f(x_0 \pm 0) = f(x_0$, $\alpha_{\pm} = f'_{\pm} (x_0)$.
+                
+        \subsection{Пример}
+        
+            $f(x) = x$ на $[-\pi, \pi]$, она нечётная, тогда $a_k(f) = 0$.
+            
+            $b_k(f) = \dfrac{1}{\pi} \int\limits^{\pi}_{-\pi} x \sin {kx} = \dfrac{2}{\pi} \int\limits^{\pi}_0 = x \dfrac{-\cos{kx}}{k} \bigg|^{\pi}_0 + \dfrac{2}{\pi k} \int\limits^{\pi}_0 \cos {kx} dx = \dfrac{2}{k} (-1)^{k - 1}$.
+            
+            Ряд Фурье: $S(f, x) = \sum \dfrac{2}{k} (-1)^k \sin {kx}$.
+            
+            $x = \dfrac{\pi}{2}$, $\left( \dfrac{1}{1} - \dfrac{1}{3} + \dfrac{1}{5} - \dfrac{1}{7} + \ldots \right) = \dfrac{\pi}{4}$.
+            
+            $x = \pi$, $\sum = 0$ (полусумма $\pi$ и $-\pi$ равна $0$ по признаку Дини).
+            
+            $\sum \| \dfrac{2}{k} (-1)^k \sin {kx} \|^2_2 = \| x \|^2_2$.
+            
+            $\dfrac{4}{k^2} \int\limits^{\pi}_{-\pi} \sin^2 kx dx$.
+            
+            $\int\limits^{\pi}_{-\pi} x^2 dx = \dfrac{x^3}{3} \big|^{\pi}_{-\pi} = \dfrac{2 \pi^3}{3}$.
+            
+            $\sum \dfrac{4 \pi}{k^2} = \dfrac{2 \pi^3}{3}$, $\sum \dfrac{1}{k^2} = \dfrac{\pi^2}{6}$.
+            
+        \subsection{Конфетка}
+        
+            Пусть $f \in L_1$, тогда:
+            
+            \begin{enumerate}
+            
+                \item Четная.
+                
+                \item $\int\limits^{\pi}_{-\pi} f = 0$.
+                
+                \item $\forall q \in \mathbb{Q} : f = 0$ в окрестности точки $\pi q$.
+                
+                \item $0 < \int\limits^{\pi}_{-\pi} |f|^2 dx < +\infty \Rightarrow f \in L_2, f \neq 0 \Rightarrow$ ряд Фурье $f$ нетривиальный.
+                
+            \end{enumerate}
+            
+            $a_k = a_k(f)$. Тогда
+            
+            $\forall m \in \mathbb{N} : s\sum\limits^{+\infty}_{k = 0} a_{km} = 0$.
+            
+            \subsubsection{Доказательство}
+            
+                $\sum a_k \cos {kx} \leftrightarrow f$.
+                
+                $x_0 := \dfrac{2 \pi}{n} i$; в окрестности $x_0$ $f = 0$ удовлетворяет признаку Дини.
+            
+                $\sum a_k \cos \dfrac{2 \pi}{n} i k = 0$, $i = 0, 1, 2, \ldots, n - 1$.
+                
+                Сложим по $i$ : $\sum a_k \left( \sum\limits_{i = 0}^{n - 1} \cos \left( \dfrac{2 \pi}{n} k j \right) \right) = 0$.
+                
+                $\cos 2 \pi \dfrac{0 k}{n} + \cos 2 \pi \dfrac{k}{n} + \cos 2 \pi \dfrac{2 k}{n} + \cos 2 \pi \dfrac{3k}{n} + \ldots + \cos 2 \pi \dfrac{(n - 1) k}{n}$.
+                
+                Это сумма $x$ координат и векторов, и она не меняется при повороте на $\dfrac{2 \pi k}{n} \Rightarrow $ сумма векторов равна $0$, значит и сумма $x$ координат равна $0$. (рассуждение содержательно только при $k$ не делящемся на $n$).
+                
+                При $k$ делящемся на $n$ сумма равна $n$.
+                
+\newpage
+
+\part{Свёртки и аппроксимативные единицы}
+    
+    \subsection{Определение}
+    
+        Свёртка двух функций из $L^1 [-\pi, \pi]$, $f$, $K \in L_1$, 
+        
+        $(f * K)(x) = \int\limits^{\pi}_{-\pi} f(t) K(x - t) dt = \int\limits^{\pi}_{-\pi}f(x - t) K(t) dt$.
+        
+    \subsection{Корректность определения}
+    
+        $g(x, t) = f(x - t) K(t)$. Проверим, что функция~--- измеримая $\mathbb{R}^2 \rightarrow \overline{\mathbb{R}}$.
+        
+        Давайте рассмотрим функции попроще, т.е. $\varphi(x, t) = f(x - t)$~--- измеримая ли она? $\mathbb{R}^2 \rightarrow \overline{\mathbb{R}}$.
+        
+        $\mathbb{R}^2 (\varphi < a)$, $E_a := \mathbb{R} \left( f(x) < a \right)$~--- измеримая по Лебегу в $\mathbb{R}$.
+        
+        $f(x - t) < a$.
+        
+        $(x, t) \mapsto (x - t, t)$.
+        
+        $\mathbb{R}^2 ( \varphi < a) \mapsto E_a \times \mathbb{R}$.
+        
+        $\varphi$~--- измеримая, $K(t) : \mathbb{R}^2 \rightarrow \overline{\mathbb{R}}$~--- измеримо, $(t, x) \mapsto K(t)$.
+        
+        $\iint\limits_{[-\pi, \pi] \times [-\pi, \pi]} | g(x, t) | dx dt = \int\limits^{\pi}_{-\pi} dt \left( | K(t) | \int\limits^{\pi}_{-\pi} | f(x - t) | dx \right) = \int\limits^{\pi}_{-\pi} f(x - t) K(t) dt$.
+        
+        Таким образом, свёртка определена при почти всех $x$, и результат свёртки также лежит в $L^1$ (всё это следует из теоремы Фубини).
+        
+    \subsection{Коэффициент Фурье свёртки}
+    
+        $c_k(f * K) = 2 \pi c_k(f) c_k(K)$.
+        
+        $2 \pi c_k(f * k) = \int\limits^{\pi}_{-\pi} \left( \int\limits^{\pi}_{-\pi} f(x - t) K(t) dt \right) e^{-ikx} dx$, $f(x - t) K(t) e^{-ikx}$~--- суммируемая на $[-\pi, \pi] \times [-\pi, \pi]$, тогда $\iint\limits_{[-\pi, \pi] \times [-\pi, \pi]} f(x - t) K(t) e^{-ik(x - t)} e^{-ikt} dx dt = \int\limits^{\pi}_{-\pi} dt \left( \int\limits^{\pi}_{-\pi} K(t) e^{-ikt} \int\limits^{\pi}_{-\pi} f(x - t) e^{-ik(x - t)} dx \right) = (2 \pi)^2 c_k(K) c_k(f)$.
+        
+        $\widetilde{c_k} (f * K) = \widetilde{c_k} (f) \widetilde{c_k} (K)$.
+        
+        $L^1[-\pi, \pi] \xrightarrow[]{\widetilde{c}}$.
+        
+        $f \mapsto ( \ldots, \widetilde{c_{-2}(f)}, \widetilde{c_{-1}(f)}, \widetilde{c_0}(f), \widetilde{c_1(f)}, \ldots )$.
+        
+        $f * g \mapsto ( \ldots, \widetilde{c_{-1}(f)}, \widetilde{c_{-1}(g)}, \widetilde{c_0(f)} \widetilde{c_0(g)}, \widetilde{c_1}, \ldots )$.
+        
+    \subsection{Ещё одно свойство}
+    
+        $f \in L^p [-\pi, \pi]$, $K \in L^q [-\pi, \pi]$. $1 \leqslant p \leqslant +\infty$, $\dfrac{1}{p} + \dfrac{1}{q} = 1$. Тогда
+        
+        $f * K$ непрерывна, $\| f * K \|_{\infty} \leqslant \| f \|_p \cdot \| K \|_q$ (*).
+        
+        \subsubsection{Доказательство}
+        
+            Неравенство (*)~--- неравенство Гёльдера.
+            
+            $\int\limits^{\pi}_{-\pi} f(x - t) K(t) dt \leqslant \left( \int\limits^{\pi}_{-\pi} |f|^p \right)^{1/p} \left( \int\limits^{\pi}_{-\pi} |K|^q \right)^{1/q}$. 
+            
+            $p = 1, +\infty$, 
+            
+            $q = +\infty, 1$.
+            
+            $\left| (f * K) (x + h) - (f * K)(x) \right| = \left| \int\limits^{\pi}_{-\pi}  \left( f(x + h - t) - f(x - t) \right) \right| \leqslant \| k \|_q \cdot \| f_h - f \|_p \xrightarrow[h \rightarrow 0]{} 0$ (по теореме о непрерывности сдвига, но с оговоркой, что теореме о непрерывности сдвига не работает для случая $p = +\infty$, если $p = +\infty$, то поменяем $p$ и $q$ местами, работает из-за симметричности свёртки). 
+            
 \end{document}
