@@ -2161,7 +2161,7 @@
     
     \subsection{Теорема Лебега о мажорирующей сходимости}
     
-        $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $\varphi : X \rightarrow \overline{\mathbb{R}}$, что $\lim\limits_{y \rightarrow Y_0} f(x, y) = \varphi(x)$ при почти всех $x$, $f$~--- удовлетворяет $L_{\mathrm{loc}} (y_0)$. Тогда 
+        $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $\varphi : X \rightarrow \overline{\mathbb{R}}$, что $\lim\limits_{y \rightarrow y_0} f(x, y) = \varphi(x)$ при почти всех $x$, $f$~--- удовлетворяет $L_{\mathrm{loc}} (y_0)$. Тогда 
         
         $\varphi$~--- суммируемая, $\lim\limits_{y \rightarrow y_0} \int\limits_X f(x, y) d \mu = \int\limits_X \varphi d \mu$.
     
@@ -2225,7 +2225,9 @@
         
         $e^{ikx} = \cos {nx} + i \sin {nx}$.
         
-    \subsection{Лемма}
+    \newpage
+    
+    \section{Лемма о вычислении коэффициентов тригонометрического ряда}
     
         Дан тригонометрический ряд (вещественный или комлексный), $S_n$, также известно, что $S_n \rightarrow f$ в $L^1 [-\pi, \pi]$. Тогда
         
@@ -2235,14 +2237,16 @@
         
         $c_k = \dfrac{1}{2 \pi} \int\limits^{\pi}_{-\pi} f(t) e^{-ikt} dt$.
 
-        \subsection{Доказательство}
+        \section{Доказательство}
         
             Докажем только формулу $1$, остальные доказываются аналогично.
             
             Возьмём $n > k$, тогда $\int\limits_{-\pi}^{\pi} S_n(t) \cos {kt} = \int\limits^{\pi}_{-\pi} \left( \dfrac{a_0}{2} + \sum a_l \cos {lt} + b_l \sin {lt} \right) \cdot \cos {kt} dt = \int\limits^{\pi}_{-\pi} a_l \cos^2 {kt} = \pi a_k$.
             
             $\left| \int\limits^{\pi}_{-\pi} S_n(t) \cos {kt} - \int\limits^{\pi}_{-\pi} f(t) \cos {kt} \right| \leqslant \int\limits^{\pi}_{-\pi} \left| S_n(t) - f(t) \right| \left| \cos {kt} \right| dt \leqslant \int\limits^{\pi}_{-\pi} \left| S_n(t) - f(t) \right| dt = \| S_n - f \|_1 \xrightarrow[n \rightarrow +\infty]{} 0$.
-            
+      
+    \newpage
+    
     \subsection{Определение}
     
         $f \in L^1 [-\pi, \pi]$, $a_k(f)$, $b_k(f)$, $c_k(f)$, полученные по формуле из леммы~--- \textit{это назначенные коэффициенты Фурье функции $f$}.
