@@ -2466,49 +2466,51 @@
     \subsection{Интеграл Дирихле}
     
         $\int\limits^{\pi}_{-\pi} f(x + t) Dn(t) dt$~--- \textit{интеграл Дирихле}.
-        
-    \subsection{Принцип локализации Римана}
+    
+    \newpage
+    
+    \section{Принцип локализации Римана}
     
         $f$, $g \in L_1$, $x_0 \in \mathbb{R}$, $\delta > 0$. $f(x) = g(x)$ на $(x_0 - \delta, x_0 + \delta)$. Тогда
         
         ряды Фурье $f$ и $g$ ведут себя одинаково, т.е. $S_n(f, x_0) - S_n(g, x_0) \xrightarrow[n \rightarrow +\infty]{} 0$.
         
-        $h := f - g$, $h = 0$ в $(x_0 - \delta, x_0 + \delta)$, $S_n(h, x_0)$, проверим, что $S_n(h, x_0) \rightarrow 0$.
+        \subsection{Доказательство}
         
-        $S_n(h, x_0) = \int\limits^{\pi}_{-\pi} h(x_0 + t) D_n(t)$.
+            $h := f - g$, $h = 0$ в $(x_0 - \delta, x_0 + \delta)$, $S_n(h, x_0)$, проверим, что $S_n(h, x_0) \rightarrow 0$.
         
-        $\dfrac{\sin \left(n + \dfrac{1}{2} \right) t}{\sin \dfrac{t}{2}} = \mathrm{ctg} \dfrac{t}{2} \sin{t} + \cos {nt}$.
+            $S_n(h, x_0) = \int\limits^{\pi}_{-\pi} h(x_0 + t) D_n(t)$.
         
-        $S_n(h, x_0) = \dfrac{1}{\pi} \int\limits^{\pi}_{-\pi} h(x_0 + t) \ctg \dfrac{t}{2} \sin {nt} + h(x_0 + t) \cos {nt} dt = b_n(h_1) + a_n(h_2) \xrightarrow[h \rightarrow +\infty]{} 0$. по теореме Римана-Лебега.
+            $\dfrac{\sin \left(n + \dfrac{1}{2} \right) t}{\sin \dfrac{t}{2}} = \mathrm{ctg} \dfrac{t}{2} \sin{t} + \cos {nt}$.
         
-        Равенство выполняется в случае $h_1$, $h_2 \in L_1$, $h_2 \in L_1$~--- очевидно.
+            $S_n(h, x_0) = \dfrac{1}{\pi} \int\limits^{\pi}_{-\pi} h(x_0 + t) \ctg \dfrac{t}{2} \sin {nt} + h(x_0 + t) \cos {nt} dt = b_n(h_1) + a_n(h_2) \xrightarrow[h \rightarrow +\infty]{} 0$. по теореме Римана-Лебега.
         
-        $\int\limits^{\pi}_{-\pi} |h_2| = \int\limits^{\pi}_{-\pi} | h(x_0 + t) | dt$.
+            Равенство выполняется в случае $h_1$, $h_2 \in L_1$, $h_2 \in L_1$~--- очевидно.
         
-        $h(x_0 + t) \mathrm{ctg} \dfrac{t}{2}$
+            $\int\limits^{\pi}_{-\pi} |h_2| = \int\limits^{\pi}_{-\pi} | h(x_0 + t) | dt$.
         
-        при $|t| < \delta : h_1 = 0$.
+            $h(x_0 + t) \mathrm{ctg} \dfrac{t}{2}$ при $|t| < \delta : h_1 = 0$.
         
-        $|t| > \delta : |h_1| \leqslant |h(x_0 + t)| \cdot \mathrm{ctg} \dfrac{\delta}{2}$.
+            $|t| > \delta : |h_1| \leqslant |h(x_0 + t)| \cdot \mathrm{ctg} \dfrac{\delta}{2}$.
         
-    \subsection{Замечания}
+            \subsection{Замечания}
     
-        \begin{enumerate}
+                \begin{enumerate}
         
-            \item В условиях теоремы пусть $[a, b] \subset (x_0 - \delta, x_0 + \delta)$. Тогда
+                    \item В условиях теоремы пусть $[a, b] \subset (x_0 - \delta, x_0 + \delta)$. Тогда
             
-                $S_n(h, x) \rightrightarrows 0$ при $n \rightarrow +\infty$ на $[a, b]$.
+                    $S_n(h, x) \rightrightarrows 0$ при $n \rightarrow +\infty$ на $[a, b]$.
                 
-            \item $x_0$, $\delta$. Для определения ряда Фурье нужен весь $[-\pi, \pi]$. $A$ для ''поведения'' ряда Фурье существенна лишь окрестность $x_0$.
+                    \item $x_0$, $\delta$. Для определения ряда Фурье нужен весь $[-\pi, \pi]$. $A$ для ''поведения'' ряда Фурье существенна лишь окрестность $x_0$.
             
-            \item $f \in L^1 [0, \pi]$, 
+                    \item $f \in L^1 [0, \pi]$, 
             
-                $f \backsim \sum b_k(f) \sin {kx}$.
+                    $f \backsim \sum b_k(f) \sin {kx}$.
             
-                $\backsim \sum a_k(f) \cos {kx}$.
+                    $\backsim \sum a_k(f) \cos {kx}$.
             
-        \end{enumerate}
+                \end{enumerate}
         
-        Эти различия ведет себя одинаково на $[0, \pi]$.
+            Эти различия ведут себя одинаково на $[0, \pi]$.
         
 \end{document}
