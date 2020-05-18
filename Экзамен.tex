@@ -2893,6 +2893,130 @@
                     
                     $\left| \int\limits^{\pi}_{-\pi} | f(x_0 + t) - f(x) | - | f(x_0 + t_0) - f(x) | \right| \leqslant \int\limits^{\pi}_{-\pi} \left| f(x_0 + t) - f(x + t_0) \right| dt$.
                     
+                    
+                    
             \end{itemize}
             
+        \subsubsection{Следствие}
+        
+            $f \in L_p \Rightarrow f * K_h \xrightarrow[L_p]{} f$, т.е. $\| f * K_h - f \| _p \rightarrow 0$.
+            
+            $\| f * K_h(x) - f(x) \|^p_p = \int\limits^{\pi}_{-\pi} \left| \int\limits^{\pi}_{-\pi} \left( f(x - t) - f(x) \right) K_h(t) dt \right| dx \leqslant \int\limits^{\pi}_{-\pi} \left( \int\limits^{\pi}_{-\pi} | f(x - t) - f(x) | | K_h(t) |^{1/p} | K_h(t) |^{1/q} dt \right)^p dx \leqslant \int\limits^{\pi}_{-\pi} \left( \int\limits^{\pi}_{-\pi} | f(x - t) - f(x) |^p \cdot | K_h(t) | \right) \cdot \| K_h \|^{p/q}_1 dx = \| K_h \|^{p/q}_1 \int\limits^{\pi}_{-\pi} g(-t) \dfrac{|K_h(t)|}{\| K_h \|_1} dt$, где $g(t) = \int\limits^{\pi}_{-\pi} | f(x + t) - f(x) |^p$.
+            
+    $f \in L_1$, $S_n(f, x)$, $\sigma_n(f)(x) = \dfrac{1}{n + 1} \sum\limits_{k = 0}^n S_k(f, x)$~--- сумма Фейера.
+    
+    $\sigma_n(f, x) = \int\limits^{\pi}_{-\pi} f(x + t) \Phi_n(t) dt$~--- через ядро Фейера.
+    
+    $\Phi_n$~--- четная, поэтому $\sigma_n(f, x) = \int\limits^{\pi}_{-\pi} f(x - t) \Phi_n(t) dt$ (оказывается, это свёртка).
+    
+        \subsection{Теорема Фейера}
+        
+            \begin{enumerate}
+            
+                \item $f \in \overline{C}[-\pi, \pi]$. Тогда $\sigma_n(f) \rightrightarrows f$, $n \rightarrow +\infty$ на $[-\pi, \pi]$.
+                
+                \item $f \in L^p [-\pi, \pi]$, $q \leqslant p < +\infty$. Тогда $\| \sigma_n(f) - f \|_p \rightarrow 0$, $n \rightarrow +\infty$.
+                
+                \item $f \in L^1 [-\pi, \pi]$, непрерывно в $x_0$, $\sigma_n(f)(x) \xrightarrow[n \rightarrow +\infty]{} f(x)$.
+                
+            \end{enumerate}
+            
+            \subsubsection{Доказательство}
+            
+                $\left\{ \Phi_n \right\}$~--- усиленная аппроксимативная единица. Проверим все свойства аппроксимативной единицы.
+                
+                \begin{enumerate}
+                
+                    \item $\Phi_n$~--- непрерывна $\Rightarrow \Phi_n \in L^1$, $L^{\infty}$, $\int\limits^{\pi}_{-\pi} \Phi_n = 1$.
+                    
+                    \item $\Phi_n \geqslant 0$, следует из аксиомы $1$.
+                    
+                    \item $\mathrm{ess}\sup\limits_{x \in E_{\delta}} \left| \Phi_n(x) \right| = \sup\limits_{x \in E_{\delta}} \dfrac{1}{2 \pi (n + 1)} \cdot \dfrac{\sin^2 {\frac{n + 1}{2}} x}{\sin^2 \frac{x}{2}} \leqslant \dfrac{\frac{1}{2 \pi} \cdot \frac{1}{\sin^2 \frac{\delta}{2}}}{n + 1}$
+                    
+                \end{enumerate}
+                
+\part{Преобразование Фурье}
+
+    \subsection{Определение}
+        
+        $f \in L^1 (\mathbb{R}^m, \lambda_m)$
+        
+        $\overline{f}(y) = \int\limits_{\mathbb{R}^m} f(x) e^{-2 \pi i \langle y, x \rangle} dx$, $y \in \mathbb{R}^m$.
+        
+    \subsection{Свойства}
+    
+        \begin{enumerate}
+        
+            \item $\overline{f}$~--- непрерывна на $\mathbb{R}^m$ по теореме Лебега при $y \in U(y_0) \left| f(x) e^{-2 \pi i \langle y, x \rangle} \right| \leqslant \left| f(x) \right|$~--- суммируемая, и очевидно $\left| \overline{f}(y) \right| \leqslant \| f \|_1$.
+            
+            \item $f_h(x) = f(x - h)$, $\overline{f}_h(y) = e^{-2 \pi i \langle y, h \rangle} \overline{f}(y)$ $(h \in \mathbb{R}^m)$.
+            
+                $f(x)$, $a \in \mathbb{R}$, $a \neq 0$.
+    
+                $g(x) = f(ax)$.
+    
+                $\overline{g}(y) = \int\limits_{\mathbb{R}^m} f(ax) e^{-2 \pi \langle x, y \rangle}dx = \dfrac{1}{|a|^m} \int\limits_{\mathbb{R}^m} f(\overline{x}) e^{-2 \pi i \langle y, \dfrac{\overline{x}}{a} \rangle } dx$, где $\overline{x} = ax$ или $x = \dfrac{\overline{x}}{a}$.
+    
+                $= \dfrac{1}{|a|^m} \overline{f} \left( \dfrac{y}{a} \right)$.
+    
+            \item $f(y) \rightarrow 0$ при $|y| \rightarrow +\infty$ по теореме Римана-Лебега $E \subset \mathbb{R}^m$, $f \in L^1 (E)$. Тогда
+            
+                $I(y) = \int\limits_E f(x) e^{-\pi i \langle y, x \rangle} dx \xrightarrow[|y| \rightarrow +\infty]{} 0$.
+                
+                $h := \dfrac{y}{2 |y|^2}$, $\overline{f}_n(y) = -\overline{f}(y)$.
+                
+            \item $f$, $g \in L^1 \left( \mathbb{R}^m \right)$, $(f * g)(x) = \int\limits_{\mathbb{R}^m} f(x - u) g(u) du$.
+            
+                Корректность свёртки как в теме ряды Фурье.
+                
+        \end{enumerate}
+    
+    \subsection{Теорема}
+    
+        $f$, $g \in L^1 \left( \mathbb{R}^m \right)$. Тогда
+        
+        \begin{enumerate}
+        
+            \item $\overline{f * g}(y) = (f * g)^^(y) = \overline{f}(x) \overline{f}(y) \cdot \overline{g}(y)$
+            
+            \item $\int\limits_{\mathbb{R}^m} \overline{f}(y) g(y) dy = \int\limits_{\mathbb{R}^m} f(y) \overline{g}(y) dy$.
+            
+                $(f * g)^^ (y) = \int\limits_{\mathbb{R}^m} \left( \int\limits_{\mathbb{R}^m} f(x - u) g(u) du \right) e^{-2 \pi i \langle y, x \rangle} dx = \int\limits_{\mathbb{R}^m} du g(u) e^{-\pi i \langle y, u \rangle} \int\limits_{\mathbb{R}^m} f(x, u) e^{-2 \pi i \langle y, x - u \rangle} dx$.
+            
+                $\int\limits_{\mathbb{R}^m} \left( \int\limits_{\mathbb{R}^m} f(x) e^{-2 \pi i \langle x, y \rangle} dx \right) g(y) dy$.
+                
+                $(x, y) \mapsto f(x) g(y) e^{-2 \pi i \langle x, y \rangle}$~--- суммируемая на $\mathbb{R}^m \times \mathbb{R}^m$.
+                
+                $\int\limits_{\mathbb{R}^m} \left( \int\limits_{\mathbb{R}^m} f(x) e^{-2 \pi i \langle x, y \rangle} dx \right) g(y) dy = \int\limits_{\mathbb{R}^m} f(x) \int\limits_{\mathbb{R}^m} g(y) e^{-2 \pi i \langle x, y \rangle} dy dx = \int f(x) \overline{g}(x) dx$
+                
+        \end{enumerate}
+        
+    \subsection{Пример}
+    
+        \begin{enumerate}
+        
+            \item $m = 1$, $f = \chi_{[-1, 1]}$.
+            
+                $\overline{f}(y) = \int\limits_{\mathbb{R}} f e^{-2 pi i xy} dx = \dfrac{1}{2 \pi i y} e^{-2 \pi i x y} \bigg|^{x = 1}_{x = -1} = \dfrac{e^{2 \pi i y} - e^{-2 \pi i y}}{2 i \pi y} = \dfrac{\sin {2 \pi y}}{\pi y}$
+                
+                Кстати, $\overline{f}(y)$~--- не суммируемая!.
+                
+            \item $f_a(x) = e^{-\pi a^2 x^2}$, $(a \in \mathbb{R}, a > 0)$, $m = 1$.
+            
+            $\overline{f}_m = \int\limits^{+\infty}_{-\infty} e^{-\pi a^2 x^2} e^{-2 \pi i \langle x, y \rangle} dx = \int\limits^{+\infty}_0 + \int\limits^0_{-\infty} = \int\limits_0^{+\infty} e^{-\pi a^2 x^2} (e^{-2 \pi i x y} + e^{2 \pi i x y}) dx = 2 \int\limits^{+\infty}_0 e^{-\pi a^2 x^2} \cos (2 \pi x y) dx = \ldots = \dfrac{1}{a} f_{1/a}(y)$.
+            
+        \end{enumerate}
+        
+    \subsection{Теорема}
+        
+        $m = 1$, $f \in C^1$, дифференцируема, пусть она будет хорошая (оптимизм).
+        
+        $\overline{f'}(y) = \int\limits^{+\infty}_{-\infty} f'(x) e^{-2 \pi i xy} dx =$ интегрируем по частям и получаем
+        
+        $= f(x) e^{-2 \pi i xy} \bigg|^{x = +\infty}_{x = -\infty} + \int\limits^{+\infty}_{-\infty} f(x) 2 \pi i y e^{-2 \pi i x y} dx = 2 \pi i y \int\limits^{+\infty}_{-\infty} f(x) e^{-2 \pi i x y} dx = 2 \pi i y \overline{f}$.
+        
+        $f' = а \xrightarrow[n]{} 2 \pi i y \overline{f} = \overline{f}$.
+        
+        $f' = f + e^{-\pi x^2}$, $\overline{f} = \dfrac{e^{-\pi y^2}}{1 + 2 \pi i y} \rightarrow f = $
+        
 \end{document}
