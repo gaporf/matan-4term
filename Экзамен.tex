@@ -2779,4 +2779,120 @@
             
             $\left| (f * K) (x + h) - (f * K)(x) \right| = \left| \int\limits^{\pi}_{-\pi}  \left( f(x + h - t) - f(x - t) \right) \right| \leqslant \| k \|_q \cdot \| f_h - f \|_p \xrightarrow[h \rightarrow 0]{} 0$ (по теореме о непрерывности сдвига, но с оговоркой, что теореме о непрерывности сдвига не работает для случая $p = +\infty$, если $p = +\infty$, то поменяем $p$ и $q$ местами, работает из-за симметричности свёртки). 
             
+\newpage
+
+\part{18.05.2020}
+
+    $(f * K)(x) = \int\limits^{\pi}_{-\pi} f(x - t) K(t) dt$.
+    
+    \subsection{Теорема}
+    
+        $f \in L^p [-\pi, \pi] (1 \leqslant p \leqslant +\infty), K \in L_1$. Тогда $f * K \in L^p$.
+        
+        $\| f * K \|_P \leqslant \| K \|_1 \| f \|_p$.
+        
+        При $p = +\infty$ тоже очевидно.
+        
+        Докажем при $1 < p < +\infty$. Возьмём $\dfrac{1}{p} + \dfrac{1}{q} = 1$.
+        
+        $\left| \int\limits^{\pi}_{-\pi} f(x - t) k(t) dt \right|^p \leqslant \left( \int\limits^{\pi}_{-\pi} \left| f(x - t) \right| \left| K(t) \right|^{1/p} \left| K(t) \right|^{1/q} \right)$. и это не превосходит по Гёльдеру
+        
+        $\left( \int\limits^{\pi}_{-\pi} \left| f(x - t) \right|^p \left| K(t) \right| dt \right) \left( \int\limits^{\pi}_{-\pi} \left| K(t) \right| dt \right)^{p/q} = \| K \|^{p/q}_1$.
+        
+        $\| f * K \|^p_p = \int\limits^{\pi}_{-\pi} \left| \int\limits^{\pi}_{-\pi} f(x - t) K(t) dt \right|^p dx \leqslant \| K_1 \|^{p/q} \int\limits^{\pi}_{-\pi} \int\limits^{\pi}_{-\pi} \left| f(x - t) \right|^p \left| K(t) \right| dt dx = \| K \|^{p/q + 1}_1 \| f \|^p_p = \| K \|^p_1 \| f \|^p_p$.
+        
+    \subsection{Определение}
+    
+        $E_{\delta} := [-\pi, \pi] \setminus (-\delta, \delta)$, $0 \leqslant \delta < \pi$.
+               
+            $D \in \mathbb{R}$, $h_0 \in \overline{\mathbb{R}}$~--- предельная точка $D$.
+            
+            Семейство функций $\left\{ K_h \right\}_{h \in D}$~--- аппроксимативная единица, если выполнены следующие аксиомы:
+            
+            \begin{enumerate}
+            
+                \item $\forall h \in D : K_h \in L^1 ([-\pi, \pi])$, $\int\limits^{\pi}_{-\pi} K_h = 1$.
+                
+                \item $\exists M > 0 : \forall h \in D : \| K_h \|_1 \leqslant m$.
+                
+                \item $\forall \delta in (0, \pi) : \int\limits_{E_{\delta}} | K_h | dt \rightarrow 0$, $h \rightarrow h_0$.
+                
+            \end{enumerate}
+            
+            \subsubsection{Замечание}
+            
+                Если $K_n \geqslant 0$, то из аксиомы $1$ следует аксиома $2$ ($M = 1$).
+                
+            \subsubsection{Суррогатная аксиома $3$}
+            
+                $K_h \in L^{\infty} [-\pi, \pi]$ и $\forall \delta \in (0, \pi) : \mathrm{ess}\sup\limits_{x \in E_{\delta}} \left| K_h(t) \right| \xrightarrow[h \rightarrow h_0]{} 0$.
+                
+                Очевидно, из суррогатной аксиомы $3$ следует обычная аксиома $3$.
+            
+            \subsubsection{Вывод}
+            
+                Сочетание аксиом $1$, $2$ и суррогатной $3$~--- усиленная аппроксимативная единица.
+                
+            \subsubsection{Замечание}
+            
+                $K_h$~--- аппроксимативная единица, $\left\{ \dfrac{|K_h|}{\|K_h\|_1} \right\}_{h \in D}$~--- тоже аппроксимативная единица (из аксиомы 1 $K_h \Rightarrow \| K_h \|_1 \geqslant 1$).
+                
+    \subsection{Свойства аппроксимативной единицы}
+    
+        $K_h$~--- аппроксимативная единица. Тогда
+        
+        \begin{enumerate}
+        
+            \item $f \in \overline{C} [-\pi, \pi] \Rightarrow f * K_h \rightrightarrows f$, $h \rightarrow h_0$.
+            
+            \item $f \in L_1 \Rightarrow f * K_h \xrightarrow[\text{в }L_1]{} f$, т.е. $\| f * K_h - f \|_1 \xrightarrow[h \rightarrow h_0]{} 0$.
+            
+            \item $K_h$~--- усиленная аппроксимативная единица, $f \in L_1$~--- непрерывно в точке $x$. Тогда $f * K_h$ непрерывна в точке $x$, $(f * K_h)(x) \xrightarrow[h \rightarrow h_0]{} f(x)$.
+            
+        \end{enumerate}
+        
+        \subsubsection{Доказательство}
+        
+            $f * K_h^{(n)} - f(x) = \int\limits^{\pi}_{-\pi} \left( f(x - t) - f(x) \right) K_h(t) dt$ (аксиома $1$).
+                
+            \begin{itemize}
+            
+                \item $1$ пункт
+                    
+                    $f$~--- равномерно-непрерывная: $\forall \varepsilon > 0 : \exists \delta > 0 : \forall t : |t| < \delta : \forall x : \left| f(x - t) - f(x) \right| < \dfrac{\varepsilon}{2 M}$ (аксиома $2$).
+                
+                    Фиксируем $\varepsilon$:
+                    
+                        $f * K_h(x) - f(x) = \int\limits^{\delta}_{-\delta} + \int\limits_{E_{\delta}} = I_1 + I_2$.
+                        
+                        $\left| I_1 \right| \leqslant \int\limits^{\delta}_{-\delta} \left| f(x - t) - f(x) \right| \left| K_h(t) \right| dt \leqslant \dfrac{\varepsilon}{2 m} \cdot \int\limits^{\delta}_{-\delta} | K_h(t) | \leqslant \dfrac{\varepsilon}{2 M} \cdot \| K_h \|_1 \leqslant \dfrac{\varepsilon}{2}$
+                        
+                        $\left| I_2 \right| \leqslant \int\limits_{E_{\delta}} | \ldots | \leqslant 2 \| f \|_{\infty} \cdot \int\limits_{E_{\delta}} |k_h| dt \rightarrow 0$ (по аксиоме $3$), т.е. $\exists U(h_0) : \forall L \in U(h_0) : \left| I_p \right| < \dfrac{\varepsilon}{2}$.
+                        
+                        $\left| f * K_h - f \right| \leqslant \left| I_1 \right| + \left| I_2 \right| < \varepsilon$.
+                        
+                \item $3$ пункт
+                
+                    $f * K_h$~--- непрерывен по свойству свёртки.
+                    
+                        $f$~--- равномерно-непрерывная: $\forall \varepsilon > 0 : \exists \delta > 0 : \forall t : |t| < \delta : \left| f(x - t) - f(x) \right| < \dfrac{\varepsilon}{2 M}$ (аксиома $2$).
+                        
+                        $\left| I_1 \right| \leqslant \int\limits^{\delta}_{-\delta} \left| f(x - t) - f(x) \right| \left| K_h(t) \right| dt \leqslant \dfrac{\varepsilon}{2 m} \cdot \int\limits^{\delta}_{-\delta} | K_h(t) | \leqslant \dfrac{\varepsilon}{2 M} \cdot \| K_h \|_1 \leqslant \dfrac{\varepsilon}{2}$
+                        
+                        $\left| I_2 \right| \leqslant \int\limits_{E_{\delta}} | \ldots | \leqslant \mathrm{essup} |K_h| \int\limits_{E_{\delta}} |f(x - t)| * |f(x)| dt \leqslant \mathrm{essup} |K_h| \left( \| f \|_1 + 2 \pi | f(x) | \right)$
+                        
+                        $\left| f * K_h - f \right| \leqslant \left| I_1 \right| + \left| I_2 \right| < \varepsilon$.
+                
+                \item $2$ пункт
+                
+                    $\| f * K_h(x) - f(x) \|_1 = \int\limits^{\pi}_{-\pi} \left| \int\limits^{\pi}_{-\pi} \left( f(x - t) - f(x) \right) K_h(t) dt \right| dx \leqslant \int\limits^{\pi}_{-\pi} \int\limits^{\pi}_{-\pi} \left| f(x - t) - f(x) \right| \cdot |K_h| dt dx$.
+                    
+                    $g(t) := \int\limits^{\pi}_{-\pi} \left| f(x + t) - f(x) \right| dx = \int\limits^{\pi}_{-\pi} | K_h(t) | g(-t) dt = \| K_h \|_1 \cdot \int\limits^{\pi}_{-\pi} g(-t) \dfrac{|K_h(t)|}{\| K_h \|_1} dt$
+                    
+                    $g(t)$~--- непрерывная по теореме о непрерывности сдвига, $\| K_h \|_1 \leqslant M$ по аксиоме $2$.
+                    
+                    $\left| \int\limits^{\pi}_{-\pi} | f(x_0 + t) - f(x) | - | f(x_0 + t_0) - f(x) | \right| \leqslant \int\limits^{\pi}_{-\pi} \left| f(x_0 + t) - f(x + t_0) \right| dt$.
+                    
+            \end{itemize}
+            
 \end{document}
