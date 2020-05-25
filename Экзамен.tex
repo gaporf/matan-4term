@@ -3019,4 +3019,124 @@
         
         $f' = f + e^{-\pi x^2}$, $\overline{f} = \dfrac{e^{-\pi y^2}}{1 + 2 \pi i y} \rightarrow f = $
         
+\newpage
+
+\part{25.05.2020}
+    
+    \subsection{Теорема Фейера}
+    
+        \begin{enumerate}
+        
+            \item $f \in \widetilde{C}$, $\sigma_n(f) \rightrightarrows f$.
+            
+            \item $f \in L^p [-\pi, \pi]$, $\| \sigma_n(f) - f \|_p \rightarrow 0$.
+            
+            \item $f \in L^1 [-\pi, \pi]$~--- непрерывна в $x$, $\sigma_n(f, x) \rightarrow f(x)$.
+            
+        \end{enumerate}
+        
+        \subsubsection{Следствие}
+        
+            $f \in L^1 [-\pi, \pi]$, $f$~--- непрерывна в $x$. Если ряд Фейера сходится в точке $x$, то $S_n(f, x) \xrightarrow[n \rightarrow +\infty]{} f(x)$.
+            
+            $\sigma_n(f)$~--- вычисляет сумму ряда Фейера методом среднего арифметического.
+        
+        \subsection{Следствие 2}
+        
+            \begin{enumerate}
+            
+                \item Тригонометрическая система полна в $L^2 [-\pi, \pi]$.
+                
+                \item $f \in L_1 : \forall k : a_k(f) = 0$, $b_k(f) = 0$. Тогда $f = 0$ почти везде (или если $c_k(f) \equiv 0$).
+                    
+            \end{enumerate}
+            
+                \subsubsection{Доказательство}
+                
+                    $1$ следует из $2$.
+                    
+                    $a_k(f) = 0$, $b_k(f) = 0 \Rightarrow \forall n : S_n(f, x) = 0 \Rightarrow \sigma_n(f, x) \equiv = 0$, но $\sigma_n(f) \rightarrow f$ в $L_1 \Rightarrow f \rightarrow 0$ почти везде
+            
+                \subsubsection{Следствие следствия $1$}
+                
+                    Коэффициенты Фуре $f \in L^1 [0, \pi]$ и по косинусам или по синусам равна 0, значит и $f = 0$ почти везде.
+                    
+                \subsubsection{Следствие следствия $2$}
+                
+                    $f \in L^2 [-\pi, \pi]$. Тогда $S_n(f, x) \rightarrow f$ в $L^2$.
+                    
+                \subsubsection{Следствие следствия $3$}
+                
+                    Равенство Парсеваля: $f$, $g \in L^p [-\pi, \pi]$.
+                    
+                    \begin{enumerate}
+                    
+                        \item $\int\limits^{\pi}_{-\pi} f(x) \overline{g}(x) dx = 2 \pi \sum\limits_{k \in \mathbb{Z}} c_k(f) \overline{c_k (g)}$.
+                        
+                        \item $\int\limits^{\pi}_{-\pi} |f|^2 dx = 2 \pi \sum\limits_{k \in \mathbb{Z}} |c_k(f)|^2$.
+                        
+                        \item $\int\limits^{\pi}_{-\pi} f(x) g(x) dx = \pi \left( \dfrac{a_0(f) a_0(g)}{2} + \sum\limits_{k = 1}^{+\infty} a_k(f) a_k(g) + b_k(f) b_k(g) \right)$.
+                        
+                        \item $\int\limits^{\pi}_{-\pi} f^2 dx = \pi \left( \dfrac{a_0^2(f)}{2} + \sum\limits_{k = 1}^{+\infty} a_k(f)^2 + b_k(f)^2 \right)$.
+                        
+                    \end{enumerate}
+                    
+            \subsection{Следствие $3$ (теорема Вейерштрасса)}
+            
+                Тригонометрические полиномы плотны в $\widetilde{C} [-\pi, \pi]$ и в $L^p [-\pi, \pi]$ ($1 \leqslant p < +\infty$).
+                
+                    \subsubsection{Доказательство}
+                    
+                    $f \in \widetilde{C}$, $\sigma_n(f)$~--- тригонометрический полином. $\sigma_n(f) \rightrightarrows f$, $\rho(\sigma_n(f), f) \rightarrow 0$.
+                    
+            \subsection{Замечание}
+            
+                В $C[a, b]$ обычные полиномы плотны в $L^p[a, b]$.
+                
+\newpage
+
+\part{Интегрирование рядов Фурье}
+
+    \subsection{Лемма}
+    
+        \begin{enumerate}
+        
+            \item $D_n(t) = \dfrac{\sin {nt}}{\pi t} + \dfrac{1}{2 \pi}$ $\left( \cos {nt} + \sin {nt} \cdot h(t) \right)$, где $h(t)$ не зависит от $n$, а также $|h(t)| \leqslant 1$, $t \in [-\pi, \pi]$.
+            
+            \item $\forall x : |x| < 2 \pi$, $\left| \int\limits_0^x D_n(t) dt \right| < 2$.
+            
+        \end{enumerate}
+        
+        \subsubsection{Доказательство}
+        
+            $D_n(t) = \dfrac{1}{2 \pi} \dfrac{\sin \left(n + \frac{1}{2} \right) t}{\sin \frac{t}{2} } = \dfrac{\sin {nt}}{2 \pi \tg {t / 2}} + \dfrac{1}{2 \pi} \cos nt = \dfrac{\sin nt}{\pi t} + \dfrac{1}{2 \pi} \left( \cos {nt} + \sin {nt} \left( \dfrac{1}{\tg {t / 2}} - \dfrac{1}{t/2} \right) \right)$, давайте возьмём в качетсве $h(t) = \dfrac{1}{\tg t / 2} - \dfrac{1}{t / 2}$, $h(t)$ убывает на $[-\pi, \pi]$ и $h(t) < | h(\pi) | = \dfrac{2}{\pi} < 1$.
+            
+            $\forall x : |x| < 2 \pi$, $\left| \int\limits^x_0 D_n(t) dt \right| < 2$, $D_n$~--- чётная, можно считать, что $x > 0$. $x \in (0, \pi)$. $\left| \int\limits^x_0 D_n(t) dt - \int\limits^x_0 \dfrac{\sin {nt}}{\pi t} \right| = \left| \dfrac{1}{2 \pi} \int\limits^x_0 \cos {nt} + \sin {nt} \cdot h(t) dt \right| \leqslant \dfrac{1}{2 \pi} \int\limits^x_0 2 dx \leqslant 1$.
+            
+            $\int\limits^x_0 \dfrac{\sin {nt}}{\pi t} dt = \int\limits^{nx}_0 \dfrac{\sin v}{\pi v} dv \in (0, 1)$, если это так, то $\int\limits^x_0 D_n \in [-1, 2]$. $\max \int\limits^{nx}_0 \dfrac{\sin v}{\pi v} dv$~--- достигается при $nx = \pi$, тогда $0 < \int\limits^{\pi}_0 \dfrac{\sin v}{\pi v} < \dfrac{1}{\pi} \int\limits^{\pi}_0 1 = 1$.
+            
+            $x \in [\pi, 2 \pi]$, $\int\limits^x_0 D_n = \int\limits^{2 \pi}_0 - \int\limits^{2\pi}_x = 1 - \int\limits^{2 \pi - x}_0 D_n(t) c_n(t) \in [-1, 2]$.
+                
+    \subsection{Интегрирование рядов Фурье}
+        
+        $f \in L_1$. Тогда $\forall a, b \in \mathbb{R}$, $\int\limits^b_a f dx = \sum\limits_{k \in \mathbb{Z}} c_k(f) \int\limits^b_a e^{ikx} dx$.
+        
+        \subsubsection{Замечание}
+        
+            Не предполагается сходимость ряда Фурье.
+            
+        \subsubsection{Доказательство}
+        
+            Достаточно рассмотреть $-\pi \leqslant a < b \leqslant \pi$, $\Xi := \Xi_{[a, b]}$.
+            
+            $\sum\limits_{k = -n}^n c_k \int\limits^b_a e^{ikx} = \sum\limits^n_{k = -n} \dfrac{1}{2 \pi} \int\limits^{\pi}_{-\pi} f(x) e^{-ikx} dx C_{-k} (\Xi) -2 \pi = \int\limits^{\pi}_{-\pi} f(x) \sum\limits_{k = -n}^n C_k(\Xi) e^{-ikx} dx = \int\limits^{\pi}_{-\pi} f(x) S_n(\Xi, x) dx = \int\limits^{\pi}_{-\pi} f(x) S_n(\Xi, x) dx \xrightarrow[n \rightarrow +\infty]{} \int\limits^b_a f(x) dx$.
+            
+            $S_n(\Xi, x) = \int\limits^{\pi}_{-\pi} \Xi(t) D_n(x - t) dt = \int\limits^b_a D_n(x - t) dt = \left| - \int\limits^{x - b}_{x - a} D_n(\tau) d \tau \right| = \left| \int\limits^{x - a}_0 D_n(t) - \int\limits^{x - b}_0 D_n(t) \right| \leqslant 4$.
+            
+        \subsubsection{Замечание}
+        
+            Проверим, что суммы Фурье функции $\Xi$~--- равномерно ограниченны. Пусть $f \in \widetilde{C}^1 [-\pi, \pi] \Rightarrow$ суммы ряда фурье равномерно ограничены, т.е. $\exists C : \forall n : \forall x : \left| S_n(f, x) \right| \leqslant C$.
+            
+            $S_n(f, x) = \int\limits^{\pi}_{-\pi} f(x - t) D_n(t) dt = f(x - t) H_n(t) \bigg|^{\pi}_{-\pi} + \int\limits^{\pi}_{-\pi} f'(x - t) H_n(t) dt \leqslant C$.
+        
 \end{document}
