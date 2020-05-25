@@ -3138,5 +3138,107 @@
             Проверим, что суммы Фурье функции $\Xi$~--- равномерно ограниченны. Пусть $f \in \widetilde{C}^1 [-\pi, \pi] \Rightarrow$ суммы ряда фурье равномерно ограничены, т.е. $\exists C : \forall n : \forall x : \left| S_n(f, x) \right| \leqslant C$.
             
             $S_n(f, x) = \int\limits^{\pi}_{-\pi} f(x - t) D_n(t) dt = f(x - t) H_n(t) \bigg|^{\pi}_{-\pi} + \int\limits^{\pi}_{-\pi} f'(x - t) H_n(t) dt \leqslant C$.
+            
+    \subsection{Лемма}
+    
+        $f \in L^1 \left( \mathbb{R}^m \right)$~--- всюду дифференцируема. $\dfrac{\partial f}{\partial x_m}$~--- непрерывна и суммируемая на $\mathbb{R}^m$. Тогда
+        
+        для почти всех $(x_1, \ldots, x_{m - 1}) \in \mathbb{R}^{m - 1}$ существует $\lim\limits_{t \rightarrow +\infty}$ или $\lim\limits_{t \rightarrow -\infty}$ от функции $f(x_1, \ldots, x_{m - 1}, t) = 0$.
+        
+        \subsubsection{Доказательство}
+        
+            $(x_1, \ldots, x_m) = u \in \mathbb{R}^{m - 1}$, $f(u, t)$. $f(u, t) - f(u, 0) = \int\limits^t_0 \dfrac{\partial f}{\partial x_m} (u, \tau) d \tau$. по теореме Фубини при почти всех $u$ это суммируемая функция по $t$ на $\mathbb{R}$.
+    
+    \subsection{Теорема}
+    
+        $f \in L^1 (\mathbb{R}^m)$.
+        
+        \begin{enumerate}
+        
+            \item $\exists k \in \left\{ 1, \ldots, m \right\}$, $g = \dfrac{\partial f}{\partial x_k}$~--- непрерывная, суммируемая в $\mathbb{R}^m$. Тогда
+            
+                $\widetilde{g}(y) = 2 \pi i y_k \widetilde{f}(y)$.
+            
+            \item Пусть $|x| \cdot f(x)$~--- суммируемая. Тогда
+            
+                $\widetilde{f} \in C^1 (\mathbb{R})$ и $\forall y \in \mathbb{R}^m$ и $\forall k \in \left\{ 1, \ldots, m \right\}$ и $\dfrac{\partial \widetilde{f}}{\partial y_k} (y) = 2 \pi i \left( x_k f(x) \right)^^ $.
+            
+        \end{enumerate}
+        
+        \subsubsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item считаем, что $k = m$, $(x_1, \ldots, x_{m - 1}) = u \subset \mathbb{R}^m$. $f(x) \leftrightarrow f(u, t)$.
+                
+                    $\int\limits^{+\infty}_{-\infty} g(u, t) e^{-2 \pi i y_m t} dt = f(u, t) e^{-2 \pi i y t} \bigg|^{t = +\infty}_{t = -\infty} + \int\limits^{+\infty}_{-\infty} f(u, t) 2 \pi i y_m e^{-2 \pi y_m t} dt$
+                    
+                    $\int\limits_{\mathbb{R}^m} g(x) e^{-2 \pi i \langle y, x \rangle} dx = \int\limits_{\mathbb{R}^{m - 1}} \left( \int\limits_{\mathbb{R}} g(u, t) e^{-2 \pi i y_m t} dt \right) e^{-2 \pi i y_m} dt$.
+                    
+                \item $\widetilde{f}(y) = \int\limits_{\mathbb{R}^m} f(x) e^{-2 \pi i \langle y, x \rangle} dx$.
+                
+                    $\dfrac{\partial \widetilde{f}}{\partial y_k} = - \int\limits_{\mathbb{R}^m} 2 \pi i x_k f(x) e^{-2 \pi \langle y, x \rangle} dx$.
+                    
+                        $L_{loc}(y) \left| 2 \pi i x_k f(x) e^{-2 \pi i \langle y, x \rangle} \right| \leqslant 2 \pi |x| | f(x) |$.
+                
+            \end{enumerate}
+            
+        \subsubsection{Следствие}
+        
+            \begin{enumerate}
+            
+                \item $f \in L^1 (\mathbb{R}^m)$, финитная (равна $0$ вне какого-то шара). Тогда
+                
+                    $\widetilde{F} \in C^{\infty} (\mathbb{R}^m)$.
+                    
+                \item $f \in C^{=\infty}_0$, финитная, бесконечно гладкая. Тогда
+                
+                    $\forall p > 0 : |y|^p \widetilde{f}(y)$~--- суммируемая в $\mathbb{R}^m$.
+                
+            \end{enumerate}
+            
+    \subsection{Формула обращения}
+    
+        $m = 1$, $f(x) = \int\limits^{+\infty}_{-\infty} \widetilde{f}(y) \cdot e^{2 \pi i y x} dy$. Хотим такую формулу.
+        
+    \subsection{Интеграл Фурье}
+    
+        $\int\limits^{+\infty}_{-\infty} \widetilde{f}(y) \cdot e^{2 \pi i y x} dy$~--- в смысле главного значения.
+        
+        $\lim\limits_{A \rightarrow +\infty} \int\limits^A_{-A}$ получаем $I_A(f, x) = \int\limits^A_{-A} \widetilde{f}(y) e^{2 \pi i y x} dy$.
+        
+    \subsection{Лемма о ядре Дирихле}
+    
+        $f in L^1 (\mathbb{R})$< $x \in \mathbb{R}$. Тогда 
+        
+        $\forall A > 0$ верно $I_A(f, x) = \int\limits^A_{-A} \widetilde(f)(y) e^{2 \pi i y x} dx = \int\limits^{+\infty}_{-\infty} f(x - t) \dfrac{\sin {2 \pi A t}}{\pi t} dt$.
+        
+        \subsubsection{Доказательство}
+        
+            Пусть $\Xi_a = \Xi [-A, A]$, $I_A(f, x) = \int\limits^{+\infty}_{-\infty} \widetilde{f}(y) \left( \Xi_a e^{2 \pi i x y } \right) dy = \int\limits^{+\infty}_{-\infty} f(y) \left( \Xi_a e^{2 \pi i x y}  \right) dy = \int\limits^{+\infty}_{-\infty} f(y) \widetilde{\Xi_A} (y - x) dy = \int\limits^{+\infty}_{-\infty} f(y) \dfrac{\sin 2 \pi A (y - x)}{\pi (y - x)} dy$.
+            
+        \subsubsection{Следствие}
+        
+            $\forall \delta > 0 : I_a(f, x) = \int\limits^{\delta}_{-\delta} f(x - t) \dfrac{\sin 2 \pi A t}{\pi t} dt + Q(1)$, $A \rightarrow +\infty$.
+            
+            $\int\limits_{|t| \geqslant \delta} f(x - t) \dfrac{\sin 2 \pi A t}{\pi t} dt \rightarrow 0$ по теореме Римана-Лебега.
+            
+    $D_n = \dfrac{\sin {nt}}{\pi t} + \dfrac{1}{2 \pi} (\cos {nt} + \sin {nt} + h(t))$.
+    
+    $S_n(f, x) = \int\limits^{\pi}_{-\pi} f(x, t) D_n(t) = \int\limits^{\pi}_{-\pi} f(x - t) \dfrac{\sin nt}{\pi t} + o(1)$ при $n \rightarrow +\infty$.
+    
+    $= \int\limits^{\delta}_{-\delta} f(x - t) \dfrac{\sin {nt}}{\pi t} + o(1)$.
+            
+        \subsubsection{Замечание}
+        
+            Для интеграла Фурье верен принцип локализации.
+            
+    \subsection{Теорема о равносходимости ряда Фурье и интеграла Фурье}
+    
+        $f \in L^1 \left( \mathbb{R} \right)$, $f_0 \in L^1 [-\pi, \pi]$. $x \in \mathbb{R}$, $f = f_0$ в $U(a)$. Тогда
+        
+        сходимость в точке $x$ интеграла Фурье $I_A(f, x)$ равносильна сходимости в точке $x$ сумм Фурье, т.е. $S_n(f_0, x)$, и в случае сходимости они равны.
+        
+        $\int\limits^{+\infty}_{-\infty} \widetilde{f}(y) e^{2 \pi i y x} dy = \sum\limits_{n \in \mathbb{Z}} c_n(f_0) e^{i nx}$.
         
 \end{document}
