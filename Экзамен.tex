@@ -3351,4 +3351,100 @@
             
             $\sum 2pi c_n(f) \overline{c_n(g)} = \sum \hat{f} \left( \dfrac{n}{2 \pi} \right) \dfrac{\sin (t - n) \pi}{\pi (t - n)} = \dfrac{\sin \pi t}{\pi} \sum \dfrac{(-1)^n F(n)}{t - n}$.
             
+    \subsection{Теорема о равносходимости ряда Фурье и интеграла Фурьера}
+    
+        $f \in L^1 (\mathbb{R})$, $f_0 \in \widetilde{L_1} [-\pi, \pi]$, $x \in \mathbb{R}$.
+        
+        $\exists U(x) : f \equiv f_0$. Тогда сходимость ряда Фурье и сходимость интеграла эквивалентна.
+        
+        $\int\limits^{+\infty}_{-\infty} \hat{f}(u) e^{2 \pi i x y} dy = \sum\limits^{+\infty}_{-\infty} c_n(f_0) e^{inx}$.
+        
+        \subsubsection{Доказательство}
+        
+            $I_a(f, x) - S_{[2\pi a]} (f, x) \xrightarrow[A \rightarrow +\infty]{} 0$.
+            
+            $U(x) - (x - \delta, x + \delta)$, $0 < \delta < \pi$.
+            
+            $I_a(f, x) = \int\limits^{\delta}_{-\delta} f(x - t) \dfrac{\sin 2 \pi A t}{\pi t} dt + o(1)$.
+            
+            $S_n(f, x) = \int\limits^{\delta}_{-\delta} f(x - t) \cdot \dfrac{\sin nt}{\pi t} dt + o(1)$.
+            
+            $2 \pi A = n \in \mathbb{N} \Rightarrow$ ОК.
+            
+            $2 \pi A$~--- нецелое, $n := [2 \pi A]$.
+            
+            $I_A - I_{\frac{n}{2 \pi}}$
+            
+            $I_A (f, x) - \int\limits^A_{-A} \hat{g}(y) e^{2 \pi i x y} dy$.
+            
+            $\left| I_A - I_{\frac{n}{2 \pi}} \right| \leqslant \int\limits^A_{A - \frac{1}{2 \pi}} + \int\limits^{-A + \frac{1}{2 \pi}}_{-A} |\hat{f}(y)|dy \leqslant 2 \dfrac{1}{\pi} \max\limits_{|y| > A - \frac{1}{2 \pi}} | \hat{f} (y) |$.
+            
+    \subsection{Признак Абеля-Дирихле равномерной сходимости}
+        
+        $\int\limits^{+\infty}_a f(x, t) g(x, t) dx$. $f(x, t)$~--- непрерывна на $(a, +\infty) \times [c, d]$.
+        
+        $\exists g_x(x, t)$~--- непрерывна на том же промежутке.
+        
+        \begin{enumerate}
+        
+            \item $\exists C : \forall B > a : \forall t : \left| \int\limits^B_a f(x, t) \right| \leqslant C$.
+            
+            \item $\forall t \in [c, d]$, $x \mapsto g(x, t)$~--- монотонна, $g(x, t) \rightrightarrows 0$ при $x \rightarrow +\infty$ на $[c, d]$.
+            
+        \end{enumerate}
+        
+        или
+        
+        \begin{enumerate}
+        
+            \item $\int\limits^{+\infty}_a f(x, t) dx$~--- равномерно сходится, $t \in [c, d]$.
+            
+            \item $g$~--- монотонна, $\exists C : \forall x \in (a, +\infty) : \forall t \in [c, d] : | g(x, t) | \leqslant C$.
+            
+        \end{enumerate}
+    
+        Тогда
+        
+    \subsection{Гладкие пути}
+    
+        $\gamma : [a, b] \rightarrow \mathbb{R}^m$, $a = t_0 < t_1 < \ldots < t_n = b$.
+        
+        $\sup\limits_{\tau} \sum\limits^n_{i = 1} \rho(\gamma(t_m), \gamma(t_i))$.
+        
+        $\int\limits^b_a |f'| dx$,
+        
+        $f : [a, b] \rightarrow \mathbb{R}$~--- не обязательно непрерывное.
+        
+        $\mathrm{Var}^b_a f = \sup\limits_{\tau} \sum | f(t_1) - f(t) |$.
+        
+    \subsection{Признак Дирихле-Жордана}
+    
+        $f \in L^1 ( \mathbb{R} )$, $f \in L^1 [-\pi, \pi]$, $f$~--- имеет ограниченную вариацию в окрестности точки $x \in \mathbb{R}$. Тогда
+        
+        $S_n(f, x) \rightarrow \dfrac{f(x + 0) + f(x - 0)}{2}$, $I_a(f, x) \rightarrow \dfrac{f(x + 0) + f(x - 0)}{2}$.
+        
+        \subsubsection{Замечание}
+        
+            Для $[-\pi, \pi]$ $f$ имеет ограниченную вариацию $[-\pi, \pi]$.
+            
+            Тогда $\forall x \in [-\pi, \pi] : S_n(f, x) \rightarrow \dfrac{f(x + 0) + f(x - 0)}{2}$.
+            
+        \subsubsection{Доказательство}
+        
+            $S_n(f, x) = \int\limits^{\delta}_{-\delta} f(x - t) \dfrac{\sin nt}{\pi t} dt + o(1) = \int\limits^{\delta}_{-\delta} \varphi(t) \dfrac{\sin nt}{\pi t} dt + o(1)$, где $\varphi(u) = f(x - u) + f(x + u)$.
+            
+            $\varphi$ имеет ограниченную вариацию, можно считать разностью двух неотрицательных убывающий функций.
+            
+            $\Phi(n) = \varphi(n) \cdot \Xi_{[0, \delta]}$, $n \in \mathbb{R}$.
+            
+            $I_n = \int\limits^{+\infty}_0 \Phi(n) \dfrac{\sin nu}{\pi u} du = \int\limits^{+\infty}_0 \Phi \left( \dfrac{t}{u} \right) \dfrac{\sin t}{\pi t} dt \xrightarrow[n \rightarrow +\infty]{} \int\limits^{+\infty}_0 \Phi(+0) \dfrac{\sin t}{\pi t} = \dfrac{\Phi(+0)}{2}$.
+            
+            $\int\limits^{\rightarrow b}_a f(x, t) dt \xrightarrow[t \rightarrow t_0]{} \int\limits^{\rightarrow b}_a f(x, t0) dt$.
+            
+            $f = \dfrac{\sin t}{\pi t}$.
+            
+            $\int\limits^{+\infty}_0 \dfrac{\sin t}{\pi t}$~--- равномерно сходится, $n \in \mathbb{N}$.
+            
+            $\left| \Phi(t, n) \right| \leqslant \Phi(+ 0)$, $\Phi$~--- монотонная.
+            
 \end{document}
