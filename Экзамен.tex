@@ -3241,4 +3241,114 @@
         
         $\int\limits^{+\infty}_{-\infty} \widetilde{f}(y) e^{2 \pi i y x} dy = \sum\limits_{n \in \mathbb{Z}} c_n(f_0) e^{i nx}$.
         
+\newpage
+
+\part{01.06.2020}
+
+    \subsection{Следствие}
+    
+        $f \in L_1$. Тогда
+        
+        $\sum \dfrac{b_n(f)}{n}$~--- сходится.
+        
+        $u \in (-\pi, \pi)$, $\int\limits^n_0 f(x) dx = \sum c_k(f) \int\limits_0^n e^{ikx} = \int\limits^{\pi}_{-\pi} f(x) S_n(\Xi x) d \mu$
+        
+        $\int\limits^{\pi}_{-\pi} \left( \int\limits^a_b f(x) dx \right) dn = \int\limits^{\pi}_{-\pi} \left( \sum c_k(f) \int\limits^n_0 e^{ikx} dx \right) dn = \sum c_k(f) \int\limits^{\pi}_{-\pi} \left( \int\limits^n_0 e^{ikx} dx \right) du$.
+    
+        $\int\limits^{\pi}_{-\pi} \sum\limits^n_{-n} c_k(f) \int\limits^n_0 e^{ikx} \xrightarrow[n \rightarrow +\infty]{} \int\limits^{\pi}_{-\pi} \int\limits^n_0 f(x) dx dn$.
+        
+        $\left| \sum\limits^n_{-n} c_k(f) \int\limits^n_0 e^{ikx} \right| \leqslant \int\limits^{\pi}_{-\pi} |f| \left| S_n(\Xi, x) \right| dx \leqslant 4 \| f \|_1$.
+        
+        $\int\limits^n_0 e^{ikx} dx = \dfrac{1}{ik} e{ikx} \bigg|^{x = n}_{x = 0} = \dfrac{1}{ik} (e^{ikn} - 1)$.
+        
+        $\int\limits^{\pi}_{-\pi} \dfrac{1}{ik} (e^{ikn} - 1) = -\dfrac{2 \pi}{i k}$.
+        
+        $\sum c_k(f) \int\limits^{\pi}_{-\pi} \left( \int\limits^n_0 e^{ikx} dx \right) dn = \sum\limits_{k \in \mathbb{Z}} c_k(f) \cdot \dfrac{-2 \pi}{ik} = \sum \dfrac{-b_k(f)}{k}$, из-за чего ряд сходится.
+        
+        $-i (c_k(f) - c_{-k}(f)) = \dfrac{1}{\pi} \int\limits^{\pi}_{-\pi} f(x) \left( \dfrac{e^{-ikx} - e^{ikx}}{2i} \right) = -b_k(f)$.
+        
+        считаем $u = n$, если где-то я не заменил.
+        
+    \subsection{Обобщенные функции}
+    
+        $\int\limits^{\pi}_{-\pi} f(x) h(x) dx$, функция $f$ и $h \in C^{\infty} [-\pi, \pi]$, $h \mapsto \int\limits^{\pi}_{-\pi} f(x) h(x) dx$.
+        
+        $f \in C^1$, $\forall h \in C^{\infty}$, $\int\limits^{\pi}_{-\pi} f(x) h(x) dx = 0$.
+        
+        $f_n \rightarrow f$ как обобщенные функции.
+        
+        $\forall h \in C^{\infty} [-\pi, \pi] \Longleftrightarrow \int\limits^{\pi}_{-\pi} f_n h \rightarrow \int\limits^{\pi}_{-\pi} fh$.
+        
+    \subsection{Лемма}
+    
+        $f \in L_1$. Тогда
+        
+        $S_n(f, x) \rightarrow f$ в смысле обобщенных функций.
+        
+        $\forall h \in \widetilde{C}^{\infty} [-\pi, \pi] : \int\limits^{\pi}_{-\pi} S_n(f, x) \cdot h \xrightarrow[n \rightarrow +\infty]{} \int\limits^{\pi}_{-\pi} f(x) h(x) dx$.
+        
+        \subsubsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $f \in L_1$, $h \in C^{\infty} \subset L^{\infty} (-\pi, \pi]$. $f * h$~--- непрерывна и гладкая
+                
+                    $\dfrac{d}{dx} (f * h) (x) = \dfrac{d}{dx} \int\limits^{\pi}_{-\pi} f(t) h(x - t) dt = \int\limits^{\pi}_{-\pi} f(t) h'_x (x - t) dt$.
+                    
+                    $\underline{h}(x) = h(-x)$.
+                    
+                    $\int\limits^{\pi}_{-\pi} S_n(f, x) h(x) dx = \sum\limits^n_{-n} c_k(f) \int\limits^{\pi}_{-\pi} e^{ikx} h(x) dx = \sum\limits^n_{-n} c_k(f) 2 \pi c_k(h(-x)) = \sum\limits^n_{-n} c_k (f * \underline{h}) = \sum\limits^n_{-n} c_k (f * \underline{h}) e^{ikx} \bigg|_{x = 0} \xrightarrow[n \rightarrow +\infty]{} f * \underline{h}(0) = \int\limits^{\pi}_{-\pi} f(t) \underline{h}(-t) dt$.
+                
+            \end{enumerate}
+            
+    \subsection{Теорема}
+    
+        $f \in \widetilde{C}^1 \Rightarrow$ частичные суммы ряда Фурье~--- ограничены.
+        
+        $\exists C : \forall n : \forall x : \left| S_n(f, x) \right| \leqslant C$.
+        
+        $|S_n(f, x)| = \left| \int\limits^{\pi}_{-\pi} f(x - u) D_n(u) du \right|$.
+        
+        $f(x - u) H_n(u) \bigg|^{\pi}_{-\pi} + \int\limits^{\pi}_{-\pi} f'(x - u) H_n(u) du$
+        
+        $H(x) = \int\limits^x_0 D_n$, всё по модулю меньше константы.
+        
+    \subsection{Лемма (обобщенное равенство Парсеваля)}
+    
+        $f \in L^1 [-\pi, \pi]$, $g$~--- измеримая, периодическая, ограниченная, и такая, что $\exists C : \forall n : \forall x : \left| S_n(g, x) \right| \leqslant C$. Тогда
+        
+        $\int\limits^{\pi}_{-\pi} f(x) \overline{g(x)} dx = 2 \pi \sum c_n(f) \overline{c_n(g)} = \sum \hat{f}(n) \hat{g}(n)$.
+        
+        $c_n(f) = \dfrac{1}{2 \pi} \int\limits^{\pi}_{-\pi} f(x) e^{-inx} = \dfrac{1}{2 \pi} \int\limits^{+\infty}_{-\infty} f(x) e^{inx} = \dfrac{1}{2 \pi} \hat{f}(n)$.
+        
+        $g$~--- ограниченная, следовательно $g \in L^1 [-\pi, \pi]$.
+        
+        $\int\limits^{\pi}_{-\pi} f(x) \overline{S_n(g, x)} dx = \int f(x< \sum\limits^n_{-n} \overline{c_k(g)} e^{-ikx} = \sum\limits^n_{-n} 2 \pi c_k(f) \overline{c_k(g)}$
+        
+        $\overline{S_n(g)} \Rightarrow \overline{g} \Rightarrow f(x) \overline{S_n(g, x)} \Rightarrow f(x) \overline{g(x)}$
+        
+        По теореме Лебега: $\left| f(x) \overline{S_n(g, x)} \right| \leqslant $
+        
+    \subsection{Теорема Котельникова (формула отчётов)}
+    
+        $f \in L^1 (\mathbb{R})$, $f \equiv 0$ вне $[-\pi, \pi]$. $F(t) = \hat{f} \left(\dfrac{t}{2 \pi} \right)$. Тогда
+        
+        $F(t) = \dfrac{\sin \pi t}{\pi} \sum\limits_{n \in \mathbb{Z}} \dfrac{(-1)^n F(n)}{t - n}$
+        
+        \subsubsection{Доказательство}
+            
+            $f_0 = f \bigg|_{[-\pi, \pi]}$, $c_n(f_0) = \dfrac{1}{2 \pi} \hat{f} \left( \dfrac{n}{2 \pi} \right)$, $n \in \mathbb{Z}$.
+        
+            $\dfrac{1}{2 \pi} \int\limits^{\pi}_{-\pi} f_n(x) e^{-inx} dx$,
+            
+            $\dfrac{1}{2 \pi} \hat{f} \left( \dfrac{n}{2 \pi} \right) = \dfrac{1}{2 \pi} \int\limits_{\mathbb{R}} f(x) e^{2 \pi i x \cdot \frac{n}{2 \pi}} = \dfrac{1}{2 \pi} \int\limits^{\pi}_{-\pi} f(x) e^{-inx}$.
+            
+            $\hat{f} \left( \dfrac{t}{2 \pi} \right) = \int\limits^{\pi}_{-\pi} f_(x) \overline{g(x)} dx = \int\limits^{\pi}_{-\pi} f_n(x) \overline{g(x)} dx$,
+            
+            $g(x) = e^{inx}$, $c_n(g) = \dfrac{1}{2 \i} \int\limits^{\pi}_{-\pi} e^{i (t - n) x} = \dfrac{1}{2 \pi} \dfrac{1}{i (t - n) e^{i (t - n) x}} \bigg|^{x = \pi}_{x = -\pi} = \dfrac{\sin (t - n) \pi}{\pi (t - n)}$.
+            
+            $\left| S_n(g, x) \right| \leqslant const$.
+            
+            $\sum 2pi c_n(f) \overline{c_n(g)} = \sum \hat{f} \left( \dfrac{n}{2 \pi} \right) \dfrac{\sin (t - n) \pi}{\pi (t - n)} = \dfrac{\sin \pi t}{\pi} \sum \dfrac{(-1)^n F(n)}{t - n}$.
+            
 \end{document}
