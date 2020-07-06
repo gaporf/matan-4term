@@ -34,17 +34,13 @@
 
 \tableofcontents
 
-\newpage 
-
-\part{Интеграл по мере}
-
 \newpage
 
     \section{Интеграл ступенчатой функции}
     
-        $f = \sum\limits_{k = 1}^n \lambda_k \cdot \chi_{E_k}$, $f \geqslant 0$, где $E_k \in \mathcal{A}$~--- допустимое разбиение, тогда интеграл ступенчатой функции $f$ на множестве $X$ есть
+        $f = \sum\limits_{k = 1}^n \lambda_k \cdot \mathcal{X}_{E_k}$, $f \geqslant 0$, где $E_k \in \mathcal{A}$~--- допустимое разбиение, тогда интеграл ступенчатой функции $f$ на множестве $X$ есть:
                 
-        $\int\limits_{X} f d \mu = \int\limits_{X} f(x) d \mu(x) = \sum\limits_{k = 1}^n \lambda_k \mu E_k$ 
+        $$\int\limits_{X} f d \mu = \int\limits_{X} f(x) d \mu(x) = \sum\limits_{k = 1}^n \lambda_k \mu E_k$$
         
         Дополнительно будем считать, что $0 \cdot \infty = \infty \cdot 0 = 0$.
                 
@@ -54,10 +50,12 @@
                 
                 \item Интеграл не зависит от допустимого разбиения:
                     
-                    $f = \sum \alpha_j \chi_{F_j} = \sum\limits_{k,\, j} \lambda_k \chi_{E_k \cap F_j}$, тогда $\int F = \sum \lambda_k \mu E_k = \sum\limits_{k} \lambda_k \sum\limits_j \mu (E_k \cap F_j) = \sum \alpha_j \mu F_i = \int F$;
+                    $f = \sum \alpha_j \mathcal{X}_{F_j} = \sum\limits_{k,\, j} \lambda_k \mathcal{X}_{E_k \cap F_j}$, тогда $\int F = \sum \lambda_k \mu E_k = \sum\limits_{k} \lambda_k \sum\limits_j \mu (E_k \cap F_j) = \sum \alpha_j \mu F_j = \int F$;
                         
                 \item $f \leqslant g$, то $\int\limits_{X} f d \mu \leqslant \int\limits_{X} g d \mu$.
                 
+                    $\int f = \sum \lambda_k \mu (E_k) = \sum\limits_{k, j} \lambda_k \mu (E_k \bigcap F_j) \leqslant \sum\limits_{k, j} \alpha_j \mu(E_k \bigcap F_j) = \sum \alpha_j \mu (F_j) = \int g$.
+                    
             \end{itemize}
             
     \newpage
@@ -66,13 +64,13 @@
     
         $f \geqslant 0$, измерима, тогда интеграл неотрицательной измеримой функции $f$ есть
         
-        $\int\limits_{X} f d \mu = \sup\limits_{\substack{\text{$g$ - ступ.} \\ 0 \leqslant g \leqslant f}} \left( \int\limits_{X} g d \mu \right)$.
+        $\int\limits_{X} f d \mu = \sup\limits_{\substack{\text{$g$~-- ступ.} \\ 0 \leqslant g \leqslant f}} \left( \int\limits_{X} g d \mu \right)$.
             
         \subsection{Свойства}
                 
             \begin{itemize}
                 
-                \item Для ступенчатой функции $f$ (при $f \geqslant 0$) это определение даёт тот же интеграл, что и для ступенчатой функции;
+                \item Для ступенчатой функции $f$ (при $f \geqslant 0$) это определение даёт тот же интеграл ступенчатой функции;
                     
                 \item $0 \leqslant \int\limits_{X} f \leqslant +\infty$;
                     
@@ -86,13 +84,13 @@
     
         $f$~--- измеримая, $f_+$ и $f_-$~--- срезки, тогда если $\int\limits_{X} f_+$ или $\int\limits_{X} f_-$~--- конечен, тогда интеграл суммируемой функции есть
             
-        $\int\limits_{X} f d \mu = \int\limits_{X} f_+ - \int\limits_{X} f_-$. 
+        $$\int\limits_{X} f d \mu = \int\limits_{X} f_+ - \int\limits_{X} f_-$$. 
                 
         Если $\int\limits_{X} f \neq \pm \infty$, то говорят, что $f$~--- \textit{суммируемая}, а также $\int |f|$~--- конечен ($|f| = f_+ + f_-$).
                 
         \subsection{Свойство}
                 
-            Если $f \geqslant 0$~--- измерима, то это определение даёт тот же интеграл, что и интеграл измеримой неотрицательной функции.
+            Если $f \geqslant 0$~--- измерима, то это определение даёт тот же интеграл неотрицательной измеримой функции.
             
     \newpage
                 
@@ -100,25 +98,21 @@
         
         $E \subset X$~--- измеримое множество, $f$~--- измеримо на $X$, тогда интеграл $f$ по множеству $E$ есть
         
-        $\int\limits_{E} f d \mu := \int\limits_{X} f \chi_E d \mu$. 
+        $$\int\limits_{E} f d \mu := \int\limits_{X} f \mathcal{X}_E d \mu$$. 
         
-        $f$~--- суммируемая на $E$ если $\int\limits_{E} f+-$ и $\int\limits_{E} f_-$~--- конечны одновременно.
+        $f$~--- суммируемая на $E$ если $\int\limits_{E} f_+$ и $\int\limits_{E} f_-$~--- конечны одновременно.
             
         \subsection{Свойства} 
                 
             \begin{itemize}
                     
-                \item $f = \sum \lambda_k \chi_{E_k}$, то $\int\limits_{E} f = \sum \lambda_k \mu \left( E_k \cap E \right)$;
+                \item $f = \sum \lambda_k \mathcal{X}_{E_k}$, то $\int\limits_{E} f = \sum \lambda_k \mu \left( E_k \cap E \right)$;
                 
-                \item $f \geqslant 0$~--- измерима, тогда $\int\limits_{E} f d \mu = \sup\limits_{\substack{\text{$g$ - ступ.} \\ 0 \leqslant g \leqslant f}} \left( \int\limits_{X} g d \mu \right)$.
+                \item $f \geqslant 0$~--- измерима, тогда $\int\limits_{E} f d \mu = \sup\limits_{\substack{\text{$g$~--- ступ.} \\ 0 \leqslant g \leqslant f}} \left( \int\limits_{X} g d \mu \right)$.
                         
             \end{itemize}
                     
     \newpage
-    
-    $(X, \mathcal{A}, \mu)$~--- произвольное пространство с мерой.
-    
-    $\mathcal{L}^0 (X)$~--- множество измеримых почти везде конечных функций.
         
     \section{Простейшие свойства интеграла Лебега}
     
