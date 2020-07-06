@@ -247,11 +247,9 @@
 
     \section{Теорема Леви}
     
-        $(X, \mathcal{A}, \mu)$, $f_n$~--- измерима, $\forall n : 0 \leqslant f_n(x) \leqslant f_{n + 1} (x)$ при почти всех $x$.
+        $f_n$~--- измерима, $\forall n : 0 \leqslant f_n(x) \leqslant f_{n + 1} (x)$ при почти всех $x$.
         
-        $f(x) = \lim\limits_{n \rightarrow +\infty} f_n(x)$ при почти всех $x$. Тогда
-        
-        $\lim\limits_{n \rightarrow +\infty} \int\limits_{X} f_n(x) d \mu = \int\limits_{X} f d \mu$.
+        $f(x) = \lim\limits_{n \rightarrow +\infty} f_n(x)$ при почти всех $x$. Тогда $\lim\limits_{n \rightarrow +\infty} \int\limits_{X} f_n(x) d \mu = \int\limits_{X} f d \mu$.
         
         \subsection{Доказательство}
         
@@ -265,9 +263,9 @@
                     
                 \item $\geqslant$
                 
-                    Достаточно доказать, что для любой ступенчатой функции $g : 0 \leqslant g \leqslant f$ верно $\lim \int\limits_{X} f_n \geqslant \int\limits_{X} g$.
+                    Достаточно доказать, что для любой ступенчатой функции $g : 0 \leqslant g \leqslant f$ верно: $\lim \int\limits_{X} f_n \geqslant \int\limits_{X} g$.
                     
-                    Достаточно доказать, что $\forall c \in (0, 1)$ верно $\lim \int\limits_{X} f_n \geqslant c \int\limits_{X} g$.
+                    Достаточно доказать, что $\forall c \in (0, 1)$ верно: $\lim \int\limits_{X} f_n \geqslant c \int\limits_{X} g$.
                     
                     $E_n := X \left( f_n \geqslant cg \right)$, $E_n \subset E_{n + 1} \subset \ldots$.
                     
@@ -275,7 +273,7 @@
                     
                     $\int\limits_{X} f_n \geqslant \int\limits_{E_n} f_n \geqslant \int\limits_{E_n} c g = c \int\limits_{E_n} g$,
                     
-                    $\lim\limits_{n \rightarrow +\infty} \int\limits_{X} f_n \geqslant \lim\limits_{n \rightarrow +\infty} c \int\limits_{E_n} g = c \int\limits_{X} g$, потому что это непрерывность снизу меры $A \mapsto \int\limits_{A} g$.
+                    $\lim\limits_{n \rightarrow +\infty} \int\limits_{X} f_n \geqslant \lim\limits_{n \rightarrow +\infty} c \int\limits_{E_n} g = c \int\limits_{X} g$, потому что это непрерывность снизу меры $A \longmapsto \int\limits_{A} g$.
                     
             \end{itemize}
     
@@ -321,13 +319,13 @@
     
         $u_n \geqslant 0$ почти везде, измеримы на $E$. Тогда
         
-        $\int\limits_{E} \left( \sum\limits^{+\infty}_{i = 1} u_n \right) d \mu = \sum\limits^{+\infty}_{n = 1} \int\limits_{E} u_n d \mu$.
+        $$\int\limits_{E} \left( \sum\limits^{+\infty}_{i = 1} u_n \right) d \mu = \sum\limits^{+\infty}_{n = 1} \int\limits_{E} u_n d \mu$$.
         
         \subsection{Доказательство}
         
             Очевидно по теореме Леви.
             
-            $S(x) = \sum\limits^{+\infty}_{n = 1} u_n(x)$ и $p \leqslant S_N \leqslant S_{N + 1} \leqslant \ldots$ и $S_N \rightarrow S(X)$.
+            $S(x) = \sum\limits^{+\infty}_{n = 1} u_n(x)$ и $0 \leqslant S_N \leqslant S_{N + 1} \leqslant \ldots$ и $S_N \rightarrow S(X)$.
             
             $\lim\limits_{n \rightarrow +\infty} \int\limits_{E} S_N = \int\limits_{E} S$,
             
@@ -335,9 +333,7 @@
             
         \subsection{Следствие}
         
-            $u_n$~--- измеримая функция, $\sum\limits^{+\infty}_{n = 1} \int\limits_{E} | u_n | < +\infty$. Тогда
-            
-            $\sum u_n$~--- абсолютно сходится почти везде на $E$.
+            $u_n$~--- измеримая функция, $\sum\limits^{+\infty}_{n = 1} \int\limits_{E} | u_n | < +\infty$. Тогда $\sum u_n$~--- абсолютно сходится почти везде на $E$.
             
             \subsubsection{Доказательство}
             
@@ -349,9 +345,7 @@
     
     \section{Абсолютная непрерывность интеграла}
     
-        $f$~--- суммируемая функция, тогда верно:
-        
-        $$\forall \varepsilon > 0 : \exists \delta > 0 : \forall E \in \mathcal{A} : \mu E < \delta : \left| \int\limits_{E} f \right| < \varepsilon$$.
+        $f$~--- суммируемая функция, тогда $\forall \varepsilon > 0 : \exists \delta > 0 : \forall E \in \mathcal{A} : \mu E < \delta : \left| \int\limits_{E} f \right| < \varepsilon$.
         
         \subsection{Доказательство}
         
