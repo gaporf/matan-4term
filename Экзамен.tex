@@ -363,17 +363,17 @@
  
     \newpage
     
-    \section{02.03.2020}
+    \section{Теорема Лебега о мажорированной сходимости}
     
-        $f_n \rightrightarrows f$ по мере то же самое, что и $\mu X( |f_n - f| \geqslant \varepsilon) \rightarrow 0$. Ещё есть способ $\int\limits_X |f_n - f| d \mu \rightarrow 0$. Можно ли вывести хоть какую-нибудь импликацию.
+        \subsection{Определение}
         
-        $\Rightarrow$ нельзя, пример: $f_n(x) = \dfrac{1}{nx}$ в $(\mathbb{R}, \lambda)$, тогда $f_n \rightrightarrows 0$ по мере. а $\int \left| \dfrac{1}{nx} \right| d \mu = +\infty$.
+            $f_n \rightrightarrows f$ по мере (будем ещё писать $f_n \xRightarrow[\mu]{} f$) то же самое, что и $\mu X( |f_n - f| \geqslant \varepsilon) \rightarrow 0$. 
+            
+            Сходимость по интегралы: $\int\limits_X |f_n - f| d \mu \rightarrow 0$.
+            
+            Если сходится по интегралу, то сходится и по мере, в обратную сторону не работает.
         
-        $\Leftarrow$ можно: $\mu X ( |f_n - f| \geqslant \varepsilon) = \int\limits_{x_n} 1 d \mu \leqslant \int\limits_{x_n} \dfrac{|f_n - f|}{\varepsilon} d \mu \leqslant \dfrac{1}{\varepsilon} \int\limits_X |f_n - f| \rightarrow 0$.
-        
-        Хотим доказать подобие $f_n \rightarrow f$, то $\int f_n \rightarrow \int f$.
-        
-        \subsection{Теорема Лебега о мажорированной сходимости}
+        \subsection{Формулировка теоремы}
         
             $f_n$, $f$~--- измеримые, почти везде конечные функции. $f_n \xRightarrow[\mu]{} f$. Также существует $g$, что:
             
@@ -387,37 +387,41 @@
         
             Тогда $\int\limits_X |f_n - f| d \mu \rightarrow 0$, и тем более $\int\limits_X f_n \rightarrow \int\limits_X f$.
             
-            \subsubsection{Доказательство}
+        \subsection{Доказательство}
             
-                $f_n$~--- суммируема в силу первого утверждения про $g$, $f$~--- суммируема по следствию теоремы Рисса. Тем более $\left| \int\limits_X f_n - \int\limits_X f \right| \leqslant \left| \int\limits_X f_n - f \right| \leqslant \int |f_n  - f|$.
+            $f_n$~--- суммируема в силу первого утверждения про $g$, $f$~--- суммируема по следствию теоремы Рисса. Тем более $\left| \int\limits_X f_n - \int\limits_X f \right| \leqslant \left| \int\limits_X f_n - f \right| \leqslant \int |f_n  - f|$.
                 
-                \begin{enumerate}
+            \begin{enumerate}
                 
-                    \item $\mu X < +\infty$. Фиксируем $\varepsilon > 0$. $X_n := X(|f_n - f| \geqslant \varepsilon)$, $\mu X_n \rightarrow 0$.
+                \item $\mu X < +\infty$. Фиксируем $\varepsilon > 0$. $X_n := X(|f_n - f| \geqslant \varepsilon)$, $\mu X_n \rightarrow 0$.
                     
-                        $\int\limits_X |f_n - f| = \int\limits_{x_n} + \int\limits_{x_n^c} \leqslant \int\limits_{x_n} 2g + \int\limits_{x_n^c} \varepsilon_0 \leqslant \int\limits_{x_n} 2g + \int\limits_x \varepsilon < \varepsilon (1 + \mu X)$. (при больших $n$ выражение $\int\limits_{x_n} 2g \leqslant \varepsilon$).
+                    $\int\limits_X |f_n - f| = \int\limits_{X_n} + \int\limits_{X_n^c} \leqslant \int\limits_{X_n} 2g + \int\limits_{X_n^c} \varepsilon_0 \leqslant \int\limits_{X_n} 2g + \int\limits_X \varepsilon < \varepsilon (1 + \mu X)$. (при больших $n$ выражение $\int\limits_{X_n} 2g \leqslant \varepsilon$).
                         
-                    \item $\mu X = +\infty$, $\varepsilon > 0$. 
+                \item $\mu X = +\infty$, $\varepsilon > 0$. 
                     
-                        Утверждение: $\exists A$~--- измеримое, $\mu A$~--- конечное, $\int\limits_{X \setminus A} g < \varepsilon$.
+                    Утверждение: $\exists A$~--- измеримое, $\mu A$~--- конечное, $\int\limits_{X \setminus A} g < \varepsilon$.
                     
-                        \textit{Доказательство}
+                    \subsubsection{Доказательство}
                         
-                            $\int G = \sup \left\{ \int g_n : h - \text{ступенчатая функция} 0 \leqslant h \leqslant g \right\}$
+                        $\int g = \sup \left\{ \int h : h - \text{суммируема} \right\}$
                             
-                        $\exists h_0 : \int\limits_X g - \int\limits_X h_0 < \varepsilon$, $A := \mathrm{supp \ } h_0$. (где supp~--- носитель (support))
+                        $\exists h_0 : \int\limits_X g - \int\limits_X h_0 < \varepsilon$, $A := \mathrm{supp \ } h_0$. (где supp~--- носитель (support)), т.е. множество $x$, что $h_0(x) \neq 0$.
                         
                         $\int\limits_{X \setminus A} g + \int\limits_A g - h_0 < \varepsilon$.
+                        
+                    \subsection{И к теореме}
                         
                         $\int\limits_X |f_n - f| = \int\limits_A + \int\limits_{X \setminus A} \leqslant \int\limits_A |f_n - f| + 2 \varepsilon < 3 \varepsilon$ при больших $n$.
                         
                 \end{enumerate}
-                
-        \subsection{Теорема Лебега о мажорированной сходимости почти везде}
+       
+    \newpage
+    
+    \section{Теорема Лебега о мажорированной сходимости для случая сходимости почти везде}
         
-            $(X, \mathcal{A}, \mu)$, $f_n$, $f$~--- измеримые, $f_n \rightarrow f$~--- почти везде.
+        $(X, \mathcal{A}, \mu)$, $f_n$, $f$~--- измеримые, $f_n \rightarrow f$~--- почти везде.
             
-            Существует такая $g$, что:
+        Существует такая $g$, что:
             
             \begin{enumerate}
             
@@ -427,9 +431,9 @@
                 
             \end{enumerate}
             
-            \subsubsection{Доказательство}
-            
-                $f_n$, $f$~--- суммируемая, тем более~--- как и раньше.
+            Тогда $f_n$, $f$~--- суммируемые (как в прошлой теореме), и $\int |f_n - f| d \mu \rightarrow 0$.
+
+            \subsection{Доказательство}
                 
                 $h_n := \sup( |f_n - f|, |f_{n + 1} - f|, \ldots )$, $h_n$ убывает. $0 \leqslant h_n \leqslant 2g$.
                 
@@ -437,54 +441,41 @@
                 
                 $2g - h \geqslant 0$, возрастают, тогда по теореме Леви $\int\limits_X 2g - h \rightarrow \int\limits_X 2g$, значит $\int\limits_X h_n \rightarrow 0$, тогда $\int\limits_X |f_n - f| \leqslant \int\limits_X h_n \rightarrow 0$.
                 
-        \subsection{Теорема Фату}
+    \newpage
+    
+    \section{Теорема Фату}
         
-            $(X, \mathcal{A}, \mu$, $f_n \geqslant 0$~--- измеримые, $f_n \rightarrow f$ почти везде. Если $\exists C > 0$, что $\forall n : \int\limits_X f_n \leqslant C$, то $\int\limits_X f \leqslant C$.
+        $f_n \geqslant 0$~--- измеримые, $f_n \rightarrow f$ почти везде. Если $\exists C > 0$, что $\forall n : \int\limits_X f_n \leqslant C$, то $\int\limits_X f \leqslant C$.
             
-            \subsubsection{Замечание}
+        \subsection{Замечание}
             
-                Вообще говоря $\int\limits_X f_n \not\rightarrow \int\limits_X f$.
+            Вообще говоря $\int\limits_X f_n \not\rightarrow \int\limits_X f$.
+                
+        \subsection{Доказательство}
+            
+            $g_n = \inf (f_n, f_{n + 1}, \ldots)$.
+                
+            $g_n$ возрастает, $g_n \rightarrow f$ почти везде. $\lim g_n = \underline{\lim} f_n = f$ почти везде.
+                
+            $\int\limits_X g_n \leqslant \int\limits_X f_n \leqslant C$, тогда $\int f \leqslant C$.
+            
+        \subsection{Следствие}
+            
+            $f_n \xRightarrow[\mu]{} f$ ($f_{n_k} \rightarrow f$).
+                
+        \subsection{Следствие 2}
+            
+            $f_n \geqslant 0$, измеримая. Тогда $\int\limits_X \underline{\lim} f_n \leqslant \underline{\lim} \int\limits_X f_n$.
                 
             \subsubsection{Доказательство}
-            
-                $g_n = \int (f_n, f_{n + 1}, \ldots)$.
                 
-                $g_n$ возрастает, $g_n \rightarrow f$ почти везде. $\lim g_n = \underline{\lim} f_n = f$ почти везде.
+                $\int\limits_X g_n \leqslant \int\limits_X f_n \leqslant C$.
                 
-                $\int\limits_X g_n \leqslant \int\limits_X f_n \leqslant C$, тогда $\int F \leqslant C$.
-                
-            Примерчик
-            
-            $f_n = n \cdot \chi_{[0, \frac{1}{n}} \rightarrow 0$ почти везде.
-            
-            $\int\limits_{\mathbb{R}} f_n = 1$, $\int f = 0$.
-            
-            Положительность важна:
-            
-            $f_n \geqslant 0$, тогда $\int -f_n \leqslant -1$, но $\int f = 0 \geqslant -1$.
-            
-            \subsubsection{Следствие}
-            
-                $f_n \xRightarrow[\mu]{} f$ ($f_{n_k} \rightarrow f$).
-                
-            \subsubsection{Следствие 2}
-            
-                $f_n \geqslant 0$, измеримая. Тогда
-                
-                $\int\limits_X \underline{\lim} f_n \leqslant \underline{\lim} \int\limits_X f_n$.
-                
-                \text{Доказательство}
-                
-                    $\int\limits_X g_n \leqslant \int\limits_X f_n \leqslant C$.
-                
-                    Берём $n_k$
+                Берём $n_k$
                     
-                    $\underline{\lim} \left( \int\limits_X f_n \right) = \lim\limits_{k \rightarrow +\infty} \left( \int\limits_X f_{n_k} \right)$.
+                $\underline{\lim} \left( \int\limits_X f_n \right) = \lim\limits_{k \rightarrow +\infty} \left( \int\limits_X f_{n_k} \right)$.
                     
-                    $\int\limits_X f_{n_k} \rightarrow \lim \left( \int\limits_X f_n \right)$, а $\int\limits_x g_n \rightarrow \int\limits_X \underline{\lim} f_n$.
-\newpage
-
-\part{Произведение мер}
+                $\int\limits_X f_{n_k} \rightarrow \lim \left( \int\limits_X f_n \right)$, а $\int\limits_x g_n \rightarrow \int\limits_X \underline{\lim} f_n$.
 
 \newpage
 
@@ -521,13 +512,13 @@
             
                 \item 
 
-                    Проверим счётную аддитивность $\mu_0$. $\chi_{A \times B} (x, y) = \chi_A(x) \cdot \chi_B(y)$, $(x, y) \in X \times Y$.
+                    Проверим счётную аддитивность $\mu_0$. $\mathcal{X}_{A \times B} (x, y) = \mathcal{X}_A(x) \cdot \mathcal{X}_B(y)$, $(x, y) \in X \times Y$.
             
-                    $P = \bigsqcup\limits_{\text{сч.}} P_k$~--- измеримые прямоугольники. $P = A \times B$ и $P_k = A_k \times B_k$, $\chi_P = \sum \chi_{P_k}$.
+                    $P = \bigsqcup\limits_{\text{сч.}} P_k$~--- измеримые прямоугольники. $P = A \times B$ и $P_k = A_k \times B_k$, $\mathcal{X}_P = \sum \mathcal{X}_{P_k}$.
             
-                    $\chi_A(x) \chi_B(y) = \sum\limits_k \chi_{A_k}(x) \chi_{B_k}(y)$. Интегрируем по $\nu$ (по пространству $Y$).
+                    $\mathcal{X}_A(x) \mathcal{X}_B(y) = \sum\limits_k \mathcal{X}_{A_k}(x) \mathcal{X}_{B_k}(y)$. Интегрируем по $\nu$ (по пространству $Y$).
             
-                    $\chi_A(x) \cdot \nu(B) = \sum \chi_{A_k}(x) \nu (B_k)$. Интегрируем по $\mu$.
+                    $\mathcal{X}_A(x) \cdot \nu(B) = \sum \mathcal{X}_{A_k}(x) \nu (B_k)$. Интегрируем по $\mu$.
             
                     $\mu A \cdot \nu B = \sum \mu A_k \cdot \nu B_k$.
             
@@ -559,7 +550,7 @@
     
     \section{Сечения множества}
     
-        $X$, $Y$ и $C \subset X \times Y$, $C_x = \left\{ y \in Y : (x, y) \in C \right\} \subset Y$~--- сечение множества $C$, аналогично определим $C^y = \left\{ x \in X : (x, y) \in C \right\}$.
+        Пусть заданы $X$, $Y$, и $C \subset X \times Y$, $C_x = \left\{ y \in Y : (x, y) \in C \right\} \subset Y$~--- сечение множества $C$, аналогично определим $C^y = \left\{ x \in X : (x, y) \in C \right\}$.
     
         Допустимы объедения, пересечения и т.п.
     
@@ -567,29 +558,17 @@
 
     \section{Принцип Кавальери}
     
-        $(X, \mathcal{A}, \mu)$ и $(Y, \mathcal{B}, \nu)$, а также $\mu$, $\nu$~--- $\sigma$-конечные и полные. 
-        
-        $m = \mu \times \nu$, $C \in \mathcal{A} \otimes \mathcal{B}$. Тогда:
+        $(X, \mathcal{A}, \mu)$ и $(Y, \mathcal{B}, \nu)$, а также $\mu$, $\nu$~--- $\sigma$-конечные и полные, $m = \mu \times \nu$, $C \in \mathcal{A} \otimes \mathcal{B}$. Тогда:
         
         \begin{enumerate}
         
             \item при почти всех $x \in X$ сечение $C_x \in \mathcal{B}$;
             
-            \item $x \mapsto \nu (C_x)$~--- измерима (почти везде) на $X$;
+            \item $x \mapsto \nu (C_x)$~--- измеримо (почти везде) на $X$;
             
             \item $m C = \int\limits_{X} \nu (C_x) d \mu(x)$.
             
         \end{enumerate}
-        
-        \subsection{Замечание}
-        
-            \begin{enumerate}
-            
-                \item $C$~--- измеримая $\not\Rightarrow$ что $\forall x : C_x$~--- измеримое.
-                
-                \item $\forall x$, $\forall y$, $C_x$, $C^y$~--- измеримы $\not\Rightarrow$ что $C$~--- измеримо (пример можно взять из Серпинскиго).
-                
-            \end{enumerate}
             
         \subsection{Доказательство}
         
@@ -603,9 +582,9 @@
                                                                             \varnothing & x \notin A
                                                                         \end{cases}$.
                 
-                    $x \longmapsto C_x: \nu B \cdot \chi_A(x)$.
+                    $x \longmapsto C_x: \nu B \cdot \mathcal{X}_A(x)$.
                     
-                    $\int\limits_{X} \nu B \chi_A(x) d \mu(x) = \mu A \cdot \nu B = m C$.
+                    $\int\limits_{X} \nu B \mathcal{X}_A(x) d \mu(x) = \mu A \cdot \nu B = m C$.
                     
                 \item $E_i$~--- дизъюнктные, $E_i \in D$. Тогда $\bigsqcup E_i \in D$.
                 
@@ -654,10 +633,6 @@
         \subsection{Следствие}
         
             $C \in Q \otimes B$, $P_1(C) := \left\{ x : C_x \neq \varnothing \right\}$, тогда если $P_1(C)$~--- измеримое в $X$, тогда $m C = \int\limits_{P_1(C)} \nu C_x d \mu x$.
-        
-        \subsection{Замечание}
-        
-            Из того, что $C$ измеримое $\not\Rightarrow$ что его проекция измерима.
 
     \newpage
     
@@ -678,8 +653,6 @@
         \subsection{Замечание}
             
             $f \geqslant 0$ измеримое, значит $\lambda_2 \Pi \Gamma (f, [a, b]) = \int\limits_{[a, b]} f(x) d \lambda_2(x)$.
-            
-            $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $C \in X \times Y$, $C_x$, $f_x : C_x \rightarrow \mathbb{R}$, т.е. $y \mapsto f(x, y)$, аналогично $f^y : C^y \rightarrow \overline{\mathbb{R}}$.
     
     \newpage
     
@@ -687,7 +660,7 @@
     
         $(X, \mathcal{A}, \mu)$, $(Y, \mathcal{B}, \nu)$ и $\mu$, $\nu$~--- $\sigma$-конечные и полные, а также $m = \mu \times \nu$.
         
-        $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $f \geqslant 0$, измеримая. Тогда
+        $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $f \geqslant 0$, измеримая. Тогда (при почти всех и почти везде)
         
         \begin{enumerate}
         
@@ -695,7 +668,7 @@
             
             \item $x \mapsto \varphi(x) = \int\limits_Y f_x(y) d \nu (y) = \int\limits_Y f(x, y) d \nu (y)$~--- измерима почти везде на $X$ (аналогично $y \mapsto \psi(y) = \int\limits_X f(x, y) d \mu(x)$~--- измерима почти везде на $Y$);
             
-            \item $\int\limits_{X \times Y} f(x, y) d \mu = \int\limits_{Y} \left( \int\limits_{X} f (x, y) d \mu (x) \right) d \nu (y) = \int\limits_X \left( \int\limits_Y f(x, y) d \nu (y) \right) d \mu (x)$.
+            \item $\int\limits_{X \times Y} f(x, y) d m = \int\limits_{Y} \left( \int\limits_{X} f (x, y) d \mu (x) \right) d \nu (y) = \int\limits_X \left( \int\limits_Y f(x, y) d \nu (y) \right) d \mu (x)$.
             
         \end{enumerate}
         
@@ -703,15 +676,13 @@
         
             \begin{enumerate}
             
-                \item $f = \chi_c$, $C \subset X \times Y$, измеримая. $f_x = \chi_{C_x} (y)$. $C_x$~--- измеримое при почти всех $x \Rightarrow f_x$~--- измеримая при почти всех $x$.
+                \item $f = \mathcal{X}_C$, $C \subset X \times Y$, измеримая. $f_x = \mathcal{X}_{C_x} (y)$. $C_x$~--- измеримое при почти всех $x \Rightarrow f_x$~--- измеримая при почти всех $x$.
                 
-                    $\varphi(x) = \int\limits_{Y} \chi_{C_x} (y) d \nu (y) = \nu (C_x)$ ($x \mapsto \nu C_x$~--- измерима по принципу Кавальери).
+                    $\varphi(x) = \int\limits_{Y} \mathcal{X}_{C_x} (y) d \nu (y) = \nu (C_x)$ ($x \mapsto \nu C_x$~--- измерима по принципу Кавальери).
                     
-                    $\int\limits_{X} \varphi(x) = \int\limits_{X} \nu C_X = m C = \int\limits_{X \times Y} \chi_C d m$.
+                    $\int\limits_{X} \varphi(x) = \int\limits_{X} \nu C_X = m C = \int\limits_{X \times Y} \mathcal{X}_C d m$.
                 
-                \item $f = \sum\limits_{\text{кон.}} a_k \chi_{C_k}$, $f \geqslant 0$.
-                
-                    $f_x = \sum a_k \chi_{(C_k)_x} (y)$.
+                \item $f = \sum\limits_{\text{кон.}} a_k \mathcal{X}_{C_k}$, $f \geqslant 0$, $f_x = \sum a_k \mathcal{X}_{(C_k)_x} (y)$.
                     
                     $x \mapsto \int f_x(y) d \nu(y) = \sum a_k \nu (C_k)_x$~--- измеримая (отдельные слагаемые~--- измеримые, значит и вся сумма измеримая).
                     
@@ -728,8 +699,6 @@
                     $\int\limits_{X} \varphi(x) = \lim\limits_{n \rightarrow +\infty} \int\limits_{X} \varphi_n(x) = \lim\limits_{n \rightarrow} \int\limits_{X \times Y} g_n d m = \int\limits_{X \times Y} f dm$ (по теореме Леви)
                     
             \end{enumerate}
-            
-        \textit{Везде должна быть приговорка \glqqпри почти всех $x$\grqq }.
         
     \newpage
     
@@ -748,12 +717,10 @@
             \item $\int\limits_{X \times Y} f(x, y) d \mu = \int\limits_{Y} \left( \int\limits_{X} f (x, y) d \mu (x) \right) d \nu (y) = \int\limits_X \left( \int\limits_Y f(x, y) d \nu (y) \right) d \mu (x)$
             
         \end{enumerate}
-        
-        \textit{без доказательства} 
     
         \subsubsection{Следствие}
         
-            $\int\limits_C f = \int\limits_{X \times Y} f \chi_C = \int\limits_X \left( \int\limits_Y f \cdot \chi_C \right) d \mu = \int\limits_{P_1(C)} \left( \int\limits_{C_x} f(x, y) d \nu(y) \right) d \mu (x)$.
+            $\int\limits_C f = \int\limits_{X \times Y} f \mathcal{X}_C = \int\limits_X \left( \int\limits_Y f \cdot \mathcal{X}_C \right) d \mu = \int\limits_{P_1(C)} \left( \int\limits_{C_x} f(x, y) d \nu(y) \right) d \mu (x)$.
             
             $P_1(C)$~--- проекция, измеримая, $\left\{ x : C_x \neq \varnothing \right\}$.
     
@@ -779,15 +746,11 @@
     
 \newpage
 
-\part{Замена переменных в интеграле}
-
-\newpage
-
     \section{Образ меры при отображении}
     
         $(X, \mathcal{A}, \mu)$ и $(Y, \mathcal{B}, )$ (пространство и алгебру изобрели, а меру нет).
     
-        $\Phi : X \rightarrow Y$, $\forall B \in \mathcal{B}$ $\Phi^{-1}(B)$~--- измеримо ($\in \mathcal{A}$).
+        $\Phi : X \rightarrow Y$, $\forall B \in \mathcal{B} : \Phi^{-1}(B)$~--- измеримо ($\in \mathcal{A}$).
     
         $\nu : \mathcal{B} \rightarrow \overline{\mathbb{R}}$, $E \in \mathcal{B}$, $\nu E := \mu(\Phi^{-1}(E))$~--- это мера на $\mathcal{B}$, а также \textit{образ меры $\mu$ при отображении $\Phi$}.
 
@@ -819,19 +782,15 @@
         
         $\forall f \geqslant 0$~--- измеримой на $Y$ верно, что $f \circ \Phi$~--- измерима на $X$ и выполняется следующее свойство:
         
-        $\int\limits_Y f(y) d \nu(y) = \int\limits_X f (\Phi(x)) \omega(x) d \mu(x)$.
-            
-        \subsection{Замечание}
-        
-            То же верно для случая $f$~--- суммируемая.
+        $$\int\limits_Y f(y) d \nu(y) = \int\limits_X f (\Phi(x)) \omega(x) d \mu(x)$$.
     
         \subsection{Доказательство}
         
             \begin{enumerate}
             
-                \item $f = \chi_B$, $B \in \mathcal{B}$. Тогда $\left(f \circ \Phi \right)(x) = \begin{cases} 1 & \Phi(X) \in B \\ 0 & \Phi(x) \notin B \end{cases} \ = \chi_{\Phi^{-1}(B)}$.
+                \item $f = \mathcal{X}_B$, $B \in \mathcal{B}$. Тогда $\left(f \circ \Phi \right)(x) = \begin{cases} 1 & \Phi(x) \in B \\ 0 & \Phi(x) \notin B \end{cases} \ = \mathcal{X}_{\Phi^{-1}(B)}$.
                 
-                    Доказывать нечего \smiley{} : $\nu B = \int\limits_{\Phi(B)} \omega d \mu$;
+                    Доказывать нечего \smiley{} : $\nu B = \int\limits_{\Phi^{-1}(B)} \omega d \mu$;
                     
                 \item $f$~-- ступенчатая, для каждой ступеньки~--- правда, и по линейности интеграла получаем результат;
                 
@@ -843,9 +802,7 @@
             
         \subsection{Следствие}
         
-            $f$~--- суммируема на $Y$, $B \in \mathcal{B}$, $\int\limits_B f d \nu(y) = \int\limits_{\Phi^{-1}}(B) \left(f \circ \Phi\right) w d \mu$.
-            
-            Частный случай: $X = Y$, $\mathcal{A} = \mathcal{B}$, $\Phi = \mathrm{id}$, $\omega \geqslant 0$~--- измерима.
+            $f$~--- суммируема на $Y$, $B \in \mathcal{B}$, $\int\limits_B f d \nu(y) = \int\limits_{\Phi^{-1}(B)} \left(f \circ \Phi\right) w d \mu$.
             
     \newpage
     
