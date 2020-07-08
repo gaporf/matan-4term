@@ -724,26 +724,6 @@
             
             $P_1(C)$~--- проекция, измеримая, $\left\{ x : C_x \neq \varnothing \right\}$.
     
-    \newpage
-    
-    \section{Какая-то нужная штука для лекции 02.03.2020, потом удалю}
-    
-        $B(0, 1) \subset \mathbb{R}^m$, Хотим найти $\lambda_m B(0, 1) = \alpha_m$.
-    
-        $\lambda_m B(0, R) = \alpha_m \cdot R^M$.
-    
-        $x_1^2 + x_2^2 + \ldots + x_m^2 \leqslant 1$.
-    
-        интеграл обычного кружочка: $\int \chi_B d \lambda_2 = \int\limits^1_{-1} \int\limits^{\sqrt{1 - x^2}}_{-\sqrt{1 - x^2}} 1 dy dy dx = \int\limits^1_{-1} 2 \sqrt{1 - x^2} dx = \pi$
-    
-        $\alpha_m = \int\limits_{\mathbb{R}^m} \chi_B = \int\limits^1_{-1} \left( \int\limits_{B(0, \sqrt{1 - x_1^2}) \subset \mathbb{R}^{m -1}} 1 d \nu \right) dx_1 = \int\limits^1_{-1} (1 - x_1^2)^{\frac{m - 1}{2}} \alpha_{m - 1} d x_1$.
-    
-        $B(x, y) = \int\limits^1_0 t^{x - 1} (1 - t)^{y - 1} dt$.
-    
-        $B(x, y) = \dfrac{\Gamma(x) \Gamma(y)}{\Gamma(x + y)}$, $\Gamma(n) = (n - 1)!$, $\Gamma(x + 1) = \Gamma(x) \cdot x$.
-    
-        Тогда объём шара в $\mathbb{R}^m$ равен $\alpha_{m - 1} 2 \int\limits^1_0 (1 - t)^{\frac{m - 1}{2}} t^{-\frac{1}{2}} dt = B(\frac{1}{2}, \frac{m + 1}{2}) \alpha_{m - 1}$. Тогда объём шара можно переписать как $\dfrac{\Gamma (\frac{1}{2}) \Gamma (\frac{m + 1}{2})}{\Gamma (\frac{m}{2} + 1) \alpha_{m - 1}}$.
-    
 \newpage
 
     \section{Образ меры при отображении}
@@ -846,7 +826,7 @@
     
     \section{Единственность плотности}
     
-        $f$, $g$~--- суммируемые на $X$, $\forall A$~--- измеримых верно: $\int\limits_A f = \int\limits_a g$. Тогда $f = g$ почти везде.
+        $f$, $g$~--- суммируемые на $X$, $\forall A$~--- измеримых верно: $\int\limits_A f = \int\limits_A g$. Тогда $f = g$ почти везде.
         
         \subsubsection{Доказательство}
         
@@ -862,7 +842,7 @@
             
         \subsection{Следствие}
         
-            Плотность $\nu$ относительно $\nu$ определена однозначно с точностью до $\mu$ почти везде.
+            Плотность $\nu$ относительно $\mu$ определена однозначно с точностью до равенства почти везде.
     
     \newpage
         
@@ -900,17 +880,15 @@
     
         \subsection{Лемма}
     
-            $f : \underset{\text{откр.}}{O} \subset \mathbb{R}^m \rightarrow \mathbb{R}$, $O$~--- непрерывное. $A$~--- измеримое, $A \subset Q \subset \overline{Q} \subset O$.
+            $f : \underset{\text{откр.}}{O} \subset \mathbb{R}^m \rightarrow \mathbb{R}$,~--- непрерывное. $A$~--- измеримое, $A \subset Q \subset \overline{Q} \subset O$.
         
-            Тогда $\int\limits_{A \subset G \text{открытое}} \left( \lambda (G) \sup\limits_{G} f \right) = \lambda A \sup\limits_{A} f$.
+            Тогда $\int\limits_{\substack{A \subset G \\ G \text{~--- открытое}}} \left( \lambda (G) \sup\limits_{G} f \right) = \lambda A \sup\limits_{A} f$.
             
             Без доказательства.
         
         \subsection{Теорема}
         
-            $\Phi : O \subset \mathbb{R}^m \rightarrow \mathbb{R}^m$~--- диффеоморфизм. $A \in \mathcal{M}^m$, $A \subset O$. Тогда
-        
-            $\lambda \Phi(A) = \int\limits_{A} \left| \det \Phi'(a) \right| d \lambda$.
+            $\Phi : O \subset \mathbb{R}^m \rightarrow \mathbb{R}^m$~--- диффеоморфизм. $A \in \mathcal{M}^m$, $A \subset O$. Тогда $\lambda \Phi(A) = \int\limits_{A} \left| \det \Phi'(a) \right| d \lambda$.
         
         \subsubsection{Доказательство}
         
@@ -920,17 +898,9 @@
             
             Достаточно проверить правое неравенство. Левое~--- правое для $\Phi^{-1}$ и $\widetilde{A} = \Phi(A)$.
             
-            $\lambda \Phi^{-1} \left( \widetilde{A} \right) \leqslant \sup J_{\Phi^{-1}} \cdot \lambda \widetilde{A}$.
-            
-            $\lambda A \leqslant \sup \left| \det (\Phi^{-1})' \right| \lambda \Phi(A)$.
-            
-            $\sup \dfrac{1}{\left| \det \Phi' \right|}$
-            
-            $\dfrac{1}{\inf \left| \det \Phi' \right|}$
-            
             \begin{enumerate}
             
-                \item $A$~--- кубическая ячейка, $\overline{A} \subset O$. От противного: пусть оказалось, что $\lambda Q \sup J_{\Phi} < \nu Q$. Возьмём $c > \sup\limits_{Q} J_{\Phi}$, так, что $\lambda Q \cdot c < \nu Q$. Значит существует такая часть $Q_i$, что $\lambda Q_i \cdot c < \nu Q_i$. $\lambda Q_n \cdot c < nu Q_n$, $a = \bigcap \overline{Q_n}$, накроем точку $a$ этим кубиков. $c > \left| \det \Phi'(a) \right|$, тогда $\nu Q_n = \lambda \Phi(Q_n)$. Получили, что $\lambda \Phi(Q_n) > c \lambda Q_n$, а по лемме нужно наоборот.
+                \item $A$~--- кубическая ячейка, $\overline{A} \subset O$. От противного: пусть оказалось, что $\lambda Q \sup J_{\Phi} < \nu Q$. Возьмём $c > \sup\limits_{Q} J_{\Phi}$, так, что $\lambda Q \cdot c < \nu Q$. Значит существует такая часть $Q_i$, что $\lambda Q_i \cdot c < \nu Q_i$. $\lambda Q_n \cdot c < \nu Q_n$, $a = \bigcap \overline{Q_n}$, накроем точку $a$ этим кубиков. $c > \left| \det \Phi'(a) \right|$, тогда $\nu Q_n = \lambda \Phi(Q_n)$. Получили, что $\lambda \Phi(Q_n) > c \lambda Q_n$, а по лемме нужно наоборот.
             
                 \item Оценка $\nu A \leqslant \sup J_{\Phi} \lambda A$, верна для случая, когда $A$~--- открытое множество.
                 
@@ -944,24 +914,10 @@
                     
                     $G$~--- открытое, тогда
                     
-                    $\nu G \leqslant \sup\limits_{G} J_{\Phi} \cdot \lambda G$.
-                    
-                    $\nu A \leqslant \nu G \leqslant \lambda \lambda A \sup\limits_{A} f$.
+                    $\nu G \leqslant \sup\limits_{G} J_{\Phi} \cdot \lambda G$ и $\nu A \leqslant \nu G \leqslant \lambda A \sup\limits_{A} f$.
                     
             \end{enumerate}
 
-    \newpage
-    
-    $\forall A \in \mathcal{M}^m$, $\Phi(A)$~--- измерима
-    
-    $\lambda \Phi(A) = \int\limits_A \left| \det \Phi'(x) \right| d \lambda (x)$.
-    
-    $\Phi: X \rightarrow Y$
-    
-    $\nu(E) = \int\limits-{\Phi^{-1}(E)} \omega d \mu$.
-    
-    $E = \Phi(A)$.
-    
     \newpage
     
     \section{Теорема о гладкой замене переменной в интеграле Лебега}
@@ -1020,7 +976,7 @@
             
             По определению гаммы-функции:
             
-            $\Gamma(s) \Gamma(t) = \int\limits^{+\infty}_0 x^{s - 1} e^x \left( \int\limits^{+\infty}_0 y^{t - 1} e^{-y}dy \right) dx = \int\limits^{+\infty}_0 x^{s - 1} e^{-x} \int\limits_X (u - x)^{t - 1} e^{-u + x} du dx$, где $y = u - x$, 
+            $\Gamma(s) \Gamma(t) = \int\limits^{+\infty}_0 x^{s - 1} e^{-x} \left( \int\limits^{+\infty}_0 y^{t - 1} e^{-y}dy \right) dx = \int\limits^{+\infty}_0 x^{s - 1} e^{-x} \int\limits_X (u - x)^{t - 1} e^{-u + x} du dx$, где $y = u - x$, 
             
             $\int\limits^{+\infty}_0 du \int\limits^u_0 dx x^{s - 1} (u - x)^{t - 1} e^{-u}$, заменим $x = uv$ и получим
             
@@ -1038,10 +994,6 @@
         
         $\int\limits^{\pi}_0 \left(\sin \varphi_k \right)^{m - 1 - k} = 2 \int\limits^{\pi / 2}_0 t^{\frac{m - 1 - k}{2} - \frac{1}{2}} (1 - t)^{-0.5} dt = B \left( \frac{m - k}{2}, \frac{1}{2} \right) =\dfrac{\Gamma\left( \frac{m - k}{2} \right) \Gamma\left( \frac{1}{2} \right)}{\Gamma \left( \frac{m - k}{2} + \frac{1}{2} \right)}$.
    
-\newpage
-
-\part{Функция распределения}
-
 \newpage
 
     \section{Теорема о вычислении интеграла по мере Бореля---Стилтьеса (с леммой)}
@@ -1109,10 +1061,6 @@
             \subsubsection{Следствие}
         
                 Мы проверили, что $g$ возрастает, $g \in C^1 \left( \mathbb{R} \right)$ и $M_g(A) = \int\limits_A g'(x) dx$.
-            
-\newpage
-
-\part{Ряды Фурье}
 
 \newpage
 
@@ -1186,7 +1134,7 @@
             
                 \item $f(x) \leqslant \mathrm{ess} \sup f$ при почти всех $x$;
             
-                \item $\left| \int\limits_\mathbb{R} fg \right| \leqslant \mathrm{ess} \sup |f| \cdot \int\limits_X |g|$.
+                \item $\left| \int\limits_X fg \right| \leqslant \mathrm{ess} \sup |f| \cdot \int\limits_X |g|$.
             
             \end{enumerate}
         
@@ -1260,7 +1208,7 @@
             
         \subsection{Следствие}
         
-            $\mu E < +\infty$, $1 \geqslant s < r \geqslant +\infty$.
+            $\mu E < +\infty$, $1 \leqslant s < r \leqslant +\infty$.
             
             $f_n$, $f \in L^s$, $f_n \rightarrow f$ на $L^r$. Тогда $f_n \rightarrow f$ на $L^s$.
             
@@ -1270,13 +1218,11 @@
 
 \newpage
 
-\part{Поверхностный интеграл}
-
     \section{Измеримое множество на простом гладком двумерном многообразии в $\mathbb{R}^3$}
     
         $M$~--- просто гладкое двумерное многообразие в $\mathbb{R}^3$, $\varphi : \underset{\text{откр.}}{O} \subset \mathbb{R}^2 \rightarrow \mathbb{R}^3$~--- параметризация.
         
-        $E \subset M$~--- измеримое (по Лебегу), если его $\varphi^{-1}(E)$~--- измерим в $\mathbb{R}^2$.
+        $E \subset M$~--- измеримое (по Лебегу), если $\varphi^{-1}(E)$~--- измерим в $\mathbb{R}^2$.
         
     \newpage
     
@@ -1294,7 +1240,7 @@
         
         $\iint\limits_M f ds$~--- Поверхностный интеграл $\mathrm{I}$ рода и вычисляется следующим образом:
         
-        $\iint\limits_M f ds = \iint\limits_{\varphi^{-1} M} f(x(u, v), y(u, v), z(u, v)) | \varphi'_u \times \varphi'_v | dv du$.
+        $\iint\limits_M f ds = \iint\limits_{\varphi^{-1} (M)} f(x(u, v), y(u, v), z(u, v)) | \varphi'_u \times \varphi'_v | dv du$.
         
     \newpage
     
@@ -1319,8 +1265,6 @@
         $S(E) = \sum S(E \bigcap M_i)$.
         
 \newpage
-
-\part{Преобразование Фурье}
 
     \section{Теорема о сходимости в пространствах $L^p$ и по мере}
     
@@ -1350,6 +1294,16 @@
     
     \newpage
     
+    \section{Фундаментальная последовательность, полное пространство}
+    
+        Пусть $X$~--- метрическое пространство, последовательность $x_n \in X$ называется фундаментальной, если:
+        
+        $$\forall \varepsilon > 0 : \exists N : \forall n_1, n_2 > N : | x_{n_1} - x_{n_2} | < \varepsilon$$.
+        
+        Пространство, в котором любая фундаментальная последовательность сходится к элементу этого же пространства, называется \textit{полным}.
+    
+    \newpage
+    
     \section{Полнота $L^p$}
     
         $L^P(X, \mu)$, $1 \leqslant p < +\infty$~--- полное.
@@ -1374,7 +1328,7 @@
             
             $\int\limits_X S_n^p \leqslant 1$, по т. Фату $\int S^p \leqslant 1$, тогда $S^p$~--- сходится, значит $S$ конечно почти везде, тогда
             
-            $\sum \left( f_{n_{k + 1}}  f_{n_k} \right)$~--- сходится почти везде.
+            $\sum \left( f_{n_{k + 1}} - f_{n_k} \right)$~--- сходится почти везде.
             
             $f(x) := f_{n_1} + \sum\limits_{k = 1}^{+\infty} \left( f_{n_{k + 1}} - f_{n_k} \right)$~--- сходится с потрам
             
@@ -1392,57 +1346,55 @@
     
     \newpage
     
+    \section{Плотное множество}
+        
+        $Y$~--- множество, $\mathcal{A} \subset Y$~--- (всюду) плотное множество, если $\forall y \in Y : \forall U(y)$ верно: $U(y) \bigcap \mathcal{A} \neq \varnothing$.
+        
+        Пример: $\mathcal{A} = \mathbb{Q} \subset Y = \mathbb{R}$.
+            
+    \newpage
+    
     \section{Плотность в $L^p$ множества ступенчатых функций}
+    
+        $(X, \mathcal{A}, \mu)$, $1 \leqslant p \leqslant +\infty$
+        
+        Тогда $\left\{ f \in L^p : f \text{~--- ступ.} \right\}$~--- плотно $L^p$.
+        
+        \subsection{Замечание}
+    
+            $p < +\infty$, $\varphi \in L^p$~--- ступенчатая, тогда $\mu X(\varphi \neq 0) < +\infty$.
+        
+        \subsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $p = +\infty$, $f \in L^{\infty}$, подменим $f$ на множество меры $0 : |f| \leqslant \| f \|_{\infty}$ всюду.
+                
+                    $\exists$ ступ. $\varphi_n \rightrightarrows f_+$, $\psi_m \rightrightarrows f_-$, т.е. $\| \varphi_n - f_+ \|_{\infty} \rightarrow 0$, $\varphi_n \rightarrow f_+$ в $C^{\infty}$, $\psi_m \rightarrow f_-$.
+                
+                \item $p < +\infty$, $f \geqslant 0$, $\exists \varphi_n$~--- ступенчатая, $\varphi_n \rightarrow f$ всюду.
+                
+                    $\| \varphi_n - f \|^p_p = \int\limits_X |\varphi_n - f|^p d \mu \rightarrow 0$, $| \varphi - f|^p \leqslant |f|^p$.
+                
+            \end{enumerate}
+                
+    \newpage
+    
+    \section{Лемма Урысона}
     
         \subsection{Определение}
         
-            $Y$~--- множество, $\mathcal{A} \subset Y$~--- (всюду) плотное множество, если $\forall y \in Y : \forall U(y)$ верно $U(y) \bigcap \mathcal{A} \neq \varnothing$.
-        
-            Пример: $\mathcal{A} = \mathbb{Q} \subset Y = \mathbb{R}$.
-        
-        \subsection{Лемма} 
-    
-            $(X, \mathcal{A}, \mu)$, $1 \leqslant p \leqslant +\infty$
-        
-            Тогда
-        
-            $\left\{ f \in L^p : f \text{~--- ступ.} \right\}$~--- плотно $L^p$.
-        
-            \subsubsection{Замечание}
-    
-                $p < +\infty$, $\varphi \in L^p$~--- ступенчатая, тогда $\mu X(\varphi \neq 0) < +\infty$.
-        
-            \subsubsection{Доказательство}
-        
-                \begin{enumerate}
+            $X$~--- \textit{топологическое} пространство, если $\forall F_1$, $F_2$~--- замкнутых подмножеств, верно: $F_1 \bigcap F_2 = \varnothing$.
             
-                    \item $p = +\infty$, $f \in L^{\infty}$, подменим $f$ на множество меры $0 : |f| \leqslant \| f \|_{\infty}$ всюду.
-                
-                        $\exists$ ступ. $\varphi_n \rightrightarrows f_+$, $\psi_m \rightrightarrows f_-$, т.е. $\| \varphi_n - f_+ \|_{\infty} \rightarrow 0$, $\varphi_n \rightarrow f_+$ в $C^{\infty}$, $\psi_m \rightarrow f_-$.
-                
-                    \item $p < +\infty$, $f \geqslant 0$, $\exists \varphi_n$~--- ступенчатая, $\varphi_n \rightarrow f$ всюду.
-                
-                        $\| \varphi_n - f \|^p_p = \int\limits_X |\varphi_n - f|^p d \mu \rightarrow 0$, $| \varphi - f|^p \leqslant |f|^p$.
-                
-                \end{enumerate}
-                
-    \newpage
+            Если $\exists$ открытые $U(F_1)$, $U(F_2)$, которые не пересекаются, то это свойство $X$ называются \textit{нормальностью}. (дополнительно требуется, чтобы $\forall y \in X : \left\{ y \right\}$~--- замкнутое).
             
-    \subsection{Определение}
+        \subsection{Лемма Урысона}
         
-        $X$~--- \textit{топологическое} пространство, если $\forall F_1$, $F_2$~--- замкнутых подмножеств, $F_1 \bigcap F_2 = \varnothing$.
-            
-        Если $\exists$ открытые $U(F_1)$, $U(F_2)$, которые не пересекаются, то это свойство $X$ называются \textit{нормальностью}. (дополнительно требуется, чтобы $\forall y \in X$ $\left\{ y \right\}$~--- замкнутое).
-            
-    \subsection{Лемма Урысона}
+            $X$~--- норм, $F_0$, $F_1$~--- замкнуты, $F_0 \bigcap F_1 = \varnothing$.
         
-        Будет дописано позже.
+            Тогда $\exists f : X \rightarrow \mathbb{R}$, $0 \leqslant f \leqslant 1$, непрерывное.
         
-        $X$~--- норм, $F_0$, $F_1$~--- замкнуты, $F_0 \bigcap F_1 = \varnothing$.
-        
-        Тогда $\exists f : X \rightarrow \mathbb{R}$, $0 \leqslant f \leqslant 1$, непрерывное.
-        
-        $f\big|_{F_0} = 0$, $f\big|_{F_1} = 1$.
+            $f\big|_{F_0} = 0$, $f\big|_{F_1} = 1$.
         
         \subsection{Доказательство}
         
@@ -1483,10 +1435,6 @@
                     $\supset$ $x \in \text{ЛЧ}$, $f(x) = S_0 < q_1 < S$, $x \in G_{q_1}$.
                 
             \end{enumerate}
-            
-\newpage
-
-\part{Поверхностный интеграл II рода}
 
     \newpage
 
@@ -1730,41 +1678,33 @@
     
     \newpage
     
-    \section{Соленоидальность бездивергентного векторного поля}
+    \section{Ротор, дивиргенция векторного поля}
     
         \subsection{Дивергенция}
     
             $\mathrm{div} A$~--- это функция $\dfrac{\partial P}{\partial x} + \dfrac{\partial Q}{\partial y} + \dfrac{\partial R}{\partial z}$.
-        
-            $\mathrm{div} A(a) = \lim\limits_{r \rightarrow 0} \dfrac{1}{\lambda_3 B} \iiint\limits_{B(a, r)} \mathrm{div} A dx dy dz = \lim\limits_{r \rightarrow 0} \dfrac{1}{\lambda_3 B} \iint\limits_{S(a, r)} \langle (P, Q, R), n_0 \rangle dS$.
             
         \subsection{Ротор}
     
-            $(P, Q, R) \in C^1$~--- ротор (вихрь).
+            $(P, Q, R) \in C^1$.
         
             $\mathrm{rot} A = (R'_y - Q'_z, P'_z - R'_x, Q'_x - P'_y)$.
     
-        $\mathrm{rot} V = 0$, $\gamma = 0$. Тогда $\int\limits_{\gamma} P dx + Q dy + R dz = 0 $.
+    \newpage
+    
+    \section{Соленоидальное векторное поле}
+    
+        Поле $V$~--- \textit{соленоидальное} в $\Omega$ если существует векторный потенциал, т.е. существует такое векторное поле $B$, что $\mathrm{rot} B = V$.
         
-        $\gamma$~--- путь от $A$ до $B$. Тогда $\int\limits_{\gamma}$~--- зависит от $A$ и $B$, но не от самого пути.
-        
-        Если $O \subset \mathbb{R}^3$~--- не односвязная, $\mathrm{rot} V = 0$. $I(v, \gamma)$ не зависит от $\gamma$
+    \newpage
     
-        $\int\limits_{\Omega} \mathrm{rot} V = \int\limits_{\gamma_2} V + \int\limits_{\gamma_1} V$.
-    
-        $\mathrm{div} (P, Q, R) = 0$.
-    
-        $\forall V : \iint\limits_{\partial V} \langle (P, Q, R), n_0 \rangle dS = 0$.
+    \section{Соленоидальность бездивергентного векторного поля}
     
         \subsection{Вспомогательная теорема}
     
             $V$~--- поле. Если $\mathrm{rot} V = 0$ и область односвязная, то поле гладкое.
     
             $\mathrm{rot} = 0$~--- дифференциальный критерий потенциальности $\Leftrightarrow$ поле локально-потенциальное $\Leftrightarrow V$~--- потенциальное.
-        
-        \subsection{Соленоидальное поле}
-    
-            Поле $V$~--- \textit{соленоидальное} в $\Omega$ если существует векторный потенциал, т.е. существует такое векторное поле $B$, что $\mathrm{rot} B = V$.
         
         \subsection{Теорема}
     
@@ -1774,9 +1714,7 @@
         
                 $\Rightarrow$ Тривиально $\mathrm{div} \mathrm{rot} B = 0$~--- упражнение.
             
-                $\Leftarrow$. 
-            
-                    $\mathrm{div} A = 0$. Ищем векторный потенциал $B : \mathrm{rot} B = A$.
+                $\Leftarrow$ $\mathrm{div} A = 0$. Ищем векторный потенциал $B : \mathrm{rot} B = A$.
             
                     $B = (P, Q, R)$, $R'_y - Q'_z = A_1$, $P'_z - R'_x = A_2$, $Q'_z - P'_y = A_3$.
                 
@@ -1792,16 +1730,14 @@
                 
                     $\mathrm{div} = 0$ по условию, тогда $\varphi'_x + \int\limits^z_{z_0} \dfrac{\partial A_3}{\partial z} dz = A_3$.
                     
-                    $\varphi'_x(x, y) + A_3(x, y, z) - A_3(x, y, z_0) = A_3$.
-                
-                    $\varphi'_x(x, y) = A_3(x, y, z_0)$.
-                
-                    $\varphi = \int\limits^x_{x_0} A_3(x, y, z_0) dx + g(y)$.
-                
-\newpage
-    
-\part{Гильбертовы пространства}
+                    $\varphi'_x(x, y) + A_3(x, y, z) - A_3(x, y, z_0) = A_3$, $\varphi'_x(x, y) = A_3(x, y, z_0)$ и $\varphi = \int\limits^x_{x_0} A_3(x, y, z_0) dx + g(y)$.
 
+    \newpage
+    
+    \section{Бескоординатное определение дивергенции}
+    
+        $\mathrm{div} A(a) = \lim\limits_{r \rightarrow 0} \dfrac{1}{\lambda_3 B} \iiint\limits_{B(a, r)} \mathrm{div} A \ dx dy dz = \lim\limits_{r \rightarrow 0} \dfrac{1}{\lambda_3 B} \iint\limits_{S(a, r)} \langle (P, Q, R), n_0 \rangle dS$.
+        
 \newpage
     
     \section{Гильбертово пространство}
@@ -1885,16 +1821,12 @@
                 \item $\langle x - c_k e_k, e_k \rangle = \langle x, e_k \rangle - c_k \| e_k \|^2 = 0$.
                 
             \end{enumerate}
-                
-\newpage
-
-\part{Ряды Фурье}
 
 \newpage
 
     \section{Коэффициенты Фурье}
     
-        $\left\{ e_k \right\}$~--- ортогональная система векторов в $\mathcal{H}$, $x \in \mathcal{H}$.
+        $\left\{ e_k \right\}$~--- ортонормированная система векторов в $\mathcal{H}$, $x \in \mathcal{H}$.
         
         $c_k(x) := \dfrac{\langle x, e_k \rangle}{\| e_k \|^2}$~--- \textit{коэффициенты Фурье} вектора $x$ по системе $\left\{ e_k \right\}$.
         
@@ -1910,7 +1842,7 @@
     
     \section{Теорема о свойствах частичных сумм ряда Фурье. Неравенство Бесселя}
     
-        $\left\{ e_k \right\}$~--- ортогональная система $\mathcal{H}$, $x \in \mathcal{H}$, $n \in \mathbb{N}$. $S_n := \sum\limits_{k = 1}^n c_k(x) e_k$, $\mathcal{L} := \Lin(e_1, \ldots, e_n)$.
+        $\left\{ e_k \right\}$~--- ортонормированная система $\mathcal{H}$, $x \in \mathcal{H}$, $n \in \mathbb{N}$. $S_n := \sum\limits_{k = 1}^n c_k(x) e_k$, $\mathcal{L} := \Lin(e_1, \ldots, e_n)$.
         
         Тогда верны следующие свойства:
         
@@ -2029,52 +1961,12 @@
                 \item $5 \Rightarrow 4$) $y \perp e_k \forall k$, $y \perp \mathcal{L} = \mathcal{H}$, $y \perp y$, что значит $\langle y, y \rangle = 0$.
                 
             \end{itemize}
-        
-\newpage
-
-\part{Интегралы, зависящие от параметра}
 
 \newpage
-
-    \subsection{Несобственный интеграл в $\mathbb{R}$}
-    
-        $\int\limits^b_a f(x) dx = \int\limits-{[a, b]} f d \lambda_1$.
-        
-        $\int\limits^{\rightarrow b}_a f dx = \lim\limits_{B \rightarrow b - 0} \int\limits^B_a f dx$~--- \textit{несобственный интеграл}.
-        
-        Здесь $f$~--- локально суммируемая, т.е. $\forall B \in [a, b) : f$~--- суммируемая на $[a, B]$. (возможно, что $b = +\infty$.
-        
-    \subsection{Теорема}
-    
-        $\int\limits^{\rightarrow b}_a f dx$~--- абсолютно сходится $\Longleftrightarrow f$~--- суммируемая на $[a, b)$.
-        
-        \subsubsection{Доказательство}
-        
-            \begin{itemize}
-            
-                \item $\Leftarrow)$ 
-                
-                    $f$~--- суммируемая $\Rightarrow \int\limits_{[a, b)} |f| d\lambda$~--- конечный, тогда $\int\limits^{\rightarrow b}_a$ существует.
-                
-                    $\int\limits^B_a |f| \leqslant \int\limits_{[a, b)} |f|$.
-                    
-                \item $\Rightarrow)$
-                
-                    $\lim\limits_{B \rightarrow b - 0} \int\limits^B_a |f| d \lambda = \int\limits_{[a, b)} |f| d \lambda$~--- в силу непрерывности меры снизу $g \geqslant 0$.
-                    
-                    Измеримость $E \mapsto \int\limits_{E} g dx$.
-                
-            \end{itemize}
-            
-    $f : X \times Y \rightarrow \overline{\mathbb{R}}$
-    
-    $X$~--- пространство с мерой, $y \subset Y_0$~--- метрическое пространство (или даже метризуемое).
-    
-    Считаем, что $\forall y : f( \cdot, y )$~--- суммируемая на $X$.
     
     \newpage
     
-    \section{Предельный переход под знаком интеграла при наличии равномерной сходимостичвп}
+    \section{Предельный переход под знаком интеграла при наличии равномерной сходимости}
     
         $\mu X < +\infty$, $\varphi : X \rightarrow \mathbb{R}$, $f(x, y) \rightrightarrows \varphi$ при $y \rightarrow y_0$ ($y_0 \in Y_0$ или $y_0$~--- предельная точка $Y$). Тогда
         
@@ -2085,19 +1977,19 @@
             По Гейне выбираем $y_n \rightarrow y_0$ при больших $n : \forall x : \left| f(x, y) - \varphi(x) \right| < 1 \Rightarrow \varphi$~--- суммируемая.
         
             $\left| \int\limits_X F(x, y) d \mu - \int\limits_X \varphi d \mu \right| \leqslant \int\limits_X | f - \varphi | d \mu \leqslant \sup\limits_{x \in X} \left| f (x, y_0) - \varphi(x) \right| \mu X \xrightarrow[n \rightarrow +\infty]{} 0$. 
-    
-    \newpage
-    
-    \subsection{определение}
-    
-        $f : X \times Y \rightarrow \overline{\mathbb{R}}$ (как выше).
-        
-        $y_0 \in Y$, $f$~--- \textit{удовлетворяет условию} $L_{\mathrm{loc}}(y_0)$, если $\exists g : X \rightarrow \overline{\mathbb{R}}$~--- суммируемая, а также существует $U(y_0)$, что для почти всех $x \in X$ и $\forall y \in Y(y_0) : \left| f(x, y) \right| \leqslant g(x)$.
         
     \newpage
     
-    \subsection{Теорема Лебега о мажорирующей сходимости}
+    \section{Теорема Лебега о непрерывности интеграла по параметру}
     
+        \subsection{определение}
+    
+            $f : X \times Y \rightarrow \overline{\mathbb{R}}$.
+        
+            $y_0 \in Y$, $f$~--- \textit{удовлетворяет условию} $L_{\mathrm{loc}}(y_0)$, если $\exists g : X \rightarrow \overline{\mathbb{R}}$~--- суммируемая, а также существует $U(y_0)$, что для почти всех $x \in X$ и $\forall y \in Y(y_0) : \left| f(x, y) \right| \leqslant g(x)$.
+        
+        \subsection{Теорема}
+        
         $f : X \times Y \rightarrow \overline{\mathbb{R}}$, $\varphi : X \rightarrow \overline{\mathbb{R}}$, что $\lim\limits_{y \rightarrow y_0} f(x, y) = \varphi(x)$ при почти всех $x$, $f$~--- удовлетворяет $L_{\mathrm{loc}} (y_0)$. Тогда 
         
         $\varphi$~--- суммируемая, $\lim\limits_{y \rightarrow y_0} \int\limits_X f(x, y) d \mu = \int\limits_X \varphi d \mu$.
@@ -2115,8 +2007,10 @@
             $J(y) := \int\limits_X f(x, y) d \mu (x)$~--- непрерывна в $y_0$.
             
             $\varphi \leftarrow -f(x, y_0)$.
-            
-    \subsection{Правило Лейбница}
+           
+    \newpage
+    
+    \section{Правило Лейбница}
     
         $Y \subset \mathbb{R}$~--- промежуток.
         
@@ -2136,7 +2030,7 @@
         
         $J(y)$~--- дифференцируемая в $y_0$ и $J'(y) = \int\limits_X f'_y(x, y) d \mu (x)$.
         
-        \subsubsection{Доказательство}
+        \subsection{Доказательство}
         
             $F(x, h) := \dfrac{f(x, y_0 + h) - f(x, y_0)}{h} \xrightarrow[h \rightarrow 0]{} f'_y (x, y_0)$.
             
@@ -2145,8 +2039,6 @@
             $L_{\mathrm{loc}} (h = 0)$, $\left| F(x, h) \right| = \left| f'_y (x, y_0 \rightarrow \theta h ) \right|$ по теорема Лагранжа, и $\left| f'_y (x, y_0 \rightarrow \partial h ) \right| \leqslant g(x)$ по условию $L_{\mathrm{loc}}(y_0)$ для $f'_y$ из $2$ пункта.
             
 \newpage
-
-\part{Тригонометрические ряды Фурье}
 
     \subsection{Тригонометрический полином порядка $n$}
     
